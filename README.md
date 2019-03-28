@@ -1,6 +1,8 @@
 # Benchmark: chloroplast assembly from genomic data
 
 ## Status
+10 check points from [Weber et al. "Essential guidelines for computational method benchmarking" (2018) arXiv](https://arxiv.org/abs/1812.00661)
+
 1. Define the purpose and scope of the benchmark.
 > automatic assembly tools extracting whole chloroplast genomes from mixed (plastid+genome) sequencing data
 
