@@ -5,6 +5,11 @@
 COV=$1
 READLEN=$2
 CHR=$3
+if [ -z "${4}" ]; then 
+    CIRCULAR=''
+else 
+    CIRCULAR='--circular-genome'
+fi
 
 SEGMENT=$((2 * $READLEN + 100))
 REVPOS=$(($SEGMENT - $READLEN))
@@ -16,7 +21,7 @@ seqkit seq --reverse --complement --threads 8 chr${CHR}_${READLEN}_intermediate/
 seqkit shuffle --threads 8 --rand-seed 91685 --out-file chr${CHR}_${READLEN}_intermediate2.fa.gz chr${CHR}_${READLEN}_intermediate/stdin.part_002.fasta
 rm -r chr${CHR}_${READLEN}_intermediate
 seqkit subseq --region 1:${READLEN} --threads 8 --line-width 0 --out-file chr${CHR}_1.${READLEN}bp.${COV}x.fa chr${CHR}_${READLEN}_intermediate2.fa.gz
-seqkit subseq --region ${REVPOS}:400 --threads 8 chr${CHR}_${READLEN}_intermediate2.fa.gz | seqkit seq --reverse --complement --line-width 0 --threads 8 --out-file chr${CHR}_2.${READLEN}bp.${COV}x.fa
+seqkit subseq --region ${REVPOS}:${SEGMENT} --threads 8 chr${CHR}_${READLEN}_intermediate2.fa.gz | seqkit seq --reverse --complement --line-width 0 --threads 8 --out-file chr${CHR}_2.${READLEN}bp.${COV}x.fa
 rm -r chr${CHR}_${READLEN}_intermediate2.fa.gz
 perl fasta_to_fastq.pl chr${CHR}_1.${READLEN}bp.${COV}x.fa >chr${CHR}_1.${READLEN}bp.${COV}x.fq
 perl fasta_to_fastq.pl chr${CHR}_2.${READLEN}bp.${COV}x.fa >chr${CHR}_2.${READLEN}bp.${COV}x.fq
