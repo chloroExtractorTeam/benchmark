@@ -16,7 +16,9 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt update && apt install --yes \
+RUN apt update && apt install --yes software-properties-common && \
+    add-apt-repository --yes ppa:deadsnakes/ppa && \
+    apt update && apt install --yes \
     liblog-log4perl-perl \
     libmoose-perl \
     libfile-which-perl \
@@ -35,7 +37,7 @@ RUN apt update && apt install --yes \
     jellyfish \
     python \
     wget \
-    python3 \
+    python3.7 \
     python3-pip \
     python3-venv \
     python-wget \
@@ -46,9 +48,9 @@ RUN cd /tmp/ && \
        tar -xzf - && \
     mv SPAdes-3.13.0-Linux/ /opt//spades/
 
-RUN pip3 install -U sphinx && \
-    pip3 install -U cython && \
-    pip3 install -U pip
+RUN pip3 install -U pip && \
+    pip install -U sphinx && \
+    pip install -U cython
 
 ENV PATH "/opt/spades/bin:$PATH"
 
