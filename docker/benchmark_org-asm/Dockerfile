@@ -17,8 +17,8 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
 ENV ORGASMVERSION e8d013ea9b939c0a05b8a7632e21f001e9c8c516
 WORKDIR /opt
 RUN pip3 install -U pip && \
-    pip3 install -U sphinx && \
-    pip3 install -U cython && \
+    pip install -U sphinx && \
+    pip install -U cython && \
     git clone https://git.metabarcoding.org/org-asm/org-asm.git && \
     cd org-asm && \
     git checkout ${ORGASMVERSION} && \
