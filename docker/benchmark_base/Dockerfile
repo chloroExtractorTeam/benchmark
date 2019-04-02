@@ -1,4 +1,4 @@
-ARG osversion=xenial
+ARG osversion=bionic-20190307
 FROM ubuntu:${osversion}
 
 ARG VERSION=master
