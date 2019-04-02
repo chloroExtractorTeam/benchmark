@@ -33,6 +33,9 @@ RUN apt update && apt install --yes \
     jellyfish \
     python \
     wget \
+    python3 \
+    python3-pip \
+    python3-venv \
     git
 
 RUN cd /tmp/ && \
