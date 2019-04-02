@@ -44,6 +44,10 @@ RUN cd /tmp/ && \
        tar -xzf - && \
     mv SPAdes-3.13.0-Linux/ /opt//spades/
 
+RUN pip3 install -U sphinx && \
+    pip3 install -U cython && \
+    pip3 install -U pip
+
 ENV PATH "/opt/spades/bin:$PATH"
 
 ADD get_versions.sh /usr/local/bin/get_versions.sh
