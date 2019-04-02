@@ -20,7 +20,7 @@ WORKDIR /opt
 RUN git clone --recursive https://github.com/Kinggerm/GetOrganelle.git && \
     cd GetOrganelle && \
     git checkout ${GETORGANELLEVERSION} && \
-    rm -rf .git && \
+    rm -rf .git
 
 ENV PATH "/opt/GetOrganelle:/opt/GetOrganelle/Utilities:$PATH"
 
