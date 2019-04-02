@@ -14,6 +14,8 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt update && apt install --yes \
     liblog-log4perl-perl \
     libmoose-perl \
