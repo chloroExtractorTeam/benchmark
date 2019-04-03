@@ -43,7 +43,7 @@ then
     ln -s ../reverse.fq
     get_organelle_reads.py -1 forward.fq -2 reverse.fq -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
 
-    find -name "*path_sequence.fasta" | sort | head -1 | xargs cp -t ../output.fa
+    find -name "*path_sequence.fasta" | sort | head -1 | xargs -I{} cp {} ../output.fa
 fi
 
 if [ -n "$IOGAVERSION" ]
