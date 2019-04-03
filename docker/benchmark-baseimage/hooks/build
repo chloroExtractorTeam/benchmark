@@ -21,6 +21,9 @@ then
     fi
 fi
 
+# finally copy the current wrapper-script into the build folder
+cp ../wrapper.sh .
+
 env
 
 docker build \
