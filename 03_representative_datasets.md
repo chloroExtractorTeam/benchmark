@@ -46,6 +46,12 @@ do
     cat starter_${i}.150bp.fq $(yes chrC_${i}.150bp.300x.fq | head -n 100) | seqkit shuffle --threads 8 --rand-seed 91685 --out-file sim_${i}.150bp.1-1000.fq
     cat starter_${i}.250bp.fq $(yes chrC_${i}.250bp.500x.fq | head -n 60) | seqkit shuffle --threads 8 --rand-seed 91685 --out-file sim_${i}.250bp.1-1000.fq
 done
+
+for i in sim_*.fq
+do
+	BASE=$(basename $i .fq)
+	seqkit sample --threads 8 --rand-seed 91685 --number 2000000 --out-file ${BASE}.2M.fq $i
+done
 ```
 
 ## Real Data
