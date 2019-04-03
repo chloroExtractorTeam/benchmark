@@ -16,35 +16,39 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt update && apt install --yes software-properties-common && \
+RUN apt update && \
+    apt install --yes \
+	software-properties-common && \
     add-apt-repository --yes ppa:deadsnakes/ppa && \
-    apt update && apt install --yes \
-    liblog-log4perl-perl \
-    libmoose-perl \
-    libfile-which-perl \
-    libipc-run-perl \
-    libterm-progressbar-perl \
-    libgraph-perl \
-    liblist-moreutils-perl \
-    bowtie2 \
-    bowtie \
-    build-essential \
-    trimmomatic \
-    ncbi-blast+ \
-    samtools \
-    bedtools \
-    r-base \
-    ghostscript \
-    jellyfish \
-    python \
-    wget \
-    python3.7 \
-    python3-pip \
-    python3-venv \
-    python-wget \
-    python-matplotlib \
-    python-biopython \
-    git
+    apt update && \
+    apt install --yes \
+       python3.7 && \
+    apt install --yes \
+       liblog-log4perl-perl \
+       libmoose-perl \
+       libfile-which-perl \
+       libipc-run-perl \
+       libterm-progressbar-perl \
+       libgraph-perl \
+       liblist-moreutils-perl \
+       bowtie2 \
+       bowtie \
+       build-essential \
+       trimmomatic \
+       ncbi-blast+ \
+       samtools \
+       bedtools \
+       r-base \
+       ghostscript \
+       jellyfish \
+       python \
+       wget \
+       python3-pip \
+       python3-venv \
+       python-wget \
+       python-matplotlib \
+       python-biopython \
+       git
 
 RUN cd /tmp/ && \
     wget -O - http://cab.spbu.ru/files/release3.13.0/SPAdes-3.13.0-Linux.tar.gz | \
