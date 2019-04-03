@@ -44,9 +44,6 @@ RUN apt update && apt install --yes software-properties-common && \
     python-wget \
     python-matplotlib \
     python-biopython \
-    python3-scipy \
-    python3-numpy \
-    python3-sympy \
     git
 
 RUN cd /tmp/ && \
