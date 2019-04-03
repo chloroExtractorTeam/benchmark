@@ -58,6 +58,8 @@ then
     fi
 
     IOGA.py --reference "${REFERENCE}" --forward forward.fq --reverse reverse.fq --threads ${NUMCPUS}
+
+    cp IOGA_RUN.final/$(sed -n '2p' IOGA_RUN.final/IOGA_RUN.statistics | cut -f 1).fasta output.fa
 fi
 
 if [ -n "$NOVOPLASTYVERSION" ]
