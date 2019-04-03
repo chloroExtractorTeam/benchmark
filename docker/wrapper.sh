@@ -47,6 +47,14 @@ fi
 if [ -n "$IOGAVERSION" ]
 then
     echo "Running IOGA"
+
+    if [ ! -e reference.fa ]
+    then
+	echo "Missing forward reads. Please add a file called forward.fq"
+	exit 1;
+    fi
+
+    IOGA.py --reference reference.fa --forward forward.fq --reverse reverse.fq --threads ${NUMCPUS} --maxrounds 32
 fi
 
 if [ -n "$NOVOPLASTYVERSION" ]
