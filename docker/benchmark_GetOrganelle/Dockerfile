@@ -14,7 +14,7 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
-RUN apt install --yes
+RUN apt install --yes \
     python-scipy \
     python-numpy \
     python-sympy
