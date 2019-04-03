@@ -63,6 +63,55 @@ fi
 if [ -n "$NOVOPLASTYVERSION" ]
 then
     echo "Running NOVOPlasty"
+
+    REFERENCE="reference.fa"
+    if [ ! -e ${REFERENCE} ]
+    then
+	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
+	REFERENCE="/opt/reference.fa"
+    fi
+
+    # Estimate read length
+    export NUMREADS=10000
+    export READLEN=$(($(head -n $((${NUMREADS}*4)) forward.fq | sed -n '1~4{n;p}' | tr -d "\n" | wc -c)/${NUMREADS}))
+    export INSERTSIZE=$((${READLEN}*23/10))
+
+cat >config.txt <<EOF
+Project:
+-----------------------
+Project name          = NOVOPlasty
+Type                  = chloro
+Genome Range          = 100000-250000
+K-mer                 = 39
+Max memory            =
+Extended log          = 0
+Save assembled reads  = no
+Seed Input            = $REFERENCE
+Reference sequence    =
+Variance detection    = no
+Heteroplasmy          =
+HP exclude list       =
+Chloroplast sequence  =
+
+Dataset 1:
+-----------------------
+Read Length           = $READLEN
+Insert size           = $INSERTSIZE
+Platform              = illumina
+Single/Paired         = PE
+Combined reads        =
+Forward reads         = forward.fq
+Reverse reads         = reverse.fq
+
+Optional:
+-----------------------
+Insert size auto      = yes
+Insert Range          = 1.8
+Insert Range strict   = 1.3
+Use Quality Scores    = no
+EOF
+
+    NOVOPlasty.pl -c config.txt
 fi
 
 if [ -n "$CHLOROPLASTASSEMBLYPROTOCOL" ]
