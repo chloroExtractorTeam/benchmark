@@ -56,6 +56,10 @@ fi
 if [ -n "$FASTPLASTVERSION" ]
 then
     echo "Running fast-plast"
+
+    fast-plast.pl -1 forward.fq -2 reverse.fq -name fast-plast --threads ${NUMCPUS}
+
+    cp $(find -name "*_FULLCP.fsa") output.fa
 fi
 
 if [ -n "$ORGASMVERSION" ]
