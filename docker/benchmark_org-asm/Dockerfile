@@ -22,6 +22,10 @@ RUN git clone https://git.metabarcoding.org/org-asm/org-asm.git && \
     rm -rf .git && \
     python3 setup.py --serenity install
 
+ADD wrapper.sh /usr/local/bin/wrapper.sh
+
+CMD ["wrapper.sh"]
+
 # Setup of /data volume and set it as working directory
 VOLUME /data
 WORKDIR /data

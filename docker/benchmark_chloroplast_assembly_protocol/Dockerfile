@@ -25,6 +25,10 @@ ENV PATH "/opt/chloroplast_assembly_protocol:$PATH"
 
 RUN perl /opt/chloroplast_assembly_protocol/install.pl
 
+ADD wrapper.sh /usr/local/bin/wrapper.sh
+
+CMD ["wrapper.sh"]
+
 # Setup of /data volume and set it as working directory
 VOLUME /data
 WORKDIR /data

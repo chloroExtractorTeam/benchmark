@@ -23,6 +23,10 @@ RUN git clone --recursive https://github.com/chloroExtractorTeam/chloroExtractor
 
 ENV PATH "/opt/chloroExtractor/bin/:$PATH"
 
+ADD wrapper.sh /usr/local/bin/wrapper.sh
+
+CMD ["wrapper.sh"]
+
 # Setup of /data volume and set it as working directory
 VOLUME /data
 WORKDIR /data

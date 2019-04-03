@@ -24,6 +24,10 @@ RUN git clone --recursive https://github.com/Kinggerm/GetOrganelle.git && \
 
 ENV PATH "/opt/GetOrganelle:/opt/GetOrganelle/Utilities:$PATH"
 
+ADD wrapper.sh /usr/local/bin/wrapper.sh
+
+CMD ["wrapper.sh"]
+
 # Setup of /data volume and set it as working directory
 VOLUME /data
 WORKDIR /data

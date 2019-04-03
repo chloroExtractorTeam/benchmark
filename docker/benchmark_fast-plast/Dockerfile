@@ -28,6 +28,10 @@ RUN git clone https://github.com/mrmckain/Fast-Plast.git && \
 
 ENV PATH "/opt/Fast-Plast/:$PATH"
 
+ADD wrapper.sh /usr/local/bin/wrapper.sh
+
+CMD ["wrapper.sh"]
+
 # Setup of /data volume and set it as working directory
 VOLUME /data
 WORKDIR /data

@@ -25,6 +25,10 @@ RUN git clone --recursive https://github.com/holmrenser/IOGA.git && \
 
 ENV PATH "/opt/IOGA:$PATH"
 
+ADD wrapper.sh /usr/local/bin/wrapper.sh
+
+CMD ["wrapper.sh"]
+
 # Setup of /data volume and set it as working directory
 VOLUME /data
 WORKDIR /data

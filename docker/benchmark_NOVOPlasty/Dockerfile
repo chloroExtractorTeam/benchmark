@@ -24,6 +24,10 @@ RUN git clone --recursive https://github.com/ndierckx/NOVOPlasty.git && \
     ln -s NOVOPlasty2.7.2.pl NOVOPlasty.pl
 ENV PATH "/opt/NOVOPlasty:$PATH"
 
+ADD wrapper.sh /usr/local/bin/wrapper.sh
+
+CMD ["wrapper.sh"]
+
 # Setup of /data volume and set it as working directory
 VOLUME /data
 WORKDIR /data
