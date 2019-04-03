@@ -55,7 +55,7 @@ then
 	REFERENCE="/opt/reference.fa"
     fi
 
-    IOGA.py --reference "${REFERENCE}" --forward forward.fq --reverse reverse.fq --threads ${NUMCPUS} --maxrounds 32
+    IOGA.py --reference "${REFERENCE}" --forward forward.fq --reverse reverse.fq --threads ${NUMCPUS} --maxrounds 2
 fi
 
 if [ -n "$NOVOPLASTYVERSION" ]
