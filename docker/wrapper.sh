@@ -64,12 +64,20 @@ if [ -n "$NOVOPLASTYVERSION" ]
 then
     echo "Running NOVOPlasty"
 
-    REFERENCE="reference.fa"
+    mkdir novo_plasty
+    cd novo_plasty
+
+    REFERENCE="../reference.fa"
     if [ ! -e ${REFERENCE} ]
     then
 	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
 	REFERENCE="/opt/reference.fa"
+    else
+	ln -s ../reference.fa
     fi
+
+    ln -s ../forward.fq
+    ln -s ../reverse.fq
 
     # Estimate read length
     export NUMREADS=10000
@@ -112,6 +120,8 @@ Use Quality Scores    = no
 EOF
 
     NOVOPlasty.pl -c config.txt
+
+    cp Circularized_assembly_1_NOVOPlasty.fasta ../output.fa
 fi
 
 if [ -n "$CHLOROPLASTASSEMBLYPROTOCOL" ]
