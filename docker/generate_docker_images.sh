@@ -21,8 +21,8 @@ do
 		echo "$i FAIL"
 	else
 		echo "$i PASS"
-		docker push ${IMAGE_NAME}
-		./hooks/post_push
+		docker push ${IMAGE_NAME} &>/dev/zero
+		./hooks/post_push &>/dev/zero
 	fi
 
 	cd $OLDPWD
