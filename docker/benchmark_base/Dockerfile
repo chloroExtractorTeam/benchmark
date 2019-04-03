@@ -25,6 +25,7 @@ RUN apt update && apt install --yes software-properties-common && \
     libipc-run-perl \
     libterm-progressbar-perl \
     libgraph-perl \
+    liblist-moreutils-perl \
     bowtie2 \
     bowtie \
     build-essential \
