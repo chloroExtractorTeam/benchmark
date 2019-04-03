@@ -13,6 +13,11 @@ then
     exit 1;
 fi
 
+# the number of CPUs can be specified using the environment variable NUMCPUS
+: "${NUMCPUS:=4}"
+
+echo "Number of CPUs/threads is set to ${NUMCPUS} and might be changed by defining NUMCPUS as environmental variable"
+
 # Run the correct assembler based on the environment variable
 if [ -n "$CHLOROEXTRACTORVERSION" ]
 then
