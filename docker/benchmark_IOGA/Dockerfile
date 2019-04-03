@@ -25,6 +25,8 @@ RUN git clone --recursive https://github.com/holmrenser/IOGA.git && \
 
 ENV PATH "/opt/IOGA:$PATH"
 
+ADD TAIR10_chrC.fas /opt/reference.fa
+
 ADD wrapper.sh /usr/local/bin/wrapper.sh
 
 ENTRYPOINT ["wrapper.sh"]
