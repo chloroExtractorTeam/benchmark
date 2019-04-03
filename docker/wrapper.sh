@@ -129,6 +129,26 @@ fi
 if [ -n "$CHLOROPLASTASSEMBLYPROTOCOL" ]
 then
     echo "Running chloroplast-assembly-protocol"
+
+    mkdir chloroplastassemblyprotocol
+    cd chloroplastassemblyprotocol
+
+    REFERENCE="../reference.fa"
+    if [ ! -e ${REFERENCE} ]
+    then
+	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
+	REFERENCE="/opt/reference.fa"
+    else
+	ln -s ../reference.fa
+    fi
+
+    mkdir input
+    cd input
+    ln -s ../../forward.fq
+    ln -s ../../reverse.fq
+    cd ..
+
+    0_get_cp_reads.pl input cp_noref $REFERENCE
 fi
 
 if [ -n "$FASTPLASTVERSION" ]
