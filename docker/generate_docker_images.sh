@@ -8,7 +8,7 @@ then
     export SOURCE_BRANCH=$(git describe --tags)
 fi
 
-for i in benchmark-baseimage benchmark_chloroextractor benchmark_fast-plast benchmark_GetOrganelle benchmark_IOGA benchmark_NOVOPlasty benchmark_org-asm benchmark_chloroplast_assembly_protocol
+for i in benchmark-baseimage benchmark_chloroextractor benchmark_fastplast benchmark_GetOrganelle benchmark_IOGA benchmark_NOVOPlasty benchmark_org-asm benchmark_chloroplast_assembly_protocol
 do
 	cd ${i};
 	export DOCKER_REPO=chloroextractorteam/$(echo $i | tr "A-Z" "a-z");
