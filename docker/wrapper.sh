@@ -48,13 +48,14 @@ if [ -n "$IOGAVERSION" ]
 then
     echo "Running IOGA"
 
-    if [ ! -e reference.fa ]
+    REFERENCE="reference.fa"
+    if [ ! -e ${REFERENCE} ]
     then
-	echo "Missing forward reads. Please add a file called forward.fq"
-	exit 1;
+	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
+	REFERENCE="/opt/reference.fa"
     fi
 
-    IOGA.py --reference reference.fa --forward forward.fq --reverse reverse.fq --threads ${NUMCPUS} --maxrounds 32
+    IOGA.py --reference "${REFERENCE}" --forward forward.fq --reverse reverse.fq --threads ${NUMCPUS} --maxrounds 32
 fi
 
 if [ -n "$NOVOPLASTYVERSION" ]
