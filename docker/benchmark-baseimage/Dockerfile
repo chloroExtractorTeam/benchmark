@@ -43,7 +43,9 @@ RUN apt update && apt install --yes software-properties-common && \
     python3-venv \
     python-wget \
     python-matplotlib \
-    biopython \
+    python-biopython \
+    python-scipy \
+    python3-scipy \
     git
 
 RUN cd /tmp/ && \
