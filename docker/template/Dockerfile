@@ -14,6 +14,10 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
+ADD wrapper.sh /usr/local/bin/wrapper.sh
+
+ENTRYPOINT ["wrapper.sh"]
+
 # Setup of /data volume and set it as working directory
 VOLUME /data
 WORKDIR /data
