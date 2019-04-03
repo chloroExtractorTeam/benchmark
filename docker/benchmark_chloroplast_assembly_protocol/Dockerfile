@@ -25,6 +25,8 @@ ENV PATH "/opt/chloroplast_assembly_protocol:$PATH"
 
 RUN perl /opt/chloroplast_assembly_protocol/install.pl
 
+ADD TAIR10_chrC.fas /opt/reference.fa
+
 ADD wrapper.sh /usr/local/bin/wrapper.sh
 
 ENTRYPOINT ["wrapper.sh"]
