@@ -41,7 +41,9 @@ then
     cd get_organelle
     ln -s ../forward.fq
     ln -s ../reverse.fq
-    get_organelle_reads.py -1 forward.fq -2 reverse.fq -o ../output.fa -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
+    get_organelle_reads.py -1 forward.fq -2 reverse.fq -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
+
+    cp plant_cp.K125.complete.graph1.1.path_sequence.fasta ../output.fa
 fi
 
 if [ -n "$IOGAVERSION" ]
