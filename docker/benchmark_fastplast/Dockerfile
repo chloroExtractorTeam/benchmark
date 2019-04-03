@@ -24,7 +24,7 @@ RUN git clone https://github.com/mrmckain/Fast-Plast.git && \
     make && \
     cd .. && \
     echo "yes\n/usr/share/java\npath\npath\npath\npath\npath\nYes\npath" | perl INSTALL.pl && \
-    sed 's#\(my $TRIMMOMATIC="\)[^"]*#\1'$(find /usr -name "trimmomatic.jar")'#' fast-plast.pl
+    sed -i 's#\(my $TRIMMOMATIC="\)[^"]*#\1'$(find /usr -name "trimmomatic.jar")'#' fast-plast.pl
 
 ENV PATH "/opt/Fast-Plast/:$PATH"
 
