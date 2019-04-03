@@ -24,6 +24,8 @@ RUN git clone --recursive https://github.com/ndierckx/NOVOPlasty.git && \
     ln -s NOVOPlasty2.7.2.pl NOVOPlasty.pl
 ENV PATH "/opt/NOVOPlasty:$PATH"
 
+ADD TAIR10_chrC.fas /opt/reference.fa
+
 ADD wrapper.sh /usr/local/bin/wrapper.sh
 
 ENTRYPOINT ["wrapper.sh"]
