@@ -21,6 +21,7 @@ RUN git clone --recursive https://github.com/ndierckx/NOVOPlasty.git && \
     cd NOVOPlasty && \
     git checkout ${NOVOPLASTYVERSION} && \
     rm -rf .git && \
+    chmod +x NOVOPlasty2.7.2.pl && \
     ln -s NOVOPlasty2.7.2.pl NOVOPlasty.pl
 ENV PATH "/opt/NOVOPlasty:$PATH"
 
