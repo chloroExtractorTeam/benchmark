@@ -23,8 +23,10 @@ RUN git clone https://github.com/mrmckain/Fast-Plast.git && \
     cd afin && \
     make && \
     cd .. && \
-    echo "yes\n/usr/share/java\npath\npath\npath\npath\npath\nYes\npath" | perl INSTALL.pl && \
-    sed -i 's#\(my $TRIMMOMATIC="\)[^"]*#\1'$(find /usr -name "trimmomatic.jar")'#' fast-plast.pl
+    echo "yes\n/usr/share/java\npath\n"$(dirname $(which spades.py))"\npath\npath\npath\nYes\npath" | perl INSTALL.pl && \
+    sed -i 's#\(my $TRIMMOMATIC="\)[^"]*#\1'$(find /usr -name "trimmomatic.jar")'#;s#\(my $BLAST="\)[^"]*#\1#;' fast-plast.pl
+# first sed command sets TRIMMOMATIC location
+# second sed command deletes the BLAST folder location
 
 ENV PATH "/opt/Fast-Plast/:$PATH"
 
