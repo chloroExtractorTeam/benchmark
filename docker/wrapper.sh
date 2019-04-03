@@ -23,7 +23,7 @@ if [ -n "$CHLOROEXTRACTORVERSION" ]
 then
     echo "Running chloroExtractor"
 
-    ptx -1 forward.fq -2 reverse.fq -d ptx
+    ptx -1 forward.fq -2 reverse.fq -d ptx --threads ${NUMCPUS}
 
     if [ -e ptx/fcg.fa ]
     then
