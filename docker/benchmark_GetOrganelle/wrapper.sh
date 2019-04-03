@@ -17,6 +17,15 @@ fi
 if [ -n "$CHLOROEXTRACTORVERSION" ]
 then
     echo "Running chloroExtractor"
+
+    ptx -1 forward.fq -2 reverse.fq -d ptx
+
+    if [ -e ptx/fcg.fa ]
+    then
+	cp ptx/fcg.fa output.fa
+    else
+	touch output.fa
+    fi
 fi
 
 if [ -n "$GETORGANELLEVERSION" ]
