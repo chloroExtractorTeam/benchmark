@@ -1,0 +1,31 @@
+* Purpose
+We want to evaluate the user friendliness of the different tools.
+Therefore we will check the tools based on the following criteria.
+
+* Criteria
+
+The evaluation will be based on the following statements/questions. 
+For each point, a tool can be evaluated as *GOOD*, *OK* or *BAD*.
+Example:
+
+
+Q: The tool is easy to install
+GOOD: The tool can be installed by using a package archive, such as CRAN, docker, etc
+OK: All dependencies are listed. A complete "install" script is preferred over a simple list
+BAD: Dependencies are missing from the installation instructions or the tool cannot be installed at all
+
+
+** List of questions 
+
+- Is the tool easy to install?
+- Is there a way to test the installation?
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings 
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+
+* Evaluation procedure
+
+The tools will be installed in a Virtual Machine running Ubuntu 18.04 with no additional packages
+installed. All further questions will be answered based on this installation.
