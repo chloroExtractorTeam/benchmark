@@ -20,7 +20,7 @@ BAD: Dependencies are missing from the installation instructions or the tool can
 - Is the tool easy to install?
 - Is there a way to test the installation?
 - Is there a tutorial on how to use the tool?
-- Is there a good documentation on the parameter settings 
+- Is there a good documentation on the parameter settings?
 - Is the tool maintained (issues answered, implementation of new features)?
 - Is the tool Open Source?
 
