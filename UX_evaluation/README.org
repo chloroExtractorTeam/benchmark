@@ -24,8 +24,152 @@ BAD: Dependencies are missing from the installation instructions or the tool can
 - Is the tool maintained (issues answered, implementation of new features)?
 - Is the tool Open Source?
 
-
 * Evaluation procedure
-
 The tools will be installed in a Virtual Machine running Ubuntu 18.04 with no additional packages
 installed. All further questions will be answered based on this installation.
+
+** create base image
+
+- using VirtualBox Version 5.2.18_Ubuntu r123745
+- installing Ubuntu 18.04.2 (sha256: 22580b9f3b186cc66818e60f44c46f795d708a1ad86b9225c458413b638459c4)
+- installed all updates via apt
+- created a snapshot {87710da5-fb80-40e9-8a56-43ae639886b5}.vdi
+
+* Evaluation of the tools
+** GetOrganelle
+- cloned the base VM
+*** questions
+**** Is the tool easy to install?
+requirements from readme on github:
+- python 3
+- python libraries numpy, scipy, sympy ~pip install numpy scipy sympy~
+- SPAdes (link in readme)
+- Bowtie2 (link in readme)
+- BLAST+ (link in readme)
+- Bandage (link in readme)
+
+installing dependencies:
+- python3 is already installed
+- pip has to be installed (not mentioned in readme)
+- installation of modules successful
+- spades installation successful (downloaded binary from their homepage and add to $PATH) Version 3.13.0 installed
+- bowtie2 installation successful (downloaded binary from their sourceforge and add to $PATH) Version 2.3.5 installed
+- blast+ installation successful (downloaded binary from their ftp and add to $PATH) Version 2.9.0 installed
+- bandage installation successful(downloaded binary from their homepage, installed qt5-default and add to $PATH) Version 0.8.1 installed
+
+installing GetOrganelle:
+- following the description in the readme
+- creating and moving to dir ~/Appilcations/bin
+- git is not installed
+- git clone repo
+- adding executables to PATH like described in Readme
+
+Conclusion:
+Except for git and pip, everything needed to install GetOrganelle is listed. The installation seems to work.
+There seems to be a minimal installation without the dependecies, as they are not needed for the main task. 
+However, I want to have the full installation running. 
+
+
+**** Is there a way to test the installation?
+- running ~get_organelle_reads.py -h~ and  ~get_organelle_reads.py --help~ works.
+- there are usage examples in the readme, but no test data is shipped
+**** Is there a tutorial on how to use the tool?
+There are some examples in the Readme
+**** Is there a good documentation on the parameter settings?
+There is an extensive description of the parameters when runnin  ~get_organelle_reads.py --help~
+**** Is the tool maintained (issues answered, implementation of new features)?
+Yes, there are recent commits and issues opened and closed
+**** Is the tool Open Source?
+Yes, GPL-3.0
+
+*** summary
+- Is the tool easy to install? OK
+- Is there a way to test the installation? BAD
+- Is there a tutorial on how to use the tool? OK
+- Is there a good documentation on the parameter settings? GOOD
+- Is the tool maintained (issues answered, implementation of new features)? GOOD
+- Is the tool Open Source? GOOD
+
+** fast-plast
+*** questions
+**** Is the tool easy to install?
+**** Is there a way to test the installation?
+**** Is there a tutorial on how to use the tool?
+**** Is there a good documentation on the parameter settings?
+**** Is the tool maintained (issues answered, implementation of new features)?
+**** Is the tool Open Source?
+
+*** summary
+- Is the tool easy to install?
+- Is there a way to test the installation?
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings?
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+** org-asm
+*** questions
+**** Is the tool easy to install?
+**** Is there a way to test the installation?
+**** Is there a tutorial on how to use the tool?
+**** Is there a good documentation on the parameter settings?
+**** Is the tool maintained (issues answered, implementation of new features)?
+**** Is the tool Open Source?
+
+*** summary
+- Is the tool easy to install?
+- Is there a way to test the installation?
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings?
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+** NOVOPlasty
+*** questions
+**** Is the tool easy to install?
+**** Is there a way to test the installation?
+**** Is there a tutorial on how to use the tool?
+**** Is there a good documentation on the parameter settings?
+**** Is the tool maintained (issues answered, implementation of new features)?
+**** Is the tool Open Source?
+
+*** summary
+- Is the tool easy to install?
+- Is there a way to test the installation?
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings?
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+** chloroExtractor
+*** questions
+**** Is the tool easy to install?
+**** Is there a way to test the installation?
+**** Is there a tutorial on how to use the tool?
+**** Is there a good documentation on the parameter settings?
+**** Is the tool maintained (issues answered, implementation of new features)?
+**** Is the tool Open Source?
+
+*** summary
+- Is the tool easy to install?
+- Is there a way to test the installation?
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings?
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+** IOGA
+*** questions
+**** Is the tool easy to install?
+**** Is there a way to test the installation?
+**** Is there a tutorial on how to use the tool?
+**** Is there a good documentation on the parameter settings?
+**** Is the tool maintained (issues answered, implementation of new features)?
+**** Is the tool Open Source?
+*** summary
+- Is the tool easy to install?
+- Is there a way to test the installation?
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings?
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
