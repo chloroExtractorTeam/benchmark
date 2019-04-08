@@ -91,8 +91,27 @@ Yes, GPL-3.0
 - Is the tool Open Source? GOOD
 
 ** fast-plast
+cloned VM from base
 *** questions
 **** Is the tool easy to install?
+There is a long list of dependencies on the github readme. However, the offer an
+installation script. I will use this:
+
+- install git (not mentioned in readme)
+- clone repo
+- running the installation perl script. It is semi automatic (had to answer 2 questions about dependency installation at the beginning)
+- error while compiling something
+- installed make
+- delete fast-plast dir and run again -> error
+- installed g++
+- try again
+- error
+- install libz-dev
+- try again
+- success
+- try again as a whole
+- success
+
 **** Is there a way to test the installation?
 **** Is there a tutorial on how to use the tool?
 **** Is there a good documentation on the parameter settings?
