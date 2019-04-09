@@ -127,8 +127,59 @@ installation script. I will use this:
 - Is the tool Open Source?
 
 ** org-asm
+cloned base VM image 
 *** questions
 **** Is the tool easy to install?
+following the instructions here:
+https://docs.metabarcoding.org/asm/install.html
+
+requirements:
+- python 3.5 (3.6.7 is installed)
+- gcc (installed version 7.3.0 via apt)
+
+downloaded org-asm as .tar.gz from https://git.metabarcoding.org/org-asm/org-asm
+https://git.metabarcoding.org/org-asm/org-asm/repository/master/archive.tar.gz
+
+running python3 get-orgasm.py returns an error:
+ModuleNotFoundError: No module named 'distutils.errors'
+
+installing python3-distutils via apt
+
+-> different error, pip seems to be missing
+installing python3-pip
+
+different error, suggest to install python3-venv
+
+got an error unexpected keyword argument 'capture_output' - according to 
+Stackoverflow, this is was introduced in python 3.7 
+
+installing python 3.7 via apt as mentioned here:
+https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/
+
+same error... strangely the first output line is always
+Unable to install ORG.asm on your system
+but then it starts installing anyway...
+
+next try: fresh VM, installed python3.7 via apt, gcc, python3-pip, python3-distutils and python3.7-venv
+download the tar like above
+
+looks better, different error
+
+installing python3.7-dev
+
+seems to be working, trying again with a fresh VM just to be sure.
+
+Installation procedure:
+- apt update
+- add-apt-repository ppa:deadsnakes/ppa
+- apt install python3.7
+- apt install gcc python3-pip python3-distutils python3.7-venv python3.7-dev
+- download tar from gitlab
+- extract tar and run python3.7 get-orgasm.py
+
+It works.
+
+
 **** Is there a way to test the installation?
 **** Is there a tutorial on how to use the tool?
 **** Is there a good documentation on the parameter settings?
