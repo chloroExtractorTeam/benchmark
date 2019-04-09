@@ -74,8 +74,6 @@ then
     then
 	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
 	REFERENCE="/opt/reference.fa"
-    else
-	ln -s ../reference.fa
     fi
 
     ln -s ../forward.fq
@@ -138,8 +136,6 @@ then
     then
 	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
 	REFERENCE="/opt/reference.fa"
-    else
-	ln -s ../reference.fa
     fi
 
     mkdir input
