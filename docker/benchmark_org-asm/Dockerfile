@@ -44,6 +44,8 @@ RUN apt purge --yes python3* && \
     rm -rf .git && \
     python3 setup.py --serenity install
 
+ENV PATH "/opt/org-asm/ORG.asm-1.0.3/bin:$PATH"
+
 ADD wrapper.sh /usr/local/bin/wrapper.sh
 
 ENTRYPOINT ["wrapper.sh"]
