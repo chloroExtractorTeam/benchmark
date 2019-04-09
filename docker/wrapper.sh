@@ -173,8 +173,11 @@ then
     sed -i 's/\(CPUTHREADS[[:space:]]*=[[:space:]]*\)[0-9]*/\1'${NUMCPUS}'/g' $(which 1_cleanreads.pl)
     1_cleanreads.pl -folder cp_noref
 
-    cp cp_noref/cleanreads.txt cp_noref/assembly_pe
-    2_assemble_reads.pl cp_noref assembly_pe -threads ${NUMCPUS}
+    if [ -e cp_noref/cleanreads.txt ]
+    then
+	cp cp_noref/cleanreads.txt cp_noref/assembly_pe
+	2_assemble_reads.pl cp_noref assembly_pe -threads ${NUMCPUS}
+    fi
 fi
 
 if [ -n "$FASTPLASTVERSION" ]
