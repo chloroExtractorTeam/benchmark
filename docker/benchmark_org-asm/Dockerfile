@@ -16,7 +16,29 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
 
 ENV ORGASMVERSION e8d013ea9b939c0a05b8a7632e21f001e9c8c516
 WORKDIR /opt
-RUN git clone https://git.metabarcoding.org/org-asm/org-asm.git && \
+RUN apt purge --yes python3* && \
+    apt install --yes \
+       build-essential \
+       checkinstall \
+       libbz2-dev \
+       libc6-dev \
+       libgdbm-dev \
+       libncursesw5-dev \
+       libreadline-gplv2-dev \
+       libssl-dev \
+       libsqlite3-dev \
+       tk-dev \
+       libffi-dev && \
+    cd /opt/ && \
+    wget -O - https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz | \
+	tar xzf - && \
+    cd Python-3.7.3 && \
+    ./configure && \
+    make && \
+    make install && \
+    cd .. && \
+    rm -rf Python-3.7.3 && \
+    git clone https://git.metabarcoding.org/org-asm/org-asm.git && \
     cd org-asm && \
     git checkout ${ORGASMVERSION} && \
     rm -rf .git && \
