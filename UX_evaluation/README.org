@@ -219,6 +219,11 @@ It works.
 ** chloroExtractor
 *** questions
 **** Is the tool easy to install?
+prerequisites:
+- installing docker with this guide: https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+running docker pull command from readme
+works.
 **** Is there a way to test the installation?
 **** Is there a tutorial on how to use the tool?
 **** Is there a good documentation on the parameter settings?
