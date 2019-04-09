@@ -197,6 +197,11 @@ It works.
 ** NOVOPlasty
 *** questions
 **** Is the tool easy to install?
+- only perl as dependency (already installed)
+- downloaded zip from github
+- unzip
+- done
+
 **** Is there a way to test the installation?
 **** Is there a tutorial on how to use the tool?
 **** Is there a good documentation on the parameter settings?
