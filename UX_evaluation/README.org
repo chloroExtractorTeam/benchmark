@@ -241,6 +241,20 @@ works.
 ** IOGA
 *** questions
 **** Is the tool easy to install?
+downloaded zip from github
+
+
+apparently, I need to install python first 
+- apt install python python-pip 
+- pip install wget
+
+some dependency installations failed, maybe make is missing
+-apt install build-essential
+
+no difference. I still get errors saying that some dependencies fail, but no reasons for failing.
+I will probably have to install them manually.
+
+
 **** Is there a way to test the installation?
 **** Is there a tutorial on how to use the tool?
 **** Is there a good documentation on the parameter settings?
