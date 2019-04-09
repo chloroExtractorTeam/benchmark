@@ -164,7 +164,7 @@ then
                 print $line;
              }
           }
-       }' | pv >interleaved.fq
+       }' >interleaved.fq
     cd ..
 
     0_get_cp_reads.pl input cp_noref $REFERENCE
