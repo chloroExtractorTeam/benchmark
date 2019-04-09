@@ -140,8 +140,31 @@ then
 
     mkdir input
     cd input
-    ln -s ../../forward.fq
-    ln -s ../../reverse.fq
+    # generate an interleaved file from our input files
+    perl -e '
+       open(my $fw,"../../forward.fq")  || die("$!\n");
+       open(my $rev,"../../reverse.fq") || die("$!\n");
+
+       while(! (eof($fw) || eof($rev)))
+       {
+          my $read = 1;
+          foreach my $file ($fw, $rev)
+          {
+             foreach my $i (1..4)
+             {
+                my $line = <$file>;
+                if ($i==1)
+                {
+                   $line =~ /^(\S+)(.*)$/s;
+                   $line=$1.".$read".$2;
+                   $read++;
+                   $read=1 if ($read>2);
+                }
+                $line="+\n" if ($i == 3);
+                print $line;
+             }
+          }
+       }' | pv >interleaved.fq
     cd ..
 
     0_get_cp_reads.pl input cp_noref $REFERENCE
