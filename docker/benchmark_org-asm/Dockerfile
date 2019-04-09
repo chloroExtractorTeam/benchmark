@@ -14,7 +14,7 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
-ENV ORGASMVERSION e8d013ea9b939c0a05b8a7632e21f001e9c8c516
+ENV ORGASMVERSION 830313acae3ca773b63f6bea9fc6d017e021bde5
 WORKDIR /opt
 RUN apt purge --yes python3* && \
     apt install --yes \
