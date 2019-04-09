@@ -22,7 +22,9 @@ RUN apt update && \
     add-apt-repository --yes ppa:deadsnakes/ppa && \
     apt update && \
     apt install --yes \
-       python3.7 && \
+       python3.7 \
+       python3.7-venv \
+       python3.7-dev && \
     apt install --yes \
        liblog-log4perl-perl \
        libmoose-perl \
@@ -48,6 +50,7 @@ RUN apt update && \
        python-wget \
        python-matplotlib \
        python-biopython \
+       python3-distutils \
        git
 
 RUN cd /tmp/ && \
