@@ -14,6 +14,8 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
+RUN apt install --yes libperl4-corelibs-perl
+
 ENV CHLOROPLASTASSEMBLYPROTOCOL 750e241f2a51c3989d59a9c58ab48c4709aa9ccb
 WORKDIR /opt
 RUN git clone https://github.com/eead-csic-compbio/chloroplast_assembly_protocol.git && \

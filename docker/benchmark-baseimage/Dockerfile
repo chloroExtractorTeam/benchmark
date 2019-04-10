@@ -22,7 +22,9 @@ RUN apt update && \
     add-apt-repository --yes ppa:deadsnakes/ppa && \
     apt update && \
     apt install --yes \
-       python3.7 && \
+       python3.7 \
+       python3.7-venv \
+       python3.7-dev && \
     apt install --yes \
        liblog-log4perl-perl \
        libmoose-perl \
@@ -48,16 +50,13 @@ RUN apt update && \
        python-wget \
        python-matplotlib \
        python-biopython \
+       python3-distutils \
        git
 
 RUN cd /tmp/ && \
     wget -O - http://cab.spbu.ru/files/release3.13.0/SPAdes-3.13.0-Linux.tar.gz | \
        tar -xzf - && \
     mv SPAdes-3.13.0-Linux/ /opt//spades/
-
-RUN pip3 install -U pip && \
-    pip install -U sphinx && \
-    pip install -U cython
 
 ENV PATH "/opt/spades/bin:$PATH"
 
