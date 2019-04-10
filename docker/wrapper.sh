@@ -150,6 +150,7 @@ then
        while(! (eof($fw) || eof($rev)))
        {
           my $read = 1;
+          $readnumber++;
           foreach my $file ($fw, $rev)
           {
              foreach my $i (1..4)
@@ -157,8 +158,7 @@ then
                 my $line = <$file>;
                 if ($i==1)
                 {
-                   $readnumber++;
-                   $line=sprintf("@read.%d.%d", $readnumber, $read);
+                   $line=sprintf("\@read.%d.%d\n", $readnumber, $read);
                    $read++;
                    $read=1 if ($read>2);
                 }
