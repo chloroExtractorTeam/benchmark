@@ -145,6 +145,8 @@ then
        open(my $fw,"../../forward.fq")  || die("$!\n");
        open(my $rev,"../../reverse.fq") || die("$!\n");
 
+       my $readnumber = 0;
+
        while(! (eof($fw) || eof($rev)))
        {
           my $read = 1;
@@ -155,8 +157,8 @@ then
                 my $line = <$file>;
                 if ($i==1)
                 {
-                   $line =~ /^(\S+)(.*)$/s;
-                   $line=$1.".$read".$2;
+                   $readnumber++;
+                   $line=sprintf("@read.%d.%d", $readnumber, $read);
                    $read++;
                    $read=1 if ($read>2);
                 }
