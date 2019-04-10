@@ -177,7 +177,7 @@ then
 
     if [ -e cp_noref/cleanreads.txt ]
     then
-	cp cp_noref/cleanreads.txt cp_noref/assembly_pe
+	sed 's/[[:space:]]*nd[[:space:]]*nd[[:space:]]*/ FR 250 /g' cp_noref/cleanreads.txt >cp_noref/assembly_pe
 	2_assemble_reads.pl cp_noref assembly_pe -threads ${NUMCPUS}
     fi
 fi
