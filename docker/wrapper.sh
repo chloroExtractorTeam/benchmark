@@ -179,6 +179,8 @@ then
     then
 	sed 's/[[:space:]]*nd[[:space:]]*nd[[:space:]]*/ FR 250 /g' cp_noref/cleanreads.txt >cp_noref/assembly_pe
 	2_assemble_reads.pl cp_noref assembly_pe -threads ${NUMCPUS}
+
+	find -name "sspace.final.scaffolds.fasta" | sort | head -1 | xargs -I{} cp {} ../output.fa
     fi
 fi
 
