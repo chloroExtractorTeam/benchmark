@@ -1,5 +1,5 @@
-ARG osversion=latest
-FROM chloroextractorteam/benchmark-baseimage:${osversion}
+ARG baseimageversion=latest
+FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
 
 ARG VERSION=master
 ARG VCS_REF
