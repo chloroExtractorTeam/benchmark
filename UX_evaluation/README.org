@@ -113,18 +113,33 @@ installation script. I will use this:
 - success
 
 **** Is there a way to test the installation?
-**** Is there a tutorial on how to use the tool?
-**** Is there a good documentation on the parameter settings?
-**** Is the tool maintained (issues answered, implementation of new features)?
-**** Is the tool Open Source?
+No - But I will try the example command from the readme with one of our simulated datasets
+sim_1.150bp.1-100.2M.fq and sim_2.150bp.1-100.2M.fq
 
+it looks like java is missing - installing default-jre and try again
+dies with the message, unable to detect quality encoding - maybe an issues due to the simulated reads all having ~I~ as phred score?
+
+I will try with the example data from chloroextractor
+
+different error - can't locate python, installing python and try again
+
+works.
+
+**** Is there a tutorial on how to use the tool?
+Not a real tutorial, but explanations of the parameters, input and output
+**** Is there a good documentation on the parameter settings?
+Yes, the documentation in the readme file looks good
+**** Is the tool maintained (issues answered, implementation of new features)?
+Yes
+**** Is the tool Open Source?
+Yes, MIT License
 *** summary
-- Is the tool easy to install?
-- Is there a way to test the installation?
-- Is there a tutorial on how to use the tool?
-- Is there a good documentation on the parameter settings?
-- Is the tool maintained (issues answered, implementation of new features)?
-- Is the tool Open Source?
+- Is the tool easy to install? BAD (many dependencies missing)
+- Is there a way to test the installation? OK
+- Is there a tutorial on how to use the tool? OK
+- Is there a good documentation on the parameter settings? GOOD
+- Is the tool maintained (issues answered, implementation of new features)? GOOD
+- Is the tool Open Source? GOOD
 
 ** org-asm
 cloned base VM image 
