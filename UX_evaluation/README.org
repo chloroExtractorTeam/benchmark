@@ -181,7 +181,17 @@ It works.
 
 
 **** Is there a way to test the installation?
+not really, but there is a tutorial with test data, which I will use to
+test the installation
 **** Is there a tutorial on how to use the tool?
+yes
+https://docs.metabarcoding.org/asm/mitochondrion.html
+
+it is for mitochondrion and not chloroplasts, but should give an idea of how to use the software.
+
+- downloaded datasets
+- running index command
+- failed with error "Cannot open file butterfly.odx/index.ogx" (file does not exist)
 **** Is there a good documentation on the parameter settings?
 **** Is the tool maintained (issues answered, implementation of new features)?
 **** Is the tool Open Source?
