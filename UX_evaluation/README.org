@@ -235,18 +235,31 @@ prerequisites:
 running docker pull command from readme
 works.
 **** Is there a way to test the installation?
-**** Is there a tutorial on how to use the tool?
-**** Is there a good documentation on the parameter settings?
-**** Is the tool maintained (issues answered, implementation of new features)?
-**** Is the tool Open Source?
+Yes, an example dataset is provided.
 
+I am running this:
+- downloaded data from zenodo
+- executed docker command
+- error: Fatal error: cannot create 'R_TempDir'
+- may be related to a too small disk size. I add mor disk space to the VM and try again
+- yes that fixed it. Example is running smoothly
+
+
+**** Is there a tutorial on how to use the tool?
+Yes, but it is not much more detailed than the example
+**** Is there a good documentation on the parameter settings?
+Yes, the parameters are explained in the readme and when calling the ~--help~ parameter
+**** Is the tool maintained (issues answered, implementation of new features)?
+Yes
+**** Is the tool Open Source?
+Yes, MIT license
 *** summary
-- Is the tool easy to install?
-- Is there a way to test the installation?
-- Is there a tutorial on how to use the tool?
-- Is there a good documentation on the parameter settings?
-- Is the tool maintained (issues answered, implementation of new features)?
-- Is the tool Open Source?
+- Is the tool easy to install? GOOD
+- Is there a way to test the installation? OK (not meaningful error message, final check if the result is correct would be nice)
+- Is there a tutorial on how to use the tool? OK
+- Is there a good documentation on the parameter settings? GOOD
+- Is the tool maintained (issues answered, implementation of new features)? GOOD
+- Is the tool Open Source? GOOD
 
 ** IOGA
 *** questions
