@@ -23,6 +23,8 @@ RUN git clone --recursive https://github.com/holmrenser/IOGA.git && \
     rm -rf .git && \
     python setup_IOGA.py
 
+RUN chmod -R +rX /opt/IOGA
+
 ENV PATH "/opt/IOGA:$PATH"
 
 ADD TAIR10_chrC.fas /opt/reference.fa
