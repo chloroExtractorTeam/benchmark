@@ -228,18 +228,29 @@ it is for mitochondrion and not chloroplasts, but should give an idea of how to 
 - done
 
 **** Is there a way to test the installation?
-**** Is there a tutorial on how to use the tool?
-**** Is there a good documentation on the parameter settings?
-**** Is the tool maintained (issues answered, implementation of new features)?
-**** Is the tool Open Source?
+no
 
+I am testing with the chloroextractor test set using the
+tair chloroplast as seed.
+Works.
+
+
+**** Is there a tutorial on how to use the tool?
+no, but a good explanation of how to use it
+**** Is there a good documentation on the parameter settings?
+there is an extensive explanation of the parameters and output files
+in the readme
+**** Is the tool maintained (issues answered, implementation of new features)?
+Yes
+**** Is the tool Open Source?
+Yes, custom license
 *** summary
-- Is the tool easy to install?
-- Is there a way to test the installation?
-- Is there a tutorial on how to use the tool?
-- Is there a good documentation on the parameter settings?
-- Is the tool maintained (issues answered, implementation of new features)?
-- Is the tool Open Source?
+- Is the tool easy to install? GOOD
+- Is there a way to test the installation? BAD
+- Is there a tutorial on how to use the tool? OK
+- Is there a good documentation on the parameter settings? GOOD
+- Is the tool maintained (issues answered, implementation of new features)? GOOD
+- Is the tool Open Source? OK
 
 ** chloroExtractor
 *** questions
