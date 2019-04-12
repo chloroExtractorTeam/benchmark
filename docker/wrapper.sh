@@ -121,7 +121,13 @@ EOF
 
     NOVOPlasty.pl -c config.txt
 
-    cp Circularized_assembly_1_NOVOPlasty.fasta ../output.fa
+    if [ -e Circularized_assembly_1_NOVOPlasty.fasta ]
+    then
+        cp Circularized_assembly_1_NOVOPlasty.fasta ../output.fa
+    else
+        cp Option_1_NOVOPlasty.fasta ../output.fa
+    fi
+    
 fi
 
 if [ -n "$CHLOROPLASTASSEMBLYPROTOCOL" ]
