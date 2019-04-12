@@ -302,8 +302,50 @@ some dependency installations failed, maybe make is missing
 
 no difference. I still get errors saying that some dependencies fail, but no reasons for failing.
 I will probably have to install them manually.
+Failing:
+- picard (maybe because of java missing)
+- samtools
+- ALE
+- seqtk
 
+installing default-jre
+picard works
 
+samtools probably misses zlib.h -> installing libz-dev
+missing curses.h -> installing libncurses5-dev
+samtools seems to work, ALE and seqtk, too
+
+trying again with setup script
+works.
+
+**** Is there a way to test the installation?
+they suggest to run IOGA.py -h
+
+returns an error -> matplotlib is missing
+running pip install matplotlib
+no mopdule named Bio -> installing via pip install biopython
+
+now it works
+
+**** Is there a tutorial on how to use the tool?
+no
+**** Is there a good documentation on the parameter settings?
+short explanation of the parameters when running ~IOGA.py -h~
+**** Is the tool maintained (issues answered, implementation of new features)?
+not really, no issues open, last closed in march 2018, last commit in september 2016
+**** Is the tool Open Source?
+No license in the github repo
+*** summary
+- Is the tool easy to install? BAD
+- Is there a way to test the installation? BAD
+- Is there a tutorial on how to use the tool? BAD
+- Is there a good documentation on the parameter settings? OK
+- Is the tool maintained (issues answered, implementation of new features)? OK
+- Is the tool Open Source? BAD
+
+** Chloroplast Assembly Protocol
+*** questions
+**** Is the tool easy to install?
 **** Is there a way to test the installation?
 **** Is there a tutorial on how to use the tool?
 **** Is there a good documentation on the parameter settings?
