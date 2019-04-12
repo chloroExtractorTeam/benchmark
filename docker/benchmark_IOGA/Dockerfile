@@ -23,7 +23,7 @@ RUN git clone --recursive https://github.com/holmrenser/IOGA.git && \
     rm -rf .git && \
     python setup_IOGA.py
 
-RUN chmod -R +rx /opt/IOGA
+RUN chmod -R +rX /opt/IOGA
 
 ENV PATH "/opt/IOGA:$PATH"
 
