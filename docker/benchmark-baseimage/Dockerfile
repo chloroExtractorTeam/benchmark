@@ -61,6 +61,7 @@ RUN cd /tmp/ && \
 ENV PATH "/opt/spades/bin:$PATH"
 
 ADD get_versions.sh /usr/local/bin/get_versions.sh
+ADD random_qual.pl /usr/local/bin/random_qual.pl
 
 # Setup of /data volume and set it as working directory
 VOLUME /data

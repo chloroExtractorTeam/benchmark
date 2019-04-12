@@ -13,6 +13,17 @@ then
     exit 1;
 fi
 
+# copy both read sets
+cp forward.fq forward.changed.fq
+cp reverse.fq reverse.changed.fq
+
+# put random quality for the first 10 reads
+random_qual.pl forward.changed.fq
+random_qual.pl reverse.changed.fq
+
+FW_READ=forward.changed.fq
+REV_READ=reverse.changed.fq
+
 # the number of CPUs can be specified using the environment variable NUMCPUS
 : "${NUMCPUS:=4}"
 
@@ -23,7 +34,7 @@ if [ -n "$CHLOROEXTRACTORVERSION" ]
 then
     echo "Running chloroExtractor"
 
-    ptx -1 forward.fq -2 reverse.fq -d ptx --threads ${NUMCPUS}
+    ptx -1 "${FW_READ}" -2 "${REV_READ}" -d ptx --threads ${NUMCPUS}
 
     if [ -e ptx/fcg.fa ]
     then
@@ -39,9 +50,9 @@ then
 
     mkdir get_organelle
     cd get_organelle
-    ln -s ../forward.fq
-    ln -s ../reverse.fq
-    get_organelle_reads.py -1 forward.fq -2 reverse.fq -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
+    ln -s ../"${FW_READ}"
+    ln -s ../"${REV_READ}"
+    get_organelle_reads.py -1 "${FW_READ}" -2 "${REV_READ}" -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
 
     find -name "*path_sequence.fasta" | sort | head -1 | xargs -I{} cp {} ../output.fa
 fi
@@ -57,7 +68,7 @@ then
 	REFERENCE="/opt/reference.fa"
     fi
 
-    IOGA.py --reference "${REFERENCE}" --forward forward.fq --reverse reverse.fq --threads ${NUMCPUS}
+    IOGA.py --reference "${REFERENCE}" --forward "${FW_READ}" --reverse "${REV_READ}" --threads ${NUMCPUS}
 
     cp IOGA_RUN.final/$(sed -n '2p' IOGA_RUN.final/IOGA_RUN.statistics | cut -f 1).fasta output.fa
 fi
@@ -76,12 +87,12 @@ then
 	REFERENCE="/opt/reference.fa"
     fi
 
-    ln -s ../forward.fq
-    ln -s ../reverse.fq
+    ln -s ../"${FW_READ}"
+    ln -s ../"${REV_READ}"
 
     # Estimate read length
     export NUMREADS=10000
-    export READLEN=$(($(head -n $((${NUMREADS}*4)) forward.fq | sed -n '1~4{n;p}' | tr -d "\n" | wc -c)/${NUMREADS}))
+    export READLEN=$(($(head -n $((${NUMREADS}*4)) "${FW_READ}" | sed -n '1~4{n;p}' | tr -d "\n" | wc -c)/${NUMREADS}))
     export INSERTSIZE=$((${READLEN}*23/10))
 
 cat >config.txt <<EOF
@@ -108,8 +119,8 @@ Insert size           = $INSERTSIZE
 Platform              = illumina
 Single/Paired         = PE
 Combined reads        =
-Forward reads         = forward.fq
-Reverse reads         = reverse.fq
+Forward reads         = "${FW_READ}"
+Reverse reads         = "${REV_READ}"
 
 Optional:
 -----------------------
@@ -148,8 +159,8 @@ then
     cd input
     # generate an interleaved file from our input files
     perl -e '
-       open(my $fw,"../../forward.fq")  || die("$!\n");
-       open(my $rev,"../../reverse.fq") || die("$!\n");
+       open(my $fw,"../../"${FW_READ}"")  || die("$!\n");
+       open(my $rev,"../../"${REV_READ}"") || die("$!\n");
 
        my $readnumber = 0;
 
@@ -194,7 +205,7 @@ if [ -n "$FASTPLASTVERSION" ]
 then
     echo "Running fast-plast"
 
-    fast-plast.pl -1 forward.fq -2 reverse.fq -name fast-plast --threads ${NUMCPUS}
+    fast-plast.pl -1 "${FW_READ}" -2 "${REV_READ}" -name fast-plast --threads ${NUMCPUS}
 
     cp $(find -name "*_FULLCP.fsa") output.fa
 fi
