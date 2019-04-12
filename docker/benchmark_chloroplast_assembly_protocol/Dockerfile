@@ -25,7 +25,8 @@ RUN git clone https://github.com/eead-csic-compbio/chloroplast_assembly_protocol
 
 ENV PATH "/opt/chloroplast_assembly_protocol:$PATH"
 
-RUN perl /opt/chloroplast_assembly_protocol/install.pl
+RUN perl /opt/chloroplast_assembly_protocol/install.pl && \
+    chmod a+w /opt/chloroplast_assembly_protocol/1_cleanreads.pl
 
 ADD TAIR10_chrC.fas /opt/reference.fa
 
