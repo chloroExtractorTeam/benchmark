@@ -13,6 +13,17 @@ then
     exit 1;
 fi
 
+# copy both read sets
+cp forward.fq forward.changed.fq
+cp reverse.fq reverse.changed.fq
+
+# put random quality for the first 10 reads
+random_qual.pl forward.changed.fq
+random_qual.pl reverse.changed.fq
+
+FW_READ=forward.changed.fq
+REV_READ=reverse.changed.fq
+
 # the number of CPUs can be specified using the environment variable NUMCPUS
 : "${NUMCPUS:=4}"
 
