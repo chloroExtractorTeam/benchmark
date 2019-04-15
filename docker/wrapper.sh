@@ -103,7 +103,7 @@ Type                  = chloro
 Genome Range          = 100000-250000
 K-mer                 = 39
 Max memory            =
-Extended log          = 0
+Extended log          = 1
 Save assembled reads  = no
 Seed Input            = $REFERENCE
 Reference sequence    =
@@ -119,8 +119,8 @@ Insert size           = $INSERTSIZE
 Platform              = illumina
 Single/Paired         = PE
 Combined reads        =
-Forward reads         = "${FW_READ}"
-Reverse reads         = "${REV_READ}"
+Forward reads         = ${FW_READ}
+Reverse reads         = ${REV_READ}
 
 Optional:
 -----------------------
