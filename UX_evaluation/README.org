@@ -60,6 +60,7 @@ installing dependencies:
 installing GetOrganelle:
 - following the description in the readme
 - creating and moving to dir ~/Appilcations/bin
+- not mentioned, that the directory has to be created first
 - git is not installed
 - git clone repo
 - adding executables to PATH like described in Readme
@@ -73,6 +74,15 @@ However, I want to have the full installation running.
 **** Is there a way to test the installation?
 - running ~get_organelle_reads.py -h~ and  ~get_organelle_reads.py --help~ works.
 - there are usage examples in the readme, but no test data is shipped
+
+I will test it using the chloroextractor test dataset
+- apparently, I have to install python, too
+- I get some warnings about bowtie, spades and blast not being in PATH, but they are
+- seems to be running though
+- ends with segmentation fault
+- installed psutil via pip3 to log memory
+- try again
+- it finished, but I only get the reads since the dependencies are not found
 **** Is there a tutorial on how to use the tool?
 There are some examples in the Readme
 **** Is there a good documentation on the parameter settings?
