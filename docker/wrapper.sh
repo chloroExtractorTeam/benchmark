@@ -159,8 +159,8 @@ then
     cd input
     # generate an interleaved file from our input files
     perl -e '
-       open(my $fw,"../../"${FW_READ}"")  || die("$!\n");
-       open(my $rev,"../../"${REV_READ}"") || die("$!\n");
+       open(my $fw,"../../'"${FW_READ}"'")  || die("$!\n");
+       open(my $rev,"../../'"${REV_READ}"'") || die("$!\n");
 
        my $readnumber = 0;
 
