@@ -356,15 +356,61 @@ No license in the github repo
 ** Chloroplast Assembly Protocol
 *** questions
 **** Is the tool easy to install?
+- download zip from github
+- unzip
+- perl install.pl
+- most are OK, one requires g++ 
+- apt install g++
+- try again
+- apt install make
+- try again
+- zlib.h missing -> installing libz-dev
+- try again
+- preccpp.h missing -> installing libpcre3-dev
+- seems to work
+- next test is for trimmomatic, message says, java is missing, install jre
+- everything "OK"
+
+
 **** Is there a way to test the installation?
+There are two examples with test data provided. I will follow both
+
+ref-guided:
+1. get reads -> success
+2. clean reads -> success
+3. singlePE: velvet assembly failed
+   both PE and MP: velvet assembly failed
+
+de-novo:
+1. get reads -> success
+2. clean reads -> success
+3. assembly -> velvet fails
 **** Is there a tutorial on how to use the tool?
+there are two howto files, I will test one of them (HOWTO_brachy.txt)
+
+1. downloading reads from sra
+2. preparing read file
+3. running 0_get_cp_reads.pl
+4. cleaning reads
+5. create config file (typo in file name)
+6. assembling
+   Error: apparently, getopts.pl is missing -> installing via apt libperl4-corelibs-perl
+   try again assembling
+   works
+7. assembly without reference: works, too
+
+
 **** Is there a good documentation on the parameter settings?
+short descriptions when calling with ~--help~ option
 **** Is the tool maintained (issues answered, implementation of new features)?
+two issues closed in 2016, last commit in june 2018
 **** Is the tool Open Source?
+yes, GPL-2.0
 *** summary
-- Is the tool easy to install?
-- Is there a way to test the installation?
-- Is there a tutorial on how to use the tool?
-- Is there a good documentation on the parameter settings?
-- Is the tool maintained (issues answered, implementation of new features)?
-- Is the tool Open Source?
+- Is the tool easy to install? OK
+- Is there a way to test the installation? OK
+- Is there a tutorial on how to use the tool? GOOD
+- Is there a good documentation on the parameter settings? OK
+- Is the tool maintained (issues answered, implementation of new features)? OK
+- Is the tool Open Source? GOOD
+
