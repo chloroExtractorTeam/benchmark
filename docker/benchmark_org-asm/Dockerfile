@@ -16,33 +16,11 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
 
 ENV ORGASMVERSION 830313acae3ca773b63f6bea9fc6d017e021bde5
 WORKDIR /opt
-RUN apt purge --yes python3* && \
-    apt install --yes \
-       build-essential \
-       checkinstall \
-       libbz2-dev \
-       libc6-dev \
-       libgdbm-dev \
-       libncursesw5-dev \
-       libreadline-gplv2-dev \
-       libssl-dev \
-       libsqlite3-dev \
-       tk-dev \
-       libffi-dev && \
-    cd /opt/ && \
-    wget -O - https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz | \
-	tar xzf - && \
-    cd Python-3.7.3 && \
-    ./configure && \
-    make && \
-    make install && \
-    cd .. && \
-    rm -rf Python-3.7.3 && \
-    git clone https://git.metabarcoding.org/org-asm/org-asm.git && \
+RUN git clone https://git.metabarcoding.org/org-asm/org-asm.git && \
     cd org-asm && \
     git checkout ${ORGASMVERSION} && \
     rm -rf .git && \
-    python3 setup.py --serenity install
+    python3 get_orgasm/get-orgasm.py
 
 ENV PATH "/opt/org-asm/ORG.asm-1.0.3/bin:$PATH"
 
