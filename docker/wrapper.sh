@@ -34,6 +34,11 @@ if [ -n "$CHLOROEXTRACTORVERSION" ]
 then
     echo "Running chloroExtractor"
 
+    mkdir chloroextractor
+    cd chloroextractor
+    ln -s ../"${FW_READ}"
+    ln -s ../"${REV_READ}"
+
     ptx -1 "${FW_READ}" -2 "${REV_READ}" -d ptx --threads ${NUMCPUS}
 
     if [ -e ptx/fcg.fa ]
@@ -61,7 +66,12 @@ if [ -n "$IOGAVERSION" ]
 then
     echo "Running IOGA"
 
-    REFERENCE="reference.fa"
+    mkdir ioga
+    cd ioga
+    ln -s ../"${FW_READ}"
+    ln -s ../"${REV_READ}"
+
+    REFERENCE="../reference.fa"
     if [ ! -e ${REFERENCE} ]
     then
 	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
@@ -204,6 +214,11 @@ fi
 if [ -n "$FASTPLASTVERSION" ]
 then
     echo "Running fast-plast"
+
+    mkdir fast-plast
+    cd fast-plast
+    ln -s ../"${FW_READ}"
+    ln -s ../"${REV_READ}"
 
     fast-plast.pl -1 "${FW_READ}" -2 "${REV_READ}" -name fast-plast --threads ${NUMCPUS}
 
