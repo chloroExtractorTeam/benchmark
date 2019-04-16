@@ -53,11 +53,17 @@ if [ -n "$GETORGANELLEVERSION" ]
 then
     echo "Running GetOrganelle"
 
+    : "${SPADESOPTIONS:=--spades-options '--careful --phred-offset 33'}"
+    echo "SPAdes options are set to ${SPADESOPTIONS} to call GetOrganelle. Other values might be specified by setting the env var SPADESOPTIONS"
+
     mkdir get_organelle
     cd get_organelle
     ln -s ../"${FW_READ}"
     ln -s ../"${REV_READ}"
-    get_organelle_reads.py -1 "${FW_READ}" -2 "${REV_READ}" -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
+
+
+
+    get_organelle_reads.py -1 "${FW_READ}" -2 "${REV_READ}" ${SPADESOPTIONS} -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
 
     find -name "*path_sequence.fasta" | sort | head -1 | xargs -I{} cp {} ../output.fa
 fi
@@ -148,7 +154,7 @@ EOF
     else
         cp Option_1_NOVOPlasty.fasta ../output.fa
     fi
-    
+
 fi
 
 if [ -n "$CHLOROPLASTASSEMBLYPROTOCOL" ]
