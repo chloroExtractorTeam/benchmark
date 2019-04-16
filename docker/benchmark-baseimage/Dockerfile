@@ -14,7 +14,9 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
-ENV DEBIAN_FRONTEND noninteractive
+RUN locale-gen en_GB.UTF-8  
+
+ENV DEBIAN_FRONTEND=noninteractive LANG=en_GB.UTF-8 LANGUAGE=en_GB:UTF-8 LC_ALL=en_GB.UTF-8  
 
 RUN apt update && \
     apt install --yes \
