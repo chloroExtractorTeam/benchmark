@@ -53,7 +53,14 @@ if [ -n "$GETORGANELLEVERSION" ]
 then
     echo "Running GetOrganelle"
 
-    : "${SPADESOPTIONS:=--spades-options \"--careful --phred-offset 33\"}"
+    : "${SPADESOPTIONS:=--careful --phred-offset 33}"
+
+    SPADESOPTIONS_OPT="--spades-options"
+
+    if [ -z $SPADESOPTIONS ]
+    then
+	SPADESOPTIONS_OPT=""
+    fi
     echo "SPAdes options are set to ${SPADESOPTIONS} to call GetOrganelle. Other values might be specified by setting the env var SPADESOPTIONS"
 
     mkdir get_organelle
@@ -61,9 +68,7 @@ then
     ln -s ../"${FW_READ}"
     ln -s ../"${REV_READ}"
 
-
-
-    get_organelle_reads.py -1 "${FW_READ}" -2 "${REV_READ}" ${SPADESOPTIONS} -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
+    get_organelle_reads.py -1 "${FW_READ}" -2 "${REV_READ}" "${SPADESOPTIONS_OPT}" "${SPADESOPTIONS}" -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
 
     find -name "*path_sequence.fasta" | sort | head -1 | xargs -I{} cp {} ../output.fa
 fi
