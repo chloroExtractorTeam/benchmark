@@ -150,9 +150,12 @@ EOF
 
     if [ -e Circularized_assembly_1_NOVOPlasty.fasta ]
     then
-        cp Circularized_assembly_1_NOVOPlasty.fasta ../output.fa
+       	cp Circularized_assembly_1_NOVOPlasty.fasta ../output.fa
+    elif [ -e Option_1_NOVOPlasty.fasta ]
+    then
+       	cp Option_1_NOVOPlasty.fasta ../output.fa
     else
-        cp Option_1_NOVOPlasty.fasta ../output.fa
+        cp Contigs_1_NOVOPlasty.fasta ../output.fa
     fi
 
 fi
