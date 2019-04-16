@@ -28,6 +28,8 @@ RUN apt update && \
        python3.7-venv \
        python3.7-dev && \
     apt install --yes \
+       nvi \
+       nano \
        liblog-log4perl-perl \
        libmoose-perl \
        libfile-which-perl \
