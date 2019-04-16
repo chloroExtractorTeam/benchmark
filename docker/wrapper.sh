@@ -34,6 +34,11 @@ if [ -n "$CHLOROEXTRACTORVERSION" ]
 then
     echo "Running chloroExtractor"
 
+    mkdir chloroextractor
+    cd chloroextractor
+    ln -s ../"${FW_READ}"
+    ln -s ../"${REV_READ}"
+
     ptx -1 "${FW_READ}" -2 "${REV_READ}" -d ptx --threads ${NUMCPUS}
 
     if [ -e ptx/fcg.fa ]
@@ -48,11 +53,17 @@ if [ -n "$GETORGANELLEVERSION" ]
 then
     echo "Running GetOrganelle"
 
+    : "${SPADESOPTIONS:=--spades-options '--careful --phred-offset 33'}"
+    echo "SPAdes options are set to ${SPADESOPTIONS} to call GetOrganelle. Other values might be specified by setting the env var SPADESOPTIONS"
+
     mkdir get_organelle
     cd get_organelle
     ln -s ../"${FW_READ}"
     ln -s ../"${REV_READ}"
-    get_organelle_reads.py -1 "${FW_READ}" -2 "${REV_READ}" -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
+
+
+
+    get_organelle_reads.py -1 "${FW_READ}" -2 "${REV_READ}" ${SPADESOPTIONS} -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
 
     find -name "*path_sequence.fasta" | sort | head -1 | xargs -I{} cp {} ../output.fa
 fi
@@ -61,7 +72,12 @@ if [ -n "$IOGAVERSION" ]
 then
     echo "Running IOGA"
 
-    REFERENCE="reference.fa"
+    mkdir ioga
+    cd ioga
+    ln -s ../"${FW_READ}"
+    ln -s ../"${REV_READ}"
+
+    REFERENCE="../reference.fa"
     if [ ! -e ${REFERENCE} ]
     then
 	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
@@ -138,7 +154,7 @@ EOF
     else
         cp Option_1_NOVOPlasty.fasta ../output.fa
     fi
-    
+
 fi
 
 if [ -n "$CHLOROPLASTASSEMBLYPROTOCOL" ]
@@ -204,6 +220,11 @@ fi
 if [ -n "$FASTPLASTVERSION" ]
 then
     echo "Running fast-plast"
+
+    mkdir fast-plast
+    cd fast-plast
+    ln -s ../"${FW_READ}"
+    ln -s ../"${REV_READ}"
 
     fast-plast.pl -1 "${FW_READ}" -2 "${REV_READ}" -name fast-plast --threads ${NUMCPUS}
 
