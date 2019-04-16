@@ -30,6 +30,7 @@ RUN apt update && \
     apt install --yes \
        nvi \
        nano \
+       valgrind \
        liblog-log4perl-perl \
        libmoose-perl \
        libfile-which-perl \
