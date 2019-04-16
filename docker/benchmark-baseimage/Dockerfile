@@ -16,6 +16,11 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
 
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN locale-gen en_GB.UTF-8  
+ENV LANG en_GB.UTF-8  
+ENV LANGUAGE en_GB:en  
+ENV LC_ALL en_GB.UTF-8  
+
 RUN apt update && \
     apt install --yes \
 	software-properties-common && \
