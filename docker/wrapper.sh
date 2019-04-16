@@ -154,8 +154,11 @@ EOF
     elif [ -e Option_1_NOVOPlasty.fasta ]
     then
        	cp Option_1_NOVOPlasty.fasta ../output.fa
-    else
+    elif [ -e Contigs_1_NOVOPlasty.fasta ]
+    then
         cp Contigs_1_NOVOPlasty.fasta ../output.fa
+    else
+        echo -n "" >../output.fa
     fi
 
 fi
