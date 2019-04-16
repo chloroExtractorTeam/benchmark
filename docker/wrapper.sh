@@ -53,7 +53,7 @@ if [ -n "$GETORGANELLEVERSION" ]
 then
     echo "Running GetOrganelle"
 
-    : "${SPADESOPTIONS:=--spades-options '--careful --phred-offset 33'}"
+    : "${SPADESOPTIONS:=--spades-options "--careful --phred-offset 33"}"
     echo "SPAdes options are set to ${SPADESOPTIONS} to call GetOrganelle. Other values might be specified by setting the env var SPADESOPTIONS"
 
     mkdir get_organelle
