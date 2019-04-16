@@ -20,7 +20,7 @@ RUN git clone https://git.metabarcoding.org/org-asm/org-asm.git && \
     cd org-asm && \
     git checkout ${ORGASMVERSION} && \
     rm -rf .git && \
-    python3 get_orgasm/get-orgasm.py
+    python3.7 get_orgasm/get-orgasm.py
 
 ENV PATH "/opt/org-asm/ORG.asm-1.0.3/bin:$PATH"
 
