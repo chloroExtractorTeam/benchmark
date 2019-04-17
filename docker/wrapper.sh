@@ -13,13 +13,28 @@ then
     exit 1;
 fi
 
-# copy both read sets
-cp forward.fq forward.changed.fq
-cp reverse.fq reverse.changed.fq
+# prevent race conditions in creating the input files
+if mkdir "read_sets_changed.started";
+then
+    # copy both read sets
+    cp forward.fq forward.changed.fq
+    cp reverse.fq reverse.changed.fq
 
-# put random quality for the first 10 reads
-random_qual.pl forward.changed.fq
-random_qual.pl reverse.changed.fq
+    # put random quality for the first 10 reads
+    random_qual.pl forward.changed.fq
+    random_qual.pl reverse.changed.fq
+
+    touch read_sets_changed.done
+else
+    date +"[%Y-%m-%d %H:%M:%S] Waiting for finishing of read preparation by other task"
+
+    while [ ! -e read_sets_changed.done ];
+    do
+	sleep 60
+	date +"[%Y-%m-%d %H:%M:%S] Still waiting for other job to prepare reads..."
+    done
+    date +"[%Y-%m-%d %H:%M:%S] Other process prepared the reads"
+fi
 
 FW_READ=forward.changed.fq
 REV_READ=reverse.changed.fq
