@@ -32,7 +32,7 @@ RUN apt install --yes \
     apt install --yes \
        nvi \
        nano \
-       valgrind \
+       libbsd-dev \
        liblog-log4perl-perl \
        libmoose-perl \
        libfile-which-perl \
