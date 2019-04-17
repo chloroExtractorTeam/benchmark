@@ -22,6 +22,11 @@ RUN git clone https://git.metabarcoding.org/org-asm/org-asm.git && \
     rm -rf .git && \
     python3.7 get_orgasm/get-orgasm.py
 
+RUN cd org-asm/src && \
+    sed -i 's#<stdio.h>#<bsd/stdio.h>#' fastq.c && \
+    make && \
+    cp orgasmi /opt/org-asm/ORG.asm-1.0.3/bin
+
 ENV PATH "/opt/org-asm/ORG.asm-1.0.3/bin:$PATH"
 
 ADD wrapper.sh /usr/local/bin/wrapper.sh
