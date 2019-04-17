@@ -208,6 +208,22 @@ It works.
 **** Is there a way to test the installation?
 not really, but there is a tutorial with test data, which I will use to
 test the installation
+
+markus found a way using valgrind to run it successfully. I will try that, too:
+
+- sudo apt update
+- sudo apt install valgrind
+- make testrun dir in /tmp
+- following the tutorial
+- downloading the reads
+- running oa index command with ~--no-pipe~ option
+- get segfault
+- run the ~orgasmi~ command from log with valgrind (~valgrind orgasmi ...~)
+- no errors
+- running ~oa buildgraph~ command from tutorial
+- running ~oa unfold~ command from tutorial
+
+success, I get an assembly
 **** Is there a tutorial on how to use the tool?
 yes
 https://docs.metabarcoding.org/asm/mitochondrion.html
@@ -217,17 +233,22 @@ it is for mitochondrion and not chloroplasts, but should give an idea of how to 
 - downloaded datasets
 - running index command
 - failed with error "Cannot open file butterfly.odx/index.ogx" (file does not exist)
+
+This error is caused by a segfault, that goes away when running it with valgrind
 **** Is there a good documentation on the parameter settings?
+Parameters are explained when using ~--help~
 **** Is the tool maintained (issues answered, implementation of new features)?
+yes, last commit is about a week ago, Frank got an answer to his email
 **** Is the tool Open Source?
+yes, CeCILL License
 
 *** summary
-- Is the tool easy to install?
-- Is there a way to test the installation?
-- Is there a tutorial on how to use the tool?
-- Is there a good documentation on the parameter settings?
-- Is the tool maintained (issues answered, implementation of new features)?
-- Is the tool Open Source?
+- Is the tool easy to install? BAD
+- Is there a way to test the installation? OK
+- Is there a tutorial on how to use the tool? GOOD
+- Is there a good documentation on the parameter settings? OK
+- Is the tool maintained (issues answered, implementation of new features)? GOOD
+- Is the tool Open Source? OK
 
 ** NOVOPlasty
 *** questions
