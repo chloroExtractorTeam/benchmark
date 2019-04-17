@@ -3,13 +3,13 @@
 # first test for the input files
 if [ ! -e forward.fq ]
 then
-    echo "Missing forward reads. Please add a file called forward.fq"
+    date +"[%Y-%m-%d %H:%M:%S] Missing forward reads. Please add a file called forward.fq"
     exit 1;
 fi
 
 if [ ! -e reverse.fq ]
 then
-    echo "Missing reverse reads. Please add a file called reverse.fq"
+    date +"[%Y-%m-%d %H:%M:%S] Missing reverse reads. Please add a file called reverse.fq"
     exit 1;
 fi
 
@@ -27,12 +27,12 @@ REV_READ=reverse.changed.fq
 # the number of CPUs can be specified using the environment variable NUMCPUS
 : "${NUMCPUS:=4}"
 
-echo "Number of CPUs/threads is set to ${NUMCPUS} and might be changed by defining NUMCPUS as environmental variable"
+date +"[%Y-%m-%d %H:%M:%S] Number of CPUs/threads is set to ${NUMCPUS} and might be changed by defining NUMCPUS as environmental variable"
 
 # Run the correct assembler based on the environment variable
 if [ -n "$CHLOROEXTRACTORVERSION" ]
 then
-    echo "Running chloroExtractor"
+    date +"[%Y-%m-%d %H:%M:%S] Starting chloroExtractor"
 
     mkdir chloroextractor
     cd chloroextractor
@@ -51,7 +51,7 @@ fi
 
 if [ -n "$GETORGANELLEVERSION" ]
 then
-    echo "Running GetOrganelle"
+    date +"[%Y-%m-%d %H:%M:%S] Starting GetOrganelle"
 
     : "${SPADESOPTIONS:=--careful --phred-offset 33}"
 
@@ -61,7 +61,7 @@ then
     then
 	SPADESOPTIONS_OPT=""
     fi
-    echo "SPAdes options are set to ${SPADESOPTIONS} to call GetOrganelle. Other values might be specified by setting the env var SPADESOPTIONS"
+    date +"[%Y-%m-%d %H:%M:%S] SPAdes options are set to ${SPADESOPTIONS} to call GetOrganelle. Other values might be specified by setting the env var SPADESOPTIONS"
 
     mkdir get_organelle
     cd get_organelle
@@ -75,7 +75,7 @@ fi
 
 if [ -n "$IOGAVERSION" ]
 then
-    echo "Running IOGA"
+    date +"[%Y-%m-%d %H:%M:%S] Starting IOGA"
 
     mkdir ioga
     cd ioga
@@ -85,7 +85,7 @@ then
     REFERENCE="../reference.fa"
     if [ ! -e ${REFERENCE} ]
     then
-	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
+	date +"[%Y-%m-%d %H:%M:%S] Missing reference file. Therefore, TAIR10 chloroplast is used internally."
 	REFERENCE="/opt/reference.fa"
     fi
 
@@ -102,7 +102,7 @@ fi
 
 if [ -n "$NOVOPLASTYVERSION" ]
 then
-    echo "Running NOVOPlasty"
+    date +"[%Y-%m-%d %H:%M:%S] Starting NOVOPlasty"
 
     mkdir novo_plasty
     cd novo_plasty
@@ -110,7 +110,7 @@ then
     REFERENCE="../reference.fa"
     if [ ! -e ${REFERENCE} ]
     then
-	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
+	date +"[%Y-%m-%d %H:%M:%S] Missing reference file. Therefore, TAIR10 chloroplast is used internally."
 	REFERENCE="/opt/reference.fa"
     fi
 
@@ -176,7 +176,7 @@ fi
 
 if [ -n "$CHLOROPLASTASSEMBLYPROTOCOL" ]
 then
-    echo "Running chloroplast-assembly-protocol"
+    date +"[%Y-%m-%d %H:%M:%S] Starting chloroplast-assembly-protocol"
 
     mkdir chloroplastassemblyprotocol
     cd chloroplastassemblyprotocol
@@ -184,7 +184,7 @@ then
     REFERENCE="../reference.fa"
     if [ ! -e ${REFERENCE} ]
     then
-	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
+	date +"[%Y-%m-%d %H:%M:%S] Missing reference file. Therefore, TAIR10 chloroplast is used internally."
 	REFERENCE="/opt/reference.fa"
     fi
 
@@ -230,13 +230,15 @@ then
 	sed 's/[[:space:]]*nd[[:space:]]*nd[[:space:]]*/ FR 250 /g' cp_noref/cleanreads.txt >cp_noref/assembly_pe
 	2_assemble_reads.pl cp_noref assembly_pe -threads ${NUMCPUS}
 
-	find -name "sspace.final.scaffolds.fasta" | sort | head -1 | xargs -I{} cp {} ../output.fa
+	find -name "sspace.final.scaffolds.fasta" | sort | head -1 | xargs -I{} cp {} output.fa
+    else
+	touch output.fa
     fi
 fi
 
 if [ -n "$FASTPLASTVERSION" ]
 then
-    echo "Running fast-plast"
+    date +"[%Y-%m-%d %H:%M:%S] Starting fast-plast"
 
     mkdir fast-plast
     cd fast-plast
@@ -256,7 +258,7 @@ fi
 
 if [ -n "$ORGASMVERSION" ]
 then
-    echo "Running ORG-asm"
+    date +"[%Y-%m-%d %H:%M:%S] Starting ORG-asm"
 
     mkdir org-asm
     cd org-asm
@@ -279,3 +281,5 @@ then
     oa buildgraph --probes protChloroArabidopsis chloro chloro.graph
     oa unfold chloro chloro.graph >output.fa
 fi
+
+date +"[%Y-%m-%d %H:%M:%S] Finished wrapper script"
