@@ -280,7 +280,7 @@ then
     ln -s ../"${FW_READ}"
     ln -s ../"${REV_READ}"
 
-    oa index --no-pipe chloro "${FW_READ}" "${REV_READ}" 2>&1 | tee index.log
+    oa index chloro "${FW_READ}" "${REV_READ}"
     oa buildgraph --probes protChloroArabidopsis chloro chloro.graph
     oa unfold chloro chloro.graph >output.fa
 fi
