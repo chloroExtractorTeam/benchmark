@@ -1,0 +1,39 @@
+The push refers to repository [docker.io/chloroextractorteam/benchmark_org-asm]
+65fb142a1905: Preparing
+2373b23fe656: Preparing
+96d4bcea152d: Preparing
+c43a2080efb3: Preparing
+7d4605e215ea: Preparing
+a86945a2d701: Preparing
+23fd958bda48: Preparing
+d1347c730ad9: Preparing
+93cde69761d1: Preparing
+0783f44135ad: Preparing
+b57c79f4a9f3: Preparing
+d60e01b37e74: Preparing
+e45cfbc98a50: Preparing
+762d8e1a6054: Preparing
+0783f44135ad: Waiting
+d1347c730ad9: Waiting
+b57c79f4a9f3: Waiting
+a86945a2d701: Waiting
+d60e01b37e74: Waiting
+93cde69761d1: Waiting
+23fd958bda48: Waiting
+e45cfbc98a50: Waiting
+762d8e1a6054: Waiting
+7d4605e215ea: Mounted from chloroextractorteam/benchmark_novoplasty
+c43a2080efb3: Mounted from chloroextractorteam/benchmark_novoplasty
+65fb142a1905: Pushed
+a86945a2d701: Mounted from chloroextractorteam/benchmark_novoplasty
+23fd958bda48: Mounted from chloroextractorteam/benchmark_novoplasty
+d1347c730ad9: Mounted from chloroextractorteam/benchmark_novoplasty
+2373b23fe656: Pushed
+93cde69761d1: Mounted from chloroextractorteam/benchmark_novoplasty
+b57c79f4a9f3: Layer already exists
+d60e01b37e74: Layer already exists
+e45cfbc98a50: Layer already exists
+762d8e1a6054: Layer already exists
+0783f44135ad: Mounted from chloroextractorteam/benchmark_novoplasty
+96d4bcea152d: Pushed
+docker: digest: sha256:e2eada5c9cb5aea208844160a0e2516049b0328316a70f5419d7ba314906a976 size: 3249

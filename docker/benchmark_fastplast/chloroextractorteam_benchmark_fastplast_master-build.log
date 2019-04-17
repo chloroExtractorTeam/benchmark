@@ -1,0 +1,147 @@
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+SSH_CONNECTION=10.149.30.159 50967 10.149.20.57 22
+GIT_SHA1=2f3e179d6cdca0c18f05c7ebf6979053339057c5
+LANG=de_DE.UTF-8
+OLDPWD=/tmp/benchmark/docker
+SSH_AUTH_SOCK=/tmp/ssh-lGsdvSFjZ7Qa/agent.14056
+XDG_SESSION_ID=23
+USER=ffoerster
+IMAGE_NAME=chloroextractorteam/benchmark_fastplast:master
+PWD=/tmp/benchmark/docker/benchmark_fastplast
+HOME=/home/ffoerster
+SSH_AGENT_PID=14057
+SSH_CLIENT=10.149.30.159 58453 22
+TMUX=/tmp/tmux-1000/default,16631,0
+BUILD_DATE=2019-04-17T12:30:35Z
+SSH_TTY=/dev/pts/0
+MAIL=/var/mail/ffoerster
+VCS_REF=2f3e179
+TERM=screen
+SHELL=/bin/bash
+TMUX_PANE=%11
+SHLVL=4
+PROMPT_COMMAND=history -a; history -n
+DOCKER_REPO=chloroextractorteam/benchmark_fastplast
+SOURCE_BRANCH=master
+LOGNAME=ffoerster
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+XDG_RUNTIME_DIR=/run/user/1000
+PATH=/home/ffoerster/projects/tools/SeqFilter/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+_=/usr/bin/env
+Sending build context to Docker daemon  28.16kB
+Step 1/15 : ARG baseimageversion=latest
+Step 2/15 : FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
+master: Pulling from chloroextractorteam/benchmark-baseimage
+Digest: sha256:7355a829cb31686c9a1ea8bee5d8b101f23bdce282cdb0ab774a392bfdf99c49
+Status: Image is up to date for chloroextractorteam/benchmark-baseimage:master
+ ---> 9541995e3529
+Step 3/15 : ARG VERSION=master
+ ---> Running in e8ecd78e65d2
+Removing intermediate container e8ecd78e65d2
+ ---> 144c31b4771b
+Step 4/15 : ARG VCS_REF
+ ---> Running in 52ea898a4259
+Removing intermediate container 52ea898a4259
+ ---> b0853a2a7c73
+Step 5/15 : ARG BUILD_DATE
+ ---> Running in 4f2430ee699a
+Removing intermediate container 4f2430ee699a
+ ---> 96b44950b593
+Step 6/15 : RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
+ ---> Running in 0e8579c8eb0d
+VCS_REF: 2f3e179, BUILD_DATE: 2019-04-17T12:30:35Z, VERSION: master
+Removing intermediate container 0e8579c8eb0d
+ ---> 3595b14a1923
+Step 7/15 : LABEL maintainer="frank.foerster@ime.fraunhofer.de"       description="Dockerfile providing an image for fast-plast for our benchmark setup"       version=${VERSION}       org.label-schema.vcs-ref=${VCS_REF}       org.label-schema.build-date=${BUILD_DATE}       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
+ ---> Running in 842260d3244d
+Removing intermediate container 842260d3244d
+ ---> fc1ecd5ec998
+Step 8/15 : WORKDIR /opt
+ ---> Running in 662edfb1aa5f
+Removing intermediate container 662edfb1aa5f
+ ---> a84f037df61f
+Step 9/15 : ENV FASTPLASTVERSION ff9755f90791270af70f74d666cced05c211e682
+ ---> Running in d87bfd24ab14
+Removing intermediate container d87bfd24ab14
+ ---> aaa124940a40
+Step 10/15 : RUN git clone https://github.com/mrmckain/Fast-Plast.git &&     cd Fast-Plast &&     git checkout ${FASTPLASTVERSION} &&     rm -rf .git &&     cd afin &&     make &&     cd .. &&     echo "yes\n/usr/share/java\npath\n"$(dirname $(which spades.py))"\npath\npath\npath\nYes\npath" | perl INSTALL.pl &&     sed -i 's#\(my $TRIMMOMATIC="\)[^"]*#\1'$(find /usr -name "trimmomatic.jar")'#;s#\(my $BLAST="\)[^"]*#\1'$(dirname $(which blastn))'/#;' fast-plast.pl
+ ---> Running in 5d53eb8f61d3
+[91mCloning into 'Fast-Plast'...
+[0m[91mNote: checking out 'ff9755f90791270af70f74d666cced05c211e682'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at ff9755f Update fast-plast.pl
+[0mg++ -std=c++11 -g -pthread -c afin.cpp -o afin.o 
+g++ -std=c++11 -g -pthread -c contig.cpp -o contig.o 
+g++ -std=c++11 -g -pthread -c process.cpp -o process.o 
+g++ -std=c++11 -g -pthread -c read.cpp -o read.o 
+g++ -std=c++11 -g -pthread -c revcomp.cpp -o revcomp.o 
+g++ -std=c++11 -g -pthread -c mismatch.cpp -o mismatch.o 
+g++ -std=c++11 -g -pthread -c log.cpp -o log.o 
+g++ -std=c++11 -g -pthread -c gzip.cpp -o gzip.o 
+g++ -std=c++11 -g -pthread -c fusion.cpp -o fusion.o 
+g++ -std=c++11 -g -pthread -c match.cpp -o match.o 
+g++ -std=c++11 -g -pthread -c readlist.cpp -o readlist.o 
+g++ -std=c++11 -g -pthread -c extension.cpp -o extension.o 
+g++ -std=c++11 -g -pthread -c contiglist.cpp -o contiglist.o 
+g++ -std=c++11 -g -pthread -o afin afin.o contig.o process.o read.o revcomp.o mismatch.o log.o gzip.o fusion.o match.o readlist.o extension.o contiglist.o -lz
+Thank you for dowloading the Fast-Plast pipeline. If you have not looked at the dependencies for Fast-Plast, please visit https://github.com/mrmckain/Fast-Plast and download them.
+
+Do you have all dependecies installed? Yes/No: Great! We still need to set up Fast-Plast. Follow the promps.To get started, we are going to set the paths to Trimmomatic, bowtie2, SPAdes, bowtie1, SSPACE, and BLAST+.  After set up for the main pipeline, we will try to set up the Coverage Analysis pipeline.
+
+Please provide the absolute path to the Trimmomatic directory. If Trimmomatic is in your PATH already, just type PATH: 
+Trimmomatic jar file located: /usr/share/java/gettext.jar
+
+Please provide the absolute path to the bowtie2 executable. If bowtie2 is in your PATH already, just type PATH: 
+bowtie2 executable located: bowtie2
+
+Please provide the absolute path to the SPAdes program directory. If SPAdes is in your PATH already, just type PATH: 
+SPAdes executable located: /opt/spades/bin/spades.py
+
+Please provide the absolute path to the bowtie1 executable. If bowtie1 is in your PATH already, just type PATH: 
+Bowtie1 executable located: bowtie
+
+Please provide the absolute path to the SSPACE executable. If SSPACE is in your PATH already, just type PATH: 
+SSPACE executable located: SSPACE_Basic.pl
+
+Please provide the absolute path to the blastn executable. If blastn is in your PATH already, just type PATH: 
+blastn executable located: blastn
+Would you like me to compile afin? Yes or No: [91mmake: *** No targets specified and no makefile found.  Stop.
+[0m
+Afin installed successfully.
+
+Please provide the absolute path to the Jellyfish 2 executable. If Jellyfish is in your PATH already, just type PATH: 
+jellyfish executable located: jellyfish
+
+jellyfish executable located: jellyfish
+Fast-Plast installation complete.  See manual for directions on how to get started.
+Removing intermediate container 5d53eb8f61d3
+ ---> 279aad4ce1ba
+Step 11/15 : ENV PATH "/opt/Fast-Plast/:$PATH"
+ ---> Running in 4930c4aec0cb
+Removing intermediate container 4930c4aec0cb
+ ---> 4b395e7bf09b
+Step 12/15 : ADD wrapper.sh /usr/local/bin/wrapper.sh
+ ---> db5cfd963e4a
+Step 13/15 : ENTRYPOINT ["wrapper.sh"]
+ ---> Running in 1ba4263bee0f
+Removing intermediate container 1ba4263bee0f
+ ---> 6cedb01bd027
+Step 14/15 : VOLUME /data
+ ---> Running in 0fe813bd507f
+Removing intermediate container 0fe813bd507f
+ ---> 842f109aaf5c
+Step 15/15 : WORKDIR /data
+ ---> Running in 7b7fa7c643bf
+Removing intermediate container 7b7fa7c643bf
+ ---> f33cd1dbcf37
+Successfully built f33cd1dbcf37
+Successfully tagged chloroextractorteam/benchmark_fastplast:master

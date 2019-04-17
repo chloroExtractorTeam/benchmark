@@ -1,0 +1,1573 @@
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+SSH_CONNECTION=10.149.30.159 50967 10.149.20.57 22
+GIT_SHA1=2f3e179d6cdca0c18f05c7ebf6979053339057c5
+LANG=de_DE.UTF-8
+OLDPWD=/tmp/benchmark/docker
+SSH_AUTH_SOCK=/tmp/ssh-lGsdvSFjZ7Qa/agent.14056
+XDG_SESSION_ID=23
+USER=ffoerster
+IMAGE_NAME=chloroextractorteam/benchmark_org-asm:docker
+PWD=/tmp/benchmark/docker/benchmark_org-asm
+HOME=/home/ffoerster
+SSH_AGENT_PID=14057
+SSH_CLIENT=10.149.30.159 58453 22
+TMUX=/tmp/tmux-1000/default,16631,0
+BUILD_DATE=2019-04-17T13:42:14Z
+SSH_TTY=/dev/pts/0
+MAIL=/var/mail/ffoerster
+VCS_REF=2f3e179
+TERM=screen
+SHELL=/bin/bash
+TMUX_PANE=%11
+SHLVL=4
+PROMPT_COMMAND=history -a; history -n
+DOCKER_REPO=chloroextractorteam/benchmark_org-asm
+SOURCE_BRANCH=docker
+LOGNAME=ffoerster
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+XDG_RUNTIME_DIR=/run/user/1000
+PATH=/home/ffoerster/projects/tools/SeqFilter/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+_=/usr/bin/env
+Sending build context to Docker daemon  353.8kB
+Step 1/16 : ARG baseimageversion=latest
+Step 2/16 : FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
+docker: Pulling from chloroextractorteam/benchmark-baseimage
+Digest: sha256:d85ca034e0b85adc953dc8412dfe8a903e322e7a69d222596172a077370271f5
+Status: Image is up to date for chloroextractorteam/benchmark-baseimage:docker
+ ---> b9e2544a792a
+Step 3/16 : ARG VERSION=master
+ ---> Running in 924131a6a050
+Removing intermediate container 924131a6a050
+ ---> c367b6af2e56
+Step 4/16 : ARG VCS_REF
+ ---> Running in 777d3239fa0f
+Removing intermediate container 777d3239fa0f
+ ---> 413da04c3292
+Step 5/16 : ARG BUILD_DATE
+ ---> Running in adb4e75de880
+Removing intermediate container adb4e75de880
+ ---> dbe006f215ed
+Step 6/16 : RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
+ ---> Running in 4b345b740c1d
+VCS_REF: 2f3e179, BUILD_DATE: 2019-04-17T13:42:14Z, VERSION: docker
+Removing intermediate container 4b345b740c1d
+ ---> c60082d20998
+Step 7/16 : LABEL maintainer="frank.foerster@ime.fraunhofer.de"       description="Dockerfile providing an image for ORG-asm for our benchmark setup"       version=${VERSION}       org.label-schema.vcs-ref=${VCS_REF}       org.label-schema.build-date=${BUILD_DATE}       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
+ ---> Running in bb55d2fa2f99
+Removing intermediate container bb55d2fa2f99
+ ---> d54358afb478
+Step 8/16 : ENV ORGASMVERSION 830313acae3ca773b63f6bea9fc6d017e021bde5
+ ---> Running in e7bb3e50db1b
+Removing intermediate container e7bb3e50db1b
+ ---> 71b606e074f9
+Step 9/16 : WORKDIR /opt
+ ---> Running in 57dab5d8712d
+Removing intermediate container 57dab5d8712d
+ ---> b2d955e2db98
+Step 10/16 : RUN git clone https://git.metabarcoding.org/org-asm/org-asm.git &&     cd org-asm &&     git checkout ${ORGASMVERSION} &&     rm -rf .git &&     python3.7 get_orgasm/get-orgasm.py
+ ---> Running in 823122e7901f
+[91mCloning into 'org-asm'...
+[0m[91mNote: checking out '830313acae3ca773b63f6bea9fc6d017e021bde5'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 830313a Tag version 1.0.3
+[0mCollecting ORG.asm
+  Downloading https://files.pythonhosted.org/packages/a1/87/b5eb7e64531fd7185b7d5888727f0c952244ec793f6be648ccb55c7ddec2/ORG.asm-1.0.3.tar.gz (269kB)
+  Saved /tmp/tmprxd710lv/ORG.asm-1.0.3.tar.gz
+    Complete output from command python setup.py egg_info:
+    ['', '/usr/lib/python36.zip', '/usr/lib/python3.6', '/usr/lib/python3.6/lib-dynload', '/usr/local/lib/python3.6/dist-packages', '/usr/lib/python3/dist-packages', '/tmp/pip-build-mc7ea7i7/ORG.asm/distutils.ext', '/tmp/pip-build-mc7ea7i7/ORG.asm/python']
+    ----------------
+    -c egg_info --egg-base pip-egg-info
+    ----------------
+    Installing ORG.asm (1.0.3) in serenity mode
+    You are running the good python
+    Restarting installation within the ORG.asm-1.0.3 virtualenv
+    Install script restarting...
+    ['/tmp/pip-build-mc7ea7i7/ORG.asm', '/usr/lib/python36.zip', '/usr/lib/python3.6', '/usr/lib/python3.6/lib-dynload', '/tmp/pip-build-mc7ea7i7/ORG.asm/ORG.asm-1.0.3/lib/python3.6/site-packages', '/tmp/pip-build-mc7ea7i7/ORG.asm/distutils.ext', '/tmp/pip-build-mc7ea7i7/ORG.asm/python']
+    ----------------
+    setup.py egg_info --egg-base pip-egg-info
+    ----------------
+    Installing ORG.asm (1.0.3) in serenity mode
+    You are running the good python
+    ORG.asm will be installed with python : /tmp/pip-build-mc7ea7i7/ORG.asm/ORG.asm-1.0.3/bin/python
+    Required packages for the installation :
+    Traceback (most recent call last):
+      File "setup.py", line 61, in <module>
+        serenity=serenity_mode(PACKAGE,VERSION)
+      File "/tmp/pip-build-mc7ea7i7/ORG.asm/distutils.ext/obidistutils/serenity/__init__.py", line 105, in serenity_mode
+        serenity_snake(args.virtual,package,version)
+      File "/tmp/pip-build-mc7ea7i7/ORG.asm/distutils.ext/obidistutils/serenity/__init__.py", line 55, in serenity_snake
+        if install_requirements():
+      File "/tmp/pip-build-mc7ea7i7/ORG.asm/distutils.ext/obidistutils/serenity/checkpackage.py", line 92, in install_requirements
+        ok = is_installed(x)
+      File "/tmp/pip-build-mc7ea7i7/ORG.asm/distutils.ext/obidistutils/serenity/checkpackage.py", line 24, in is_installed
+        capture_output=True).stdout
+      File "/usr/lib/python3.6/subprocess.py", line 403, in run
+        with Popen(*popenargs, **kwargs) as process:
+    TypeError: __init__() got an unexpected keyword argument 'capture_output'
+    
+    ----------------------------------------
+[91mCommand "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-mc7ea7i7/ORG.asm/
+[0m['/tmp/tmprxd710lv/ORG.asm-1.0.3', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/usr/local/lib/python3.7/dist-packages', '/usr/lib/python3/dist-packages', '/tmp/tmprxd710lv/ORG.asm-1.0.3/distutils.ext', '/tmp/tmprxd710lv/ORG.asm-1.0.3/python']
+----------------
+setup.py --serenity --virtualenv=/opt/org-asm/ORG.asm-1.0.3 install
+----------------
+Installing ORG.asm (1.0.3) in serenity mode
+You are running the good python
+Restarting installation within the /opt/org-asm/ORG.asm-1.0.3 virtualenv
+Install script restarting...
+['/tmp/tmprxd710lv/ORG.asm-1.0.3', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages', '/tmp/tmprxd710lv/ORG.asm-1.0.3/distutils.ext', '/tmp/tmprxd710lv/ORG.asm-1.0.3/python']
+----------------
+setup.py --serenity --virtualenv=/opt/org-asm/ORG.asm-1.0.3 install
+----------------
+Installing ORG.asm (1.0.3) in serenity mode
+You are running the good python
+ORG.asm will be installed with python : /opt/org-asm/ORG.asm-1.0.3/bin/python
+Required packages for the installation :
+Look for package pip : ok version 19.0.3 installed
+Look for package Cython : not installed
+  Installing requirement : Cython
+Looking in indexes: https://pypi.org/simple, https://pypi.python.org/simple/
+Collecting Cython
+  Downloading https://files.pythonhosted.org/packages/3e/ac/40ecc487c0ccb0cc9510f5f380a6af28af85fc770bca37cef398bb5f018f/Cython-0.29.7-cp37-cp37m-manylinux1_x86_64.whl (2.1MB)
+Requirement already satisfied: pip in /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (19.0.3)
+Collecting Sphinx (from -r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/9a/b0/a8cf1d35237aebefd63f05543ed49ea24d302239828ca89409b0c1a35b27/Sphinx-2.0.1-py2.py3-none-any.whl (3.2MB)
+Collecting sphinxcontrib-jsmath (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/c2/42/4c8646762ee83602e3fb3fbe774c2fac12f317deb0b5dbeeedd2d3ba4b77/sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl
+Collecting sphinxcontrib-devhelp (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/b0/a3/fea98741f0b2f2902fbf6c35c8e91b22cd0dd13387291e81d457f9a93066/sphinxcontrib_devhelp-1.0.1-py2.py3-none-any.whl (84kB)
+Collecting alabaster<0.8,>=0.7 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/10/ad/00b090d23a222943eb0eda509720a404f531a439e803f6538f35136cae9e/alabaster-0.7.12-py2.py3-none-any.whl
+Collecting imagesize (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/fc/b6/aef66b4c52a6ad6ac18cf6ebc5731ed06d8c9ae4d3b2d9951f261150be67/imagesize-1.1.0-py2.py3-none-any.whl
+Collecting requests>=2.5.0 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/7d/e3/20f3d364d6c8e5d2353c72a67778eb189176f08e873c9900e10c0287b84b/requests-2.21.0-py2.py3-none-any.whl (57kB)
+Collecting babel!=2.0,>=1.3 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/b8/ad/c6f60602d3ee3d92fbed87675b6fb6a6f9a38c223343ababdb44ba201f10/Babel-2.6.0-py2.py3-none-any.whl (8.1MB)
+Collecting sphinxcontrib-htmlhelp (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/e4/35/80a67cc493f4a8a9634ab203a77aaa1b84d79ccb1c02eca72cb084d2c7f7/sphinxcontrib_htmlhelp-1.0.2-py2.py3-none-any.whl (96kB)
+Collecting sphinxcontrib-qthelp (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/ce/5b/4747c3ba98b3a3e21a66faa183d8f79b9ded70e74212a7988d236a6eb78a/sphinxcontrib_qthelp-1.0.2-py2.py3-none-any.whl (90kB)
+Collecting sphinxcontrib-serializinghtml (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/57/b3/3648e48fa5682e61e9839d62de4e23af1795ceb738d68d73bd974257a95c/sphinxcontrib_serializinghtml-1.1.3-py2.py3-none-any.whl (89kB)
+Collecting Jinja2>=2.3 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/1d/e7/fd8b501e7a6dfe492a433deb7b9d833d39ca74916fa8bc63dd1a4947a671/Jinja2-2.10.1-py2.py3-none-any.whl (124kB)
+Requirement already satisfied: setuptools in /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages (from Sphinx->-r requirements.txt (line 4)) (40.8.0)
+Collecting sphinxcontrib-applehelp (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/13/9a/4428b3114d654cb1cd34d90d5e6fab938d5436f94a571155187ea1dd78b4/sphinxcontrib_applehelp-1.0.1-py2.py3-none-any.whl (121kB)
+Collecting packaging (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/91/32/58bc30e646e55eab8b21abf89e353f59c0cc02c417e42929f4a9546e1b1d/packaging-19.0-py2.py3-none-any.whl
+Collecting docutils>=0.12 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/36/fa/08e9e6e0e3cbd1d362c3bbee8d01d0aedb2155c4ac112b19ef3cae8eed8d/docutils-0.14-py3-none-any.whl (543kB)
+Collecting Pygments>=2.0 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/13/e5/6d710c9cf96c31ac82657bcfb441df328b22df8564d58d0c4cd62612674c/Pygments-2.3.1-py2.py3-none-any.whl (849kB)
+Collecting snowballstemmer>=1.1 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/d4/6c/8a935e2c7b54a37714656d753e4187ee0631988184ed50c0cf6476858566/snowballstemmer-1.2.1-py2.py3-none-any.whl (64kB)
+Collecting certifi>=2017.4.17 (from requests>=2.5.0->Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/60/75/f692a584e85b7eaba0e03827b3d51f45f571c2e793dd731e598828d380aa/certifi-2019.3.9-py2.py3-none-any.whl (158kB)
+Collecting idna<2.9,>=2.5 (from requests>=2.5.0->Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/14/2c/cd551d81dbe15200be1cf41cd03869a46fe7226e7450af7a6545bfc474c9/idna-2.8-py2.py3-none-any.whl (58kB)
+Collecting urllib3<1.25,>=1.21.1 (from requests>=2.5.0->Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/62/00/ee1d7de624db8ba7090d1226aebefab96a2c71cd5cfa7629d6ad3f61b79e/urllib3-1.24.1-py2.py3-none-any.whl (118kB)
+Collecting chardet<3.1.0,>=3.0.2 (from requests>=2.5.0->Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+Collecting pytz>=0a (from babel!=2.0,>=1.3->Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/3d/73/fe30c2daaaa0713420d0382b16fbb761409f532c56bdcc514bf7b6262bb6/pytz-2019.1-py2.py3-none-any.whl (510kB)
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.3->Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/98/7b/ff284bd8c80654e471b769062a9b43cc5d03e7a615048d96f4619df8d420/MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl
+Collecting pyparsing>=2.0.2 (from packaging->Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/dd/d9/3ec19e966301a6e25769976999bd7bbe552016f0d32b577dc9d63d2e0c49/pyparsing-2.4.0-py2.py3-none-any.whl (62kB)
+Collecting six (from packaging->Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
+Installing collected packages: Cython, sphinxcontrib-jsmath, sphinxcontrib-devhelp, alabaster, imagesize, certifi, idna, urllib3, chardet, requests, pytz, babel, sphinxcontrib-htmlhelp, sphinxcontrib-qthelp, sphinxcontrib-serializinghtml, MarkupSafe, Jinja2, sphinxcontrib-applehelp, pyparsing, six, packaging, docutils, Pygments, snowballstemmer, Sphinx
+Successfully installed Cython-0.29.7 Jinja2-2.10.1 MarkupSafe-1.1.1 Pygments-2.3.1 Sphinx-2.0.1 alabaster-0.7.12 babel-2.6.0 certifi-2019.3.9 chardet-3.0.4 docutils-0.14 idna-2.8 imagesize-1.1.0 packaging-19.0 pyparsing-2.4.0 pytz-2019.1 requests-2.21.0 six-1.12.0 snowballstemmer-1.2.1 sphinxcontrib-applehelp-1.0.1 sphinxcontrib-devhelp-1.0.1 sphinxcontrib-htmlhelp-1.0.2 sphinxcontrib-jsmath-1.0.1 sphinxcontrib-qthelp-1.0.2 sphinxcontrib-serializinghtml-1.1.3 urllib3-1.24.1
+Look for package Sphinx : ok version 2.0.1 installed
+Restarting installation with all dependencies ok
+Install script restarting...
+['/tmp/tmprxd710lv/ORG.asm-1.0.3', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages', '/tmp/tmprxd710lv/ORG.asm-1.0.3/distutils.ext', '/tmp/tmprxd710lv/ORG.asm-1.0.3/python']
+----------------
+setup.py --serenity --virtualenv=/opt/org-asm/ORG.asm-1.0.3 install
+----------------
+Installing ORG.asm (1.0.3) in serenity mode
+You are running the good python
+ORG.asm will be installed with python : /opt/org-asm/ORG.asm-1.0.3/bin/python
+Required packages for the installation :
+Look for package pip : ok version 19.0.3 installed
+Look for package Cython : ok version 0.29.7 installed
+Look for package Sphinx : ok version 2.0.1 installed
+You are running the good python
+Required packages for the installation :
+Look for package pip : ok version 19.0.3 installed
+Look for package Cython : ok version 0.29.7 installed
+Look for package Sphinx : ok version 2.0.1 installed
+Required packages for the installation :
+Look for package pip : ok version 19.0.3 installed
+Look for package Cython : ok version 0.29.7 installed
+Look for package Sphinx : ok version 2.0.1 installed
+Cython module : ['fiboheap/fibo.h', 'src/orgasm.h', '@expand8bits.c']
+Cython module : ['fiboheap/fibo.c', 'fiboheap/fibo.h']
+Cython module : ['fiboheap/fibo.c', 'fiboheap/fibo.h']
+Cython module : ['fiboheap/fibo.h', 'src/orgasm.h']
+Cython module : ['fiboheap/fibo.c', 'fiboheap/fibo.h']
+Cython module : ['fiboheap/fibo.h']
+Cython module : ['fiboheap/fibo.c', 'fiboheap/fibo.h']
+Cython module : ['src/orgasm.h']
+Cython module : ['src/_sse.h', 'src/buffer.c', 'src/buildindex.c', '@code16bits.c', '@codecomp.c', 'src/compsort.c', 'src/debug.c', 'src/debug.h', 'src/decode.c', 'src/encode.c', 'src/fastq.c', 'src/indexinput.c', 'src/indexoutput.c', 'src/load.c', 'src/lookfor.c', 'src/malloc.c', 'src/orgasm.h', 'src/sort.c', 'src/fgetln.c', 'fiboheap/fibo.h']
+Cython module : ['src/orgasm.h', 'fiboheap/fibo.h']
+Cython module : ['src/_sse.h', 'src/orgasm.h', 'fiboheap/fibo.h']
+Cython module : ['src/_sse.h', 'src/orgasm.h', 'fiboheap/fibo.h']
+Cython module : []
+Cython module : ['fiboheap/fibo.h', 'src/orgasm.h']
+Cython module : []
+running install
+running build
+running littlebigman
+creating build
+creating build/temp.linux-x86_64-3.7
+building 'littlebigman' program
+creating build/temp.linux-x86_64-3.7/distutils.ext
+creating build/temp.linux-x86_64-3.7/distutils.ext/src
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -c distutils.ext/src/littlebigman.c -o build/temp.linux-x86_64-3.7/distutils.ext/src/littlebigman.o -msse2
+[91mdistutils.ext/src/littlebigman.c: In function ‘main’:
+distutils.ext/src/littlebigman.c:20:5: warning: this ‘else’ clause does not guard... [-Wmisleading-indentation]
+     else
+     ^~~~
+distutils.ext/src/littlebigman.c:23:2: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘else’
+  return 0;
+  ^~~~~~
+[0mx86_64-linux-gnu-gcc -pthread build/temp.linux-x86_64-3.7/distutils.ext/src/littlebigman.o -o build/temp.linux-x86_64-3.7/littlebigman
+Your CPU is in mode : -DLITTLE_END
+running build_py
+creating build/lib.linux-x86_64-3.7
+creating build/lib.linux-x86_64-3.7/orgasm
+copying python/orgasm/version.py -> build/lib.linux-x86_64-3.7/orgasm
+copying python/orgasm/__init__.py -> build/lib.linux-x86_64-3.7/orgasm
+copying python/orgasm/config.py -> build/lib.linux-x86_64-3.7/orgasm
+copying python/orgasm/tango.py -> build/lib.linux-x86_64-3.7/orgasm
+creating build/lib.linux-x86_64-3.7/orgasm/backtranslate
+copying python/orgasm/backtranslate/fasta.py -> build/lib.linux-x86_64-3.7/orgasm/backtranslate
+copying python/orgasm/backtranslate/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/backtranslate
+creating build/lib.linux-x86_64-3.7/orgasm/fiboheap
+copying python/orgasm/fiboheap/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/fiboheap
+creating build/lib.linux-x86_64-3.7/orgasm/graph
+copying python/orgasm/graph/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/graph
+creating build/lib.linux-x86_64-3.7/orgasm/multialign
+copying python/orgasm/multialign/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/multialign
+creating build/lib.linux-x86_64-3.7/orgasm/indexer
+copying python/orgasm/indexer/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/indexer
+creating build/lib.linux-x86_64-3.7/orgasm/assembler
+copying python/orgasm/assembler/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/assembler
+creating build/lib.linux-x86_64-3.7/orgasm/apps
+copying python/orgasm/apps/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/apps
+creating build/lib.linux-x86_64-3.7/orgasm/utils
+copying python/orgasm/utils/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/utils
+creating build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/clone.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/buildgraph.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/index.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/unfoldrdna.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/cutlow.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/compact.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/restore.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/unfold.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/list.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/graphstats.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/substract.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/graph.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+copying python/orgasm/commands/seeds.py -> build/lib.linux-x86_64-3.7/orgasm/commands
+creating build/lib.linux-x86_64-3.7/orgasm/files
+copying python/orgasm/files/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/files
+creating build/lib.linux-x86_64-3.7/orgasm/format
+copying python/orgasm/format/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/format
+creating build/lib.linux-x86_64-3.7/orgasm/reads
+copying python/orgasm/reads/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/reads
+creating build/lib.linux-x86_64-3.7/orgasm/samples
+copying python/orgasm/samples/phix.py -> build/lib.linux-x86_64-3.7/orgasm/samples
+copying python/orgasm/samples/__init__.py -> build/lib.linux-x86_64-3.7/orgasm/samples
+running build_ext
+Look for CPU architecture... [('LITTLE_END', None)]
+running build_files
+running build_ctools
+building 'buildcomplement' program
+creating build/temp.linux-x86_64-3.7/src
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/buildcomplement.c -o build/temp.linux-x86_64-3.7/src/buildcomplement.o -msse2
+x86_64-linux-gnu-gcc -pthread build/temp.linux-x86_64-3.7/src/buildcomplement.o -o build/temp.linux-x86_64-3.7/buildcomplement
+building 'buildcode' program
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/buildcode.c -o build/temp.linux-x86_64-3.7/src/buildcode.o -msse2
+[91msrc/buildcode.c: In function ‘main’:
+src/buildcode.c:44:39: warning: format ‘%llX’ expects argument of type ‘long long unsigned int’, but argument 3 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+    fprintf(stdout,"    INT64_C(0x%16llX),  // %04X --> %8s \n", *((uint64_t*)nuc),code,nuc);
+                                  ~~~~~^                         ~~~~~~~~~~~~~~~~~
+                                  %16lX
+[0m[91msrc/buildcode.c:46:39: warning: format ‘%llX’ expects argument of type ‘long long unsigned int’, but argument 3 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+    fprintf(stdout,"    INT64_C(0x%16llX)   // %04X --> %8s \n", *((uint64_t*)nuc),code,nuc);
+                                  ~~~~~^                         ~~~~~~~~~~~~~~~~~
+                                  %16lX
+[0mx86_64-linux-gnu-gcc -pthread build/temp.linux-x86_64-3.7/src/buildcode.o -o build/temp.linux-x86_64-3.7/buildcode
+building 'buildexpand8bits' program
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/buildexpand8bits.c -o build/temp.linux-x86_64-3.7/src/buildexpand8bits.o -msse2
+[91msrc/buildexpand8bits.c: In function ‘main’:
+src/buildexpand8bits.c:40:1: warning: multi-line comment [-Wcomment]
+ //  *((uint32_t*)nuc) = *((uint32_t*)nuc) >> 24 | \
+ ^
+[0mx86_64-linux-gnu-gcc -pthread build/temp.linux-x86_64-3.7/src/buildexpand8bits.o -o build/temp.linux-x86_64-3.7/buildexpand8bits
+Building file : codecomp.c
+    --> build/temp.linux-x86_64-3.7/buildcomplement > build/temp.linux-x86_64-3.7/codecomp.c
+Done.
+
+Building file : code16bits.c
+    --> build/temp.linux-x86_64-3.7/buildcode > build/temp.linux-x86_64-3.7/code16bits.c
+Done.
+
+Building file : expand8bits.c
+    --> build/temp.linux-x86_64-3.7/buildexpand8bits > build/temp.linux-x86_64-3.7/expand8bits.c
+Done.
+
+running build_cexe
+Look for CPU architecture... [('LITTLE_END', None)]
+creating build/scripts-3.7
+orgasmi :-> src/orgasmi.c ok
+orgasmi :-> src/buffer.c ok
+orgasmi :-> src/buildindex.c ok
+orgasmi :-> @code16bits.c changed to build/temp.linux-x86_64-3.7/code16bits.c
+orgasmi :-> @codecomp.c changed to build/temp.linux-x86_64-3.7/codecomp.c
+orgasmi :-> src/compsort.c ok
+orgasmi :-> src/debug.c ok
+orgasmi :-> src/decode.c ok
+orgasmi :-> src/encode.c ok
+orgasmi :-> src/fastq.c ok
+orgasmi :-> src/indexinput.c ok
+orgasmi :-> src/indexoutput.c ok
+orgasmi :-> src/load.c ok
+orgasmi :-> src/lookfor.c ok
+orgasmi :-> src/malloc.c ok
+orgasmi :-> src/fgetln.c ok
+orgasmi :-> src/sort.c ok
+building 'orgasmi' program
+creating build/temp.linux-x86_64-3.7/build
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/orgasmi.c -o build/temp.linux-x86_64-3.7/src/orgasmi.o -msse2
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/buffer.c -o build/temp.linux-x86_64-3.7/src/buffer.o -msse2
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/buildindex.c -o build/temp.linux-x86_64-3.7/src/buildindex.o -msse2
+[91msrc/buildindex.c: In function ‘buildIndex’:
+src/buildindex.c:44:2: warning: implicit declaration of function ‘asprintf’; did you mean ‘vsprintf’? [-Wimplicit-function-declaration]
+  asprintf(&indexFileName,"%s.ofx",indexname);
+  ^~~~~~~~
+  vsprintf
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c build/temp.linux-x86_64-3.7/code16bits.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/code16bits.o -msse2
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c build/temp.linux-x86_64-3.7/codecomp.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/codecomp.o -msse2
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/compsort.c -o build/temp.linux-x86_64-3.7/src/compsort.o -msse2
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/debug.c -o build/temp.linux-x86_64-3.7/src/debug.o -msse2
+[91msrc/debug.c: In function ‘int2bin’:
+src/debug.c:23:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+     u = *(unsigned *)&i;
+     ^
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/decode.c -o build/temp.linux-x86_64-3.7/src/decode.o -msse2
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/encode.c -o build/temp.linux-x86_64-3.7/src/encode.o -msse2
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/fastq.c -o build/temp.linux-x86_64-3.7/src/fastq.o -msse2
+[91msrc/fastq.c: In function ‘readFastq’:
+src/fastq.c:42:11: warning: implicit declaration of function ‘fgetln’; did you mean ‘fgets’? [-Wimplicit-function-declaration]
+  buffer = fgetln(in,&lseq);
+           ^~~~~~
+           fgets
+src/fastq.c:42:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  buffer = fgetln(in,&lseq);
+         ^
+[0m[91msrc/fastq.c:45:10: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+   buffer = fgetln(in,&lseq);
+          ^
+[0m[91msrc/fastq.c:59:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  buffer = fgetln(in,&lseq);
+         ^
+[0m[91msrc/fastq.c:60:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  buffer = fgetln(in,&lseq);
+         ^
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/indexinput.c -o build/temp.linux-x86_64-3.7/src/indexinput.o -msse2
+[91msrc/indexinput.c: In function ‘loadGeneralData’:
+src/indexinput.c:57:2: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result [-Wunused-result]
+  fread(buffer,1,sizeof(buffer_t),input);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/indexoutput.c -o build/temp.linux-x86_64-3.7/src/indexoutput.o -msse2
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/load.c -o build/temp.linux-x86_64-3.7/src/load.o -msse2
+[91msrc/load.c: In function ‘loadIndexedReads’:
+src/load.c:34:2: warning: implicit declaration of function ‘asprintf’; did you mean ‘vsprintf’? [-Wimplicit-function-declaration]
+  asprintf(&indexFileName,"%s.ogx",indexname);
+  ^~~~~~~~
+  vsprintf
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/lookfor.c -o build/temp.linux-x86_64-3.7/src/lookfor.o -msse2
+[91msrc/lookfor.c: In function ‘shiftKey’:
+src/lookfor.c:47:10: warning: variable ‘rmask’ set but not used [-Wunused-but-set-variable]
+  uint8_t rmask;
+          ^~~~~
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/malloc.c -o build/temp.linux-x86_64-3.7/src/malloc.o -msse2
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/fgetln.c -o build/temp.linux-x86_64-3.7/src/fgetln.o -msse2
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -c src/sort.c -o build/temp.linux-x86_64-3.7/src/sort.o -msse2
+x86_64-linux-gnu-gcc -pthread build/temp.linux-x86_64-3.7/src/orgasmi.o build/temp.linux-x86_64-3.7/src/buffer.o build/temp.linux-x86_64-3.7/src/buildindex.o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/code16bits.o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/codecomp.o build/temp.linux-x86_64-3.7/src/compsort.o build/temp.linux-x86_64-3.7/src/debug.o build/temp.linux-x86_64-3.7/src/decode.o build/temp.linux-x86_64-3.7/src/encode.o build/temp.linux-x86_64-3.7/src/fastq.o build/temp.linux-x86_64-3.7/src/indexinput.o build/temp.linux-x86_64-3.7/src/indexoutput.o build/temp.linux-x86_64-3.7/src/load.o build/temp.linux-x86_64-3.7/src/lookfor.o build/temp.linux-x86_64-3.7/src/malloc.o build/temp.linux-x86_64-3.7/src/fgetln.o build/temp.linux-x86_64-3.7/src/sort.o -o build/scripts-3.7/orgasmi
+orgasm.backtranslate._ahocorasick :-> python/orgasm/backtranslate/_ahocorasick.pyx ok
+orgasm.backtranslate._ahocorasick :-> @expand8bits.c changed to build/temp.linux-x86_64-3.7/expand8bits.c
+orgasm.backtranslate._bitvector :-> python/orgasm/backtranslate/_bitvector.pyx ok
+orgasm.fiboheap._fiboheap :-> python/orgasm/fiboheap/_fiboheap.pyx ok
+orgasm.fiboheap._fiboheap :-> fiboheap/fibo.c ok
+orgasm.graph._fibointheap :-> python/orgasm/graph/_fibointheap.pyx ok
+orgasm.graph._fibointheap :-> fiboheap/fibo.c ok
+orgasm.graph._graph :-> python/orgasm/graph/_graph.pyx ok
+orgasm.graph._fibomaxintheap :-> python/orgasm/graph/_fibomaxintheap.pyx ok
+orgasm.graph._fibomaxintheap :-> fiboheap/fibo.c ok
+orgasm.graph._graphmultiedge :-> python/orgasm/graph/_graphmultiedge.pyx ok
+orgasm.graph._fibominintheap :-> python/orgasm/graph/_fibominintheap.pyx ok
+orgasm.graph._fibominintheap :-> fiboheap/fibo.c ok
+orgasm.multialign._dynamic :-> python/orgasm/multialign/_dynamic.pyx ok
+orgasm.multialign._multi :-> python/orgasm/multialign/_multi.pyx ok
+orgasm.indexer.fakereads :-> python/orgasm/indexer/fakereads.pyx ok
+orgasm.indexer._orgasm :-> python/orgasm/indexer/_orgasm.pyx ok
+orgasm.indexer._orgasm :-> src/buffer.c ok
+orgasm.indexer._orgasm :-> src/buildindex.c ok
+orgasm.indexer._orgasm :-> @code16bits.c changed to build/temp.linux-x86_64-3.7/code16bits.c
+orgasm.indexer._orgasm :-> @codecomp.c changed to build/temp.linux-x86_64-3.7/codecomp.c
+orgasm.indexer._orgasm :-> src/compsort.c ok
+orgasm.indexer._orgasm :-> src/debug.c ok
+orgasm.indexer._orgasm :-> src/decode.c ok
+orgasm.indexer._orgasm :-> src/encode.c ok
+orgasm.indexer._orgasm :-> src/fastq.c ok
+orgasm.indexer._orgasm :-> src/indexinput.c ok
+orgasm.indexer._orgasm :-> src/indexoutput.c ok
+orgasm.indexer._orgasm :-> src/load.c ok
+orgasm.indexer._orgasm :-> src/lookfor.c ok
+orgasm.indexer._orgasm :-> src/malloc.c ok
+orgasm.indexer._orgasm :-> src/sort.c ok
+orgasm.indexer._orgasm :-> src/fgetln.c ok
+orgasm.assembler._tango :-> python/orgasm/assembler/_tango.pyx ok
+orgasm.assembler._assembler :-> python/orgasm/assembler/_assembler.pyx ok
+orgasm.assembler._asmbgraph :-> python/orgasm/assembler/_asmbgraph.pyx ok
+orgasm.apps.config :-> python/orgasm/apps/config.pyx ok
+orgasm.apps.command :-> python/orgasm/apps/command.pyx ok
+orgasm.apps.logging :-> python/orgasm/apps/logging.pyx ok
+orgasm.apps.counter :-> python/orgasm/apps/counter.pyx ok
+orgasm.apps.progress :-> python/orgasm/apps/progress.pyx ok
+orgasm.apps.arguments :-> python/orgasm/apps/arguments.pyx ok
+orgasm.utils._progress :-> python/orgasm/utils/_progress.pyx ok
+orgasm.utils.dna :-> python/orgasm/utils/dna.pyx ok
+orgasm.files.linebuffer :-> python/orgasm/files/linebuffer.pyx ok
+orgasm.files.uncompress :-> python/orgasm/files/uncompress.pyx ok
+orgasm.files.universalopener :-> python/orgasm/files/universalopener.pyx ok
+orgasm.format.sam :-> python/orgasm/format/sam.pyx ok
+orgasm.reads._fasta :-> python/orgasm/reads/_fasta.pyx ok
+orgasm.reads._sequences :-> python/orgasm/reads/_sequences.pyx ok
+orgasm.reads._fastq :-> python/orgasm/reads/_fastq.pyx ok
+orgasm.backtranslate._ahocorasick :-> ['python/orgasm/backtranslate/_ahocorasick.pyx', 'build/temp.linux-x86_64-3.7/expand8bits.c']
+cythoning python/orgasm/backtranslate/_ahocorasick.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.c
+creating build/temp.linux-x86_64-3.7/pyrex
+creating build/temp.linux-x86_64-3.7/pyrex/orgasm
+creating build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate
+building 'orgasm.backtranslate._ahocorasick' extension
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.c: In function ‘__pyx_f_6orgasm_13backtranslate_12_ahocorasick_11AhoCorasick_simpleMatch’:
+build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.c:6467:39: warning: array subscript has type ‘char’ [-Wchar-subscripts]
+     __pyx_v_nextstate = (__pyx_v_table[__pyx_v_letter]);
+                                       ^
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.c: In function ‘__pyx_f_6orgasm_13backtranslate_12_ahocorasick_15ProtAhoCorasick_addSequence’:
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.c:9500:8: warning: variable ‘__pyx_v_letter’ set but not used [-Wunused-but-set-variable]
+   char __pyx_v_letter[2];
+        ^~~~~~~~~~~~~~
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.c: In function ‘__pyx_f_6orgasm_13backtranslate_12_ahocorasick_14NucAhoCorasick_scanIndex’:
+build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.c:506:40: warning: ‘__pyx_v_locmax’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   #define PyInt_FromLong               PyLong_FromLong
+                                        ^~~~~~~~~~~~~~~
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.c:13007:7: note: ‘__pyx_v_locmax’ was declared here
+   int __pyx_v_locmax;
+       ^~~~~~~~~~~~~~
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.c: In function ‘__pyx_f_6orgasm_13backtranslate_12_ahocorasick_15ProtAhoCorasick_scanIndex’:
+build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.c:506:40: warning: ‘__pyx_v_locmax’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   #define PyInt_FromLong               PyLong_FromLong
+                                        ^~~~~~~~~~~~~~~
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.c:10512:7: note: ‘__pyx_v_locmax’ was declared here
+   int __pyx_v_locmax;
+       ^~~~~~~~~~~~~~
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/expand8bits.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/expand8bits.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_ahocorasick.o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/expand8bits.o -o build/lib.linux-x86_64-3.7/orgasm/backtranslate/_ahocorasick.cpython-37m-x86_64-linux-gnu.so
+orgasm.backtranslate._bitvector :-> ['python/orgasm/backtranslate/_bitvector.pyx']
+cythoning python/orgasm/backtranslate/_bitvector.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_bitvector.c
+building 'orgasm.backtranslate._bitvector' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_bitvector.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_bitvector.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/backtranslate/_bitvector.o -o build/lib.linux-x86_64-3.7/orgasm/backtranslate/_bitvector.cpython-37m-x86_64-linux-gnu.so
+orgasm.fiboheap._fiboheap :-> ['python/orgasm/fiboheap/_fiboheap.pyx', 'fiboheap/fibo.c']
+cythoning python/orgasm/fiboheap/_fiboheap.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/fiboheap/_fiboheap.c
+creating build/temp.linux-x86_64-3.7/pyrex/orgasm/fiboheap
+building 'orgasm.fiboheap._fiboheap' extension
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/fiboheap
+creating build/temp.linux-x86_64-3.7/fiboheap
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/fiboheap/_fiboheap.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/fiboheap/_fiboheap.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c fiboheap/fibo.c -o build/temp.linux-x86_64-3.7/fiboheap/fibo.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/fiboheap/_fiboheap.o build/temp.linux-x86_64-3.7/fiboheap/fibo.o -o build/lib.linux-x86_64-3.7/orgasm/fiboheap/_fiboheap.cpython-37m-x86_64-linux-gnu.so
+orgasm.graph._fibointheap :-> ['python/orgasm/graph/_fibointheap.pyx', 'fiboheap/fibo.c']
+cythoning python/orgasm/graph/_fibointheap.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_fibointheap.c
+creating build/temp.linux-x86_64-3.7/pyrex/orgasm/graph
+building 'orgasm.graph._fibointheap' extension
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/graph
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_fibointheap.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_fibointheap.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c fiboheap/fibo.c -o build/temp.linux-x86_64-3.7/fiboheap/fibo.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_fibointheap.o build/temp.linux-x86_64-3.7/fiboheap/fibo.o -o build/lib.linux-x86_64-3.7/orgasm/graph/_fibointheap.cpython-37m-x86_64-linux-gnu.so
+orgasm.graph._graph :-> ['python/orgasm/graph/_graph.pyx']
+cythoning python/orgasm/graph/_graph.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_graph.c
+building 'orgasm.graph._graph' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_graph.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_graph.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_graph.o -o build/lib.linux-x86_64-3.7/orgasm/graph/_graph.cpython-37m-x86_64-linux-gnu.so
+orgasm.graph._fibomaxintheap :-> ['python/orgasm/graph/_fibomaxintheap.pyx', 'fiboheap/fibo.c']
+cythoning python/orgasm/graph/_fibomaxintheap.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_fibomaxintheap.c
+building 'orgasm.graph._fibomaxintheap' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_fibomaxintheap.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_fibomaxintheap.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c fiboheap/fibo.c -o build/temp.linux-x86_64-3.7/fiboheap/fibo.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_fibomaxintheap.o build/temp.linux-x86_64-3.7/fiboheap/fibo.o -o build/lib.linux-x86_64-3.7/orgasm/graph/_fibomaxintheap.cpython-37m-x86_64-linux-gnu.so
+orgasm.graph._graphmultiedge :-> ['python/orgasm/graph/_graphmultiedge.pyx']
+cythoning python/orgasm/graph/_graphmultiedge.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_graphmultiedge.c
+building 'orgasm.graph._graphmultiedge' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_graphmultiedge.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_graphmultiedge.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_graphmultiedge.o -o build/lib.linux-x86_64-3.7/orgasm/graph/_graphmultiedge.cpython-37m-x86_64-linux-gnu.so
+orgasm.graph._fibominintheap :-> ['python/orgasm/graph/_fibominintheap.pyx', 'fiboheap/fibo.c']
+cythoning python/orgasm/graph/_fibominintheap.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_fibominintheap.c
+building 'orgasm.graph._fibominintheap' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_fibominintheap.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_fibominintheap.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c fiboheap/fibo.c -o build/temp.linux-x86_64-3.7/fiboheap/fibo.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/graph/_fibominintheap.o build/temp.linux-x86_64-3.7/fiboheap/fibo.o -o build/lib.linux-x86_64-3.7/orgasm/graph/_fibominintheap.cpython-37m-x86_64-linux-gnu.so
+orgasm.multialign._dynamic :-> ['python/orgasm/multialign/_dynamic.pyx']
+cythoning python/orgasm/multialign/_dynamic.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/multialign/_dynamic.c
+creating build/temp.linux-x86_64-3.7/pyrex/orgasm/multialign
+building 'orgasm.multialign._dynamic' extension
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/multialign
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/multialign/_dynamic.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/multialign/_dynamic.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/multialign/_dynamic.o -o build/lib.linux-x86_64-3.7/orgasm/multialign/_dynamic.cpython-37m-x86_64-linux-gnu.so
+orgasm.multialign._multi :-> ['python/orgasm/multialign/_multi.pyx']
+cythoning python/orgasm/multialign/_multi.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/multialign/_multi.c
+building 'orgasm.multialign._multi' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/multialign/_multi.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/multialign/_multi.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/multialign/_multi.o -o build/lib.linux-x86_64-3.7/orgasm/multialign/_multi.cpython-37m-x86_64-linux-gnu.so
+orgasm.indexer.fakereads :-> ['python/orgasm/indexer/fakereads.pyx']
+cythoning python/orgasm/indexer/fakereads.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/indexer/fakereads.c
+creating build/temp.linux-x86_64-3.7/pyrex/orgasm/indexer
+building 'orgasm.indexer.fakereads' extension
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/indexer
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/indexer/fakereads.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/indexer/fakereads.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/indexer/fakereads.o -o build/lib.linux-x86_64-3.7/orgasm/indexer/fakereads.cpython-37m-x86_64-linux-gnu.so
+orgasm.indexer._orgasm :-> ['python/orgasm/indexer/_orgasm.pyx', 'src/buffer.c', 'src/buildindex.c', 'build/temp.linux-x86_64-3.7/code16bits.c', 'build/temp.linux-x86_64-3.7/codecomp.c', 'src/compsort.c', 'src/debug.c', 'src/decode.c', 'src/encode.c', 'src/fastq.c', 'src/indexinput.c', 'src/indexoutput.c', 'src/load.c', 'src/lookfor.c', 'src/malloc.c', 'src/sort.c', 'src/fgetln.c']
+cythoning python/orgasm/indexer/_orgasm.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/indexer/_orgasm.c
+building 'orgasm.indexer._orgasm' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/indexer/_orgasm.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/indexer/_orgasm.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/indexer/_orgasm.c: In function ‘__pyx_f_6orgasm_7indexer_7_orgasm_5Index_getIds’:
+build/temp.linux-x86_64-3.7/pyrex/orgasm/indexer/_orgasm.c:506:40: warning: ‘__pyx_v_t’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   #define PyInt_FromLong               PyLong_FromLong
+                                        ^~~~~~~~~~~~~~~
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/indexer/_orgasm.c:9389:7: note: ‘__pyx_v_t’ was declared here
+   int __pyx_v_t;
+       ^~~~~~~~~
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/buffer.c -o build/temp.linux-x86_64-3.7/src/buffer.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/buildindex.c -o build/temp.linux-x86_64-3.7/src/buildindex.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+[91msrc/buildindex.c: In function ‘buildIndex’:
+src/buildindex.c:44:2: warning: implicit declaration of function ‘asprintf’; did you mean ‘vsprintf’? [-Wimplicit-function-declaration]
+  asprintf(&indexFileName,"%s.ofx",indexname);
+  ^~~~~~~~
+  vsprintf
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/code16bits.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/code16bits.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/codecomp.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/codecomp.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/compsort.c -o build/temp.linux-x86_64-3.7/src/compsort.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/debug.c -o build/temp.linux-x86_64-3.7/src/debug.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+[91msrc/debug.c: In function ‘int2bin’:
+src/debug.c:23:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+     u = *(unsigned *)&i;
+     ^
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/decode.c -o build/temp.linux-x86_64-3.7/src/decode.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/encode.c -o build/temp.linux-x86_64-3.7/src/encode.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/fastq.c -o build/temp.linux-x86_64-3.7/src/fastq.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+[91msrc/fastq.c: In function ‘readFastq’:
+src/fastq.c:42:11: warning: implicit declaration of function ‘fgetln’; did you mean ‘fgets’? [-Wimplicit-function-declaration]
+  buffer = fgetln(in,&lseq);
+           ^~~~~~
+           fgets
+src/fastq.c:42:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  buffer = fgetln(in,&lseq);
+         ^
+src/fastq.c:45:10: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+   buffer = fgetln(in,&lseq);
+          ^
+src/fastq.c:59:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  buffer = fgetln(in,&lseq);
+         ^
+src/fastq.c:60:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+  buffer = fgetln(in,&lseq);
+         ^
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/indexinput.c -o build/temp.linux-x86_64-3.7/src/indexinput.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+[91msrc/indexinput.c: In function ‘loadGeneralData’:
+src/indexinput.c:57:2: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result [-Wunused-result]
+  fread(buffer,1,sizeof(buffer_t),input);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/indexoutput.c -o build/temp.linux-x86_64-3.7/src/indexoutput.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/load.c -o build/temp.linux-x86_64-3.7/src/load.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+[91msrc/load.c: In function ‘loadIndexedReads’:
+src/load.c:34:2: warning: implicit declaration of function ‘asprintf’; did you mean ‘vsprintf’? [-Wimplicit-function-declaration]
+  asprintf(&indexFileName,"%s.ogx",indexname);
+  ^~~~~~~~
+  vsprintf
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/lookfor.c -o build/temp.linux-x86_64-3.7/src/lookfor.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+[91msrc/lookfor.c: In function ‘shiftKey’:
+src/lookfor.c:47:10: warning: variable ‘rmask’ set but not used [-Wunused-but-set-variable]
+  uint8_t rmask;
+          ^~~~~
+[0mx86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/malloc.c -o build/temp.linux-x86_64-3.7/src/malloc.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/sort.c -o build/temp.linux-x86_64-3.7/src/sort.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c src/fgetln.c -o build/temp.linux-x86_64-3.7/src/fgetln.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/indexer/_orgasm.o build/temp.linux-x86_64-3.7/src/buffer.o build/temp.linux-x86_64-3.7/src/buildindex.o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/code16bits.o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/codecomp.o build/temp.linux-x86_64-3.7/src/compsort.o build/temp.linux-x86_64-3.7/src/debug.o build/temp.linux-x86_64-3.7/src/decode.o build/temp.linux-x86_64-3.7/src/encode.o build/temp.linux-x86_64-3.7/src/fastq.o build/temp.linux-x86_64-3.7/src/indexinput.o build/temp.linux-x86_64-3.7/src/indexoutput.o build/temp.linux-x86_64-3.7/src/load.o build/temp.linux-x86_64-3.7/src/lookfor.o build/temp.linux-x86_64-3.7/src/malloc.o build/temp.linux-x86_64-3.7/src/sort.o build/temp.linux-x86_64-3.7/src/fgetln.o -o build/lib.linux-x86_64-3.7/orgasm/indexer/_orgasm.cpython-37m-x86_64-linux-gnu.so
+orgasm.assembler._tango :-> ['python/orgasm/assembler/_tango.pyx']
+cythoning python/orgasm/assembler/_tango.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler/_tango.c
+creating build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler
+building 'orgasm.assembler._tango' extension
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler/_tango.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler/_tango.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler/_tango.o -o build/lib.linux-x86_64-3.7/orgasm/assembler/_tango.cpython-37m-x86_64-linux-gnu.so
+orgasm.assembler._assembler :-> ['python/orgasm/assembler/_assembler.pyx']
+cythoning python/orgasm/assembler/_assembler.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler/_assembler.c
+building 'orgasm.assembler._assembler' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler/_assembler.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler/_assembler.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler/_assembler.o -o build/lib.linux-x86_64-3.7/orgasm/assembler/_assembler.cpython-37m-x86_64-linux-gnu.so
+orgasm.assembler._asmbgraph :-> ['python/orgasm/assembler/_asmbgraph.pyx']
+cythoning python/orgasm/assembler/_asmbgraph.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler/_asmbgraph.c
+building 'orgasm.assembler._asmbgraph' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler/_asmbgraph.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler/_asmbgraph.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/assembler/_asmbgraph.o -o build/lib.linux-x86_64-3.7/orgasm/assembler/_asmbgraph.cpython-37m-x86_64-linux-gnu.so
+orgasm.apps.config :-> ['python/orgasm/apps/config.pyx']
+cythoning python/orgasm/apps/config.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/config.c
+creating build/temp.linux-x86_64-3.7/pyrex/orgasm/apps
+building 'orgasm.apps.config' extension
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/config.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/config.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/config.o -o build/lib.linux-x86_64-3.7/orgasm/apps/config.cpython-37m-x86_64-linux-gnu.so
+orgasm.apps.command :-> ['python/orgasm/apps/command.pyx']
+cythoning python/orgasm/apps/command.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/command.c
+building 'orgasm.apps.command' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/command.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/command.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/command.o -o build/lib.linux-x86_64-3.7/orgasm/apps/command.cpython-37m-x86_64-linux-gnu.so
+orgasm.apps.logging :-> ['python/orgasm/apps/logging.pyx']
+cythoning python/orgasm/apps/logging.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/logging.c
+building 'orgasm.apps.logging' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/logging.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/logging.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/logging.o -o build/lib.linux-x86_64-3.7/orgasm/apps/logging.cpython-37m-x86_64-linux-gnu.so
+orgasm.apps.counter :-> ['python/orgasm/apps/counter.pyx']
+cythoning python/orgasm/apps/counter.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/counter.c
+building 'orgasm.apps.counter' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/counter.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/counter.o
+[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/apps/counter.c: In function ‘__pyx_pf_6orgasm_4apps_7counter_15ProgressCounter_2__call__’:
+build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/counter.c:2336:47: warning: field width specifier ‘*’ expects argument of type ‘int’, but argument 4 has type ‘long long unsigned int’ [-Wformat=]
+       ((void)fprintf(stderr, ((char *)"\r%s [%*d] speed : %*.1f %s/s"), __pyx_v_self->chead, __pyx_v_self->digits, __pyx_v_ipos, __pyx_v_self->digits, __pyx_v_speed, __pyx_v_self->cunit));
+                                              ~^~                                             ~~~~~~~~~~~~~~~~~~~~
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/apps/counter.c:2336:48: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘long long unsigned int’ [-Wformat=]
+       ((void)fprintf(stderr, ((char *)"\r%s [%*d] speed : %*.1f %s/s"), __pyx_v_self->chead, __pyx_v_self->digits, __pyx_v_ipos, __pyx_v_self->digits, __pyx_v_speed, __pyx_v_self->cunit));
+                                              ~~^
+                                              %*lld
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/apps/counter.c:2336:60: warning: field width specifier ‘*’ expects argument of type ‘int’, but argument 6 has type ‘long long unsigned int’ [-Wformat=]
+       ((void)fprintf(stderr, ((char *)"\r%s [%*d] speed : %*.1f %s/s"), __pyx_v_self->chead, __pyx_v_self->digits, __pyx_v_ipos, __pyx_v_self->digits, __pyx_v_speed, __pyx_v_self->cunit));
+                                                           ~^~~~                                                                  ~~~~~~~~~~~~~~~~~~~~
+[0mx86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/counter.o -o build/lib.linux-x86_64-3.7/orgasm/apps/counter.cpython-37m-x86_64-linux-gnu.so
+orgasm.apps.progress :-> ['python/orgasm/apps/progress.pyx']
+cythoning python/orgasm/apps/progress.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.c
+building 'orgasm.apps.progress' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.o
+[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.c: In function ‘__pyx_pf_6orgasm_4apps_8progress_11ProgressBar_2__call__’:
+build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.c:2445:59: warning: field precision specifier ‘.*’ expects argument of type ‘int’, but argument 5 has type ‘long long unsigned int’ [-Wformat=]
+         ((void)fprintf(stderr, ((char *)"\r%s %5.1f %% |%.*s%c%.*s] remain : %d days %02d:%02d:%02d"), __pyx_v_self->chead, (__pyx_v_percent * 100.0), __pyx_v_fraction, __pyx_v_self->diese, (__pyx_v_self->wheel[__pyx_v_self->arrow]), (50 - __pyx_v_fraction), __pyx_v_self->spaces, __pyx_v_days, __pyx_v_hour, __pyx_v_minu, __pyx_v_sec));
+                                                         ~~^~
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.c:2445:65: warning: field precision specifier ‘.*’ expects argument of type ‘int’, but argument 8 has type ‘long long unsigned int’ [-Wformat=]
+         ((void)fprintf(stderr, ((char *)"\r%s %5.1f %% |%.*s%c%.*s] remain : %d days %02d:%02d:%02d"), __pyx_v_self->chead, (__pyx_v_percent * 100.0), __pyx_v_fraction, __pyx_v_self->diese, (__pyx_v_self->wheel[__pyx_v_self->arrow]), (50 - __pyx_v_fraction), __pyx_v_self->spaces, __pyx_v_days, __pyx_v_hour, __pyx_v_minu, __pyx_v_sec));
+                                                               ~~^~                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.c:2473:59: warning: field precision specifier ‘.*’ expects argument of type ‘int’, but argument 5 has type ‘long long unsigned int’ [-Wformat=]
+         ((void)fprintf(stderr, ((char *)"\r%s %5.1f %% |%.*s%c%.*s] remain : %02d:%02d:%02d"), __pyx_v_self->chead, (__pyx_v_percent * 100.), __pyx_v_fraction, __pyx_v_self->diese, (__pyx_v_self->wheel[__pyx_v_self->arrow]), (50 - __pyx_v_fraction), __pyx_v_self->spaces, __pyx_v_hour, __pyx_v_minu, __pyx_v_sec));
+                                                         ~~^~
+build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.c:2473:65: warning: field precision specifier ‘.*’ expects argument of type ‘int’, but argument 8 has type ‘long long unsigned int’ [-Wformat=]
+         ((void)fprintf(stderr, ((char *)"\r%s %5.1f %% |%.*s%c%.*s] remain : %02d:%02d:%02d"), __pyx_v_self->chead, (__pyx_v_percent * 100.), __pyx_v_fraction, __pyx_v_self->diese, (__pyx_v_self->wheel[__pyx_v_self->arrow]), (50 - __pyx_v_fraction), __pyx_v_self->spaces, __pyx_v_hour, __pyx_v_minu, __pyx_v_sec));
+                                                               ~~^~                                                                                                                                                               ~~~~~~~~~~~~~~~~~~~~~~~
+[0mx86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.o -o build/lib.linux-x86_64-3.7/orgasm/apps/progress.cpython-37m-x86_64-linux-gnu.so
+orgasm.apps.arguments :-> ['python/orgasm/apps/arguments.pyx']
+cythoning python/orgasm/apps/arguments.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/arguments.c
+building 'orgasm.apps.arguments' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/arguments.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/arguments.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/arguments.o -o build/lib.linux-x86_64-3.7/orgasm/apps/arguments.cpython-37m-x86_64-linux-gnu.so
+orgasm.utils._progress :-> ['python/orgasm/utils/_progress.pyx']
+cythoning python/orgasm/utils/_progress.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/utils/_progress.c
+creating build/temp.linux-x86_64-3.7/pyrex/orgasm/utils
+building 'orgasm.utils._progress' extension
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/utils
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/utils/_progress.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/utils/_progress.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/utils/_progress.o -o build/lib.linux-x86_64-3.7/orgasm/utils/_progress.cpython-37m-x86_64-linux-gnu.so
+orgasm.utils.dna :-> ['python/orgasm/utils/dna.pyx']
+cythoning python/orgasm/utils/dna.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/utils/dna.c
+building 'orgasm.utils.dna' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/utils/dna.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/utils/dna.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/utils/dna.o -o build/lib.linux-x86_64-3.7/orgasm/utils/dna.cpython-37m-x86_64-linux-gnu.so
+orgasm.files.linebuffer :-> ['python/orgasm/files/linebuffer.pyx']
+cythoning python/orgasm/files/linebuffer.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/files/linebuffer.c
+creating build/temp.linux-x86_64-3.7/pyrex/orgasm/files
+building 'orgasm.files.linebuffer' extension
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/files
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/files/linebuffer.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/files/linebuffer.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/files/linebuffer.o -o build/lib.linux-x86_64-3.7/orgasm/files/linebuffer.cpython-37m-x86_64-linux-gnu.so
+orgasm.files.uncompress :-> ['python/orgasm/files/uncompress.pyx']
+cythoning python/orgasm/files/uncompress.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/files/uncompress.c
+building 'orgasm.files.uncompress' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/files/uncompress.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/files/uncompress.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/files/uncompress.o -o build/lib.linux-x86_64-3.7/orgasm/files/uncompress.cpython-37m-x86_64-linux-gnu.so
+orgasm.files.universalopener :-> ['python/orgasm/files/universalopener.pyx']
+cythoning python/orgasm/files/universalopener.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/files/universalopener.c
+building 'orgasm.files.universalopener' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/files/universalopener.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/files/universalopener.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/files/universalopener.o -o build/lib.linux-x86_64-3.7/orgasm/files/universalopener.cpython-37m-x86_64-linux-gnu.so
+orgasm.format.sam :-> ['python/orgasm/format/sam.pyx']
+cythoning python/orgasm/format/sam.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/format/sam.c
+creating build/temp.linux-x86_64-3.7/pyrex/orgasm/format
+building 'orgasm.format.sam' extension
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/format
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/format/sam.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/format/sam.o
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/format/sam.o -o build/lib.linux-x86_64-3.7/orgasm/format/sam.cpython-37m-x86_64-linux-gnu.so
+orgasm.reads._fasta :-> ['python/orgasm/reads/_fasta.pyx']
+cythoning python/orgasm/reads/_fasta.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_fasta.c
+creating build/temp.linux-x86_64-3.7/pyrex/orgasm/reads
+building 'orgasm.reads._fasta' extension
+creating build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/reads
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_fasta.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_fasta.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_fasta.o -o build/lib.linux-x86_64-3.7/orgasm/reads/_fasta.cpython-37m-x86_64-linux-gnu.so
+orgasm.reads._sequences :-> ['python/orgasm/reads/_sequences.pyx']
+cythoning python/orgasm/reads/_sequences.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c
+building 'orgasm.reads._sequences' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -Ifiboheap -Isrc -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c: In function ‘__pyx_f_6orgasm_5reads_10_sequences_bestQuality.isra.89.constprop’:
+build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c:506:40: warning: ‘__pyx_v_maxend’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   #define PyInt_FromLong               PyLong_FromLong
+                                        ^~~~~~~~~~~~~~~
+build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c:5461:7: note: ‘__pyx_v_maxend’ was declared here
+   int __pyx_v_maxend;
+       ^~~~~~~~~~~~~~
+build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c:506:40: warning: ‘__pyx_v_maxbegin’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   #define PyInt_FromLong               PyLong_FromLong
+                                        ^~~~~~~~~~~~~~~
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c:5460:7: note: ‘__pyx_v_maxbegin’ was declared here
+   int __pyx_v_maxbegin;
+       ^~~~~~~~~~~~~~~~
+build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c:5600:8: warning: ‘__pyx_v_maxscore’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+     if (__pyx_t_2) {
+        ^
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c: In function ‘__pyx_gb_6orgasm_5reads_10_sequences_44generator10’:
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c:11306:34: warning: ‘__pyx_t_18’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+       __pyx_cur_scope->__pyx_t_3 = __pyx_t_18;
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c:11305:34: warning: ‘__pyx_t_11’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+       __pyx_cur_scope->__pyx_t_2 = __pyx_t_11;
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+[0mx86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.o -o build/lib.linux-x86_64-3.7/orgasm/reads/_sequences.cpython-37m-x86_64-linux-gnu.so
+orgasm.reads._fastq :-> ['python/orgasm/reads/_fastq.pyx']
+cythoning python/orgasm/reads/_fastq.pyx to build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_fastq.c
+building 'orgasm.reads._fastq' extension
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_fastq.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_fastq.o -msse2 -Wno-unused-function -Wmissing-braces -Wchar-subscripts
+x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_fastq.o -o build/lib.linux-x86_64-3.7/orgasm/reads/_fastq.cpython-37m-x86_64-linux-gnu.so
+running build_scripts
+creating build/raw_scripts
+Store the raw script python/oa.py -> build/raw_scripts/oa.py
+copying python/oa.py -> build/raw_scripts
+copying and adjusting python/oa.py -> build/scripts-3.7
+changing mode of build/scripts-3.7/oa from 644 to 755
+running build_sphinx
+Running Sphinx v2.0.1
+making output directory... done
+building [mo]: all of 0 po files
+building [html]: all source files
+updating environment: 34 added, 0 changed, 0 removed
+reading sources... [  2%] algorithms
+reading sources... [  5%] algorithms/gapfilling
+reading sources... [  8%] algorithms/graphcleanning
+reading sources... [ 11%] algorithms/graphextension
+reading sources... [ 14%] algorithms/graphunfolding
+reading sources... [ 17%] algorithms/seedselection
+reading sources... [ 20%] assembling
+reading sources... [ 23%] chroroplast
+reading sources... [ 26%] commands/buildgraph
+reading sources... [ 29%] commands/compact
+reading sources... [ 32%] commands/cutlow
+reading sources... [ 35%] commands/fasta
+reading sources... [ 38%] commands/fillgaps
+reading sources... [ 41%] commands/graph
+reading sources... [ 44%] commands/graphstats
+reading sources... [ 47%] commands/index
+reading sources... [ 50%] commands/list
+reading sources... [ 52%] commands/path
+reading sources... [ 55%] commands/seeds
+reading sources... [ 58%] commands/unfold
+reading sources... [ 61%] commands/unfoldrdna
+reading sources... [ 64%] embl
+reading sources... [ 67%] fasta
+reading sources... [ 70%] fastq
+reading sources... [ 73%] finishing
+reading sources... [ 76%] index
+reading sources... [ 79%] install
+reading sources... [ 82%] iupac
+reading sources... [ 85%] mitochondrion
+reading sources... [ 88%] oa
+reading sources... [ 91%] preparing
+reading sources... [ 94%] unfolding
+reading sources... [ 97%] userapi
+reading sources... [100%] utilities
+
+[91m/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/Cython/Compiler/Main.py:367: FutureWarning: Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /tmp/tmprxd710lv/ORG.asm-1.0.3/python/orgasm/assembler/_assembler.pxd
+  tree = Parsing.p_module(s, pxd, full_module_name)
+warning: python/orgasm/assembler/_asmbgraph.pyx:161:4: Overriding cdef method with def method.
+/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/Cython/Compiler/Main.py:367: FutureWarning: Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /tmp/tmprxd710lv/ORG.asm-1.0.3/python/orgasm/reads/_fasta.pxd
+  tree = Parsing.p_module(s, pxd, full_module_name)
+/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/Cython/Compiler/Main.py:367: FutureWarning: Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /tmp/tmprxd710lv/ORG.asm-1.0.3/python/orgasm/reads/_sequences.pxd
+  tree = Parsing.p_module(s, pxd, full_module_name)
+/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/Cython/Compiler/Main.py:367: FutureWarning: Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /tmp/tmprxd710lv/ORG.asm-1.0.3/python/orgasm/reads/_fastq.pxd
+  tree = Parsing.p_module(s, pxd, full_module_name)
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst:32: WARNING: Unexpected indentation.
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst:59: WARNING: Inline substitution_reference start-string without end-string.
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst:60: WARNING: Definition list ends without a blank line; unexpected unindent.
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst:105: WARNING: Unexpected indentation.
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:235: WARNING: Duplicate explicit target name: "bwa".
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:26: WARNING: Error in "program" directive:
+no content permitted.
+
+.. program:: oa fillgaps
+
+    usage: oa fillgaps [-h] [--minread BUILDGRAPH:MINREAD]
+                       [--coverage BUILDGRAPH:COVERAGE]
+                       [--minratio BUILDGRAPH:MINRATIO]
+                       [--mincov BUILDGRAPH:MINCOV]
+                       [--minoverlap BUILDGRAPH:MINOVERLAP]
+                       [--smallbranches BUILDGRAPH:SMALLBRANCHES]
+                       [--lowcomplexity] [--back ORGASM:BACK] [--snp]
+                       [--adapt5 adapt5] [--adapt3 adapt3]
+                       [--seeds seeds] [--kup ORGASM:KUP]
+                       index [output]
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:196: WARNING: Duplicate explicit target name: "bwa".
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:132: WARNING: Explicit markup ends without a blank line; unexpected unindent.
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:156: WARNING: Footnote [2] is not referenced.
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:160: WARNING: image file not readable: Probabilitymetrics.png
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://pypi.python.org/pypi/org.asm".
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://git.metabarcoding.org/org-asm/org-asm".
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:55: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:58: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:95: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:2: WARNING: Duplicate explicit target name: "yed".
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:12: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/papi_R1.fastq.gz
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:13: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/papi_R2.fastq.gz
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:440: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/tuto/butterfly.mito.gml
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:575: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/butterfly.mito.path.gml
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:596: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/butterfly.mito.fasta
+/tmp/tmprxd710lv/ORG.asm-1.0.3/build/lib.linux-x86_64-3.7/orgasm/assembler/__init__.py:docstring of orgasm.assembler:13: WARNING: Duplicate ID: "module-orgasm.assembler".
+/tmp/tmprxd710lv/ORG.asm-1.0.3/build/lib.linux-x86_64-3.7/orgasm/tango.py:docstring of orgasm.tango.unfoldAssembling:14: WARNING: Duplicate ID: "module-orgasm.tango".
+[0mlooking for now-outdated files... none found
+pickling environment... done
+checking consistency... [91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst: WARNING: document isn't included in any toctree
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/fasta.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/graph.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/graphstats.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/path.rst: WARNING: document isn't included in any toctree
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/iupac.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/userapi.rst: WARNING: document isn't included in any toctree
+[0mdone
+preparing documents... done
+writing output... [  2%] algorithms
+writing output... [  5%] algorithms/gapfilling
+writing output... [  8%] algorithms/graphcleanning
+writing output... [ 11%] algorithms/graphextension
+writing output... [ 14%] algorithms/graphunfolding
+writing output... [ 17%] algorithms/seedselection
+writing output... [ 20%] assembling
+writing output... [ 23%] chroroplast
+writing output... [ 26%] commands/buildgraph
+writing output... [ 29%] commands/compact
+writing output... [ 32%] commands/cutlow
+writing output... [ 35%] commands/fasta
+writing output... [ 38%] commands/fillgaps
+writing output... [ 41%] commands/graph
+writing output... [ 44%] commands/graphstats
+writing output... [ 47%] commands/index
+writing output... [ 50%] commands/list
+writing output... [ 52%] commands/path
+writing output... [ 55%] commands/seeds
+writing output... [ 58%] commands/unfold
+writing output... [ 61%] commands/unfoldrdna
+writing output... [ 64%] embl
+writing output... [ 67%] fasta
+writing output... [ 70%] fastq
+writing output... [ 73%] finishing
+writing output... [ 76%] index
+writing output... [ 79%] install
+writing output... [ 82%] iupac
+writing output... [ 85%] mitochondrion
+writing output... [ 88%] oa
+writing output... [ 91%] preparing
+writing output... [ 94%] unfolding
+writing output... [ 97%] userapi
+writing output... [100%] utilities
+
+[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/algorithms.rst:: WARNING: a suitable image for html builder not found: genome_size.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/algorithms.rst:: WARNING: a suitable image for html builder not found: [None] (algorithms.*)
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/algorithms/graphextension.rst:9: WARNING: a suitable image for html builder not found: algorithms/../extension.*
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:17: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:: WARNING: a suitable image for html builder not found: algorithms/ahocorasick.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:15: WARNING: a suitable image for html builder not found: commands/../oa-buildgraph.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:107: WARNING: a suitable image for html builder not found: commands/../extension.*
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/cutlow.rst:17: WARNING: a suitable image for html builder not found: commands/../oa-cutlow.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:19: WARNING: a suitable image for html builder not found: commands/../oa-fillgaps.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:81: WARNING: a suitable image for html builder not found: commands/../extension.*
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --length ###
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --estimate-length #.##
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/seeds.rst:21: WARNING: a suitable image for html builder not found: commands/../oa-seeds.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:199: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:: WARNING: a suitable image for html builder not found: butterfly.mito.path.*
+doc/sphinx/source/strategy.txt:: WARNING: a suitable image for html builder not found: ./Kmer-histogram.*
+doc/sphinx/source/assembly-graph.txt:14: WARNING: a suitable image for html builder not found: ./graph.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/oa.rst:25: WARNING: a suitable image for html builder not found: command-flowgram.*
+[0mgenerating indices... genindex py-modindex
+highlighting module code... [ 50%] orgasm.assembler._assembler
+highlighting module code... [100%] orgasm.tango
+
+writing additional pages... search
+copying static files... [91mWARNING: html_static_path entry '/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/_static' does not exist
+[0mdone
+copying extra files... done
+dumping search index in English (code: en) ... done
+dumping object inventory... done
+build succeeded, 52 warnings.
+
+The HTML pages are in doc/sphinx/build/html.
+Running Sphinx v2.0.1
+making output directory... done
+loading pickled environment... done
+building [mo]: all of 0 po files
+building [epub]: all source files
+updating environment: [] 0 added, 3 changed, 0 removed
+reading sources... [ 33%] fastq
+reading sources... [ 66%] install
+reading sources... [100%] mitochondrion
+
+[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:156: WARNING: Footnote [2] is not referenced.
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:160: WARNING: image file not readable: Probabilitymetrics.png
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://pypi.python.org/pypi/org.asm".
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://git.metabarcoding.org/org-asm/org-asm".
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:55: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:58: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:95: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:2: WARNING: Duplicate explicit target name: "yed".
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:12: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/papi_R1.fastq.gz
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:13: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/papi_R2.fastq.gz
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:440: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/tuto/butterfly.mito.gml
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:575: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/butterfly.mito.path.gml
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:596: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/butterfly.mito.fasta
+[0mlooking for now-outdated files... none found
+pickling environment... done
+checking consistency... [91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/fasta.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/graph.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/graphstats.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/path.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/iupac.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/userapi.rst: WARNING: document isn't included in any toctree
+[0mdone
+preparing documents... done
+writing output... [  2%] algorithms
+writing output... [  5%] algorithms/gapfilling
+writing output... [  8%] algorithms/graphcleanning
+writing output... [ 11%] algorithms/graphextension
+writing output... [ 14%] algorithms/graphunfolding
+writing output... [ 17%] algorithms/seedselection
+writing output... [ 20%] assembling
+writing output... [ 23%] chroroplast
+writing output... [ 26%] commands/buildgraph
+writing output... [ 29%] commands/compact
+writing output... [ 32%] commands/cutlow
+writing output... [ 35%] commands/fasta
+writing output... [ 38%] commands/fillgaps
+writing output... [ 41%] commands/graph
+writing output... [ 44%] commands/graphstats
+writing output... [ 47%] commands/index
+writing output... [ 50%] commands/list
+writing output... [ 52%] commands/path
+writing output... [ 55%] commands/seeds
+writing output... [ 58%] commands/unfold
+writing output... [ 61%] commands/unfoldrdna
+writing output... [ 64%] embl
+writing output... [ 67%] fasta
+writing output... [ 70%] fastq
+writing output... [ 73%] finishing
+writing output... [ 76%] index
+writing output... [ 79%] install
+writing output... [ 82%] iupac
+writing output... [ 85%] mitochondrion
+writing output... [ 88%] oa
+writing output... [ 91%] preparing
+writing output... [ 94%] unfolding
+writing output... [ 97%] userapi
+writing output... [100%] utilities
+
+[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/algorithms.rst:: WARNING: a suitable image for epub builder not found: genome_size.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/algorithms.rst:: WARNING: a suitable image for epub builder not found: [None] (algorithms.*)
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/algorithms/graphextension.rst:9: WARNING: a suitable image for epub builder not found: algorithms/../extension.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:17: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:: WARNING: a suitable image for epub builder not found: algorithms/ahocorasick.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:15: WARNING: a suitable image for epub builder not found: commands/../oa-buildgraph.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:107: WARNING: a suitable image for epub builder not found: commands/../extension.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/cutlow.rst:17: WARNING: a suitable image for epub builder not found: commands/../oa-cutlow.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:19: WARNING: a suitable image for epub builder not found: commands/../oa-fillgaps.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:81: WARNING: a suitable image for epub builder not found: commands/../extension.*
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --length ###
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --estimate-length #.##
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/seeds.rst:21: WARNING: a suitable image for epub builder not found: commands/../oa-seeds.*
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:199: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:: WARNING: a suitable image for epub builder not found: butterfly.mito.path.*
+doc/sphinx/source/strategy.txt:: WARNING: a suitable image for epub builder not found: ./Kmer-histogram.*
+doc/sphinx/source/assembly-graph.txt:14: WARNING: a suitable image for epub builder not found: ./graph.*
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/oa.rst:25: WARNING: a suitable image for epub builder not found: command-flowgram.*
+[0mgenerating indices... genindex py-modindex
+highlighting module code... [ 50%] orgasm.assembler._assembler
+highlighting module code... [100%] orgasm.tango
+
+writing additional pages...
+copying static files... [91mWARNING: html_static_path entry '/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/_static' does not exist
+[0mdone
+copying extra files... done
+writing mimetype file...
+writing META-INF/container.xml file...
+writing content.opf file...
+writing nav.xhtml file...
+writing toc.ncx file...
+[91mWARNING: duplicated ToC entry found: commands/buildgraph.xhtml
+WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#command-prototype
+WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#positional-arguments
+[0m[91mWARNING: duplicated ToC entry found: commands/buildgraph.xhtml#optional-arguments
+WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#general-option
+WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#graph-initialisation-options
+WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#graph-extension-options
+[0m[91mWARNING: duplicated ToC entry found: commands/buildgraph.xhtml#graph-filtering-options
+WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#graph-limit-option
+WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#graph-cleaning-options
+WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#scaffolding-option
+[0mwriting OrganelleAssembler.epub file...
+build succeeded, 53 warnings.
+
+The ePub file is in doc/sphinx/build/epub.
+Running Sphinx v2.0.1
+making output directory... done
+loading pickled environment... done
+building [mo]: all of 0 po files
+building [man]: all source files
+updating environment: [] 0 added, 3 changed, 0 removed
+reading sources... [ 33%] fastq
+reading sources... [ 66%] install
+reading sources... [100%] mitochondrion
+
+[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:156: WARNING: Footnote [2] is not referenced.
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:160: WARNING: image file not readable: Probabilitymetrics.png
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://pypi.python.org/pypi/org.asm".
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://git.metabarcoding.org/org-asm/org-asm".
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:55: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:58: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/install.rst:95: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:2: WARNING: Duplicate explicit target name: "yed".
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:12: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/papi_R1.fastq.gz
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:13: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/papi_R2.fastq.gz
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:440: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/tuto/butterfly.mito.gml
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:575: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/butterfly.mito.path.gml
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:596: WARNING: download file not readable: /tmp/tmprxd710lv/ORG.asm-1.0.3/samples/butterfly.mito.fasta
+[0mlooking for now-outdated files... none found
+pickling environment... done
+checking consistency... [91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst: WARNING: document isn't included in any toctree
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/fasta.rst: WARNING: document isn't included in any toctree
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/graph.rst: WARNING: document isn't included in any toctree
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/graphstats.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/path.rst: WARNING: document isn't included in any toctree
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/iupac.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/userapi.rst: WARNING: document isn't included in any toctree
+[0mdone
+writing... organelleassembler.1 { install oa preparing commands/index assembling commands/seeds commands/buildgraph finishing commands/cutlow unfolding commands/unfold commands/unfoldrdna utilities commands/list commands/compact fasta fastq embl mitochondrion algorithms algorithms/seedselection algorithms/graphextension algorithms/graphcleanning algorithms/gapfilling algorithms/graphunfolding } [91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --length ###
+/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --estimate-length #.##
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:199: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
+[0m[91m/tmp/tmprxd710lv/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:17: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
+[0mdone
+build succeeded, 27 warnings.
+
+The manual pages are in doc/sphinx/build/man.
+running install_lib
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/backtranslate
+copying build/lib.linux-x86_64-3.7/orgasm/backtranslate/_bitvector.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/backtranslate
+copying build/lib.linux-x86_64-3.7/orgasm/backtranslate/fasta.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/backtranslate
+copying build/lib.linux-x86_64-3.7/orgasm/backtranslate/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/backtranslate
+copying build/lib.linux-x86_64-3.7/orgasm/backtranslate/_ahocorasick.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/backtranslate
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/backtranslate/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/backtranslate/__pycache__/__init__.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/backtranslate/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/backtranslate/__pycache__/fasta.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/backtranslate/__pycache__
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/fiboheap
+copying build/lib.linux-x86_64-3.7/orgasm/fiboheap/_fiboheap.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/fiboheap
+copying build/lib.linux-x86_64-3.7/orgasm/fiboheap/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/fiboheap
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/graph
+copying build/lib.linux-x86_64-3.7/orgasm/graph/_graph.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/graph
+copying build/lib.linux-x86_64-3.7/orgasm/graph/_fibominintheap.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/graph
+copying build/lib.linux-x86_64-3.7/orgasm/graph/_fibointheap.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/graph
+copying build/lib.linux-x86_64-3.7/orgasm/graph/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/graph
+copying build/lib.linux-x86_64-3.7/orgasm/graph/_fibomaxintheap.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/graph
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/graph/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/graph/__pycache__/__init__.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/graph/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/graph/_graphmultiedge.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/graph
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/multialign
+copying build/lib.linux-x86_64-3.7/orgasm/multialign/_dynamic.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/multialign
+copying build/lib.linux-x86_64-3.7/orgasm/multialign/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/multialign
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/multialign/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/multialign/__pycache__/__init__.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/multialign/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/multialign/_multi.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/multialign
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/indexer
+copying build/lib.linux-x86_64-3.7/orgasm/indexer/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/indexer
+copying build/lib.linux-x86_64-3.7/orgasm/indexer/_orgasm.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/indexer
+copying build/lib.linux-x86_64-3.7/orgasm/indexer/fakereads.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/indexer
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/indexer/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/indexer/__pycache__/__init__.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/indexer/__pycache__
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/assembler
+copying build/lib.linux-x86_64-3.7/orgasm/assembler/_tango.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/assembler
+copying build/lib.linux-x86_64-3.7/orgasm/assembler/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/assembler
+copying build/lib.linux-x86_64-3.7/orgasm/assembler/_assembler.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/assembler
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/assembler/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/assembler/__pycache__/__init__.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/assembler/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/assembler/_asmbgraph.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/assembler
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/apps
+copying build/lib.linux-x86_64-3.7/orgasm/apps/arguments.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/apps
+copying build/lib.linux-x86_64-3.7/orgasm/apps/config.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/apps
+copying build/lib.linux-x86_64-3.7/orgasm/apps/counter.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/apps
+copying build/lib.linux-x86_64-3.7/orgasm/apps/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/apps
+copying build/lib.linux-x86_64-3.7/orgasm/apps/progress.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/apps
+copying build/lib.linux-x86_64-3.7/orgasm/apps/logging.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/apps
+copying build/lib.linux-x86_64-3.7/orgasm/apps/command.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/apps
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/apps/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/apps/__pycache__/__init__.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/apps/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/version.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm
+copying build/lib.linux-x86_64-3.7/orgasm/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/utils
+copying build/lib.linux-x86_64-3.7/orgasm/utils/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/utils
+copying build/lib.linux-x86_64-3.7/orgasm/utils/_progress.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/utils
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/utils/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/utils/__pycache__/__init__.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/utils/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/utils/dna.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/utils
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/clone.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/buildgraph.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/index.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/unfoldrdna.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/cutlow.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/compact.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/restore.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/unfold.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/commands/__pycache__/__init__.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/commands/list.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/graphstats.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/substract.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/graph.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/commands/seeds.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands
+copying build/lib.linux-x86_64-3.7/orgasm/config.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/files
+copying build/lib.linux-x86_64-3.7/orgasm/files/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/files
+copying build/lib.linux-x86_64-3.7/orgasm/files/uncompress.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/files
+copying build/lib.linux-x86_64-3.7/orgasm/files/linebuffer.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/files
+copying build/lib.linux-x86_64-3.7/orgasm/files/universalopener.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/files
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/format
+copying build/lib.linux-x86_64-3.7/orgasm/format/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/format
+copying build/lib.linux-x86_64-3.7/orgasm/format/sam.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/format
+copying build/lib.linux-x86_64-3.7/orgasm/tango.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/__pycache__/tango.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/__pycache__/version.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/__pycache__/__init__.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/__pycache__
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/reads
+copying build/lib.linux-x86_64-3.7/orgasm/reads/_sequences.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/reads
+copying build/lib.linux-x86_64-3.7/orgasm/reads/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/reads
+copying build/lib.linux-x86_64-3.7/orgasm/reads/_fastq.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/reads
+copying build/lib.linux-x86_64-3.7/orgasm/reads/_fasta.cpython-37m-x86_64-linux-gnu.so -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/reads
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/samples
+copying build/lib.linux-x86_64-3.7/orgasm/samples/phix.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/samples
+copying build/lib.linux-x86_64-3.7/orgasm/samples/__init__.py -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/samples
+creating /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/samples/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/samples/__pycache__/phix.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/samples/__pycache__
+copying build/lib.linux-x86_64-3.7/orgasm/samples/__pycache__/__init__.cpython-37.pyc -> /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/samples/__pycache__
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/fiboheap/__init__.py to __init__.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/clone.py to clone.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/buildgraph.py to buildgraph.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/index.py to index.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/unfoldrdna.py to unfoldrdna.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/cutlow.py to cutlow.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/compact.py to compact.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/restore.py to restore.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/unfold.py to unfold.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/list.py to list.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/graphstats.py to graphstats.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/substract.py to substract.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/graph.py to graph.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/commands/seeds.py to seeds.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/config.py to config.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/files/__init__.py to __init__.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/format/__init__.py to __init__.cpython-37.pyc
+byte-compiling /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/orgasm/reads/__init__.py to __init__.cpython-37.pyc
+running install_scripts
+copying build/scripts-3.7/oa -> /opt/org-asm/ORG.asm-1.0.3/bin
+copying build/scripts-3.7/orgasmi -> /opt/org-asm/ORG.asm-1.0.3/bin
+changing mode of /opt/org-asm/ORG.asm-1.0.3/bin/oa to 755
+changing mode of /opt/org-asm/ORG.asm-1.0.3/bin/orgasmi to 755
+creating /opt/org-asm/ORG.asm-1.0.3/export
+creating /opt/org-asm/ORG.asm-1.0.3/export/bin
+exporting file /opt/org-asm/ORG.asm-1.0.3/bin/oa -> /opt/org-asm/ORG.asm-1.0.3/export/bin/oa
+exporting file /opt/org-asm/ORG.asm-1.0.3/bin/orgasmi -> /opt/org-asm/ORG.asm-1.0.3/export/bin/orgasmi
+running install_egg_info
+running egg_info
+creating python/ORG.asm.egg-info
+writing python/ORG.asm.egg-info/PKG-INFO
+writing dependency_links to python/ORG.asm.egg-info/dependency_links.txt
+writing top-level names to python/ORG.asm.egg-info/top_level.txt
+writing manifest file 'python/ORG.asm.egg-info/SOURCES.txt'
+reading manifest file 'python/ORG.asm.egg-info/SOURCES.txt'
+writing manifest file 'python/ORG.asm.egg-info/SOURCES.txt'
+Copying python/ORG.asm.egg-info to /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/ORG.asm-1.0.3-py3.7.egg-info
+running install_sphinx
+creating /opt/org-asm/ORG.asm-1.0.3/export/share
+creating /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/mitochondrion.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/.buildinfo -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/genindex.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/unfolding.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/assembling.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/py-modindex.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/install.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+creating /opt/org-asm/ORG.asm-1.0.3/export/share/html/_modules
+creating /opt/org-asm/ORG.asm-1.0.3/export/share/html/_modules/orgasm
+copying doc/sphinx/build/html/_modules/orgasm/tango.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_modules/orgasm
+copying doc/sphinx/build/html/_modules/index.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_modules
+copying doc/sphinx/build/html/utilities.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/embl.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/finishing.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/chroroplast.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/iupac.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/algorithms.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+creating /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/unfold.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/cutlow.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/graphstats.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/list.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/path.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/seeds.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/index.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/fillgaps.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/fasta.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/unfoldrdna.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/buildgraph.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/compact.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/commands/graph.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/commands
+copying doc/sphinx/build/html/index.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/fasta.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+creating /opt/org-asm/ORG.asm-1.0.3/export/share/html/algorithms
+copying doc/sphinx/build/html/algorithms/graphunfolding.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/algorithms
+copying doc/sphinx/build/html/algorithms/graphcleanning.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/algorithms
+copying doc/sphinx/build/html/algorithms/gapfilling.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/algorithms
+copying doc/sphinx/build/html/algorithms/seedselection.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/algorithms
+copying doc/sphinx/build/html/algorithms/graphextension.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/algorithms
+copying doc/sphinx/build/html/search.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+creating /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/fasta.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/oa.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/utilities.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/algorithms.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/unfolding.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/mitochondrion.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/install.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/userapi.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/finishing.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+creating /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/fasta.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/cutlow.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/seeds.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/unfoldrdna.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/buildgraph.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/graph.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/path.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/list.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/fillgaps.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/index.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/unfold.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/compact.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/commands/graphstats.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/commands
+copying doc/sphinx/build/html/_sources/index.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+creating /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/algorithms
+copying doc/sphinx/build/html/_sources/algorithms/gapfilling.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/algorithms
+copying doc/sphinx/build/html/_sources/algorithms/seedselection.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/algorithms
+copying doc/sphinx/build/html/_sources/algorithms/graphcleanning.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/algorithms
+copying doc/sphinx/build/html/_sources/algorithms/graphextension.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/algorithms
+copying doc/sphinx/build/html/_sources/algorithms/graphunfolding.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources/algorithms
+copying doc/sphinx/build/html/_sources/embl.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/iupac.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/preparing.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/assembling.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/chroroplast.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/_sources/fastq.rst.txt -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_sources
+copying doc/sphinx/build/html/oa.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/objects.inv -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+creating /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/searchtools.js -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/file.png -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/basic.css -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/jquery.js -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/pygments.css -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/plus.png -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/jquery-3.2.1.js -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/nature.css -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/documentation_options.js -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/underscore-1.3.1.js -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/graphviz.css -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/language_data.js -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/underscore.js -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/minus.png -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/_static/doctools.js -> /opt/org-asm/ORG.asm-1.0.3/export/share/html/_static
+copying doc/sphinx/build/html/userapi.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/searchindex.js -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/preparing.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+copying doc/sphinx/build/html/fastq.html -> /opt/org-asm/ORG.asm-1.0.3/export/share/html
+creating /opt/org-asm/ORG.asm-1.0.3/export/share/man
+creating /opt/org-asm/ORG.asm-1.0.3/export/share/man/man1
+copying doc/sphinx/build/man/organelleassembler.1 -> /opt/org-asm/ORG.asm-1.0.3/export/share/man/man1
+creating /opt/org-asm/ORG.asm-1.0.3/export/share/man/man1/_static
+copying doc/sphinx/build/man/_static/graphviz.css -> /opt/org-asm/ORG.asm-1.0.3/export/share/man/man1/_static
+copying doc/sphinx/build/epub/OrganelleAssembler.epub -> /opt/org-asm/ORG.asm-1.0.3/export/share
+[91mget_orgasm/get-orgasm.py:37319: DeprecationWarning: decodestring() is a deprecated alias since Python 3.1, use decodebytes()
+  fp.write(base64.decodestring(ZIPFILE))
+Unable to install ORG.asm on your system
+[0m['/tmp/tmprxd710lv/ORG.asm-1.0.3', '/opt/org-asm/get_orgasm', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/usr/local/lib/python3.7/dist-packages', '/usr/lib/python3/dist-packages', '/tmp/tmprxd710lv/ORG.asm-1.0.3/distutils.ext', '/tmp/tmprxd710lv/ORG.asm-1.0.3/python']
+Removing intermediate container 823122e7901f
+ ---> c2b70673273e
+Step 11/16 : RUN cd org-asm/src &&     sed -i 's#<stdio.h>#<bsd/stdio.h>#' fastq.c &&     make &&     cp orgasmi /opt/org-asm/ORG.asm-1.0.3/bin
+ ---> Running in 1c5ee545dc4b
+[91mglobal.mk:20: fastq.P: No such file or directory
+global.mk:20: encode.P: No such file or directory
+global.mk:20: decode.P: No such file or directory
+global.mk:20: buffer.P: No such file or directory
+[0m[91mglobal.mk:20: debug.P: No such file or directory
+global.mk:20: malloc.P: No such file or directory
+global.mk:20: sort.P: No such file or directory
+[0m[91mglobal.mk:20: indexoutput.P: No such file or directory
+global.mk:20: indexinput.P: No such file or directory
+global.mk:20: code16bits.P: No such file or directory
+global.mk:20: codecomp.P: No such file or directory
+[0m[91mglobal.mk:20: buildindex.P: No such file or directory
+global.mk:20: compsort.P: No such file or directory
+[0m[91mglobal.mk:20: load.P: No such file or directory
+global.mk:20: lookfor.P: No such file or directory
+[0m[91mglobal.mk:20: fgetln.P: No such file or directory
+global.mk:20: orgasmi.P: No such file or directory
+[0mgcc -DMAC_OS_X -M  -o orgasmi.d orgasmi.c
+gcc -DMAC_OS_X -M  -o fgetln.d fgetln.c
+gcc -DMAC_OS_X -M  -o lookfor.d lookfor.c
+gcc -DMAC_OS_X -M  -o load.d load.c
+gcc -DMAC_OS_X -M  -o compsort.d compsort.c
+gcc -DMAC_OS_X -M  -o buildindex.d buildindex.c
+gcc -o littlebigman littlebigman.c
+gcc -o buildcomplement -DLITTLE_END buildcomplement.c
+./buildcomplement > codecomp.c
+gcc -DMAC_OS_X -M  -o codecomp.d codecomp.c
+gcc -o buildcode -DLITTLE_END buildcode.c
+[91mbuildcode.c: In function ‘main’:
+buildcode.c:44:39: warning: format ‘%llX’ expects argument of type ‘long long unsigned int’, but argument 3 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+    fprintf(stdout,"    INT64_C(0x%16llX),  // %04X --> %8s \n", *((uint64_t*)nuc),code,nuc);
+                                  ~~~~~^                         ~~~~~~~~~~~~~~~~~
+                                  %16lX
+[0m[91mbuildcode.c:46:39: warning: format ‘%llX’ expects argument of type ‘long long unsigned int’, but argument 3 has type ‘uint64_t {aka long unsigned int}’ [-Wformat=]
+    fprintf(stdout,"    INT64_C(0x%16llX)   // %04X --> %8s \n", *((uint64_t*)nuc),code,nuc);
+                                  ~~~~~^                         ~~~~~~~~~~~~~~~~~
+                                  %16lX
+[0m./buildcode > code16bits.c
+gcc -DMAC_OS_X -M  -o code16bits.d code16bits.c
+gcc -DMAC_OS_X -M  -o indexinput.d indexinput.c
+gcc -DMAC_OS_X -M  -o indexoutput.d indexoutput.c
+gcc -DMAC_OS_X -M  -o sort.d sort.c
+gcc -DMAC_OS_X -M  -o malloc.d malloc.c
+gcc -DMAC_OS_X -M  -o debug.d debug.c
+gcc -DMAC_OS_X -M  -o buffer.d buffer.c
+gcc -DMAC_OS_X -M  -o decode.d decode.c
+gcc -DMAC_OS_X -M  -o encode.d encode.c
+gcc -DMAC_OS_X -M  -o fastq.d fastq.c
+gcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o fastq.o fastq.c
+[91mfastq.c: In function ‘readFastq’:
+fastq.c:42:2: warning: ‘fgetln’ is deprecated: This functions cannot be safely ported, use getline(3) instead, as it is supported by GNU and POSIX.1-2008. [-Wdeprecated-declarations]
+  buffer = fgetln(in,&lseq);
+  ^~~~~~
+In file included from fastq.c:8:0:
+/usr/include/bsd/stdio.h:53:7: note: declared here
+ char *fgetln(FILE *fp, size_t *lenp)
+       ^~~~~~
+[0m[91mfastq.c:45:3: warning: ‘fgetln’ is deprecated: This functions cannot be safely ported, use getline(3) instead, as it is supported by GNU and POSIX.1-2008. [-Wdeprecated-declarations]
+   buffer = fgetln(in,&lseq);
+   ^~~~~~
+In file included from fastq.c:8:0:
+/usr/include/bsd/stdio.h:53:7: note: declared here
+ char *fgetln(FILE *fp, size_t *lenp)
+       ^~~~~~
+fastq.c:59:2: warning: ‘fgetln’ is deprecated: This functions cannot be safely ported, use getline(3) instead, as it is supported by GNU and POSIX.1-2008. [-Wdeprecated-declarations]
+  buffer = fgetln(in,&lseq);
+  ^~~~~~
+In file included from fastq.c:8:0:
+/usr/include/bsd/stdio.h:53:7: note: declared here
+ char *fgetln(FILE *fp, size_t *lenp)
+       ^~~~~~
+fastq.c:60:2: warning: ‘fgetln’ is deprecated: This functions cannot be safely ported, use getline(3) instead, as it is supported by GNU and POSIX.1-2008. [-Wdeprecated-declarations]
+  buffer = fgetln(in,&lseq);
+  ^~~~~~
+In file included from fastq.c:8:0:
+/usr/include/bsd/stdio.h:53:7: note: declared here
+ char *fgetln(FILE *fp, size_t *lenp)
+       ^~~~~~
+[0m[91mfastq.c: In function ‘readPairedFastq’:
+fastq.c:134:37: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     forwardLength>0 && forwardLength<readLength;
+                                     ^
+[0m[91mfastq.c:165:25: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+           reverseLength < readLength );
+                         ^
+fastq.c:171:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ((forwardLength >= readLength) && (reverseLength >= readLength)) {
+                     ^~
+fastq.c:171:54: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if ((forwardLength >= readLength) && (reverseLength >= readLength)) {
+                                                      ^~
+[0mgcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o encode.o encode.c
+gcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o decode.o decode.c
+[91mdecode.c: In function ‘decodeComp’:
+decode.c:96:13: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i=0; i<lkey;i++)
+             ^
+[0m[91mdecode.c:111:6: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    i < lcompact;
+      ^
+[0mgcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o buffer.o buffer.c
+gcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o debug.o debug.c
+[91mdebug.c: In function ‘int2bin’:
+debug.c:23:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+     u = *(unsigned *)&i;
+     ^
+[0mgcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o malloc.o malloc.c
+[91mmalloc.c: In function ‘util_malloc’:
+malloc.c:12:52: warning: unused parameter ‘filename’ [-Wunused-parameter]
+ void   *util_malloc(int32_t chunksize, const char *filename, int32_t line)
+                                                    ^~~~~~~~
+malloc.c:12:70: warning: unused parameter ‘line’ [-Wunused-parameter]
+ void   *util_malloc(int32_t chunksize, const char *filename, int32_t line)
+                                                                      ^~~~
+[0m[91mmalloc.c: In function ‘util_realloc’:
+malloc.c:31:64: warning: unused parameter ‘filename’ [-Wunused-parameter]
+ void   *util_realloc(void *chunk, int32_t newsize, const char *filename, int32_t    line)
+                                                                ^~~~~~~~
+malloc.c:31:85: warning: unused parameter ‘line’ [-Wunused-parameter]
+ void   *util_realloc(void *chunk, int32_t newsize, const char *filename, int32_t    line)
+                                                                                     ^~~~
+malloc.c: In function ‘util_free’:
+malloc.c:49:44: warning: unused parameter ‘filename’ [-Wunused-parameter]
+ void    util_free(void *chunk, const char *filename, int32_t    line)
+                                            ^~~~~~~~
+malloc.c:49:65: warning: unused parameter ‘line’ [-Wunused-parameter]
+ void    util_free(void *chunk, const char *filename, int32_t    line)
+                                                                 ^~~~
+[0mgcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o sort.o sort.c
+[91msort.c: In function ‘sortSuffix’:
+sort.c:406:9: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (i > nextprint)
+         ^
+[0m[91msort.c: In function ‘indexForward’:
+sort.c:435:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i=0; i < buffer->readCount; i++)
+              ^
+[0m[91msort.c: In function ‘indexReverse’:
+sort.c:468:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i=0; i < buffer->readCount; i++)
+              ^
+[0mgcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o indexoutput.o indexoutput.c
+gcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o indexinput.o indexinput.c
+[91mindexinput.c: In function ‘loadGeneralData’:
+indexinput.c:57:2: warning: ignoring return value of ‘fread’, declared with attribute warn_unused_result [-Wunused-result]
+  fread(buffer,1,sizeof(buffer_t),input);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0mgcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o code16bits.o code16bits.c
+gcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o codecomp.o codecomp.c
+gcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o buildindex.o buildindex.c
+[91mbuildindex.c: In function ‘buildIndex’:
+buildindex.c:44:2: warning: implicit declaration of function ‘asprintf’; did you mean ‘vsprintf’? [-Wimplicit-function-declaration]
+  asprintf(&indexFileName,"%s.ofx",indexname);
+  ^~~~~~~~
+  vsprintf
+[0m[91mbuildindex.c:11:20: warning: unused parameter ‘minword’ [-Wunused-parameter]
+           uint32_t minword,
+                    ^~~~~~~
+[0mgcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o compsort.o compsort.c
+[91mcompsort.c: In function ‘sortCompSuffix’:
+compsort.c:305:9: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if (i > nextprint)
+         ^
+[0mgcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o load.o load.c
+[91mload.c: In function ‘indexReverseComplement’:
+load.c:19:13: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (i=0;i < reads->readCount; i++)
+             ^
+[0m[91mload.c: In function ‘loadIndexedReads’:
+load.c:34:2: warning: implicit declaration of function ‘asprintf’; did you mean ‘vsprintf’? [-Wimplicit-function-declaration]
+  asprintf(&indexFileName,"%s.ogx",indexname);
+  ^~~~~~~~
+  vsprintf
+[0mgcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o lookfor.o lookfor.c
+[91mlookfor.c: In function ‘shiftKey’:
+lookfor.c:47:10: warning: variable ‘rmask’ set but not used [-Wunused-but-set-variable]
+  uint8_t rmask;
+          ^~~~~
+[0mgcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o fgetln.o fgetln.c
+gcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o orgasmi.o orgasmi.c
+gcc -g -o orgasmi fastq.o encode.o decode.o buffer.o debug.o malloc.o sort.o indexoutput.o indexinput.o code16bits.o codecomp.o buildindex.o compsort.o load.o lookfor.o fgetln.o orgasmi.o  -lz -lm -lpthread
+gcc -o buildexpand8bits -DLITTLE_END buildexpand8bits.c
+./buildexpand8bits > expand8bits.c
+Removing intermediate container 1c5ee545dc4b
+ ---> 5d17f528b661
+Step 12/16 : ENV PATH "/opt/org-asm/ORG.asm-1.0.3/bin:$PATH"
+ ---> Running in 59ff9a8003b3
+Removing intermediate container 59ff9a8003b3
+ ---> 6fdb15828290
+Step 13/16 : ADD wrapper.sh /usr/local/bin/wrapper.sh
+ ---> 46c87c0ea180
+Step 14/16 : ENTRYPOINT ["wrapper.sh"]
+ ---> Running in 71e990efe820
+Removing intermediate container 71e990efe820
+ ---> 0b184a8baf07
+Step 15/16 : VOLUME /data
+ ---> Running in 7bdd9afd73bf
+Removing intermediate container 7bdd9afd73bf
+ ---> 51e5c9a8a585
+Step 16/16 : WORKDIR /data
+ ---> Running in bbaa40963339
+Removing intermediate container bbaa40963339
+ ---> 1b9a53243463
+Successfully built 1b9a53243463
+Successfully tagged chloroextractorteam/benchmark_org-asm:docker
