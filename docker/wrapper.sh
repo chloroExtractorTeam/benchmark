@@ -70,7 +70,7 @@ then
 
     get_organelle_reads.py -1 "${FW_READ}" -2 "${REV_READ}" "${SPADESOPTIONS_OPT}" "${SPADESOPTIONS}" -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
 
-    find -name "*path_sequence.fasta" | sort | head -1 | xargs -I{} cp {} ../output.fa
+    find -name "*path_sequence.fasta" | sort | head -1 | xargs -I{} cp {} output.fa
 fi
 
 if [ -n "$IOGAVERSION" ]
@@ -91,7 +91,13 @@ then
 
     IOGA.py --reference "${REFERENCE}" --forward "${FW_READ}" --reverse "${REV_READ}" --threads ${NUMCPUS}
 
-    cp IOGA_RUN.final/$(sed -n '2p' IOGA_RUN.final/IOGA_RUN.statistics | cut -f 1).fasta output.fa
+    REQ_OUTPUT_FILE=$(sed -n '2p' IOGA_RUN.final/IOGA_RUN.statistics | cut -f 1).fasta
+    if [ -e ${REQ_OUTPUT_FILE} ]
+    then
+	cp IOGA_RUN.final/"${REQ_OUTPUT_FILE}" output.fa
+    else
+	touch output.fa
+    fi
 fi
 
 if [ -n "$NOVOPLASTYVERSION" ]
@@ -155,15 +161,15 @@ EOF
 
     if [ -e Circularized_assembly_1_NOVOPlasty.fasta ]
     then
-       	cp Circularized_assembly_1_NOVOPlasty.fasta ../output.fa
+	cp Circularized_assembly_1_NOVOPlasty.fasta output.fa
     elif [ -e Option_1_NOVOPlasty.fasta ]
     then
-       	cp Option_1_NOVOPlasty.fasta ../output.fa
+	cp Option_1_NOVOPlasty.fasta output.fa
     elif [ -e Contigs_1_NOVOPlasty.fasta ]
     then
-        cp Contigs_1_NOVOPlasty.fasta ../output.fa
+	cp Contigs_1_NOVOPlasty.fasta output.fa
     else
-        echo -n "" >../output.fa
+        echo -n "" >output.fa
     fi
 
 fi
@@ -239,7 +245,13 @@ then
 
     fast-plast.pl -1 "${FW_READ}" -2 "${REV_READ}" -name fast-plast --threads ${NUMCPUS}
 
-    cp $(find -name "*_FULLCP.fsa") output.fa
+    REQ_OUTFILE=$(find -name "*_FULLCP.fsa" | head -n 1)
+    if [ -e "${REQ_OUTFILE}" ]
+    then
+	cp "${REQ_OUTFILE}" output.fa
+    else
+	touch output.fa
+    fi
 fi
 
 if [ -n "$ORGASMVERSION" ]
@@ -265,5 +277,5 @@ then
     fi
 
     oa buildgraph --probes protChloroArabidopsis chloro chloro.graph
-    oa unfold chloro chloro.graph >../output.fa
+    oa unfold chloro chloro.graph >output.fa
 fi
