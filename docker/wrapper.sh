@@ -3,23 +3,38 @@
 # first test for the input files
 if [ ! -e forward.fq ]
 then
-    echo "Missing forward reads. Please add a file called forward.fq"
+    date +"[%Y-%m-%d %H:%M:%S] Missing forward reads. Please add a file called forward.fq"
     exit 1;
 fi
 
 if [ ! -e reverse.fq ]
 then
-    echo "Missing reverse reads. Please add a file called reverse.fq"
+    date +"[%Y-%m-%d %H:%M:%S] Missing reverse reads. Please add a file called reverse.fq"
     exit 1;
 fi
 
-# copy both read sets
-cp forward.fq forward.changed.fq
-cp reverse.fq reverse.changed.fq
+# prevent race conditions in creating the input files
+if mkdir "read_sets_changed.started";
+then
+    # copy both read sets
+    cp forward.fq forward.changed.fq
+    cp reverse.fq reverse.changed.fq
 
-# put random quality for the first 10 reads
-random_qual.pl forward.changed.fq
-random_qual.pl reverse.changed.fq
+    # put random quality for the first 10 reads
+    random_qual.pl forward.changed.fq
+    random_qual.pl reverse.changed.fq
+
+    touch read_sets_changed.done
+else
+    date +"[%Y-%m-%d %H:%M:%S] Waiting for finishing of read preparation by other task"
+
+    while [ ! -e read_sets_changed.done ];
+    do
+	sleep 60
+	date +"[%Y-%m-%d %H:%M:%S] Still waiting for other job to prepare reads..."
+    done
+    date +"[%Y-%m-%d %H:%M:%S] Other process prepared the reads"
+fi
 
 FW_READ=forward.changed.fq
 REV_READ=reverse.changed.fq
@@ -27,12 +42,12 @@ REV_READ=reverse.changed.fq
 # the number of CPUs can be specified using the environment variable NUMCPUS
 : "${NUMCPUS:=4}"
 
-echo "Number of CPUs/threads is set to ${NUMCPUS} and might be changed by defining NUMCPUS as environmental variable"
+date +"[%Y-%m-%d %H:%M:%S] Number of CPUs/threads is set to ${NUMCPUS} and might be changed by defining NUMCPUS as environmental variable"
 
 # Run the correct assembler based on the environment variable
 if [ -n "$CHLOROEXTRACTORVERSION" ]
 then
-    echo "Running chloroExtractor"
+    date +"[%Y-%m-%d %H:%M:%S] Starting chloroExtractor"
 
     mkdir chloroextractor
     cd chloroextractor
@@ -51,7 +66,7 @@ fi
 
 if [ -n "$GETORGANELLEVERSION" ]
 then
-    echo "Running GetOrganelle"
+    date +"[%Y-%m-%d %H:%M:%S] Starting GetOrganelle"
 
     : "${SPADESOPTIONS:=--careful --phred-offset 33}"
 
@@ -61,7 +76,7 @@ then
     then
 	SPADESOPTIONS_OPT=""
     fi
-    echo "SPAdes options are set to ${SPADESOPTIONS} to call GetOrganelle. Other values might be specified by setting the env var SPADESOPTIONS"
+    date +"[%Y-%m-%d %H:%M:%S] SPAdes options are set to ${SPADESOPTIONS} to call GetOrganelle. Other values might be specified by setting the env var SPADESOPTIONS"
 
     mkdir get_organelle
     cd get_organelle
@@ -70,12 +85,12 @@ then
 
     get_organelle_reads.py -1 "${FW_READ}" -2 "${REV_READ}" "${SPADESOPTIONS_OPT}" "${SPADESOPTIONS}" -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
 
-    find -name "*path_sequence.fasta" | sort | head -1 | xargs -I{} cp {} ../output.fa
+    find -name "*path_sequence.fasta" | sort | head -1 | xargs -I{} cp {} output.fa
 fi
 
 if [ -n "$IOGAVERSION" ]
 then
-    echo "Running IOGA"
+    date +"[%Y-%m-%d %H:%M:%S] Starting IOGA"
 
     mkdir ioga
     cd ioga
@@ -85,18 +100,24 @@ then
     REFERENCE="../reference.fa"
     if [ ! -e ${REFERENCE} ]
     then
-	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
+	date +"[%Y-%m-%d %H:%M:%S] Missing reference file. Therefore, TAIR10 chloroplast is used internally."
 	REFERENCE="/opt/reference.fa"
     fi
 
     IOGA.py --reference "${REFERENCE}" --forward "${FW_READ}" --reverse "${REV_READ}" --threads ${NUMCPUS}
 
-    cp IOGA_RUN.final/$(sed -n '2p' IOGA_RUN.final/IOGA_RUN.statistics | cut -f 1).fasta output.fa
+    REQ_OUTPUT_FILE=$(sed -n '2p' IOGA_RUN.final/IOGA_RUN.statistics | cut -f 1).fasta
+    if [ -e ${REQ_OUTPUT_FILE} ]
+    then
+	cp IOGA_RUN.final/"${REQ_OUTPUT_FILE}" output.fa
+    else
+	touch output.fa
+    fi
 fi
 
 if [ -n "$NOVOPLASTYVERSION" ]
 then
-    echo "Running NOVOPlasty"
+    date +"[%Y-%m-%d %H:%M:%S] Starting NOVOPlasty"
 
     mkdir novo_plasty
     cd novo_plasty
@@ -104,7 +125,7 @@ then
     REFERENCE="../reference.fa"
     if [ ! -e ${REFERENCE} ]
     then
-	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
+	date +"[%Y-%m-%d %H:%M:%S] Missing reference file. Therefore, TAIR10 chloroplast is used internally."
 	REFERENCE="/opt/reference.fa"
     fi
 
@@ -155,22 +176,22 @@ EOF
 
     if [ -e Circularized_assembly_1_NOVOPlasty.fasta ]
     then
-       	cp Circularized_assembly_1_NOVOPlasty.fasta ../output.fa
+	cp Circularized_assembly_1_NOVOPlasty.fasta output.fa
     elif [ -e Option_1_NOVOPlasty.fasta ]
     then
-       	cp Option_1_NOVOPlasty.fasta ../output.fa
+	cp Option_1_NOVOPlasty.fasta output.fa
     elif [ -e Contigs_1_NOVOPlasty.fasta ]
     then
-        cp Contigs_1_NOVOPlasty.fasta ../output.fa
+	cp Contigs_1_NOVOPlasty.fasta output.fa
     else
-        echo -n "" >../output.fa
+        echo -n "" >output.fa
     fi
 
 fi
 
 if [ -n "$CHLOROPLASTASSEMBLYPROTOCOL" ]
 then
-    echo "Running chloroplast-assembly-protocol"
+    date +"[%Y-%m-%d %H:%M:%S] Starting chloroplast-assembly-protocol"
 
     mkdir chloroplastassemblyprotocol
     cd chloroplastassemblyprotocol
@@ -178,7 +199,7 @@ then
     REFERENCE="../reference.fa"
     if [ ! -e ${REFERENCE} ]
     then
-	echo "Missing reference file. Therefore, TAIR10 chloroplast is used internally."
+	date +"[%Y-%m-%d %H:%M:%S] Missing reference file. Therefore, TAIR10 chloroplast is used internally."
 	REFERENCE="/opt/reference.fa"
     fi
 
@@ -224,13 +245,15 @@ then
 	sed 's/[[:space:]]*nd[[:space:]]*nd[[:space:]]*/ FR 250 /g' cp_noref/cleanreads.txt >cp_noref/assembly_pe
 	2_assemble_reads.pl cp_noref assembly_pe -threads ${NUMCPUS}
 
-	find -name "sspace.final.scaffolds.fasta" | sort | head -1 | xargs -I{} cp {} ../output.fa
+	find -name "sspace.final.scaffolds.fasta" | sort | head -1 | xargs -I{} cp {} output.fa
+    else
+	touch output.fa
     fi
 fi
 
 if [ -n "$FASTPLASTVERSION" ]
 then
-    echo "Running fast-plast"
+    date +"[%Y-%m-%d %H:%M:%S] Starting fast-plast"
 
     mkdir fast-plast
     cd fast-plast
@@ -239,12 +262,18 @@ then
 
     fast-plast.pl -1 "${FW_READ}" -2 "${REV_READ}" -name fast-plast --threads ${NUMCPUS}
 
-    cp $(find -name "*_FULLCP.fsa") output.fa
+    REQ_OUTFILE=$(find -name "*_FULLCP.fsa" | head -n 1)
+    if [ -e "${REQ_OUTFILE}" ]
+    then
+	cp "${REQ_OUTFILE}" output.fa
+    else
+	touch output.fa
+    fi
 fi
 
 if [ -n "$ORGASMVERSION" ]
 then
-    echo "Running ORG-asm"
+    date +"[%Y-%m-%d %H:%M:%S] Starting ORG-asm"
 
     mkdir org-asm
     cd org-asm
@@ -265,5 +294,7 @@ then
     fi
 
     oa buildgraph --probes protChloroArabidopsis chloro chloro.graph
-    oa unfold chloro chloro.graph >../output.fa
+    oa unfold chloro chloro.graph >output.fa
 fi
+
+date +"[%Y-%m-%d %H:%M:%S] Finished wrapper script"
