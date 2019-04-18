@@ -5,6 +5,11 @@ We use both simulated and real data.
 - Real: public, Illumina, paired, plant, DNA, random, wgs datasets from [SRA](https://www.ncbi.nlm.nih.gov/sra) where a reference chloroplast for the species is present in [CpBase](http://rocaplab.ocean.washington.edu/old_website/tools/cpbase)
 
 ## Simulated Data
+The final simulation data is available from zenodo: 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2644937.svg)](https://doi.org/10.5281/zenodo.2644937)
+
+If you want to reproduce the simulation yourself please follow these instructions:
+
 Download reference *Arabidopsis thaliana* data from [TAIR](https://www.arabidopsis.org)
 
 ```bash
