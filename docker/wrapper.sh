@@ -107,7 +107,7 @@ then
     IOGA.py --reference "${REFERENCE}" --forward "${FW_READ}" --reverse "${REV_READ}" --threads ${NUMCPUS}
 
     REQ_OUTPUT_FILE=$(sed -n '2p' IOGA_RUN.final/IOGA_RUN.statistics | cut -f 1).fasta
-    if [ -e ${REQ_OUTPUT_FILE} ]
+    if [ -e IOGA_RUN.final/"${REQ_OUTPUT_FILE}" ]
     then
 	cp IOGA_RUN.final/"${REQ_OUTPUT_FILE}" output.fa
     else
