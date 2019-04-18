@@ -12,7 +12,7 @@ else
 fi
 
 SEGMENT=$((2 * $READLEN + 100))
-REVPOS=$(($SEGMENT - $READLEN))
+REVPOS=$(($SEGMENT - $READLEN + 1))
 PROPORTION=$(echo "scale=3; $COV / (2*$READLEN)" | bc -l)
 SEED=91685
 
