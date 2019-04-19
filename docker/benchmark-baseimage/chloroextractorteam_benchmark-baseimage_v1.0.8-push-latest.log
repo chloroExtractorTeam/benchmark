@@ -1,0 +1,30 @@
+The push refers to repository [docker.io/chloroextractorteam/benchmark-baseimage]
+d9c967ee39ae: Preparing
+cc3aa22016cb: Preparing
+189d15fa8419: Preparing
+fd492255957a: Preparing
+96f5cd25f999: Preparing
+bfc7e569f41d: Preparing
+136a41642414: Preparing
+b57c79f4a9f3: Preparing
+d60e01b37e74: Preparing
+e45cfbc98a50: Preparing
+762d8e1a6054: Preparing
+136a41642414: Waiting
+bfc7e569f41d: Waiting
+b57c79f4a9f3: Waiting
+762d8e1a6054: Waiting
+d60e01b37e74: Waiting
+e45cfbc98a50: Waiting
+189d15fa8419: Layer already exists
+96f5cd25f999: Layer already exists
+cc3aa22016cb: Layer already exists
+d9c967ee39ae: Layer already exists
+fd492255957a: Layer already exists
+136a41642414: Layer already exists
+b57c79f4a9f3: Layer already exists
+d60e01b37e74: Layer already exists
+bfc7e569f41d: Layer already exists
+e45cfbc98a50: Layer already exists
+762d8e1a6054: Layer already exists
+latest: digest: sha256:e4644d0a7260638bfb281260ae234ebeecb869a85b9553324272481dbd0f57eb size: 2617
