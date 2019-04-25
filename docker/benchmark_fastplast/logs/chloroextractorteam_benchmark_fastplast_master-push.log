@@ -1,0 +1,36 @@
+The push refers to repository [docker.io/chloroextractorteam/benchmark_fastplast]
+f931701c1a3b: Preparing
+10ebba01b009: Preparing
+36e5b7f48f40: Preparing
+6dcbab2c502d: Preparing
+ff60ac16169a: Preparing
+921e5894e1d4: Preparing
+d4d04147d44e: Preparing
+a9ede48fa510: Preparing
+4e5b38cd996f: Preparing
+b57c79f4a9f3: Preparing
+d60e01b37e74: Preparing
+e45cfbc98a50: Preparing
+762d8e1a6054: Preparing
+b57c79f4a9f3: Waiting
+4e5b38cd996f: Waiting
+d60e01b37e74: Waiting
+d4d04147d44e: Waiting
+a9ede48fa510: Waiting
+e45cfbc98a50: Waiting
+921e5894e1d4: Waiting
+762d8e1a6054: Waiting
+ff60ac16169a: Mounted from chloroextractorteam/benchmark_chloroextractor
+36e5b7f48f40: Mounted from chloroextractorteam/benchmark_chloroextractor
+6dcbab2c502d: Mounted from chloroextractorteam/benchmark_chloroextractor
+d4d04147d44e: Mounted from chloroextractorteam/benchmark_chloroextractor
+921e5894e1d4: Mounted from chloroextractorteam/benchmark_chloroextractor
+f931701c1a3b: Pushed
+a9ede48fa510: Mounted from chloroextractorteam/benchmark_chloroextractor
+b57c79f4a9f3: Layer already exists
+d60e01b37e74: Layer already exists
+e45cfbc98a50: Layer already exists
+762d8e1a6054: Layer already exists
+4e5b38cd996f: Mounted from chloroextractorteam/benchmark_chloroextractor
+10ebba01b009: Pushed
+master: digest: sha256:46af4604eebe00019303bce5532bba954a55c3c45c0c51b36814c63043e6ed17 size: 3038
