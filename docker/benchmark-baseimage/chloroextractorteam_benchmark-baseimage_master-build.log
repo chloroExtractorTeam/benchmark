@@ -1,6 +1,7 @@
+BRANCH_NAME=logs-2019-04-25T12-55-01
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 SSH_CONNECTION=10.149.30.159 50967 10.149.20.57 22
-GIT_SHA1=2f3e179d6cdca0c18f05c7ebf6979053339057c5
+GIT_SHA1=8fdc0ffba4a32846134e37e8e53c462e446524e8
 LANG=de_DE.UTF-8
 OLDPWD=/tmp/benchmark/docker
 SSH_AUTH_SOCK=/tmp/ssh-lGsdvSFjZ7Qa/agent.14056
@@ -12,10 +13,10 @@ HOME=/home/ffoerster
 SSH_AGENT_PID=14057
 SSH_CLIENT=10.149.30.159 58453 22
 TMUX=/tmp/tmux-1000/default,16631,0
-BUILD_DATE=2019-04-17T12:03:46Z
+BUILD_DATE=2019-04-25T11:21:10Z
 SSH_TTY=/dev/pts/0
 MAIL=/var/mail/ffoerster
-VCS_REF=2f3e179
+VCS_REF=8fdc0ff
 TERM=screen
 SHELL=/bin/bash
 TMUX_PANE=%11
@@ -28,7 +29,7 @@ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 XDG_RUNTIME_DIR=/run/user/1000
 PATH=/home/ffoerster/projects/tools/SeqFilter/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 _=/usr/bin/env
-Sending build context to Docker daemon  310.3kB
+Sending build context to Docker daemon  314.9kB
 Step 1/17 : ARG osversion=bionic-20190307
 Step 2/17 : FROM ubuntu:${osversion}
 bionic-20190307: Pulling from library/ubuntu
@@ -36,28 +37,28 @@ Digest: sha256:017eef0b616011647b269b5c65826e2e2ebddbe5d1f8c1e56b3599fb14fabec8
 Status: Image is up to date for ubuntu:bionic-20190307
  ---> 94e814e2efa8
 Step 3/17 : ARG VERSION=master
- ---> Running in f4a48a3a38c7
-Removing intermediate container f4a48a3a38c7
- ---> f07e7fafd11b
+ ---> Running in d4ca22ffafb7
+Removing intermediate container d4ca22ffafb7
+ ---> d49841bfac3c
 Step 4/17 : ARG VCS_REF
- ---> Running in c2878fec4bf1
-Removing intermediate container c2878fec4bf1
- ---> 9a75f3b09073
+ ---> Running in cab97dca4a7c
+Removing intermediate container cab97dca4a7c
+ ---> 1a0449412311
 Step 5/17 : ARG BUILD_DATE
- ---> Running in 13ca5daa5978
-Removing intermediate container 13ca5daa5978
- ---> 3d533fdc4c59
+ ---> Running in b39725bf1e6d
+Removing intermediate container b39725bf1e6d
+ ---> e43418b58426
 Step 6/17 : RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
- ---> Running in 697cf41b8e69
-VCS_REF: 2f3e179, BUILD_DATE: 2019-04-17T12:03:46Z, VERSION: master
-Removing intermediate container 697cf41b8e69
- ---> b6e687dd3aec
+ ---> Running in 58c3dc8a2164
+VCS_REF: 8fdc0ff, BUILD_DATE: 2019-04-25T11:21:10Z, VERSION: master
+Removing intermediate container 58c3dc8a2164
+ ---> af595ac76c02
 Step 7/17 : LABEL maintainer="frank.foerster@ime.fraunhofer.de"       description="Dockerfile providing the base image for our benchmark setup"       version=${VERSION}       org.label-schema.vcs-ref=${VCS_REF}       org.label-schema.build-date=${BUILD_DATE}       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
- ---> Running in a522fb142bff
-Removing intermediate container a522fb142bff
- ---> a9d4e197f10a
+ ---> Running in 17ea0ede7152
+Removing intermediate container 17ea0ede7152
+ ---> 159f8b94fecf
 Step 8/17 : RUN apt update &&     apt install --yes        locales
- ---> Running in 415d7ec00e76
+ ---> Running in 97c585e9d932
 [91m
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -65,25 +66,25 @@ WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 Get:2 http://security.ubuntu.com/ubuntu bionic-security InRelease [88.7 kB]
 Get:3 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
 Get:4 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
-Get:5 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [410 kB]
+Get:5 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [4171 B]
 Get:6 http://security.ubuntu.com/ubuntu bionic-security/restricted amd64 Packages [5436 B]
-Get:7 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [4171 B]
-Get:8 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [301 kB]
-Get:9 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
-Get:10 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
-Get:11 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
-Get:12 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
+Get:7 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [416 kB]
+Get:8 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [304 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
 Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [10.8 kB]
-Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [7238 B]
-Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1103 kB]
-Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [752 kB]
-Get:17 http://archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [3659 B]
-Get:18 http://archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [942 B]
-Fetched 16.0 MB in 4s (4222 kB/s)
+Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [1107 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [7238 B]
+Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [774 kB]
+Get:17 http://archive.ubuntu.com/ubuntu bionic-backports/main amd64 Packages [942 B]
+Get:18 http://archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [3659 B]
+Fetched 16.0 MB in 2s (7037 kB/s)
 Reading package lists...
 Building dependency tree...
 Reading state information...
-6 packages can be upgraded. Run 'apt list --upgradable' to see them.
+8 packages can be upgraded. Run 'apt list --upgradable' to see them.
 [91m
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -92,12 +93,12 @@ Building dependency tree...
 Reading state information...
 The following NEW packages will be installed:
   locales
-0 upgraded, 1 newly installed, 0 to remove and 6 not upgraded.
+0 upgraded, 1 newly installed, 0 to remove and 8 not upgraded.
 Need to get 3612 kB of archives.
 After this operation, 14.5 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 locales all 2.27-3ubuntu1 [3612 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 3612 kB in 1s (5293 kB/s)
+[0mFetched 3612 kB in 0s (12.2 MB/s)
 Selecting previously unselected package locales.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4039 files and directories currently installed.)
 Preparing to unpack .../locales_2.27-3ubuntu1_all.deb ...
@@ -111,21 +112,21 @@ debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Ter
 debconf: falling back to frontend: Teletype
 Generating locales (this might take a while)...
 Generation complete.
-Removing intermediate container 415d7ec00e76
- ---> bb6f6e2fbfce
+Removing intermediate container 97c585e9d932
+ ---> bc4feeb8e1f3
 Step 9/17 : RUN locale-gen en_GB.UTF-8
- ---> Running in 0c223164ad5e
+ ---> Running in 2567a0ccf626
 Generating locales (this might take a while)...
   en_GB.UTF-8... done
 Generation complete.
-Removing intermediate container 0c223164ad5e
- ---> 23475f31a27f
+Removing intermediate container 2567a0ccf626
+ ---> e29f3e541085
 Step 10/17 : ENV DEBIAN_FRONTEND=noninteractive LANG=en_GB.UTF-8 LANGUAGE=en_GB:UTF-8 LC_ALL=en_GB.UTF-8
- ---> Running in 53bfd08c2b17
-Removing intermediate container 53bfd08c2b17
- ---> 7d53def616e8
+ ---> Running in b6b17be097ff
+Removing intermediate container b6b17be097ff
+ ---> 8dafd09e781b
 Step 11/17 : RUN apt install --yes 	software-properties-common &&     add-apt-repository --yes ppa:deadsnakes/ppa &&     apt update &&     apt install --yes        python3.7        python3.7-venv        python3.7-dev &&     apt install --yes        nvi        nano        libbsd-dev        liblog-log4perl-perl        libmoose-perl        libfile-which-perl        libipc-run-perl        libterm-progressbar-perl        libgraph-perl        liblist-moreutils-perl        bowtie2        bowtie        build-essential        trimmomatic        ncbi-blast+        samtools        bedtools        r-base        ghostscript        jellyfish        python        wget        python3-pip        python3-venv        python-wget        python-matplotlib        python-biopython        python3-distutils        git
- ---> Running in d8373132ebd8
+ ---> Running in 5499270fbb8b
 [91m
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -172,7 +173,7 @@ The following NEW packages will be installed:
   python3-dbus python3-gi python3-minimal python3-software-properties
   python3.6 python3.6-minimal readline-common shared-mime-info
   software-properties-common ucf unattended-upgrades xdg-user-dirs xz-utils
-0 upgraded, 73 newly installed, 0 to remove and 6 not upgraded.
+0 upgraded, 73 newly installed, 0 to remove and 8 not upgraded.
 Need to get 24.5 MB of archives.
 After this operation, 111 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 cron amd64 3.0pl1-128.1ubuntu1 [68.8 kB]
@@ -195,7 +196,7 @@ Get:17 http://archive.ubuntu.com/ubuntu bionic/main amd64 ca-certificates all 20
 Get:18 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libapparmor1 amd64 2.12-4ubuntu5.1 [31.3 kB]
 Get:19 http://archive.ubuntu.com/ubuntu bionic/main amd64 libdbus-1-3 amd64 1.12.2-1ubuntu1 [175 kB]
 Get:20 http://archive.ubuntu.com/ubuntu bionic/main amd64 dbus amd64 1.12.2-1ubuntu1 [150 kB]
-Get:21 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 distro-info-data all 0.37ubuntu0.3 [4,528 B]
+Get:21 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 distro-info-data all 0.37ubuntu0.4 [4,572 B]
 Get:22 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libmagic-mgc amd64 1:5.32-2ubuntu0.2 [184 kB]
 Get:23 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libmagic1 amd64 1:5.32-2ubuntu0.2 [68.5 kB]
 Get:24 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 file amd64 1:5.32-2ubuntu0.2 [22.1 kB]
@@ -249,7 +250,7 @@ Get:71 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-softwa
 Get:72 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 software-properties-common all 0.96.24.32.7 [9,908 B]
 Get:73 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 unattended-upgrades all 1.1ubuntu1.18.04.10 [40.4 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 24.5 MB in 23s (1,060 kB/s)
+[0mFetched 24.5 MB in 1s (22.5 MB/s)
 Selecting previously unselected package cron.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4657 files and directories currently installed.)
 Preparing to unpack .../cron_3.0pl1-128.1ubuntu1_amd64.deb ...
@@ -319,8 +320,8 @@ Selecting previously unselected package dbus.
 Preparing to unpack .../05-dbus_1.12.2-1ubuntu1_amd64.deb ...
 Unpacking dbus (1.12.2-1ubuntu1) ...
 Selecting previously unselected package distro-info-data.
-Preparing to unpack .../06-distro-info-data_0.37ubuntu0.3_all.deb ...
-Unpacking distro-info-data (0.37ubuntu0.3) ...
+Preparing to unpack .../06-distro-info-data_0.37ubuntu0.4_all.deb ...
+Unpacking distro-info-data (0.37ubuntu0.4) ...
 Selecting previously unselected package libmagic-mgc.
 Preparing to unpack .../07-libmagic-mgc_1%3a5.32-2ubuntu0.2_amd64.deb ...
 Unpacking libmagic-mgc (1:5.32-2ubuntu0.2) ...
@@ -492,7 +493,7 @@ Setting up libglib2.0-0:amd64 (2.56.3-0ubuntu0.18.04.1) ...
 No schema files found: doing nothing.
 Setting up libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2) ...
 Setting up libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2) ...
-Setting up distro-info-data (0.37ubuntu0.3) ...
+Setting up distro-info-data (0.37ubuntu0.4) ...
 Setting up libroken18-heimdal:amd64 (7.5.0+dfsg-1) ...
 Setting up libksba8:amd64 (1.3.5-2) ...
 Setting up ucf (3.0038) ...
@@ -577,26 +578,26 @@ Updating certificates in /etc/ssl/certs...
 Running hooks in /etc/ca-certificates/update.d...
 done.
 Processing triggers for dbus (1.12.2-1ubuntu1) ...
-Get:1 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic InRelease [15.9 kB]
-Hit:2 http://archive.ubuntu.com/ubuntu bionic InRelease
-Hit:3 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Hit:1 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Get:2 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic InRelease [15.9 kB]
+Hit:3 http://archive.ubuntu.com/ubuntu bionic InRelease
 Hit:4 http://archive.ubuntu.com/ubuntu bionic-updates InRelease
 Hit:5 http://archive.ubuntu.com/ubuntu bionic-backports InRelease
 Get:6 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic/main amd64 Packages [31.3 kB]
-Fetched 47.2 kB in 3s (14.4 kB/s)
+Fetched 47.2 kB in 1s (40.9 kB/s)
 Reading package lists...
 [91m
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-[0mHit:1 http://archive.ubuntu.com/ubuntu bionic InRelease
-Hit:2 http://security.ubuntu.com/ubuntu bionic-security InRelease
-Hit:3 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic InRelease
+[0mHit:1 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Hit:2 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu bionic InRelease
 Hit:4 http://archive.ubuntu.com/ubuntu bionic-updates InRelease
 Hit:5 http://archive.ubuntu.com/ubuntu bionic-backports InRelease
 Reading package lists...
 Building dependency tree...
 Reading state information...
-6 packages can be upgraded. Run 'apt list --upgradable' to see them.
+8 packages can be upgraded. Run 'apt list --upgradable' to see them.
 [91m
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -614,27 +615,27 @@ The following NEW packages will be installed:
   libpython3.7-minimal libpython3.7-stdlib linux-libc-dev manpages
   manpages-dev python3-distutils python3-lib2to3 python3.7 python3.7-dev
   python3.7-minimal python3.7-venv
-0 upgraded, 16 newly installed, 0 to remove and 6 not upgraded.
+0 upgraded, 16 newly installed, 0 to remove and 8 not upgraded.
 Need to get 20.1 MB of archives.
 After this operation, 84.7 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 manpages all 4.15-1 [1,234 kB]
 Get:2 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic/main amd64 libpython3.7-minimal amd64 3.7.3-1+bionic1 [594 kB]
-Get:3 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic/main amd64 python3.7-minimal amd64 3.7.3-1+bionic1 [1,847 kB]
-Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 libc-dev-bin amd64 2.27-3ubuntu1 [71.8 kB]
-Get:5 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 linux-libc-dev amd64 4.15.0-47.50 [1,008 kB]
-Get:6 http://archive.ubuntu.com/ubuntu bionic/main amd64 libc6-dev amd64 2.27-3ubuntu1 [2,587 kB]
-Get:7 http://archive.ubuntu.com/ubuntu bionic/main amd64 libexpat1-dev amd64 2.2.5-3 [122 kB]
-Get:8 http://archive.ubuntu.com/ubuntu bionic/main amd64 manpages-dev all 4.15-1 [2,217 kB]
-Get:9 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic/main amd64 libpython3.7-stdlib amd64 3.7.3-1+bionic1 [1,773 kB]
-Get:10 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-lib2to3 all 3.6.7-1~18.04 [76.5 kB]
-Get:11 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-distutils all 3.6.7-1~18.04 [141 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic/main amd64 libc-dev-bin amd64 2.27-3ubuntu1 [71.8 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 linux-libc-dev amd64 4.15.0-48.51 [1,006 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic/main amd64 libc6-dev amd64 2.27-3ubuntu1 [2,587 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic/main amd64 libexpat1-dev amd64 2.2.5-3 [122 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic/main amd64 manpages-dev all 4.15-1 [2,217 kB]
+Get:8 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic/main amd64 python3.7-minimal amd64 3.7.3-1+bionic1 [1,847 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-lib2to3 all 3.6.7-1~18.04 [76.5 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 python3-distutils all 3.6.7-1~18.04 [141 kB]
+Get:11 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic/main amd64 libpython3.7-stdlib amd64 3.7.3-1+bionic1 [1,773 kB]
 Get:12 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic/main amd64 libpython3.7 amd64 3.7.3-1+bionic1 [1,762 kB]
 Get:13 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic/main amd64 libpython3.7-dev amd64 3.7.3-1+bionic1 [4,115 kB]
 Get:14 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic/main amd64 python3.7 amd64 3.7.3-1+bionic1 [327 kB]
 Get:15 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic/main amd64 python3.7-dev amd64 3.7.3-1+bionic1 [501 kB]
 Get:16 http://ppa.launchpad.net/deadsnakes/ppa/ubuntu bionic/main amd64 python3.7-venv amd64 3.7.3-1+bionic1 [1,740 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 20.1 MB in 12s (1,643 kB/s)
+[0mFetched 20.1 MB in 11s (1,861 kB/s)
 Selecting previously unselected package libpython3.7-minimal:amd64.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7927 files and directories currently installed.)
 Preparing to unpack .../00-libpython3.7-minimal_3.7.3-1+bionic1_amd64.deb ...
@@ -649,8 +650,8 @@ Selecting previously unselected package libc-dev-bin.
 Preparing to unpack .../03-libc-dev-bin_2.27-3ubuntu1_amd64.deb ...
 Unpacking libc-dev-bin (2.27-3ubuntu1) ...
 Selecting previously unselected package linux-libc-dev:amd64.
-Preparing to unpack .../04-linux-libc-dev_4.15.0-47.50_amd64.deb ...
-Unpacking linux-libc-dev:amd64 (4.15.0-47.50) ...
+Preparing to unpack .../04-linux-libc-dev_4.15.0-48.51_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (4.15.0-48.51) ...
 Selecting previously unselected package libc6-dev:amd64.
 Preparing to unpack .../05-libc6-dev_2.27-3ubuntu1_amd64.deb ...
 Unpacking libc6-dev:amd64 (2.27-3ubuntu1) ...
@@ -686,7 +687,7 @@ Preparing to unpack .../15-python3.7-venv_3.7.3-1+bionic1_amd64.deb ...
 Unpacking python3.7-venv (3.7.3-1+bionic1) ...
 Setting up manpages (4.15-1) ...
 Processing triggers for mime-support (3.60ubuntu1) ...
-Setting up linux-libc-dev:amd64 (4.15.0-47.50) ...
+Setting up linux-libc-dev:amd64 (4.15.0-48.51) ...
 Setting up libpython3.7-minimal:amd64 (3.7.3-1+bionic1) ...
 Setting up python3.7-minimal (3.7.3-1+bionic1) ...
 Processing triggers for libc-bin (2.27-3ubuntu1) ...
@@ -980,7 +981,7 @@ The following NEW packages will be installed:
   r-doc-html r-recommended samtools scour tk8.6-blt2.5 trimmomatic
   ttf-bitstream-vera tzdata ubuntu-mono unzip wget x11-common x11-utils
   x11-xserver-utils xauth xdg-utils zip zlib1g-dev
-0 upgraded, 512 newly installed, 0 to remove and 6 not upgraded.
+0 upgraded, 512 newly installed, 0 to remove and 8 not upgraded.
 Need to get 327 MB of archives.
 After this operation, 1,291 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 liblocale-gettext-perl amd64 1.07-3build2 [16.6 kB]
@@ -1032,7 +1033,7 @@ Get:46 http://archive.ubuntu.com/ubuntu bionic/main amd64 libelf1 amd64 0.170-0.
 Get:47 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libidn11 amd64 1.33-2.1ubuntu1.2 [46.6 kB]
 Get:48 http://archive.ubuntu.com/ubuntu bionic/main amd64 libtext-iconv-perl amd64 1.7-5build6 [13.0 kB]
 Get:49 http://archive.ubuntu.com/ubuntu bionic/main amd64 netbase all 5.4 [12.7 kB]
-Get:50 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 tzdata all 2018i-0ubuntu0.18.04 [189 kB]
+Get:50 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 tzdata all 2019a-0ubuntu0.18.04 [189 kB]
 Get:51 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gettext-base amd64 0.19.8.1-6ubuntu0.3 [113 kB]
 Get:52 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 krb5-locales all 1.16-2ubuntu0.1 [13.5 kB]
 Get:53 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libdrm-common all 2.4.95-1~18.04.1 [5,068 B]
@@ -1496,7 +1497,7 @@ Get:510 http://archive.ubuntu.com/ubuntu bionic/main amd64 libhttp-parser2.7.1 a
 Get:511 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 nodejs amd64 8.10.0~dfsg-2ubuntu0.4 [4,796 kB]
 Get:512 http://archive.ubuntu.com/ubuntu bionic/universe amd64 r-base-html all 3.4.4-1ubuntu1 [54.8 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 327 MB in 3min 7s (1,752 kB/s)
+[0mFetched 327 MB in 9s (34.4 MB/s)
 Selecting previously unselected package liblocale-gettext-perl.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12848 files and directories currently installed.)
 Preparing to unpack .../liblocale-gettext-perl_1.07-3build2_amd64.deb ...
@@ -1653,8 +1654,8 @@ Selecting previously unselected package netbase.
 Preparing to unpack .../005-netbase_5.4_all.deb ...
 Unpacking netbase (5.4) ...
 Selecting previously unselected package tzdata.
-Preparing to unpack .../006-tzdata_2018i-0ubuntu0.18.04_all.deb ...
-Unpacking tzdata (2018i-0ubuntu0.18.04) ...
+Preparing to unpack .../006-tzdata_2019a-0ubuntu0.18.04_all.deb ...
+Unpacking tzdata (2019a-0ubuntu0.18.04) ...
 Selecting previously unselected package gettext-base.
 Preparing to unpack .../007-gettext-base_0.19.8.1-6ubuntu0.3_amd64.deb ...
 Unpacking gettext-base (0.19.8.1-6ubuntu0.3) ...
@@ -3085,11 +3086,11 @@ Setting up libuv1:amd64 (1.18.0-3) ...
 Setting up perl-openssl-defaults:amd64 (3build1) ...
 Setting up libpng-tools (1.6.34-1ubuntu0.18.04.1) ...
 Setting up libpsl5:amd64 (0.19.1-5build1) ...
-Setting up tzdata (2018i-0ubuntu0.18.04) ...
+Setting up tzdata (2019a-0ubuntu0.18.04) ...
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Wed Apr 17 12:22:02 UTC 2019.
-Universal Time is now:  Wed Apr 17 12:22:02 UTC 2019.
+Local time is now:      Thu Apr 25 11:24:34 UTC 2019.
+Universal Time is now:  Thu Apr 25 11:24:34 UTC 2019.
 Run 'dpkg-reconfigure tzdata' if you wish to change it.
 
 Setting up libtbb2:amd64 (2017~U7-8) ...
@@ -3768,334 +3769,334 @@ Running hooks in /etc/ca-certificates/update.d...
 
 done.
 done.
-Removing intermediate container d8373132ebd8
- ---> 867aef068d8c
+Removing intermediate container 5499270fbb8b
+ ---> b79a85c1cb5b
 Step 12/17 : RUN cd /tmp/ &&     wget -O - http://cab.spbu.ru/files/release3.13.0/SPAdes-3.13.0-Linux.tar.gz |        tar -xzf - &&     mv SPAdes-3.13.0-Linux/ /opt//spades/
- ---> Running in 2b576eb07a94
-[91m--2019-04-17 12:24:25--  http://cab.spbu.ru/files/release3.13.0/SPAdes-3.13.0-Linux.tar.gz
-Resolving cab.spbu.ru (cab.spbu.ru)... [0m[91m185.44.15.200
+ ---> Running in 5676ebe2029c
+[91m--2019-04-25 11:26:21--  http://cab.spbu.ru/files/release3.13.0/SPAdes-3.13.0-Linux.tar.gz
+[0m[91mResolving cab.spbu.ru (cab.spbu.ru)... [0m[91m185.44.15.200
 Connecting to cab.spbu.ru (cab.spbu.ru)|185.44.15.200|:80... [0m[91mconnected.
-[0m[91mHTTP request sent, awaiting response... [0m[91m200 OK
+HTTP request sent, awaiting response... [0m[91m200 OK
 Length: 15124368 (14M) [application/octet-stream]
-[0m[91mSaving to: ‘STDOUT’
+Saving to: ‘STDOUT’
+[0m[91m
+     0K .......... ..[0m[91m........ .......... .[0m[91m..[0m[91m....... ..........  0%  628K 23s[0m[91m
+    50K ......[0m[91m.... .......... ......[0m[91m.... ....[0m[91m...... ..........  0%  661K 23s
+   100K ........[0m[91m.. ..........[0m[91m ...[0m[91m....... .[0m[91m........[0m[91m. .........[0m[91m.  1%  672K 22s
+   150K .......... .[0m[91m......... .......[0m[91m... .....[0m[91m..... ..........  1% 38.3M 17s[0m[91m
+   200K .......... ....[0m[91m...[0m[91m... ......[0m[91m...[0m[91m. .......[0m[91m... ..........  1%[0m[91m 1.29M 16s
+   250K ...[0m[91m.......[0m[91m .......... .........[0m[91m. .......[0m[91m... ......[0m[91m....  2% 1.30M 15s
+   300K ..[0m[91m........ ........[0m[91m.. .......... ...[0m[91m....... ..........  2% 1.30M 14s
+   350K .......[0m[91m... .......... ...[0m[91m....... .[0m[91m........[0m[91m. ..........  2%[0m[91m 67.3M 12s
+   400K .....[0m[91m..... ...[0m[91m....... .[0m[91m......... .......... ..........  3% 1.31M[0m[91m 12s
+   450K .......... .[0m[91m........[0m[91m. .......... .......... .[0m[91m........[0m[91m.  3% 88.3M 11s
+   500K .......... .....[0m[91m.....[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m......  3% 1.29M 11s
+   550K [0m[91m..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... ..........  4%  104M 10s[0m[91m
+   600K .......... .......... ....[0m[91m...... ..[0m[91m.[0m[91m....... .........[0m[91m.  4% 1.31M 10s
+   650K .......[0m[91m... .......... .......... .[0m[91m......... ..........  4%  114M 9s[0m[91m
+   700K .....[0m[91m..... ...[0m[91m....... .......... .....[0m[91m..... ..........  5% 28.1M 9s
+   750K .[0m[91m......[0m[91m... .......... ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m...  5% 1.35M 9s
+   800K .......... .[0m[91m..[0m[91m....... .[0m[91m......... .......[0m[91m... .....[0m[91m.....  5%  136M 8s
+   850K ...[0m[91m....... .[0m[91m....[0m[91m..... .......... .[0m[91m......... ...[0m[91m.......  6% 1.34M 8s
+   900K .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m.  6% 43.3M 8s
+   950K .....[0m[91m..[0m[91m... .......... ..[0m[91m.[0m[91m....... .[0m[91m......... .......[0m[91m...  6% 96.6M 7s
+  1000K .....[0m[91m..... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ......[0m[91m....  7% 1.34M 7s
+  1050K ....[0m[91m...... ..[0m[91m........ ........[0m[91m.[0m[91m. ......[0m[91m.... ....[0m[91m......  7% 36.0M 7s
+  1100K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... ..........  7%  166M 7s[0m[91m
+  1150K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m.....[0m[91m... ..........  8% 55.0M 6s
+  1200K ...[0m[91m....... .[0m[91m......... .......[0m[91m... .......... ...[0m[91m.......  8% 1.36M 7s
+  1250K .......[0m[91m..[0m[91m. .......[0m[91m... .....[0m[91m..[0m[91m... ...[0m[91m....... .[0m[91m..[0m[91m.......  8% 77.9M 6s[0m[91m
+  1300K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ ....[0m[91m....[0m[91m..  9% 54.4M 6s
+  1350K ......[0m[91m.... .......... ..[0m[91m........[0m[91m ........[0m[91m.. .......[0m[91m...  9% 81.2M 6s
+  1400K .....[0m[91m..... .......... ...[0m[91m....... .......... .......[0m[91m...  9% 1.36M 6s
+  1450K .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m.[0m[91m.. .....[0m[91m..... 10% 62.4M 6s
+  1500K [0m[91m...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... 10% 67.1M 6s
+  1550K .[0m[91m........[0m[91m. .......... .[0m[91m...[0m[91m...... [0m[91m...[0m[91m....... .[0m[91m........[0m[91m. 10% 85.9M 5s
+  1600K .......[0m[91m... .....[0m[91m..... .......... .[0m[91m......... .......[0m[91m... 11% 16.1M 5s
+  1650K ...[0m[91m....... .........[0m[91m. .......[0m[91m... ......[0m[91m.... ...[0m[91m....... 11% 1.47M 5s
+  1700K .[0m[91m........[0m[91m. .......[0m[91m... .......... ...[0m[91m....... .[0m[91m........[0m[91m. 11% 48.1M 5s
+  1750K .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... 12% 77.5M 5s
+  1800K .....[0m[91m..... .......... .[0m[91m......... .......[0m[91m... .......... 12% 34.2M 5s
+  1850K ...[0m[91m....... .......... .......[0m[91m... .....[0m[91m..... .......... 12% 13.8M 5s[0m[91m
+  1900K ..........[0m[91m .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... 13% 1.57M 5s
+  1950K .[0m[91m........[0m[91m. .......[0m[91m..[0m[91m. .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. 13% 48.9M 5s
+  2000K .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .......... .......... 13% 56.9M 5s
+  2050K .......... .......... .......... .......... .......... 14% 36.1M 4s
+  2100K .......... .......... .......... .......... .......... 14% 24.9M 4s
+  2150K .......... .......... .......... .......... .......... 14% 15.7M 4s[0m[91m
+  2200K ......[0m[91m.... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. 15% 1.65M 4s
+  2250K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.[0m[91m. ......[0m[91m.... 15% 74.8M 4s
+  2300K ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m...... 15% 69.0M 4s
+  2350K .......[0m[91m...[0m[91m .......... ......[0m[91m.... .......... ..[0m[91m........ 16% 32.6M 4s[0m[91m
+  2400K .......... .......... ....[0m[91m...... ..[0m[91m........ .......... 16% 15.3M 4s
+  2450K ..[0m[91m....[0m[91m.... ....[0m[91m...... .......... ........[0m[91m.. ......[0m[91m.... 16% 28.0M 4s
+  2500K .......... ..[0m[91m........ ..[0m[91m........ .......... .......... 17% 1.65M 4s
+  2550K ....[0m[91m.....[0m[91m. ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 17% 49.8M 4s
+  2600K ..[0m[91m........[0m[91m ........[0m[91m.. .........[0m[91m. ..........[0m[91m ..[0m[91m........ 17% 54.4M 4s[0m[91m
+  2650K ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ ..[0m[91m......[0m[91m.. 18% 23.9M 4s
+  2700K .......... ....[0m[91m...... ..[0m[91m........ .......... ......[0m[91m.... 18% 26.6M 4s
+  2750K ....[0m[91m...... .......... ........[0m[91m.. ......[0m[91m.... .......... 18% 15.3M 3s
+  2800K ..[0m[91m........[0m[91m ........[0m[91m.. .......... .......... ..[0m[91m........ 19% 27.5M 3s
+  2850K .......... ......[0m[91m...[0m[91m. .......... .....[0m[91m..... .[0m[91m..[0m[91m....... 19% 1.78M 3s
+  2900K .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m...[0m[91m.... .[0m[91m..[0m[91m......[0m[91m. 19% 42.0M 3s
+  2950K .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... 20% 49.5M 3s
+  3000K .......... ...[0m[91m....... .[0m[91m......... .......[0m[91m... .....[0m[91m..... 20%  167M 3s[0m[91m
+  3050K ...[0m[91m....... .[0m[91m........[0m[91m. .......... .....[0m[91m..... .......... 20% 19.3M 3s
+  3100K .[0m[91m......... .......... .....[0m[91m..... ...[0m[91m....... .......... 21% 6.61M 3s
+  3150K [0m[91m.......[0m[91m... .....[0m[91m..... ...[0m[91m....... .........[0m[91m. .......... 21% 16.5M 3s
+  3200K ..[0m[91m...[0m[91m..... .......... .........[0m[91m. .......... .......... 22% 11.5M 3s[0m[91m
+  3250K ........[0m[91m.. ......[0m[91m.... ......[0m[91m.... ..[0m[91m........[0m[91m ........[0m[91m.. 22% 2.57M 3s
+  3300K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ ....[0m[91m....[0m[91m.. ......[0m[91m.... 22% 53.9M 3s
+  3350K ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... .......... 23% 57.1M 3s
+  3400K ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m...... .......... 23% 22.9M 3s[0m[91m
+  3450K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 23% 12.9M 3s
+  3500K .......... ....[0m[91m...... ..[0m[91m........ .......... ......[0m[91m.... 24% 23.4M 3s
+  3550K ....[0m[91m...... .......... ........[0m[91m.. .......... .......... 24% 13.7M 3s[0m[91m
+  3600K ..[0m[91m........ .......[0m[91m.[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ 24% 31.5M 3s[0m[91m
+  3650K .......... ......[0m[91m.... ....[0m[91m.....[0m[91m. ..[0m[91m........[0m[91m ........[0m[91m.. 25% 2.14M 3s
+  3700K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... 25% 50.7M 3s
+  3750K[0m[91m ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. .......... [0m[91m....[0m[91m...... 25% 54.4M 3s
+  3800K ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ 26% 74.4M 3s
+  3850K ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ .......... 26% 19.0M 3s[0m[91m
+  3900K ......[0m[91m.... .......... .[0m[91m.[0m[91m........ ........[0m[91m.. .......... 26% 15.6M 3s
+  3950K ....[0m[91m...... ..........[0m[91m .......... .......... ....[0m[91m...... 27% 28.9M 2s
+  4000K ..[0m[91m........ .......... ......[0m[91m.... .......... .......... 27% 13.9M 2s[0m[91m
+  4050K .......... ......[0m[91m.... .......... ..........[0m[91m ........[0m[91m.. 27% 28.1M 2s
+  4100K .......... ..........[0m[91m .......... ..[0m[91m....[0m[91m.... ....[0m[91m...... 28%[0m[91m 2.17M 2s
+  4150K ..[0m[91m........[0m[91m .......... ......[0m[91m.... ........[0m[91m.. .......... 28%[0m[91m 63.4M 2s[0m[91m
+  4200K .....[0m[91m...[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m .......... 28%[0m[91m 48.9M[0m[91m 2s
+  4250K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... 29% 25.0M 2s
+  4300K ..........[0m[91m ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 29% 26.3M 2s
+  4350K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... .......... 29% 15.0M 2s[0m[91m
+  4400K ........[0m[91m.. ......[0m[91m.... .......... ..........[0m[91m .......... 30% 14.8M 2s
+  4450K ......[0m[91m.... .......... ..........[0m[91m .......... .......... 30% 28.6M 2s
+  4500K [0m[91m....[0m[91m...... ..[0m[91m........ .......... ......[0m[91m.... ....[0m[91m...... 30% 27.5M 2s
+  4550K .......... ........[0m[91m.. ......[0m[91m.... .......... .......... 31% 14.2M 2s[0m[91m
+  4600K ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. 31% 2.57M 2s
+  4650K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ ..[0m[91m......[0m[91m.. ......[0m[91m.... 31% 48.0M 2s
+  4700K .[0m[91m...[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m...[0m[91m. [0m[91m....[0m[91m.[0m[91m..... 32% 47.9M 2s
+  4750K ..[0m[91m........ ...[0m[91m.....[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ 32% 63.7M 2s
+  4800K .......... ..[0m[91m....[0m[91m.... .......... ..[0m[91m........[0m[91m .........[0m[91m. 32% 23.1M 2s
+  4850K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ [0m[91m........[0m[91m.. ......[0m[91m.... 33% 20.9M 2s
+  4900K .......... ..[0m[91m........ ........[0m[91m.. .......... .......... 33% 14.2M 2s[0m[91m
+  4950K ..[0m[91m........[0m[91m .......... .......... ....[0m[91m...... .......... 33% 23.6M 2s[0m[91m
+  5000K .......... .......... ....[0m[91m...... .......... ........[0m[91m.. 34% 15.0M 2s
+  5050K ......[0m[91m.... .......... ..........[0m[91m ........[0m[91m.. .......... 34% 15.3M 2s
+  5100K ....[0m[91m...... ..[0m[91m........[0m[91m .......... ..........[0m[91m .......... 34% 2.66M 2s
+  5150K ..[0m[91m....[0m[91m.... .......... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... 35% 62.7M 2s
+  5200K ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... 35% 67.3M 2s
+  5250K ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... .......... [0m[91m..[0m[91m........ 35% 71.3M 2s[0m[91m
+  5300K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m ........[0m[91m.. 36% 14.9M 2s
+  5350K ......[0m[91m.... ....[0m[91m......[0m[91m ..[0m[91m........ [0m[91m........[0m[91m.. ....[0m[91m..[0m[91m.... 36% 25.5M 2s
+  5400K ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 36% 33.1M 2s
+  5450K ..[0m[91m........[0m[91m ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ 37% 15.3M 2s[0m[91m
+  5500K .......... .......... ....[0m[91m...... ..[0m[91m........ .......... 37% 12.9M 2s
+  5550K ...[0m[91m...[0m[91m.... .......... ..[0m[91m........ .......... ......[0m[91m.... 37% 24.9M 2s
+  5600K ....[0m[91m...... .......... ........[0m[91m.. .......... .......... 38% 13.0M 2s
+  5650K ..[0m[91m........[0m[91m .......... .......... ....[0m[91m...... ..[0m[91m........ 38% 27.7M 2s
+  5700K ........[0m[91m.. ......[0m[91m.... .....[0m[91m..[0m[91m... ...[0m[91m....... .[0m[91m....[0m[91m....[0m[91m. 38% 3.34M[0m[91m 2s
+  5750K .......[0m[91m... .....[0m[91m..... ...[0m[91m....... [0m[91m.[0m[91m........[0m[91m. .......[0m[91m... 39% 57.0M 2s
+  5800K .....[0m[91m..... ...[0m[91m....... .[0m[91m.[0m[91m........[0m[91m .......[0m[91m... .....[0m[91m..... 39% 44.1M 2s
+  5850K .[0m[91m..[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m.[0m[91m...[0m[91m. .......... 39% 1.31M 2s
+  5900K .....[0m[91m..... ...[0m[91m....... .[0m[91m...[0m[91m.....[0m[91m. .......[0m[91m... .....[0m[91m..... 40% 60.7M 2s
+  5950K ...[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... .......... 40% 85.1M 2s
+  6000K .[0m[91m........[0m[91m. .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .[0m[91m........[0m[91m. 40%  158M 2s
+  6050K .......[0m[91m... .....[0m[91m..... ...[0m[91m..[0m[91m..... .[0m[91m........[0m[91m. .......[0m[91m... 41% 20.2M 2s
+  6100K .....[0m[91m..... ...[0m[91m....... ..[0m[91m........ ......[0m[91m.[0m[91m... .....[0m[91m..... 41% 21.6M 2s
+  6150K .......... .[0m[91m......... .......[0m[91m... .......... ..........[0m[91m 41% 15.1M 2s
+  6200K .[0m[91m........[0m[91m. .......... .......... ...[0m[91m....... .........[0m[91m. 42% 44.6M 2s
+  6250K .......... .....[0m[91m..... ...[0m[91m....... .......... .......[0m[91m... 42% 12.9M 2s
+  6300K .....[0m[91m..... .......... .........[0m[91m. .......[0m[91m... .......... 42% 12.1M 1s
+  6350K ...[0m[91m....... .........[0m[91m. .......... .......... .......... 43% 13.1M 1s
+  6400K .[0m[91m........[0m[91m. .......... .......... ...[0m[91m....... .......... 43% 13.6M 1s
+  6450K .......[0m[91m... .....[0m[91m..... .......... ......[0m[91m...[0m[91m. .......[0m[91m... 44% 24.6M 1s
+  6500K .......... ...[0m[91m....... .[0m[91m........[0m[91m. .......... .......... 44%[0m[91m 15.2M 1s
+  6550K ...[0m[91m....... .........[0m[91m. .......... .....[0m[91m..... ...[0m[91m....... 44% 28.5M 1s
+  6600K .........[0m[91m. .......... .....[0m[91m..... .......... .......... 45% 13.3M 1s
+  6650K .......[0m[91m... .......... .......... .........[0m[91m. .......... 45% 15.0M 1s
+  6700K .......... .......[0m[91m... .[0m[91m........[0m[91m. .......... .......... 45% 27.4M 1s
+  6750K[0m[91m ...[0m[91m....... .......... .......[0m[91m... .....[0m[91m..... .......... 46% 13.9M 1s
+  6800K .......[0m[91m..[0m[91m. .......[0m[91m... .......... ...[0m[91m....... .........[0m[91m. 46% 22.7M 1s
+  6850K .......... .......... .[0m[91m..[0m[91m....... .........[0m[91m. .......... 46% 13.6M 1s
+  6900K .....[0m[91m..... ...[0m[91m....... .........[0m[91m. .......[0m[91m... .....[0m[91m..... 47% 24.0M 1s
+  6950K .......... .........[0m[91m. .......[0m[91m... .......... ...[0m[91m....... 47% 12.7M 1s
+  7000K ........[0m[91m.[0m[91m. .......... .....[0m[91m..... .......... .[0m[91m........[0m[91m. 47% 26.2M 1s
+  7050K .........[0m[91m. .......[0m[91m... .......... ...[0m[91m....... .........[0m[91m. 48% 2.65M 1s
+  7100K .......[0m[91m... .......... ..[0m[91m.[0m[91m....... .[0m[91m......... .[0m[91m......[0m[91m... 48%  124M 1s
+  7150K .....[0m[91m..... .......... [0m[91m....[0m[91m...... .......... .......... 48% 35.7M 1s
+  7200K ......[0m[91m.... ....[0m[91m...... ..........[0m[91m .......... .......... 49% 23.0M 1s
+  7250K ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... .......... 49% 27.7M 1s
+  7300K ..[0m[91m........ ........[0m[91m.[0m[91m. ......[0m[91m.... .......... .......... 49%[0m[91m 16.9M 1s[0m[91m
+  7350K ........[0m[91m.. .......... .......... ..[0m[91m........[0m[91m .......... 50% 14.0M 1s
+  7400K ......[0m[91m.... ....[0m[91m...... ..........[0m[91m .......... .......... 50% 29.4M 1s[0m[91m
+  7450K .......... ......[0m[91m.... [0m[91m..........[0m[91m ..[0m[91m........[0m[91m .......... 50%  504K 1s
+  7500K .....[0m[91m.[0m[91m.... ....[0m[91m...... [0m[91m..[0m[91m........ .......... ......[0m[91m.... 51%  161M 1s
+  7550K .......... ..[0m[91m........ .......... .....[0m[91m.[0m[91m.... .......... 51% 52.3M 1s
+  7600K ..[0m[91m........[0m[91m ........[0m[91m.. .......... .......... ..[0m[91m........ 51% 21.5M 1s[0m[91m
+  7650K .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ .......... 52% 15.9M 1s
+  7700K .......... ....[0m[91m...... .......... ........[0m[91m.. ......[0m[91m.... 52% 27.4M 1s
+  7750K ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... ..........[0m[91m 52% 14.0M 1s
+  7800K .[0m[91m.[0m[91m........ ....[0m[91m...... .......... .........[0m[91m. ......[0m[91m.... 53% 1.89M 1s
+  7850K ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. .......... ..[0m[91m..[0m[91m...... 53% 92.0M 1s
+  7900K ..[0m[91m........ ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 53%  111M 1s
+  7950K ......[0m[91m..[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m ........[0m[91m.. 54% 53.8M 1s
+  8000K .......... ....[0m[91m...... ..........[0m[91m .......... ......[0m[91m.... 54% 13.8M 1s
+  8050K ...[0m[91m.[0m[91m...... ..........[0m[91m .......... .......... ....[0m[91m...... 54% 28.4M 1s
+  8100K ..[0m[91m........ ........[0m[91m.[0m[91m. .......... ....[0m[91m...... .......... 55% 1.66M 1s
+  8150K ........[0m[91m.. .....[0m[91m.[0m[91m.... ....[0m[91m...... ..........[0m[91m ....[0m[91m...... 55% 34.2M 1s
+  8200K ....[0m[91m..[0m[91m.... ....[0m[91m...... .........[0m[91m. ......[0m[91m.... .......... 55% 1.35M 1s
+  8250K ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m....[0m[91m.. ..[0m[91m........ 56%[0m[91m 58.9M 1s[0m[91m
+  8300K ........[0m[91m.. .......... ....[0m[91m...... ..........[0m[91m .......... 56%[0m[91m 38.9M 1s
+  8350K ......[0m[91m.... .......... ..[0m[91m........ ........[0m[91m.. .......... 56%  113M 1s
+  8400K [0m[91m....[0m[91m...... ..[0m[91m........[0m[91m .......... .......... ....[0m[91m...... 57% 31.0M 1s
+  8450K ..[0m[91m........[0m[91m .......... ......[0m[91m.... .......... .......... 57% 13.5M[0m[91m 1s[0m[91m
+  8500K ........[0m[91m.[0m[91m. .......... ...[0m[91m....... .[0m[91m.....[0m[91m.... .......... 57%  727K 1s
+  8550K ..........[0m[91m ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..........[0m[91m 58%[0m[91m 54.6M 1s
+  8600K ........[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. 58% 95.5M 1s
+  8650K ......[0m[91m.... ..........[0m[91m ...[0m[91m..[0m[91m.[0m[91m.... ..[0m[91m........ .......... 58% 1.18M 1s
+  8700K ....[0m[91m..[0m[91m.... ....[0m[91m...... ..[0m[91m.....[0m[91m... .......... ...[0m[91m....... 59% 1.44M 1s
+  8750K .[0m[91m......... ....[0m[91m...[0m[91m... .....[0m[91m..... ...[0m[91m......[0m[91m. ..[0m[91m.[0m[91m..[0m[91m...[0m[91m.[0m[91m. 59% 12.4M 1s
+  8800K ..[0m[91m........ .......... ..[0m[91m...[0m[91m....[0m[91m.[0m[91m ....[0m[91m...... ...[0m[91m....... 59% 1.29M 1s
+  8850K[0m[91m .[0m[91m......... ........[0m[91m.. .......[0m[91m... .....[0m[91m..... ..[0m[91m..[0m[91m...[0m[91m... 60% 1.30M 1s
+  8900K ..[0m[91m...[0m[91m..... ...[0m[91m....... .[0m[91m......... .[0m[91m........[0m[91m. .....[0m[91m...[0m[91m.. 60% 1.29M 1s
+  8950K ......[0m[91m...[0m[91m. .......... .....[0m[91m..... ....[0m[91m......[0m[91m ...[0m[91m.....[0m[91m.. 60% 1.30M 1s
+  9000K .[0m[91m...[0m[91m......[0m[91m ...[0m[91m....... .......... .......[0m[91m.[0m[91m.. ..[0m[91m.....[0m[91m... 61% 1.37M 1s
+  9050K ....[0m[91m.....[0m[91m. ....[0m[91m..[0m[91m..[0m[91m.. .......... .......... ..[0m[91m........ 61% 1.31M 1s[0m[91m
+  9100K .........[0m[91m. ....[0m[91m...[0m[91m...[0m[91m ..[0m[91m........ .......[0m[91m... .......[0m[91m... 61% 1.29M 1s
+  9150K .....[0m[91m..... ...[0m[91m..[0m[91m...[0m[91m.. ..[0m[91m..[0m[91m....[0m[91m.. ......[0m[91m.... ....[0m[91m...... 62% 1.34M 1s
+  9200K ..[0m[91m........ .[0m[91m.......[0m[91m.. ........[0m[91m.. .......... ....[0m[91m...... 62% 1.29M 1s
+  9250K ..[0m[91m.......[0m[91m. ....[0m[91m...... .......... .......... .......... 62% 1.23M 1s
+  9300K ....[0m[91m...... ..........[0m[91m .......[0m[91m... ....[0m[91m...... .[0m[91m......... 63%[0m[91m 1.35M 1s
+  9350K ...[0m[91m.......[0m[91m .....[0m[91m..... ...[0m[91m.......[0m[91m ..[0m[91m........[0m[91m ....[0m[91m...... 63% 1.25M 1s
+  9400K ...[0m[91m...[0m[91m.... ......[0m[91m.... .......... .......[0m[91m... ........[0m[91m.. 63% 1.21M 1s
+  9450K .......[0m[91m... .......... .........[0m[91m. ........[0m[91m.. .[0m[91m..[0m[91m...[0m[91m.... 64%  455K 1s
+  9500K .......... .......... .......... ......[0m[91m.... ....[0m[91m...... 64%  119M 1s[0m[91m
+  9550K ...[0m[91m....... .[0m[91m...[0m[91m..[0m[91m..[0m[91m.. ........[0m[91m.. ....[0m[91m...... ..[0m[91m...[0m[91m....[0m[91m. 64%  663K 1s
+  9600K .........[0m[91m. ..[0m[91m...[0m[91m...[0m[91m.. .....[0m[91m..... .[0m[91m......... .....[0m[91m..... 65% 1.26M 1s
+  9650K .[0m[91m......[0m[91m...[0m[91m .......... .......[0m[91m... ..........[0m[91m ...[0m[91m....... 65%  663K 1s
+  9700K .........[0m[91m. .......... ..[0m[91m...[0m[91m..... .......... .........[0m[91m. 66% 1.28M 1s
+  9750K .....[0m[91m...[0m[91m.. .......... .......... ........[0m[91m..[0m[91m .......... 66%  657K 1s
+  9800K .......... ....[0m[91m...... .[0m[91m...[0m[91m...... .......... .......... 66% 1.28M 1s
+  9850K ...[0m[91m.....[0m[91m.. .......... .......... .......... ..[0m[91m........ 67%  659K 1s
+  9900K .......... .......... ......[0m[91m.... .......... .......... 67% 1.28M 1s
+  9950K ..........[0m[91m .......... .......... .......... ....[0m[91m...... 67%  659K 1s
+ 10000K .......... .......... ........[0m[91m.. .......... .......... 68% 1.28M 1s
+ 10050K .......... ..[0m[91m........ .......... .......... ......[0m[91m.... 68%  659K 1s
+ 10100K .......... .......... ........[0m[91m..[0m[91m .......... .......... 68% 1.28M 1s
+ 10150K .......... ....[0m[91m...... .......... .......... ........[0m[91m.. 69%  659K 1s
+ 10200K .......... .......... .......... ..[0m[91m........ .......... 69% 1.28M 1s
+ 10250K .......... ....[0m[91m.[0m[91m..... .......... .......... .........[0m[91m. 69%  662K 1s
+ 10300K .......... .......... ...[0m[91m....... ...[0m[91m....... .......... 70% 1.28M 1s
+ 10350K [0m[91m.......... .....[0m[91m..[0m[91m... .......... .......... .[0m[91m......... 70% 1.29M 1s[0m[91m
+ 10400K .[0m[91m......... .......... .......... .....[0m[91m..... .......... 70%  660K 1s
+ 10450K .......... .........[0m[91m. .......... .......... .......... 71% 1.29M 1s
+ 10500K .[0m[91m..[0m[91m....... .......... .......... .......[0m[91m... .......... 71%  661K 1s
+ 10550K .......... .[0m[91m......... .[0m[91m........[0m[91m. .......[0m[91m... .......... 71% 1.28M 1s
+ 10600K ...[0m[91m..[0m[91m..... .......... ....[0m[91m...... .........[0m[91m. .......[0m[91m... 72%  663K 1s
+ 10650K .....[0m[91m..... .......... .[0m[91m..[0m[91m....... .......... .......[0m[91m... 72% 1.28M 1s
+ 10700K .....[0m[91m..[0m[91m... .......... .......... .........[0m[91m. .[0m[91m......... 72%  660K 1s
+ 10750K .......... .......... ...[0m[91m..[0m[91m..... .......... .......... 73% 1.29M 1s
+ 10800K ......[0m[91m..[0m[91m.. .......... .......... .......... ..[0m[91m........ 73%  662K 1s
+ 10850K .......... ......[0m[91m.... ......[0m[91m.... .......... ..[0m[91m........ 73% 1.28M 1s
+ 10900K ........[0m[91m..[0m[91m .........[0m[91m. ..[0m[91m........[0m[91m .......... ....[0m[91m...... 74%  665K 1s
+ 10950K ......[0m[91m.... .......... ........[0m[91m.[0m[91m.[0m[91m [0m[91m.[0m[91m.[0m[91m..[0m[91m.[0m[91m.[0m[91m.[0m[91m..[0m[91m. ..........[0m[91m 74%  996K 1s
+ 11000K .......... ..[0m[91m......[0m[91m.. .......... ....[0m[91m...... ......[0m[91m.... 74%  686K 1s
+ 11050K ..[0m[91m........ ........[0m[91m.. ..........[0m[91m ......[0m[91m.... ....[0m[91m...... 75% 1.23M 1s
+ 11100K ..[0m[91m........ ....[0m[91m......[0m[91m .......... ......[0m[91m.... ....[0m[91m....[0m[91m.. 75%  675K 1s
+ 11150K ....[0m[91m...... .......... .......... ..[0m[91m.....[0m[91m... .......... 75% 1.23M 1s
+ 11200K ...[0m[91m....... .[0m[91m.....[0m[91m.... .[0m[91m......... .......... ..[0m[91m...[0m[91m..... 76% 1.27M 1s[0m[91m
+ 11250K .....[0m[91m..... .......... .[0m[91m........[0m[91m. ....[0m[91m.....[0m[91m. .......... 76%  660K 1s
+ 11300K .......... ...[0m[91m.....[0m[91m.. ...[0m[91m....... .......... .......[0m[91m... 76% 1.28M 1s
+ 11350K .[0m[91m......[0m[91m... .......... .......... .....[0m[91m..... .[0m[91m......... 77%  657K 1s
+ 11400K .......... .........[0m[91m. .....[0m[91m..... .......... .......... 77% 1.28M 1s
+ 11450K ...[0m[91m......[0m[91m. .......... .......... .......[0m[91m... ......[0m[91m.... 77%  662K 1s
+ 11500K .......... ......[0m[91m.... ....[0m[91m...... ..[0m[91m...[0m[91m..[0m[91m... ...[0m[91m....... 78% 1.28M 1s
+ 11550K .[0m[91m......... .[0m[91m........[0m[91m. ......[0m[91m.... .........[0m[91m. ........[0m[91m.. 78%  687K 1s
+ 11600K ......[0m[91m.... ...[0m[91m....[0m[91m... ...[0m[91m....... ....[0m[91m......[0m[91m .......... 78% 1.20M 1s
+ 11650K ....[0m[91m...... .......... .[0m[91m......[0m[91m... .......... ...[0m[91m....... 79% 1.28M 1s
+ 11700K ........[0m[91m.. ...[0m[91m....... .........[0m[91m. .......... .....[0m[91m..... 79%  685K 1s[0m[91m
+ 11750K ..........[0m[91m .......... ....[0m[91m..[0m[91m...[0m[91m. .......[0m[91m... .......... 79% 1.21M 1s
+ 11800K .[0m[91m......... ..[0m[91m........ ....[0m[91m...... .......... .........[0m[91m. 80%  680K 1s
+ 11850K .......... .[0m[91m........[0m[91m. .......[0m[91m... ......[0m[91m.... .......[0m[91m... 80% 1.22M 1s
+ 11900K ......[0m[91m.[0m[91m... ....[0m[91m...... ...[0m[91m....... ....[0m[91m...... ...[0m[91m....... 80% 1.28M 1s
+ 11950K .........[0m[91m.[0m[91m .......... .[0m[91m........[0m[91m. .......... ......[0m[91m.... 81%  676K 1s
+ 12000K ........[0m[91m.. .......... ...[0m[91m....... ...[0m[91m....... ....[0m[91m...... 81% 1.25M 1s
+ 12050K ...[0m[91m.[0m[91m......[0m[91m ..........[0m[91m .......... .[0m[91m......... ........[0m[91m.. 81% 1.28M 1s
+ 12100K ......[0m[91m.[0m[91m... ........[0m[91m.. .......... ....[0m[91m...... ...[0m[91m....... 82%  675K 1s
+ 12150K .....[0m[91m..... .......... .........[0m[91m.[0m[91m .......... .[0m[91m......... 82% 1.25M 1s[0m[91m
+ 12200K .....[0m[91m..... .......[0m[91m... .......... .[0m[91m.......[0m[91m.. .[0m[91m......... 82% 1.29M 1s[0m[91m
+ 12250K ......[0m[91m.... .......... .[0m[91m........[0m[91m. .[0m[91m..[0m[91m....... ...[0m[91m...[0m[91m.... 83%  674K 1s
+ 12300K ..........[0m[91m .........[0m[91m. ....[0m[91m...... ...[0m[91m...[0m[91m.... .......... 83% 1.28M 1s[0m[91m
+ 12350K ........[0m[91m.. ....[0m[91m...... ..[0m[91m...[0m[91m..... .......... .[0m[91m......... 83% 1.26M 1s
+ 12400K ....[0m[91m...... ..[0m[91m...[0m[91m..... .......... .......... .......... 84% 1.24M 1s
+ 12450K ....[0m[91m...... .......... .......... .......... ....[0m[91m...... 84%  660K 1s
+ 12500K ..........[0m[91m .......... .......... ....[0m[91m...... .......... 84% 1.28M 1s[0m[91m
+ 12550K .......... ......[0m[91m.... ...[0m[91m....... ..[0m[91m...[0m[91m..... ...[0m[91m....... 85% 1.28M 1s
+ 12600K .[0m[91m......... ...[0m[91m.....[0m[91m.. ....[0m[91m......[0m[91m .......... .......... 85% 1.28M[0m[91m 1s
+ 12650K ..[0m[91m......[0m[91m.. .......[0m[91m..[0m[91m. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 85%  665K 1s
+ 12700K ..[0m[91m...[0m[91m..... ...[0m[91m....... .[0m[91m......... ..[0m[91m........ .........[0m[91m. 86% 1.28M 1s
+ 12750K .......[0m[91m... .....[0m[91m..... .[0m[91m.........[0m[91m .......[0m[91m... [0m[91m.[0m[91m......... 86% 1.29M 1s
+ 12800K [0m[91m.......[0m[91m... .[0m[91m......... .......[0m[91m... ...[0m[91m....... .......... 87% 1.29M 1s[0m[91m
+ 12850K .......... ......[0m[91m.... .......... ..[0m[91m........[0m[91m .......... 87%  663K 1s
+ 12900K ......[0m[91m.... ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. ......[0m[91m.... 87% 1.29M 1s
+ 12950K ...[0m[91m....... ..[0m[91m.......[0m[91m. .......... .....[0m[91m..... .......... 88% 1.29M 1s
+ 13000K .[0m[91m........[0m[91m. .......... .....[0m[91m..... ...[0m[91m....... .[0m[91m.......[0m[91m.. 88%  662K 1s
+ 13050K .......... .......... ..........[0m[91m .......... .[0m[91m......... 88% 1.28M 1s
+ 13100K .[0m[91m......[0m[91m... .......... .......... .[0m[91m..[0m[91m....... .......... 89% 1.28M 1s
+ 13150K .......[0m[91m... .....[0m[91m..... ...[0m[91m...[0m[91m.... .......... ..[0m[91m........ 89% 1.29M 1s
+ 13200K ........[0m[91m.. ........[0m[91m.. .......... .......... .......... 89% 1.28M 1s[0m[91m
+ 13250K ..........[0m[91m .......... .[0m[91m.....[0m[91m.... .......... .......... 90% 1.28M 1s[0m[91m
+ 13300K ...[0m[91m....... .......... .......... .......... .....[0m[91m..... 90%  662K 1s
+ 13350K .......... .[0m[91m......... .......[0m[91m... ........[0m[91m.. .......... 90% 1.28M 1s
+ 13400K .......... ..........[0m[91m ..........[0m[91m .......... [0m[91m......[0m[91m.... 91% 1.29M 1s
+ 13450K .......... ..[0m[91m........[0m[91m ...[0m[91m....... .......... ....[0m[91m...... 91% 1.29M 1s[0m[91m
+ 13500K ..[0m[91m........ .....[0m[91m..... .......... .........[0m[91m. .......... 91% 1.29M 1s
+ 13550K .....[0m[91m..... .......... .......... .......[0m[91m... .......[0m[91m... 92%  662K 1s
+ 13600K .......... .......... .........[0m[91m. .........[0m[91m. .......... 92% 1.28M 1s
+ 13650K .......... ...[0m[91m....... .......... ..[0m[91m........ .......... 92% 1.28M 1s
+ 13700K .......... ....[0m[91m...... ....[0m[91m...... .......... .......... 93% 1.28M 0s
+ 13750K ......[0m[91m.... .......[0m[91m... .......... .......... .[0m[91m........[0m[91m. 93% 1.28M 0s
+ 13800K .......[0m[91m..[0m[91m. .......... .......... .......... .[0m[91m......... 93% 1.28M 0s
+ 13850K ..[0m[91m........ .......... ......[0m[91m.... .......... ....[0m[91m...... 94%  662K 0s
+ 13900K .......... ........[0m[91m.. .......... ......[0m[91m.... .......... 94% 1.29M 0s
+ 13950K ..........[0m[91m .......... .........[0m[91m. .......... [0m[91m..[0m[91m........ 94% 1.29M 0s[0m[91m
+ 14000K ........[0m[91m.. .......... ....[0m[91m...... ........[0m[91m.. ......[0m[91m.... 95% 1.29M 0s
+ 14050K ....[0m[91m...... .........[0m[91m. .......... ....[0m[91m...... ..........[0m[91m 95% 1.29M 0s[0m[91m
+ 14100K .......... .....[0m[91m..... .......... .........[0m[91m. .......[0m[91m... 95% 1.29M 0s
+ 14150K .....[0m[91m.....[0m[91m ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........ 96% 1.29M 0s[0m[91m
+ 14200K .....[0m[91m..... .......... .[0m[91m........[0m[91m. .......... .....[0m[91m..... 96% 1.29M 0s[0m[91m
+ 14250K .......... ......[0m[91m.... ....[0m[91m...... ..........[0m[91m ........[0m[91m.. 96%  663K 0s
+ 14300K .......... .......... ..........[0m[91m .......... ......[0m[91m.... 97% 1.29M 0s
+ 14350K .......... ........[0m[91m.. .......... .........[0m[91m. ...[0m[91m..[0m[91m..... 97% 1.29M 0s
+ 14400K ..[0m[91m........ ........[0m[91m.. .......... .......... ..[0m[91m.[0m[91m....... 97% 1.28M 0s
+ 14450K[0m[91m ....[0m[91m...... ..[0m[91m........ ..........[0m[91m .......... [0m[91m.[0m[91m......... 98% 1.29M 0s
+ 14500K .....[0m[91m..... .[0m[91m......... ....[0m[91m...... .......... ..[0m[91m........ 98% 1.29M 0s
+ 14550K ......[0m[91m.... .[0m[91m........[0m[91m.[0m[91m .......[0m[91m... .......... ...[0m[91m....... 98% 1.29M 0s
+ 14600K .........[0m[91m. ..[0m[91m........[0m[91m ........[0m[91m.. .......... ...[0m[91m....... 99% 1.28M 0s
+ 14650K .........[0m[91m. .......[0m[91m... .......... ...[0m[91m....... ....[0m[91m...... 99% 1.29M 0s
+ 14700K ...[0m[91m.......[0m[91m ........[0m[91m.. .......... ....[0m[91m...... .....[0m[91m..... 99% 1.28M 0s
+ 14750K ...[0m[91m....... .[0m[91m........                 [0m[91m                 [0m[91m100% 70.2M=7.4s
 
-     0K ........[0m[91m.. ..[0m[91m........ .......... ..[0m[91m.[0m[91m..[0m[91m..... ...[0m[91m.......  0%  573K 26s
-    50K ......[0m[91m.... .......... .......... ....[0m[91m...... ..........  0%  577K 26s
-   100K .......... ........[0m[91m.. .......... .......... ........[0m[91m..  1% 1.12M 21s
-   150K .....[0m[91m...[0m[91m.. .......... .......... ..[0m[91m........[0m[91m ..........  1%  218K 33s
-   200K ......[0m[91m.... .......... ..[0m[91m........ .......... ......[0m[91m....  1% 38.6M 26s
-   250K ....[0m[91m...... .......... .......... .......... ....[0m[91m.[0m[91m.....  2% 67.5M 22s
-   300K .......... ........[0m[91m.. .......... .......... ..........  2% 25.2M 19s
-   350K ...[0m[91m.[0m[91m...... .........[0m[91m. .......... .......... ..........  2% 1.23M 18s
-   400K ....[0m[91m.[0m[91m.[0m[91m.[0m[91m... ..[0m[91m.[0m[91m....... .......... .......... ..........  3% 1.12M 17s
-   450K .......... [0m[91m.........[0m[91m. [0m[91m.[0m[91m..[0m[91m.......[0m[91m .......... ..........  3% 1.14M 16s
-   500K ......[0m[91m.... .......... .......... .......... ..[0m[91m...[0m[91m.....  3% 39.0M 15s
-   550K .........[0m[91m. .......... .......... .......... ..........  4% 1.15M 15s
-   600K ..[0m[91m.[0m[91m....... .[0m[91m........[0m[91m. .......[0m[91m... ...[0m[91m....... ......[0m[91m....  4% 19.6M 14s
-   650K ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ ..........  4% 1.17M 13s
-   700K ......[0m[91m.... ....[0m[91m...... .......... ..........[0m[91m ..........  5% 35.0M 12s
-   750K .......... .......... ....[0m[91m...... ...[0m[91m....... ..........  5% 1.16M 12s
-   800K .......... .......... .......... .......... ..........  5%  280M 12s
-   850K .......... .......... .[0m[91m.[0m[91m...[0m[91m..[0m[91m... .......... ..........  6% 20.8M 11s
-   900K .......... .........[0m[91m. .......... .......... .[0m[91m.........[0m[91m  6% 1.20M 11s
-   950K ...[0m[91m....... .......... .......... .....[0m[91m..... ..........  6% 51.7M 10s
-  1000K .......... ..[0m[91m........[0m[91m .......... .....[0m[91m.[0m[91m.... ..........  7% 15.8M 10s
-  1050K .......... ...[0m[91m....... .........[0m[91m. .......... ...[0m[91m..[0m[91m.....  7% 1.24M 10s
-  1100K ..[0m[91m........ .......[0m[91m... .......... ...[0m[91m....... ..........  7% 35.6M 9s
-  1150K .......[0m[91m... .......... ...[0m[91m...[0m[91m...[0m[91m. .......... ...[0m[91m.......  8% 20.3M 9s
-  1200K ....[0m[91m...... ..[0m[91m........ ....[0m[91m...... ..........[0m[91m ..........  8% 1.22M 9s
-  1250K .......... ........[0m[91m.. .......... .....[0m[91m..... ......[0m[91m....  8% 48.0M 9s
-  1300K ....[0m[91m...... ..........[0m[91m .......... .......... ..........  9%[0m[91m  132M 8s
-  1350K .[0m[91m...[0m[91m......[0m[91m .......... .[0m[91m....[0m[91m..... ...[0m[91m....... ..........  9% 19.7M 8s
-  1400K .......[0m[91m.[0m[91m.. .......... .......... .......... ..........  9% 1.23M 8s
-  1450K .......... .......... ...[0m[91m......[0m[91m. .......... .......... 10% 52.3M 8s
-  1500K ....[0m[91m...... .......... .......... .......... .........[0m[91m. 10% 72.8M 8s
-  1550K ..[0m[91m........ .......... ..[0m[91m......[0m[91m.. .......... .......... 10% 25.3M 7s
-  1600K ..[0m[91m........ ....[0m[91m...... ..[0m[91m........[0m[91m ........[0m[91m.. .......... 11% 1.20M 7s
-  1650K ....[0m[91m...... .......... ........[0m[91m.. .......... .......... 11%  111M 7s
-  1700K ..[0m[91m........ .......... .......... .....[0m[91m..... .......... 11%  230M 7s
-  1750K ........[0m[91m.. ......[0m[91m.... .......... ..[0m[91m........[0m[91m .......... 12% 13.7M 7s
-  1800K ....[0m[91m..[0m[91m.... ....[0m[91m...... ..[0m[91m........ .......... ......[0m[91m.... 12% 19.7M 7s
-  1850K ....[0m[91m.....[0m[91m. .......[0m[91m... .....[0m[91m..... .......... .[0m[91m........[0m[91m.[0m[91m 12% 1.32M 7s
-  1900K .....[0m[91m..[0m[91m.[0m[91m.. .....[0m[91m..... ...[0m[91m....... .[0m[91m......... .......[0m[91m... 13% 55.8M 6s
-  1950K .....[0m[91m..... .......... .[0m[91m.......[0m[91m.[0m[91m. .......[0m[91m... .......... 13%  128M[0m[91m 6s
-  2000K ...[0m[91m....... .[0m[91m......... .......... .....[0m[91m..... ...[0m[91m....... 13%  132M 6s
-  2050K .[0m[91m......... .......[0m[91m... .....[0m[91m..... .......[0m[91m... .[0m[91m......... 14% 19.1M 6s
-  2100K .......[0m[91m... .......... ......[0m[91m.... .......... .........[0m[91m. 14% 1.22M 6s
-  2150K ...[0m[91m....... .[0m[91m........[0m[91m. .......... .......... ...[0m[91m....... 14%[0m[91m 52.4M 6s
-  2200K .........[0m[91m. .......[0m[91m... .......... .......... .........[0m[91m. 15% 84.8M 6s
-  2250K .......[0m[91m... .......... ...[0m[91m....... .......... .......... 15%  116M 6s
-  2300K [0m[91m.....[0m[91m....[0m[91m.[0m[91m .......... .........[0m[91m. .......... .....[0m[91m..... 15% 15.0M 5s
-  2350K ...[0m[91m....... .........[0m[91m. .......... .......... ...[0m[91m....... 16% 30.0M 5s
-  2400K .[0m[91m......... .....[0m[91m.[0m[91m.... ...[0m[91m.[0m[91m...... .[0m[91m......... ..[0m[91m.[0m[91m..[0m[91m.[0m[91m.... 16% 1.32M 5s
-  2450K .......[0m[91m... .....[0m[91m..... .......... .[0m[91m.[0m[91m........ .......... 16% 60.1M 5s
-  2500K .....[0m[91m..... .......... .........[0m[91m. .......... .......... 17%  113M 5s
-  2550K .......... .[0m[91m......... .......... .....[0m[91m..... ...[0m[91m....... 17% 14.1M 5s
-  2600K .[0m[91m......... .......[0m[91m... .....[0m[91m.[0m[91m.... .......... ..........[0m[91m 17% 7.42M 5s
-  2650K .......... .....[0m[91m..... .......... .........[0m[91m. .......... 18% 12.0M 5s
-  2700K ......[0m[91m..[0m[91m.[0m[91m. .......... .[0m[91m......... .[0m[91m......... ........[0m[91m.. 18% 1.63M 5s
-  2750K .......[0m[91m... .......... ..[0m[91m........ .......... ......[0m[91m.... 18% 67.1M 5s
-  2800K .......... .......... ........[0m[91m.. .......... .......... 19% 68.4M 5s
-  2850K ..........[0m[91m ........[0m[91m.. .......... .......... ..[0m[91m........ 19%  216M 5s
-  2900K .......... ......[0m[91m.... .....[0m[91m.[0m[91m.... .......... .......... 19% 23.5M 4s
-  2950K ......[0m[91m.... .......... ..........[0m[91m .......... ......[0m[91m.... 20% 46.3M 4s
-  3000K ....[0m[91m...... .......... .......... ......[0m[91m.... .......... 20% 27.1M 4s
-  3050K .......... ........[0m[91m.. ......[0m[91m...[0m[91m. .......[0m[91m... .......... 20% 1.44M 4s
-  3100K .[0m[91m..[0m[91m....... .........[0m[91m. .......... .......... .......... 21% 13.0M 4s
-  3150K .[0m[91m........[0m[91m. .......[0m[91m... .......... ...[0m[91m....... .......... 21%[0m[91m  116M 4s
-  3200K .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .........[0m[91m. .......... 22% 36.3M 4s
-  3250K .......... ...[0m[91m....... .......... .......... .....[0m[91m..... 22% 29.2M 4s
-  3300K .......... .......... .......[0m[91m... .......... .......... 22% 38.9M[0m[91m 4s
-  3350K .......... .......[0m[91m... .......... .......... .........[0m[91m. 23% 36.4M 4s
-  3400K .......... .......... ...[0m[91m....... .......... .......[0m[91m... 23% 1.47M 4s
-  3450K .....[0m[91m..... ...[0m[91m.....[0m[91m.. .......... ....[0m[91m...... .......... 23% 12.5M 4s
-  3500K ....[0m[91m...... .[0m[91m......... .......... .......... .......... 24% 88.0M 4s
-  3550K .[0m[91m......... .......... .......... ...[0m[91m....... .........[0m[91m. 24% 82.9M 4s
-  3600K .......... .......... ...[0m[91m....... .......... .......[0m[91m... 24% 39.0M 4s
-  3650K .......... ...[0m[91m....... .........[0m[91m. .......... .......... 25% 13.2M 4s
-  3700K ...[0m[91m....... .[0m[91m.[0m[91m........ .......[0m[91m... .......... .....[0m[91m..... 25% 17.4M 4s
-  3750K .[0m[91m...[0m[91m.....[0m[91m. .......... ...[0m[91m..[0m[91m..... ...[0m[91m....... .......... 25%[0m[91m 11.4M 3s
-  3800K .......[0m[91m... .......... .......... .[0m[91m........[0m[91m. ...[0m[91m....... 26% 1.84M 3s
-  3850K .......... ......[0m[91m....[0m[91m .......... .....[0m[91m..... .......... 26% 13.6M 3s
-  3900K .[0m[91m......... .......... .......... ......[0m[91m.... .......... 26% 81.5M 3s
-  3950K .......... .......... ...[0m[91m....... .......... .........[0m[91m. 27% 75.0M 3s
-  4000K .......... ....[0m[91m....[0m[91m.. .[0m[91m......... .....[0m[91m..... .......... 27% 35.0M 3s
-  4050K .[0m[91m........[0m[91m. .......... .......... ...[0m[91m....... .........[0m[91m. 27% 52.1M 3s
-  4100K .......[0m[91m... .....[0m[91m..... ...[0m[91m....... .[0m[91m......... .......... 28% 22.7M 3s
-  4150K .....[0m[91m..... .......... .........[0m[91m. .......[0m[91m... .......... 28% 24.5M 3s
-  4200K .......... .......... .......[0m[91m... .......... .......... 28% 38.5M 3s
-  4250K .........[0m[91m. ....[0m[91m...... .......... ..........[0m[91m .......... 29% 1.45M 3s
-  4300K .[0m[91m.......[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........[0m[91m .......... 29% 30.5M 3s
-  4350K .......... .......... ........[0m[91m..[0m[91m ........[0m[91m.. ......[0m[91m.... 29% 51.5M 3s
-  4400K ....[0m[91m...... ..[0m[91m........ ........[0m[91m.. .......... ....[0m[91m...... 30% 99.3M 3s
-  4450K ..........[0m[91m ........[0m[91m.. .......... .......... .......... 30%  184M 3s
-  4500K .......... ......[0m[91m...[0m[91m. .......... .......... ...[0m[91m....... 30% 48.2M 3s
-  4550K .........[0m[91m. .......[0m[91m... .....[0m[91m..... .......... .........[0m[91m. 31% 25.5M 3s
-  4600K .......... .....[0m[91m..... .......... .[0m[91m........[0m[91m. .......... 31% 25.8M 3s
-  4650K .......... .......... .[0m[91m......... .......... .......... 31% 46.4M 3s
-  4700K ...[0m[91m....... .......... .......... .[0m[91m...[0m[91m...... .......... 32% 1.54M 3s
-  4750K ........[0m[91m.. .[0m[91m..[0m[91m....... .........[0m[91m. .......... .....[0m[91m..... 32% 16.4M 3s[0m[91m
-  4800K[0m[91m ........[0m[91m.. .......... ....[0m[91m.[0m[91m..... ..[0m[91m........[0m[91m .......... 32%[0m[91m 28.8M[0m[91m 3s
-  4850K ......[0m[91m.... .......... .......... [0m[91m.[0m[91m.[0m[91m......[0m[91m.. ......[0m[91m.... 33% 42.1M 3s
-  4900K .......... ..[0m[91m........[0m[91m [0m[91m.......... ......[0m[91m.... .......... 33% 36.0M 3s
-  4950K ..........[0m[91m [0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m....[0m[91m.. .[0m[91m..[0m[91m....[0m[91m... .......... ..[0m[91m........ 33% 24.1M 3s
-  5000K .......... ......[0m[91m.... ....[0m[91m...... .......... ........[0m[91m.. 34% 13.6M 3s
-  5050K ......[0m[91m.... .......... ..........[0m[91m .......... .......[0m[91m... 34% 21.6M 3s
-  5100K .......... ..........[0m[91m [0m[91m.......... .......... ..[0m[91m..[0m[91m...... 34% 31.3M 2s
-  5150K ..[0m[91m........ .......... ......[0m[91m.... ....[0m[91m...... .......... 35% 16.5M 2s
-  5200K .......... ......[0m[91m.... .......... ..[0m[91m........[0m[91m ......[0m[91m.[0m[91m... 35% 2.04M 2s
-  5250K ........[0m[91m.. .......... .....[0m[91m..... .....[0m[91m..... .......... 35% 18.9M 2s
-  5300K .....[0m[91m....[0m[91m. .......... .......... .......[0m[91m... .....[0m[91m....[0m[91m. 36% 35.4M 2s
-  5350K ..[0m[91m.....[0m[91m..[0m[91m. .......... .......... .[0m[91m........[0m[91m.[0m[91m .......... 36% 38.1M 2s
-  5400K .....[0m[91m..... ...[0m[91m.[0m[91m...... .[0m[91m..[0m[91m......[0m[91m. .......[0m[91m.[0m[91m.. .......... 36% 17.1M 2s
-  5450K ...[0m[91m.....[0m[91m.. .......... .......... .......... ....[0m[91m...... 37%  311M 2s
-  5500K .........[0m[91m. .......... .......... ...[0m[91m....... .......... 37% 21.2M 2s[0m[91m
-  5550K .......... .......... .......... .......... ........[0m[91m.. 37% 1.20M 2s
-  5600K .......... ....[0m[91m...... ..[0m[91m........[0m[91m .......... ......[0m[91m.... 38%  183M 2s[0m[91m
-  5650K ....[0m[91m...... ...[0m[91m....... ........[0m[91m.. .......... ....[0m[91m...... 38% 67.8M 2s
-  5700K ..[0m[91m........ .......... .......... ....[0m[91m...... .......... 38% 28.2M 2s[0m[91m
-  5750K ........[0m[91m.. .......... .......... ..........[0m[91m .......... 39% 21.8M 2s
-  5800K .......... ....[0m[91m...... ..[0m[91m........ .......... .......... 39% 40.8M 2s
-  5850K ....[0m[91m...... .......... .......... .......... ....[0m[91m...... 39% 38.7M 2s
-  5900K .......... ........[0m[91m.. ......[0m[91m.... .......... .......... 40% 22.4M 2s[0m[91m
-  5950K .......... .......... .......... ..[0m[91m........[0m[91m .......... 40% 16.9M 2s
-  6000K ......[0m[91m.... ....[0m[91m...... ..........[0m[91m ........[0m[91m.. .......... 40% 47.6M 2s
-  6050K ....[0m[91m...... .......... ........[0m[91m.. .......... .......... 41% 26.4M 2s
-  6100K ..........[0m[91m .......... .......... ....[0m[91m...... ..[0m[91m........ 41% 38.5M 2s
-  6150K .......... ......[0m[91m.... ....[0m[91m...... .......... .........[0m[91m. 41% 23.0M 2s
-  6200K .......... ....[0m[91m...... .......... ........[0m[91m.. .......... 42% 33.2M 2s
-  6250K .......... ..........[0m[91m .......... .......... .......... 42% 32.7M 2s
-  6300K ..[0m[91m......[0m[91m.[0m[91m. .....[0m[91m.[0m[91m.... ...[0m[91m....... .......[0m[91m... ...[0m[91m....... 42% 2.95M 2s
-  6350K .[0m[91m.[0m[91m........ ......[0m[91m.... ....[0m[91m.[0m[91m..... ..[0m[91m........[0m[91m .......... 43% 21.2M 2s
-  6400K ......[0m[91m.[0m[91m... .......... ..........[0m[91m .......... .......... 43%  151M 2s
-  6450K .......... ..[0m[91m........[0m[91m ...[0m[91m.......[0m[91m .......[0m[91m... .......... 44% 23.6M 2s
-  6500K .......... ...[0m[91m....... .........[0m[91m. .[0m[91m...[0m[91m...... .......... 44% 7.91M 2s
-  6550K .......... .........[0m[91m.[0m[91m .......... .......... ...[0m[91m....... 44%  138M 2s
-  6600K .[0m[91m........[0m[91m. .......[0m[91m.[0m[91m.[0m[91m. .......... .......... .........[0m[91m. 45% 25.6M 2s
-  6650K .......[0m[91m... .........[0m[91m. ........[0m[91m.. .......... .....[0m[91m..... 45% 1.08M 2s
-  6700K .......... .......... ........[0m[91m..[0m[91m .......... .......... 45% 43.1M 2s
-  6750K .......... .......[0m[91m... .....[0m[91m..... .......... .......... 46%  235M 2s
-  6800K .......... .......... ...[0m[91m..[0m[91m..... .......... .......... 46%  182M 2s
-  6850K .......... ...[0m[91m....... .........[0m[91m.[0m[91m .......[0m[91m... .......... 46% 37.4M 2s
-  6900K .......... .[0m[91m......... .......... .....[0m[91m..... ...[0m[91m....... 47% 34.3M 2s
-  6950K .........[0m[91m. .......... .....[0m[91m..... .......... .........[0m[91m. 47% 17.0M 2s
-  7000K .......[0m[91m... .......... ...[0m[91m....... .......... .......[0m[91m... 47% 35.9M 2s
-  7050K .......... .......... .[0m[91m......... .......... .....[0m[91m..... 48% 21.8M 2s
-  7100K ...[0m[91m....... .......... ......[0m[91m.... ...[0m[91m......[0m[91m. ........[0m[91m.. 48% 2.83M 2s
-  7150K ......[0m[91m...[0m[91m. .........[0m[91m. ...[0m[91m....... .[0m[91m......... .......... 48% 27.2M 2s
-  7200K ..........[0m[91m .[0m[91m......... .......[0m[91m... ..[0m[91m........ .......... 49% 14.0M 2s
-  7250K .......... ....[0m[91m.....[0m[91m. ...[0m[91m.[0m[91m...... ..........[0m[91m .......[0m[91m... 49% 16.8M 2s
-  7300K .....[0m[91m..... ...[0m[91m....... ...[0m[91m....[0m[91m..[0m[91m. .......[0m[91m... .....[0m[91m..... 49%  110M 2s
-  7350K .......[0m[91m.[0m[91m.. ..[0m[91m.[0m[91m.[0m[91m...... .......... ......[0m[91m.... .......... 50%  997K 2s
-  7400K .......... ........[0m[91m.[0m[91m. .......... .......... ..[0m[91m........ 50% 93.4M 2s
-  7450K .......... ......[0m[91m.... .......... .......... ........[0m[91m..[0m[91m 50%  112M 2s
-  7500K ......[0m[91m.[0m[91m... .......... ..[0m[91m........[0m[91m [0m[91m.......... ......[0m[91m.... 51% 14.3M 2s
-  7550K ....[0m[91m.[0m[91m..... ..........[0m[91m .......... .......... ....[0m[91m.[0m[91m.[0m[91m.... 51% 1.55M 2s
-  7600K .......... ........[0m[91m.. .......... ....[0m[91m...... ..[0m[91m........ 51% 63.6M 2s
-  7650K ........[0m[91m.[0m[91m. ......[0m[91m.... .......... .......... .......... 52% 16.4M 2s
-  7700K .......... .......... ..........[0m[91m .......... .......... 52%  111M 1s
-  7750K .....[0m[91m..... .......... .......... .....[0m[91m..... ...[0m[91m.[0m[91m...... 52% 1.23M 1s
-  7800K .[0m[91m......... .......... .......... .......... .......... 53% 39.4M 1s
-  7850K .......... .......... .......... ..[0m[91m.[0m[91m....... .......... 53%  179M 1s
-  7900K ......[0m[91m.[0m[91m.[0m[91m.. .......... .......... .......[0m[91m..[0m[91m. ........[0m[91m.. 53% 28.0M 1s
-  7950K[0m[91m ...[0m[91m....... .........[0m[91m. .[0m[91m......... .......... .......... 54% 41.0M 1s
-  8000K .[0m[91m......... .......... .....[0m[91m..... .......[0m[91m.[0m[91m.. .....[0m[91m..... 54% 1.08M 1s
-  8050K .......... .[0m[91m.[0m[91m........ .......... .....[0m[91m..... .......... 54% 52.8M 1s
-  8100K .......... ........[0m[91m.. .......... .......... .........[0m[91m.[0m[91m 55%  207M 1s
-  8150K .......... .......... .......... .[0m[91m......... [0m[91m.......... 55% 11.0M 1s[0m[91m
-  8200K ..........[0m[91m .........[0m[91m.[0m[91m .[0m[91m.......[0m[91m.[0m[91m.[0m[91m [0m[91m..[0m[91m........ ........[0m[91m.[0m[91m. 55% 1.61M 1s
-  8250K .[0m[91m.[0m[91m...[0m[91m..... .......... .....[0m[91m..... ..[0m[91m.[0m[91m.[0m[91m...[0m[91m... ..[0m[91m.......[0m[91m. 56% 1.30M 1s
-  8300K .......... .......... .[0m[91m......[0m[91m... ...[0m[91m.[0m[91m...... ........[0m[91m.. 56% 7.76M 1s[0m[91m
-  8350K .....[0m[91m..... ......[0m[91m.... .....[0m[91m..... .[0m[91m.[0m[91m.[0m[91m....... .[0m[91m..[0m[91m...[0m[91m.... 56% 5.77M 1s[0m[91m
-  8400K ........[0m[91m.. .......... .........[0m[91m. ....[0m[91m.....[0m[91m. .......... 57% 1.47M 1s[0m[91m
-  8450K .......... .[0m[91m....[0m[91m..... ....[0m[91m...[0m[91m...[0m[91m ....[0m[91m...... ....[0m[91m....[0m[91m.. 57% 4.80M 1s
-  8500K ..[0m[91m........ .......... .......... .[0m[91m.....[0m[91m.... ..[0m[91m........ 57% 1.45M 1s
-  8550K ...[0m[91m.......[0m[91m .......... .......... ....[0m[91m...... ..[0m[91m........ 58% 1.02M 1s
-  8600K .......... .......... .......... ..........[0m[91m ........[0m[91m.. 58% 50.5M 1s
-  8650K ......[0m[91m.... ....[0m[91m...... ......[0m[91m..[0m[91m.. ..[0m[91m...[0m[91m....[0m[91m. ...[0m[91m....... 58% 1.45M 1s
-  8700K ...[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m... .....[0m[91m..... ......[0m[91m....[0m[91m .......[0m[91m... .[0m[91m....[0m[91m.[0m[91m.... 59% 4.78M 1s[0m[91m
-  8750K ....[0m[91m..[0m[91m.... ..[0m[91m...[0m[91m..... ...[0m[91m..[0m[91m....[0m[91m. ....[0m[91m...... ..[0m[91m.......[0m[91m. 59% 1.20M 1s
-  8800K .[0m[91m.[0m[91m....[0m[91m.[0m[91m.[0m[91m.. ........[0m[91m..[0m[91m ..[0m[91m...[0m[91m.[0m[91m.[0m[91m... ...[0m[91m....[0m[91m..[0m[91m. .......... 59% 1.34M 1s[0m[91m
-  8850K[0m[91m .[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m..[0m[91m.[0m[91m.[0m[91m. .......... ...[0m[91m.[0m[91m...[0m[91m... ..........[0m[91m ....[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.. 60% 4.30M 1s
-  8900K ..[0m[91m...[0m[91m..... .[0m[91m.[0m[91m........ ......[0m[91m..[0m[91m.. .[0m[91m.[0m[91m..[0m[91m...... .........[0m[91m.[0m[91m 60% 1.25M 1s
-  8950K ...[0m[91m..[0m[91m..... ..[0m[91m.[0m[91m....... ...[0m[91m....... ..[0m[91m...[0m[91m..[0m[91m... .......... 60% 1.23M 1s
-  9000K ...[0m[91m....[0m[91m... .[0m[91m.......[0m[91m.. .....[0m[91m.....[0m[91m .[0m[91m.......[0m[91m.. .....[0m[91m....[0m[91m. 61% 6.25M 1s
-  9050K ....[0m[91m....[0m[91m.. ....[0m[91m...... .......... .....[0m[91m...[0m[91m.[0m[91m. .......... 61% 1.20M 1s
-  9100K .......... .....[0m[91m..... .......[0m[91m... ......[0m[91m....[0m[91m .......... 61% 1.25M 1s
-  9150K .......... .[0m[91m....[0m[91m..... ...[0m[91m....... .......... .[0m[91m...[0m[91m...... 62% 6.76M 1s
-  9200K ....[0m[91m...... ..[0m[91m....[0m[91m.... .......... ........[0m[91m.. ...[0m[91m......[0m[91m. 62% 1.20M 1s
-  9250K .......[0m[91m... .........[0m[91m. .[0m[91m.........[0m[91m ...[0m[91m.....[0m[91m.. ....[0m[91m...... 62% 1.25M 1s
-  9300K .......... ........[0m[91m.. ..[0m[91m......[0m[91m.. ..[0m[91m........[0m[91m ........[0m[91m.. 63% 7.79M 1s
-  9350K .[0m[91m........[0m[91m. ........[0m[91m..[0m[91m .......... .......... .......... 63% 1.31M 1s
-  9400K ..[0m[91m.....[0m[91m... ....[0m[91m...... .......[0m[91m...[0m[91m ........[0m[91m..[0m[91m .......[0m[91m... 63% 4.69M 1s[0m[91m
-  9450K ........[0m[91m.. ......[0m[91m.... .......... .[0m[91m.....[0m[91m.... .[0m[91m......... 64% 1.31M 1s[0m[91m
-  9500K ...[0m[91m..[0m[91m..... ..[0m[91m......[0m[91m.[0m[91m.[0m[91m ......[0m[91m...[0m[91m. .......[0m[91m... .......... 64% 1.23M 1s
-  9550K ...[0m[91m.......[0m[91m ......[0m[91m.... .[0m[91m......... ...[0m[91m..[0m[91m..... .[0m[91m......[0m[91m.[0m[91m.. 64% 7.42M 1s[0m[91m
-  9600K .....[0m[91m...[0m[91m.. .......... .......... .........[0m[91m. .......... 65%[0m[91m 1.23M 1s[0m[91m
-  9650K ...[0m[91m....... ..[0m[91m...[0m[91m.....[0m[91m ......[0m[91m...[0m[91m. ....[0m[91m...[0m[91m... .......... 65% 1.20M 1s
-  9700K ...[0m[91m....... ........[0m[91m.. .......... ..[0m[91m..[0m[91m...... .[0m[91m...[0m[91m...... 66% 8.43M 1s
-  9750K ..[0m[91m...[0m[91m...[0m[91m.. ....[0m[91m..[0m[91m.... .......... .......... .......... 66% 1.28M 1s[0m[91m
-  9800K ........[0m[91m.. .......... ...[0m[91m...[0m[91m...[0m[91m.[0m[91m ..........[0m[91m ......[0m[91m..[0m[91m.. 66% 1.13M 1s
-  9850K ......[0m[91m.... .......... ..[0m[91m........ ..[0m[91m........ ......[0m[91m.... 67% 15.3M 1s
-  9900K .....[0m[91m...[0m[91m.. .[0m[91m..[0m[91m....... ..[0m[91m.[0m[91m..[0m[91m.....[0m[91m .......... .......... 67% 1.19M 1s
-  9950K .......... ....[0m[91m...[0m[91m... .........[0m[91m. .......[0m[91m...[0m[91m ...[0m[91m..[0m[91m..... 67% 10.2M 1s
- 10000K .[0m[91m...[0m[91m...... ..[0m[91m........ .......... ......[0m[91m.... ....[0m[91m.....[0m[91m.[0m[91m 68% 1.19M 1s
- 10050K .......[0m[91m... .....[0m[91m..... .......... ...[0m[91m...[0m[91m.... ....[0m[91m...... 68% 1.17M 1s
- 10100K .......... .......... ......[0m[91m.... .[0m[91m..[0m[91m....... .......... 68% 21.3M 1s
- 10150K ....[0m[91m...[0m[91m... .[0m[91m......[0m[91m.[0m[91m.. .[0m[91m.....[0m[91m.... ....[0m[91m...... ..[0m[91m........ 69% 1.16M 1s
- 10200K .......... .......... .[0m[91m......... ...[0m[91m...[0m[91m...[0m[91m. ....[0m[91m...[0m[91m... 69% 12.7M 1s[0m[91m
- 10250K ...[0m[91m...[0m[91m..[0m[91m..[0m[91m ......[0m[91m.[0m[91m... ....[0m[91m...... .......... ........[0m[91m.[0m[91m. 69% 1.20M 1s
- 10300K .......[0m[91m... ....[0m[91m...... .[0m[91m.....[0m[91m...[0m[91m. ..[0m[91m.[0m[91m....... .[0m[91m......... 70% 1.16M 1s
- 10350K .......... ...[0m[91m...[0m[91m.... .......[0m[91m.[0m[91m.. .......... ...[0m[91m....... 70% 6.72M 1s
- 10400K .[0m[91m......... ..[0m[91m.....[0m[91m... ...[0m[91m....... .[0m[91m......... .......[0m[91m... 70% 1.34M 1s
- 10450K[0m[91m .....[0m[91m.[0m[91m...[0m[91m. ..[0m[91m.......[0m[91m. .......... .......... .......... 71% 7.09M 1s[0m[91m
- 10500K .[0m[91m....[0m[91m..... .......... .......... ..........[0m[91m ....[0m[91m...[0m[91m..[0m[91m.[0m[91m 71% 1.13M 1s
- 10550K .....[0m[91m.[0m[91m.... ...[0m[91m.[0m[91m...... .[0m[91m.......[0m[91m.. .........[0m[91m. .......... 71% 1.33M 1s
- 10600K .....[0m[91m..... .......... .......... ..[0m[91m........ .......... 72% 6.87M 1s
- 10650K ......[0m[91m.... ....[0m[91m...... ....[0m[91m...... ..[0m[91m........ .......... 72% 1.32M 1s
- 10700K .......... .......[0m[91m... ........[0m[91m.. .......... .......... 72% 6.93M 1s
- 10750K[0m[91m ..[0m[91m.......[0m[91m. .......... .......... .......[0m[91m...[0m[91m .......... 73% 1.33M 1s
- 10800K .[0m[91m...[0m[91m...... ..[0m[91m........ .......... .......... ....[0m[91m...... 73% 1.15M 1s
- 10850K ..........[0m[91m .......... .......... ......[0m[91m.... .......... 73% 7.08M 1s
- 10900K ..[0m[91m...[0m[91m..... ..........[0m[91m ........[0m[91m.[0m[91m. .......... .......... 74% 1.32M 1s
- 10950K ...[0m[91m....... .......... .[0m[91m......... .......... .[0m[91m......... 74% 6.93M 1s
- 11000K .......... ....[0m[91m...... ..[0m[91m........ .......... .......... 74% 1.32M 1s
- 11050K ......[0m[91m..[0m[91m.[0m[91m. .......... .....[0m[91m.[0m[91m.... .[0m[91m......... ........[0m[91m.[0m[91m. 75% 1.14M 1s
- 11100K ......[0m[91m.... .......... ..[0m[91m........[0m[91m .......... .[0m[91m...[0m[91m...... 75% 7.34M 1s
- 11150K ..[0m[91m........[0m[91m ........[0m[91m.[0m[91m. ..........[0m[91m ...[0m[91m....... .....[0m[91m....[0m[91m. 75% 1.28M 1s
- 11200K .......... .....[0m[91m..... ......[0m[91m...[0m[91m. ......[0m[91m.... .......... 76% 8.84M 1s
- 11250K ..[0m[91m........[0m[91m ........[0m[91m.. .........[0m[91m. ..[0m[91m...[0m[91m..... .......... 76% 1.28M 1s
- 11300K .[0m[91m........[0m[91m. .[0m[91m..[0m[91m....... ..[0m[91m........ ..........[0m[91m .......... 76% 9.18M 1s
- 11350K ...[0m[91m....... ....[0m[91m......[0m[91m [0m[91m.......... ......[0m[91m.... .....[0m[91m..... 77% 1.15M 1s
- 11400K ..[0m[91m..[0m[91m...... .......... .......[0m[91m... .....[0m[91m...[0m[91m.. .........[0m[91m. 77% 1.28M 1s
- 11450K .....[0m[91m..... ...[0m[91m......[0m[91m. ...[0m[91m.......[0m[91m .......... ...[0m[91m....... 77% 8.37M 1s
- 11500K .[0m[91m........[0m[91m. .......[0m[91m... ...[0m[91m....... .......... .......... 78% 1.25M 1s
- 11550K .......... .....[0m[91m.[0m[91m.... .......... .........[0m[91m.[0m[91m .......... 78% 9.23M 1s
- 11600K .....[0m[91m...[0m[91m.. ...[0m[91m....[0m[91m... .....[0m[91m..... .......... .........[0m[91m. 78% 1.17M 1s
- 11650K ......[0m[91m.... ....[0m[91m...... .......... .........[0m[91m.[0m[91m .....[0m[91m..... 79% 1.28M 1s
- 11700K .[0m[91m.....[0m[91m.... ..[0m[91m......[0m[91m.. ......[0m[91m.... .......... .......... 79% 8.90M 1s
- 11750K[0m[91m .[0m[91m.[0m[91m.[0m[91m..[0m[91m.[0m[91m.... .......... .......... ...[0m[91m......[0m[91m.[0m[91m [0m[91m.[0m[91m......... 79% 1.23M 1s[0m[91m
- 11800K .....[0m[91m..... ...[0m[91m....... .......... .[0m[91m........[0m[91m. ..[0m[91m...[0m[91m..... 80% 7.77M 1s
- 11850K .......... .........[0m[91m. .[0m[91m.....[0m[91m.... ..[0m[91m.....[0m[91m... ...[0m[91m....... 80% 1.21M 1s
- 11900K .......[0m[91m... .......... .......[0m[91m...[0m[91m ..........[0m[91m ........[0m[91m.. 80% 15.5M 1s
- 11950K ........[0m[91m.. ....[0m[91m......[0m[91m .....[0m[91m..... .[0m[91m......... .[0m[91m........[0m[91m. 81% 1.20M 1s
- 12000K .......... .....[0m[91m...[0m[91m..[0m[91m ......[0m[91m.... .....[0m[91m..... ......[0m[91m.... 81% 1.27M 1s
- 12050K ...[0m[91m....[0m[91m... ...[0m[91m.....[0m[91m.. ...[0m[91m....... ...[0m[91m..[0m[91m..... .......... 81% 9.66M 1s[0m[91m
- 12100K ..[0m[91m..[0m[91m.[0m[91m...[0m[91m.. .......[0m[91m... ..[0m[91m........ ....[0m[91m..[0m[91m.... ..[0m[91m........ 82% 1.25M 1s
- 12150K .[0m[91m.....[0m[91m...[0m[91m. ..[0m[91m.[0m[91m....... ........[0m[91m.. ..........[0m[91m ...[0m[91m......[0m[91m. 82%[0m[91m 7.35M[0m[91m 1s
- 12200K ..........[0m[91m [0m[91m...[0m[91m.....[0m[91m.[0m[91m. .[0m[91m......... ........[0m[91m..[0m[91m [0m[91m.[0m[91m.......[0m[91m.. 82% 1.20M 1s
- 12250K ......[0m[91m.[0m[91m.[0m[91m.. ......[0m[91m.... ........[0m[91m.. .[0m[91m..[0m[91m...[0m[91m.... .......... 83% 7.04M 1s
- 12300K .........[0m[91m.[0m[91m .......... ......[0m[91m.[0m[91m... ..[0m[91m..[0m[91m.[0m[91m..[0m[91m..[0m[91m. .[0m[91m....[0m[91m..... 83% 1.32M 1s
- 12350K .[0m[91m.........[0m[91m .....[0m[91m.[0m[91m..[0m[91m.. [0m[91m....[0m[91m...... .......[0m[91m.[0m[91m.[0m[91m. .......[0m[91m.[0m[91m.[0m[91m. 83% 1.22M 1s
- 12400K .......[0m[91m... ....[0m[91m..[0m[91m.[0m[91m.[0m[91m..[0m[91m ....[0m[91m...... .......... .......... 84% 9.46M 1s[0m[91m
- 12450K[0m[91m .......... ..[0m[91m.[0m[91m....... .........[0m[91m. ....[0m[91m...[0m[91m... .......... 84% 1.26M 1s
- 12500K .[0m[91m......[0m[91m.[0m[91m.. .......... .......... ........[0m[91m.. .....[0m[91m.[0m[91m...[0m[91m. 84% 5.16M 1s
- 12550K ..[0m[91m........ .......... ..[0m[91m...[0m[91m..... .........[0m[91m. ..[0m[91m...[0m[91m....[0m[91m. 85% 1.31M 1s
- 12600K .......[0m[91m... .......... ...[0m[91m...[0m[91m..[0m[91m.. .[0m[91m...[0m[91m...[0m[91m...[0m[91m .......... 85% 7.11M 1s
- 12650K ..........[0m[91m .......[0m[91m... .......[0m[91m..[0m[91m. ..[0m[91m...[0m[91m...[0m[91m.. .........[0m[91m. 85% 1.33M 1s
- 12700K .......... ...[0m[91m......[0m[91m. .....[0m[91m..... .......... .[0m[91m......[0m[91m.[0m[91m.[0m[91m. 86% 1.18M 1s
- 12750K .....[0m[91m..... ..........[0m[91m ....[0m[91m...... ..........[0m[91m ........[0m[91m.. 86% 9.75M 1s
- 12800K .......... ..[0m[91m.......[0m[91m.[0m[91m .......... .....[0m[91m..... .......... 87% 1.26M 1s
- 12850K ........[0m[91m.. ......[0m[91m.... .......... ...[0m[91m......[0m[91m. ....[0m[91m...... 87%[0m[91m 10.2M 1s[0m[91m
- 12900K ........[0m[91m.. .......... ...[0m[91m....... .[0m[91m........[0m[91m. .....[0m[91m...[0m[91m.. 87% 1.21M 1s
- 12950K ....[0m[91m...... .......... .[0m[91m.....[0m[91m.... ...[0m[91m.....[0m[91m.. ......[0m[91m...[0m[91m. 88% 6.14M 1s
- 13000K .......[0m[91m...[0m[91m .......... .......... ...[0m[91m...[0m[91m.... .......... 88% 1.37M 1s
- 13050K ........[0m[91m.. .[0m[91m..[0m[91m....[0m[91m... ..[0m[91m...[0m[91m...[0m[91m.. .......... ........[0m[91m.. 88% 1.15M 1s
- 13100K .....[0m[91m..... .......... .[0m[91m.[0m[91m........[0m[91m ..........[0m[91m .......... 89% 13.6M 1s
- 13150K ...[0m[91m.......[0m[91m ...[0m[91m...[0m[91m...[0m[91m. .......... ......[0m[91m.... .[0m[91m........[0m[91m. 89% 1.15M 1s
- 13200K .......[0m[91m... .......... ...[0m[91m.....[0m[91m.. .[0m[91m......[0m[91m... .[0m[91m.......[0m[91m.. 89% 12.5M 0s
- 13250K .[0m[91m....[0m[91m..... ...[0m[91m....... .[0m[91m..[0m[91m......[0m[91m. .......... .......... 90%[0m[91m 1.23M 0s
- 13300K ....[0m[91m.[0m[91m.[0m[91m.... .......... .[0m[91m......... .....[0m[91m.[0m[91m..[0m[91m.. .[0m[91m......... 90% 5.87M 0s
- 13350K .......... .[0m[91m......[0m[91m.[0m[91m.[0m[91m. .......... .......... .......... 90%[0m[91m 1.34M 0s
- 13400K ........[0m[91m.. .......... ...[0m[91m...[0m[91m.[0m[91m... .......... ....[0m[91m.....[0m[91m. 91% 1.21M 0s
- 13450K ....[0m[91m...... .......... ..[0m[91m........ ........[0m[91m.. .......... 91% 7.77M 0s
- 13500K .......... ....[0m[91m...... ...[0m[91m....... ......[0m[91m.... ..[0m[91m........ 91% 1.13M 0s[0m[91m
- 13550K .......... ......[0m[91m.... .....[0m[91m.[0m[91m.... ..[0m[91m........ .......... 92% 21.0M 0s
- 13600K .[0m[91m....[0m[91m..... .......... ....[0m[91m......[0m[91m .......... ........[0m[91m.. 92% 1.18M 0s
- 13650K ......[0m[91m.... .......... ..........[0m[91m .........[0m[91m. .......... 92% 8.75M 0s
- 13700K .....[0m[91m..... ..[0m[91m.....[0m[91m...[0m[91m .......... ......[0m[91m.... ..........[0m[91m 93% 1.28M 0s
- 13750K .......... .......... .......[0m[91m... [0m[91m.[0m[91m.[0m[91m..[0m[91m...... .........[0m[91m. 93% 1.27M 0s
- 13800K .....[0m[91m..... .......... .........[0m[91m. .......... .......... 93% 9.18M 0s
- 13850K .......... ....[0m[91m.[0m[91m..... ........[0m[91m.. .......[0m[91m... ...[0m[91m..[0m[91m..... 94% 1.13M 0s
- 13900K .......[0m[91m... .......... ...[0m[91m....... .......... .......... 94% 80.6M 0s
- 13950K ..[0m[91m...[0m[91m..... .......... .....[0m[91m.....[0m[91m ...[0m[91m....... .[0m[91m......... 94% 1.13M 0s
- 14000K .........[0m[91m. .[0m[91m......... .......... .....[0m[91m.....[0m[91m ...[0m[91m.[0m[91m.[0m[91m..... 95% 6.70M 0s[0m[91m
- 14050K .......... ..[0m[91m..[0m[91m....[0m[91m.. .[0m[91m...[0m[91m...... ...[0m[91m.......[0m[91m .........[0m[91m.[0m[91m 95%[0m[91m 1.32M 0s
- 14100K .......[0m[91m... .......... .......[0m[91m.[0m[91m.. ...[0m[91m.[0m[91m..[0m[91m.... .......... 95% 7.49M 0s[0m[91m
- 14150K ......[0m[91m.... ....[0m[91m...... .......... ....[0m[91m......[0m[91m [0m[91m..[0m[91m........ 96% 1.32M 0s
- 14200K .......... .....[0m[91m..[0m[91m... .[0m[91m.[0m[91m........ ........[0m[91m.. [0m[91m...[0m[91m....... 96% 1.15M 0s
- 14250K .[0m[91m......... .......... .........[0m[91m.[0m[91m [0m[91m.......... .......... 96%[0m[91m 33.8M 0s
- 14300K ...[0m[91m.....[0m[91m.. .[0m[91m...[0m[91m...... .....[0m[91m..... .[0m[91m......... .......... 97% 1.15M 0s
- 14350K .......... ...[0m[91m....... .[0m[91m.[0m[91m.[0m[91m.[0m[91m...... ..........[0m[91m [0m[91m......[0m[91m...[0m[91m. 97% 7.21M 0s
- 14400K ..[0m[91m........ ...[0m[91m......[0m[91m. [0m[91m.......... .......... .......... 97% 1.32M 0s
- 14450K .......... .......[0m[91m... .....[0m[91m..... ....[0m[91m...[0m[91m..[0m[91m. .....[0m[91m..... 98% 7.10M 0s
- 14500K .[0m[91m.....[0m[91m...[0m[91m. ..[0m[91m......[0m[91m.. ......[0m[91m.... ....[0m[91m...... ..[0m[91m........ 98% 1.32M 0s
- 14550K .......... ...[0m[91m....... .[0m[91m...[0m[91m.[0m[91m..[0m[91m... .....[0m[91m...[0m[91m.. ....[0m[91m...... 98% 1.12M 0s
- 14600K .......... [0m[91m........[0m[91m.. .......... .......... ...[0m[91m....... 99%  105M 0s
- 14650K .[0m[91m........[0m[91m. .....[0m[91m...[0m[91m.. ......[0m[91m.... ..[0m[91m.[0m[91m....... .......... 99% 1.11M 0s
- 14700K .......... .......... .......... ........[0m[91m.. .......[0m[91m.[0m[91m.[0m[91m.[0m[91m 99% 9.53M 0s
- 14750K .[0m[91m......... ....[0m[91m.....[0m[91m                                  100%  533K=5.1s
+[0m[91m2019-04-25 11:26:28 (1.96 MB/s) - written to stdout [15124368/15124368]
 
-[0m[91m2019-04-17 12:24:30 (2.82 MB/s) - written to stdout [15124368/15124368]
-
-[0mRemoving intermediate container 2b576eb07a94
- ---> c7e3205849bb
+[0mRemoving intermediate container 5676ebe2029c
+ ---> 57d811a33cab
 Step 13/17 : ENV PATH "/opt/spades/bin:$PATH"
- ---> Running in b5847cefc7d6
-Removing intermediate container b5847cefc7d6
- ---> 4f9e50d8023f
+ ---> Running in fdf782a4152c
+Removing intermediate container fdf782a4152c
+ ---> a5c1164e3c54
 Step 14/17 : ADD get_versions.sh /usr/local/bin/get_versions.sh
- ---> 35ce0504f1b2
+ ---> 1a1dbe23aae5
 Step 15/17 : ADD random_qual.pl /usr/local/bin/random_qual.pl
- ---> 3f445c27d54d
+ ---> d18290655d0d
 Step 16/17 : VOLUME /data
- ---> Running in d04afcdbe404
-Removing intermediate container d04afcdbe404
- ---> d7e11af674f6
+ ---> Running in cdc7b7683e2f
+Removing intermediate container cdc7b7683e2f
+ ---> b020b233d705
 Step 17/17 : WORKDIR /data
- ---> Running in 71936ce68605
-Removing intermediate container 71936ce68605
- ---> 9541995e3529
+ ---> Running in 0168bae5f924
+Removing intermediate container 0168bae5f924
+ ---> 0dd179d7944f
 [Warning] One or more build-args [baseimageversion] were not consumed
-Successfully built 9541995e3529
+Successfully built 0dd179d7944f
 Successfully tagged chloroextractorteam/benchmark-baseimage:master

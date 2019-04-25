@@ -1,3 +1,4 @@
+BRANCH_NAME=logs-2019-04-25T12-55-01
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 SSH_CONNECTION=10.149.30.159 50967 10.149.20.57 22
 GIT_SHA1=11bb3b727f66f7707fd65b7a6d435afb7ac8a403
@@ -12,7 +13,7 @@ HOME=/home/ffoerster
 SSH_AGENT_PID=14057
 SSH_CLIENT=10.149.30.159 58453 22
 TMUX=/tmp/tmux-1000/default,16631,0
-BUILD_DATE=2019-04-25T09:09:56Z
+BUILD_DATE=2019-04-25T11:52:37Z
 SSH_TTY=/dev/pts/0
 MAIL=/var/mail/ffoerster
 VCS_REF=11bb3b7
@@ -28,40 +29,40 @@ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 XDG_RUNTIME_DIR=/run/user/1000
 PATH=/home/ffoerster/projects/tools/SeqFilter/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 _=/usr/bin/env
-Sending build context to Docker daemon  15.36kB
+Sending build context to Docker daemon  43.01kB
 Step 1/14 : ARG baseimageversion=latest
 Step 2/14 : FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
 docker: Pulling from chloroextractorteam/benchmark-baseimage
-Digest: sha256:316ec3b8f643e8295719a3d6ce2027423e3d696ef2008110b7d3cdefdade520d
+Digest: sha256:37892c53e578608acb80a496b40bf8c5a8a2fb6904469a280eb3f2c82d693568
 Status: Image is up to date for chloroextractorteam/benchmark-baseimage:docker
- ---> 6b918d5ecc73
+ ---> 380f6c15df0d
 Step 3/14 : ARG VERSION=master
- ---> Running in 22f2d2575b7a
-Removing intermediate container 22f2d2575b7a
- ---> ece7cfc85c3c
+ ---> Running in 5edb3cf90b30
+Removing intermediate container 5edb3cf90b30
+ ---> 33c76e92d0f0
 Step 4/14 : ARG VCS_REF
- ---> Running in 3a50c2f1984b
-Removing intermediate container 3a50c2f1984b
- ---> 2c09bd9b680c
+ ---> Running in c495b3017b7d
+Removing intermediate container c495b3017b7d
+ ---> f8536c108e68
 Step 5/14 : ARG BUILD_DATE
- ---> Running in 8a37d538a761
-Removing intermediate container 8a37d538a761
- ---> 3e22c9738698
+ ---> Running in eb49d559a728
+Removing intermediate container eb49d559a728
+ ---> b6ddb2e6d411
 Step 6/14 : RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
- ---> Running in 518f26548c94
-VCS_REF: 11bb3b7, BUILD_DATE: 2019-04-25T09:09:56Z, VERSION: docker
-Removing intermediate container 518f26548c94
- ---> 0c5bfb4acb44
+ ---> Running in a889012542d7
+VCS_REF: 11bb3b7, BUILD_DATE: 2019-04-25T11:52:37Z, VERSION: docker
+Removing intermediate container a889012542d7
+ ---> 2fd2407bcd3b
 Step 7/14 : LABEL maintainer="frank.foerster@ime.fraunhofer.de"       description="Dockerfile providing an image for chloroExtractor for our benchmark setup"       version=${VERSION}       org.label-schema.vcs-ref=${VCS_REF}       org.label-schema.build-date=${BUILD_DATE}       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
- ---> Running in 6e81481fbab4
-Removing intermediate container 6e81481fbab4
- ---> 1ac4ad0767b1
+ ---> Running in 6f55f9dd9de5
+Removing intermediate container 6f55f9dd9de5
+ ---> b105832760c7
 Step 8/14 : ENV CHLOROEXTRACTORVERSION 2723dcd3e7bb94935ab6df27026bd518583eaaae
- ---> Running in 7c009eab3a2d
-Removing intermediate container 7c009eab3a2d
- ---> fe84b973ddb9
+ ---> Running in 5ae298d70cb2
+Removing intermediate container 5ae298d70cb2
+ ---> 90e3b2c22d58
 Step 9/14 : RUN git clone --recursive https://github.com/chloroExtractorTeam/chloroExtractor.git /opt/chloroExtractor/ &&     cd /opt/chloroExtractor/ &&     git checkout ${CHLOROEXTRACTORVERSION} &&     rm -rf /opt/chloroExtractor/.git
- ---> Running in 5b553c089a0b
+ ---> Running in 1c7717a96d0b
 [91mCloning into '/opt/chloroExtractor'...
 [0m[91mSubmodule 'test/chloroExtractor-testsuite' (https://github.com/chloroExtractorTeam/chloroExtractor-testsuite.git) registered for path 'test/chloroExtractor-testsuite'
 [0m[91mSubmodule 'util/Bowtie2' (https://github.com/BioInf-Wuerzburg/perl5lib-Bowtie2.git) registered for path 'util/Bowtie2'
@@ -108,25 +109,25 @@ do so (now or later) by using -b with the checkout command again. Example:
   git checkout -b <new-branch-name>
 
 HEAD is now at 2723dcd Merge pull request #134 from chloroExtractorTeam/master
-[0mRemoving intermediate container 5b553c089a0b
- ---> 962f2c3c52fe
+[0mRemoving intermediate container 1c7717a96d0b
+ ---> 5daf0d603888
 Step 10/14 : ENV PATH "/opt/chloroExtractor/bin/:$PATH"
- ---> Running in 671ea60b0a2a
-Removing intermediate container 671ea60b0a2a
- ---> e7ae32067c0c
+ ---> Running in 1933dbd7ed13
+Removing intermediate container 1933dbd7ed13
+ ---> 36132bbf393d
 Step 11/14 : ADD wrapper.sh /usr/local/bin/wrapper.sh
- ---> a97f34dbd790
+ ---> 4243500f2cf6
 Step 12/14 : ENTRYPOINT ["wrapper.sh"]
- ---> Running in 73a7fd7828d7
-Removing intermediate container 73a7fd7828d7
- ---> d4eff2e7fa58
+ ---> Running in 869e7cda4da8
+Removing intermediate container 869e7cda4da8
+ ---> faa14c2dc1f5
 Step 13/14 : VOLUME /data
- ---> Running in 763f5f8a38fd
-Removing intermediate container 763f5f8a38fd
- ---> 6277175db8fc
+ ---> Running in f2f5cc25b3ce
+Removing intermediate container f2f5cc25b3ce
+ ---> 6d467668683d
 Step 14/14 : WORKDIR /data
- ---> Running in 3b11ca80114c
-Removing intermediate container 3b11ca80114c
- ---> 0e2ad658d13d
-Successfully built 0e2ad658d13d
+ ---> Running in 9ca17afdfd4a
+Removing intermediate container 9ca17afdfd4a
+ ---> dafba1302df6
+Successfully built dafba1302df6
 Successfully tagged chloroextractorteam/benchmark_chloroextractor:docker

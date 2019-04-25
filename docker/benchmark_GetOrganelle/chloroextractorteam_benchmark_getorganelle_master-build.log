@@ -1,6 +1,7 @@
+BRANCH_NAME=logs-2019-04-25T12-55-01
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 SSH_CONNECTION=10.149.30.159 50967 10.149.20.57 22
-GIT_SHA1=2f3e179d6cdca0c18f05c7ebf6979053339057c5
+GIT_SHA1=8fdc0ffba4a32846134e37e8e53c462e446524e8
 LANG=de_DE.UTF-8
 OLDPWD=/tmp/benchmark/docker
 SSH_AUTH_SOCK=/tmp/ssh-lGsdvSFjZ7Qa/agent.14056
@@ -12,10 +13,10 @@ HOME=/home/ffoerster
 SSH_AGENT_PID=14057
 SSH_CLIENT=10.149.30.159 58453 22
 TMUX=/tmp/tmux-1000/default,16631,0
-BUILD_DATE=2019-04-17T12:35:01Z
+BUILD_DATE=2019-04-25T11:34:37Z
 SSH_TTY=/dev/pts/0
 MAIL=/var/mail/ffoerster
-VCS_REF=2f3e179
+VCS_REF=8fdc0ff
 TERM=screen
 SHELL=/bin/bash
 TMUX_PANE=%11
@@ -28,36 +29,36 @@ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 XDG_RUNTIME_DIR=/run/user/1000
 PATH=/home/ffoerster/projects/tools/SeqFilter/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 _=/usr/bin/env
-Sending build context to Docker daemon  37.89kB
+Sending build context to Docker daemon   38.4kB
 Step 1/16 : ARG baseimageversion=latest
 Step 2/16 : FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
 master: Pulling from chloroextractorteam/benchmark-baseimage
-Digest: sha256:7355a829cb31686c9a1ea8bee5d8b101f23bdce282cdb0ab774a392bfdf99c49
+Digest: sha256:8f482fc526f923eb553817526f253e68c4042b320ecd81cf5c898d67d3949c13
 Status: Image is up to date for chloroextractorteam/benchmark-baseimage:master
- ---> 9541995e3529
+ ---> 0dd179d7944f
 Step 3/16 : ARG VERSION=master
- ---> Running in b67610fb9707
-Removing intermediate container b67610fb9707
- ---> 695453b27e10
+ ---> Running in b2cea74a5003
+Removing intermediate container b2cea74a5003
+ ---> 3143d48e11c5
 Step 4/16 : ARG VCS_REF
- ---> Running in a2f5b843c66c
-Removing intermediate container a2f5b843c66c
- ---> 9cd308c4efd1
+ ---> Running in a697ce389518
+Removing intermediate container a697ce389518
+ ---> c13873fdc723
 Step 5/16 : ARG BUILD_DATE
- ---> Running in c00b34529c9d
-Removing intermediate container c00b34529c9d
- ---> c3f1b3c216c5
+ ---> Running in 1bd25fd09edc
+Removing intermediate container 1bd25fd09edc
+ ---> b0a6397e9624
 Step 6/16 : RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
- ---> Running in 8794e74237d7
-VCS_REF: 2f3e179, BUILD_DATE: 2019-04-17T12:35:01Z, VERSION: master
-Removing intermediate container 8794e74237d7
- ---> fa5dda0f79ab
+ ---> Running in 384a648b2abf
+VCS_REF: 8fdc0ff, BUILD_DATE: 2019-04-25T11:34:37Z, VERSION: master
+Removing intermediate container 384a648b2abf
+ ---> 69b291303c52
 Step 7/16 : LABEL maintainer="frank.foerster@ime.fraunhofer.de"       description="Dockerfile providing an image for GetOrganelle for our benchmark setup"       version=${VERSION}       org.label-schema.vcs-ref=${VCS_REF}       org.label-schema.build-date=${BUILD_DATE}       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
- ---> Running in 4b9f6a830bb4
-Removing intermediate container 4b9f6a830bb4
- ---> ab048e7db397
+ ---> Running in 3212a6f1345a
+Removing intermediate container 3212a6f1345a
+ ---> a674398a81ec
 Step 8/16 : RUN apt install --yes     python-scipy     python-numpy     python-sympy
- ---> Running in 74e113021cfe
+ ---> Running in 7690b1e2dd95
 [91m
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -87,7 +88,7 @@ The following NEW packages will be installed:
   python-pyglet python-pygments python-scandir python-scipy
   python-simplegeneric python-sympy python-traitlets python-wcwidth
   python2.7-dev
-0 upgraded, 30 newly installed, 0 to remove and 6 not upgraded.
+0 upgraded, 30 newly installed, 0 to remove and 8 not upgraded.
 Need to get 45.8 MB of archives.
 After this operation, 123 MB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 python-decorator all 4.1.2-1 [9,300 B]
@@ -121,7 +122,7 @@ Get:28 http://archive.ubuntu.com/ubuntu bionic/universe amd64 python-pyglet all 
 Get:29 http://archive.ubuntu.com/ubuntu bionic/universe amd64 python-sympy all 1.1.1-5 [2,568 kB]
 Get:30 http://archive.ubuntu.com/ubuntu bionic/universe amd64 python-scipy amd64 0.19.1-2ubuntu1 [9,689 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 45.8 MB in 42s (1,079 kB/s)
+[0mFetched 45.8 MB in 1s (38.6 MB/s)
 Selecting previously unselected package python-decorator.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 52498 files and directories currently installed.)
 Preparing to unpack .../00-python-decorator_4.1.2-1_all.deb ...
@@ -248,18 +249,18 @@ Setting up python-sympy (1.1.1-5) ...
 Setting up python-ipython (5.5.0-1) ...
 Setting up ipython (5.5.0-1) ...
 Processing triggers for libc-bin (2.27-3ubuntu1) ...
-Removing intermediate container 74e113021cfe
- ---> b564a64c1088
+Removing intermediate container 7690b1e2dd95
+ ---> 2f1c0e94e3e3
 Step 9/16 : ENV GETORGANELLEVERSION b2e29d6d9372246535d42063430f51280766a741
- ---> Running in 23b3b14598c0
-Removing intermediate container 23b3b14598c0
- ---> 16eb5b8572b4
+ ---> Running in 30166c6d74b3
+Removing intermediate container 30166c6d74b3
+ ---> f69de338edd3
 Step 10/16 : WORKDIR /opt
- ---> Running in f05ef041d878
-Removing intermediate container f05ef041d878
- ---> bb848cbe4678
+ ---> Running in d1440546563f
+Removing intermediate container d1440546563f
+ ---> 6db998fe55a0
 Step 11/16 : RUN git clone --recursive https://github.com/Kinggerm/GetOrganelle.git &&     cd GetOrganelle &&     git checkout ${GETORGANELLEVERSION} &&     rm -rf .git
- ---> Running in 04d260948725
+ ---> Running in dee87c497e74
 [91mCloning into 'GetOrganelle'...
 [0m[91mNote: checking out 'b2e29d6d9372246535d42063430f51280766a741'.
 
@@ -273,25 +274,25 @@ do so (now or later) by using -b with the checkout command again. Example:
   git checkout -b <new-branch-name>
 
 HEAD is now at b2e29d6 v1.5.2a
-[0mRemoving intermediate container 04d260948725
- ---> 814df753a823
+[0mRemoving intermediate container dee87c497e74
+ ---> f55f9bbcf87e
 Step 12/16 : ENV PATH "/opt/GetOrganelle:/opt/GetOrganelle/Utilities:$PATH"
- ---> Running in 546bfc84b710
-Removing intermediate container 546bfc84b710
- ---> ed4818eaf237
+ ---> Running in ab88d5cc473b
+Removing intermediate container ab88d5cc473b
+ ---> cae83d16a5b3
 Step 13/16 : ADD wrapper.sh /usr/local/bin/wrapper.sh
- ---> 0e93307ded55
+ ---> 99f3bac67e5c
 Step 14/16 : ENTRYPOINT ["wrapper.sh"]
- ---> Running in 3ce6883e443d
-Removing intermediate container 3ce6883e443d
- ---> 4a725a692244
+ ---> Running in b0e8649e7b54
+Removing intermediate container b0e8649e7b54
+ ---> b178ff978659
 Step 15/16 : VOLUME /data
- ---> Running in 9493832ccbd9
-Removing intermediate container 9493832ccbd9
- ---> 6487b5889f02
+ ---> Running in a42aedb46352
+Removing intermediate container a42aedb46352
+ ---> 19596196d60a
 Step 16/16 : WORKDIR /data
- ---> Running in b775cb6ab41c
-Removing intermediate container b775cb6ab41c
- ---> 342746e938d9
-Successfully built 342746e938d9
+ ---> Running in a177cf97982b
+Removing intermediate container a177cf97982b
+ ---> 906c51e29fc7
+Successfully built 906c51e29fc7
 Successfully tagged chloroextractorteam/benchmark_getorganelle:master

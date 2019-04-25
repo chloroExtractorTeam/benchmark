@@ -1,6 +1,7 @@
+BRANCH_NAME=logs-2019-04-25T12-55-01
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 SSH_CONNECTION=10.149.30.159 50967 10.149.20.57 22
-GIT_SHA1=2f3e179d6cdca0c18f05c7ebf6979053339057c5
+GIT_SHA1=8fdc0ffba4a32846134e37e8e53c462e446524e8
 LANG=de_DE.UTF-8
 OLDPWD=/tmp/benchmark/docker
 SSH_AUTH_SOCK=/tmp/ssh-lGsdvSFjZ7Qa/agent.14056
@@ -12,10 +13,10 @@ HOME=/home/ffoerster
 SSH_AGENT_PID=14057
 SSH_CLIENT=10.149.30.159 58453 22
 TMUX=/tmp/tmux-1000/default,16631,0
-BUILD_DATE=2019-04-17T12:51:03Z
+BUILD_DATE=2019-04-25T11:43:05Z
 SSH_TTY=/dev/pts/0
 MAIL=/var/mail/ffoerster
-VCS_REF=2f3e179
+VCS_REF=8fdc0ff
 TERM=screen
 SHELL=/bin/bash
 TMUX_PANE=%11
@@ -28,36 +29,36 @@ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 XDG_RUNTIME_DIR=/run/user/1000
 PATH=/home/ffoerster/projects/tools/SeqFilter/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 _=/usr/bin/env
-Sending build context to Docker daemon  187.9kB
+Sending build context to Docker daemon  188.4kB
 Step 1/18 : ARG baseimageversion=latest
 Step 2/18 : FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
 master: Pulling from chloroextractorteam/benchmark-baseimage
-Digest: sha256:7355a829cb31686c9a1ea8bee5d8b101f23bdce282cdb0ab774a392bfdf99c49
+Digest: sha256:8f482fc526f923eb553817526f253e68c4042b320ecd81cf5c898d67d3949c13
 Status: Image is up to date for chloroextractorteam/benchmark-baseimage:master
- ---> 9541995e3529
+ ---> 0dd179d7944f
 Step 3/18 : ARG VERSION=master
- ---> Running in de5412a4ad38
-Removing intermediate container de5412a4ad38
- ---> bd347f02d32b
+ ---> Running in 547606deeb0c
+Removing intermediate container 547606deeb0c
+ ---> 31a4677f7506
 Step 4/18 : ARG VCS_REF
- ---> Running in 466a660d6f9b
-Removing intermediate container 466a660d6f9b
- ---> 5e241b086e50
+ ---> Running in 31c33fad610d
+Removing intermediate container 31c33fad610d
+ ---> a4bd4ae7ab9f
 Step 5/18 : ARG BUILD_DATE
- ---> Running in 923bd8e99f48
-Removing intermediate container 923bd8e99f48
- ---> 007fec1ff284
+ ---> Running in 66e42db43aab
+Removing intermediate container 66e42db43aab
+ ---> e7a868216d81
 Step 6/18 : RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
- ---> Running in 83a1d9e93d23
-VCS_REF: 2f3e179, BUILD_DATE: 2019-04-17T12:51:03Z, VERSION: master
-Removing intermediate container 83a1d9e93d23
- ---> ffa7decdcdeb
+ ---> Running in 990c5ac91e43
+VCS_REF: 8fdc0ff, BUILD_DATE: 2019-04-25T11:43:05Z, VERSION: master
+Removing intermediate container 990c5ac91e43
+ ---> e52925e4bd4f
 Step 7/18 : LABEL maintainer="frank.foerster@ime.fraunhofer.de"       description="Dockerfile providing an image for chloroplast-assembly-protocol for our benchmark setup"       version=${VERSION}       org.label-schema.vcs-ref=${VCS_REF}       org.label-schema.build-date=${BUILD_DATE}       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
- ---> Running in ad5e175b3eca
-Removing intermediate container ad5e175b3eca
- ---> ee5c973eed69
+ ---> Running in cfb7c267b369
+Removing intermediate container cfb7c267b369
+ ---> f66f623ae757
 Step 8/18 : RUN apt install --yes libperl4-corelibs-perl
- ---> Running in 45847edc041e
+ ---> Running in a8597bdfffa5
 [91m
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -66,30 +67,30 @@ Building dependency tree...
 Reading state information...
 The following NEW packages will be installed:
   libperl4-corelibs-perl
-0 upgraded, 1 newly installed, 0 to remove and 6 not upgraded.
+0 upgraded, 1 newly installed, 0 to remove and 8 not upgraded.
 Need to get 37.3 kB of archives.
 After this operation, 143 kB of additional disk space will be used.
 Get:1 http://archive.ubuntu.com/ubuntu bionic/universe amd64 libperl4-corelibs-perl all 0.004-1 [37.3 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 37.3 kB in 0s (128 kB/s)
+[0mFetched 37.3 kB in 0s (107 kB/s)
 Selecting previously unselected package libperl4-corelibs-perl.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 52498 files and directories currently installed.)
 Preparing to unpack .../libperl4-corelibs-perl_0.004-1_all.deb ...
 Unpacking libperl4-corelibs-perl (0.004-1) ...
 Setting up libperl4-corelibs-perl (0.004-1) ...
 Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
-Removing intermediate container 45847edc041e
- ---> 3a472061868d
+Removing intermediate container a8597bdfffa5
+ ---> 6f55fbb700d3
 Step 9/18 : ENV CHLOROPLASTASSEMBLYPROTOCOL 750e241f2a51c3989d59a9c58ab48c4709aa9ccb
- ---> Running in 2b0cc4cef5db
-Removing intermediate container 2b0cc4cef5db
- ---> 65d44ea2ffc8
+ ---> Running in 7f90b0c988ef
+Removing intermediate container 7f90b0c988ef
+ ---> 1986b9d8f532
 Step 10/18 : WORKDIR /opt
- ---> Running in b5e6ecefe598
-Removing intermediate container b5e6ecefe598
- ---> 364ee0f8f225
+ ---> Running in b13fee76e0f9
+Removing intermediate container b13fee76e0f9
+ ---> b9d87a3fa957
 Step 11/18 : RUN git clone https://github.com/eead-csic-compbio/chloroplast_assembly_protocol.git &&     cd chloroplast_assembly_protocol &&     git checkout ${CHLOROPLASTASSEMBLYPROTOCOL} &&     rm -rf .git
- ---> Running in e02f043db7e1
+ ---> Running in 6dcd5808eea5
 [91mCloning into 'chloroplast_assembly_protocol'...
 [0m[91mNote: checking out '750e241f2a51c3989d59a9c58ab48c4709aa9ccb'.
 
@@ -103,14 +104,14 @@ do so (now or later) by using -b with the checkout command again. Example:
   git checkout -b <new-branch-name>
 
 HEAD is now at 750e241 Removed binaries to make sure they're compiled upon installation
-[0mRemoving intermediate container e02f043db7e1
- ---> 6051e508a557
+[0mRemoving intermediate container 6dcd5808eea5
+ ---> 8ae58017cb29
 Step 12/18 : ENV PATH "/opt/chloroplast_assembly_protocol:$PATH"
- ---> Running in 217405e87f45
-Removing intermediate container 217405e87f45
- ---> 9104b5db7f8c
+ ---> Running in 9048e1458cbd
+Removing intermediate container 9048e1458cbd
+ ---> d556197934c2
 Step 13/18 : RUN perl /opt/chloroplast_assembly_protocol/install.pl &&     chmod a+w /opt/chloroplast_assembly_protocol/1_cleanreads.pl
- ---> Running in 2ea93c03efa2
+ ---> Running in 99aab5eb584f
 
 ## checking software provided in binary form: 
 # bowtie (SSPACE-BASIC-2.0_linux-x86_64/bowtie/bowtie )
@@ -119,12 +120,14 @@ Step 13/18 : RUN perl /opt/chloroplast_assembly_protocol/install.pl &&     chmod
 ## checking pre-compiled C software: 
 # seqtk (seqtk/)
 >> OK
-# bwa (bwa-0.7.6a/)
->> OK
 # velvet (velvet_1.2.08/)
+>> OK
+# bwa (bwa-0.7.6a/)
 >> OK
 
 ## checking pre-compiled C++ software: 
+# musket (musket-1.0.6/)
+>> OK
 # split_pairs (split_pairs_v0.5/)
 
 # compiling split_pairs in split_pairs_v0.5/ (requires g++ compiler) ...
@@ -172,31 +175,29 @@ ln -f pigz unpigz
 make[1]: Leaving directory '/opt/chloroplast_assembly_protocol/bin/split_pairs_v0.5/pigz-2.3.1'
 # duk (duk/)
 >> OK
-# musket (musket-1.0.6/)
->> OK
 
 ## checking JAVA software: 
 # fastqc (FastQC)
 >> OK
 # trimmomatic (java -jar Trimmomatic-0.32)
 >> OK
-Removing intermediate container 2ea93c03efa2
- ---> 548f0b268a4e
+Removing intermediate container 99aab5eb584f
+ ---> f03a8735df46
 Step 14/18 : ADD TAIR10_chrC.fas /opt/reference.fa
- ---> 6ac04ed89416
+ ---> 04f30c3c2dbb
 Step 15/18 : ADD wrapper.sh /usr/local/bin/wrapper.sh
- ---> 5a61e1f226a6
+ ---> 06258d3036ca
 Step 16/18 : ENTRYPOINT ["wrapper.sh"]
- ---> Running in ac4774160593
-Removing intermediate container ac4774160593
- ---> 15e605fdc868
+ ---> Running in 7c15ed12f887
+Removing intermediate container 7c15ed12f887
+ ---> 70016a2e3d14
 Step 17/18 : VOLUME /data
- ---> Running in 9b23c1e00820
-Removing intermediate container 9b23c1e00820
- ---> d2f1b393054c
+ ---> Running in 7f3295fee359
+Removing intermediate container 7f3295fee359
+ ---> c92e702d8d08
 Step 18/18 : WORKDIR /data
- ---> Running in 4c91ffc51204
-Removing intermediate container 4c91ffc51204
- ---> 910c50eb62b5
-Successfully built 910c50eb62b5
+ ---> Running in 6b876111412a
+Removing intermediate container 6b876111412a
+ ---> 9846cd1610aa
+Successfully built 9846cd1610aa
 Successfully tagged chloroextractorteam/benchmark_chloroplast_assembly_protocol:master

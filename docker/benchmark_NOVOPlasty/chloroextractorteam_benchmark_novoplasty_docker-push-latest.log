@@ -1,39 +1,39 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_novoplasty]
-0c53ba785bde: Preparing
-c1ec218b80c3: Preparing
-72ac1da27dad: Preparing
-fa7b1314dbc0: Preparing
-e13d7b078a86: Preparing
-511745f30c34: Preparing
-3b3518c3159f: Preparing
-42ad8e71e341: Preparing
-c73b28f965fa: Preparing
-52faf8224064: Preparing
+fa16500c1444: Preparing
+dfef3fa8527b: Preparing
+44d100cd8429: Preparing
+2ce5db4aca6c: Preparing
+e81d040f0424: Preparing
+94b39a6fd54b: Preparing
+94fbdf15cded: Preparing
+2c55dda73587: Preparing
+84aa5566faae: Preparing
+91952daa90ed: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-511745f30c34: Waiting
-3b3518c3159f: Waiting
-42ad8e71e341: Waiting
-c73b28f965fa: Waiting
-e45cfbc98a50: Waiting
-762d8e1a6054: Waiting
-52faf8224064: Waiting
-d60e01b37e74: Waiting
+94b39a6fd54b: Waiting
+2c55dda73587: Waiting
+91952daa90ed: Waiting
+84aa5566faae: Waiting
 b57c79f4a9f3: Waiting
-72ac1da27dad: Layer already exists
-0c53ba785bde: Layer already exists
-fa7b1314dbc0: Layer already exists
-e13d7b078a86: Layer already exists
-c1ec218b80c3: Layer already exists
-511745f30c34: Layer already exists
-3b3518c3159f: Layer already exists
-42ad8e71e341: Layer already exists
-52faf8224064: Layer already exists
-c73b28f965fa: Layer already exists
-d60e01b37e74: Layer already exists
+e45cfbc98a50: Waiting
+d60e01b37e74: Waiting
+762d8e1a6054: Waiting
+94fbdf15cded: Waiting
+e81d040f0424: Layer already exists
+44d100cd8429: Layer already exists
+2ce5db4aca6c: Layer already exists
+dfef3fa8527b: Layer already exists
+fa16500c1444: Layer already exists
+94b39a6fd54b: Layer already exists
+2c55dda73587: Layer already exists
+94fbdf15cded: Layer already exists
+84aa5566faae: Layer already exists
+91952daa90ed: Layer already exists
 b57c79f4a9f3: Layer already exists
+d60e01b37e74: Layer already exists
 e45cfbc98a50: Layer already exists
 762d8e1a6054: Layer already exists
-latest: digest: sha256:eab234138e20cdd6d8e51bb45f0af05d0e0a13406992916076ab6d49809f85f0 size: 3245
+latest: digest: sha256:1ce0230cf5b6ee8ebb7b406d48338053369a1d8f01a313fbb11f51b176c91f0c size: 3245
