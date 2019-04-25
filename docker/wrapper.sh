@@ -164,6 +164,12 @@ Combined reads        =
 Forward reads         = ${FW_READ}
 Reverse reads         = ${REV_READ}
 
+Heteroplasmy:
+-----------------------
+MAF                   =
+HP exclude list       =
+PCR-free              =
+
 Optional:
 -----------------------
 Insert size auto      = yes

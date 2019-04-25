@@ -1,30 +1,30 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark-baseimage]
-c43a2080efb3: Preparing
-7d4605e215ea: Preparing
-a86945a2d701: Preparing
-23fd958bda48: Preparing
-d1347c730ad9: Preparing
-93cde69761d1: Preparing
-0783f44135ad: Preparing
+fa7b1314dbc0: Preparing
+e13d7b078a86: Preparing
+511745f30c34: Preparing
+3b3518c3159f: Preparing
+42ad8e71e341: Preparing
+c73b28f965fa: Preparing
+52faf8224064: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
+c73b28f965fa: Waiting
+52faf8224064: Waiting
+e45cfbc98a50: Waiting
 b57c79f4a9f3: Waiting
 d60e01b37e74: Waiting
 762d8e1a6054: Waiting
-e45cfbc98a50: Waiting
-0783f44135ad: Waiting
-93cde69761d1: Waiting
-a86945a2d701: Pushed
-7d4605e215ea: Pushed
-c43a2080efb3: Pushed
+fa7b1314dbc0: Pushed
+e13d7b078a86: Pushed
+511745f30c34: Pushed
 b57c79f4a9f3: Layer already exists
 d60e01b37e74: Layer already exists
 e45cfbc98a50: Layer already exists
 762d8e1a6054: Layer already exists
-93cde69761d1: Pushed
-23fd958bda48: Pushed
-0783f44135ad: Pushed
-d1347c730ad9: Pushed
-docker: digest: sha256:d85ca034e0b85adc953dc8412dfe8a903e322e7a69d222596172a077370271f5 size: 2617
+c73b28f965fa: Pushed
+3b3518c3159f: Pushed
+52faf8224064: Pushed
+42ad8e71e341: Pushed
+docker: digest: sha256:316ec3b8f643e8295719a3d6ce2027423e3d696ef2008110b7d3cdefdade520d size: 2617

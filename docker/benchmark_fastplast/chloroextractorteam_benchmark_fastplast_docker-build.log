@@ -1,6 +1,6 @@
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 SSH_CONNECTION=10.149.30.159 50967 10.149.20.57 22
-GIT_SHA1=2f3e179d6cdca0c18f05c7ebf6979053339057c5
+GIT_SHA1=11bb3b727f66f7707fd65b7a6d435afb7ac8a403
 LANG=de_DE.UTF-8
 OLDPWD=/tmp/benchmark/docker
 SSH_AUTH_SOCK=/tmp/ssh-lGsdvSFjZ7Qa/agent.14056
@@ -12,10 +12,10 @@ HOME=/home/ffoerster
 SSH_AGENT_PID=14057
 SSH_CLIENT=10.149.30.159 58453 22
 TMUX=/tmp/tmux-1000/default,16631,0
-BUILD_DATE=2019-04-17T13:20:44Z
+BUILD_DATE=2019-04-25T09:11:16Z
 SSH_TTY=/dev/pts/0
 MAIL=/var/mail/ffoerster
-VCS_REF=2f3e179
+VCS_REF=11bb3b7
 TERM=screen
 SHELL=/bin/bash
 TMUX_PANE=%11
@@ -28,44 +28,44 @@ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 XDG_RUNTIME_DIR=/run/user/1000
 PATH=/home/ffoerster/projects/tools/SeqFilter/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 _=/usr/bin/env
-Sending build context to Docker daemon  41.47kB
+Sending build context to Docker daemon  15.36kB
 Step 1/15 : ARG baseimageversion=latest
 Step 2/15 : FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
 docker: Pulling from chloroextractorteam/benchmark-baseimage
-Digest: sha256:d85ca034e0b85adc953dc8412dfe8a903e322e7a69d222596172a077370271f5
+Digest: sha256:316ec3b8f643e8295719a3d6ce2027423e3d696ef2008110b7d3cdefdade520d
 Status: Image is up to date for chloroextractorteam/benchmark-baseimage:docker
- ---> b9e2544a792a
+ ---> 6b918d5ecc73
 Step 3/15 : ARG VERSION=master
- ---> Running in e05dfb6b2099
-Removing intermediate container e05dfb6b2099
- ---> bc0dd068afbc
+ ---> Running in 4762b43bb402
+Removing intermediate container 4762b43bb402
+ ---> 727ed67f7705
 Step 4/15 : ARG VCS_REF
- ---> Running in 73b7868bcad0
-Removing intermediate container 73b7868bcad0
- ---> 2aa9e0dca2c8
+ ---> Running in 1e51a9b907dc
+Removing intermediate container 1e51a9b907dc
+ ---> 95f636630dc7
 Step 5/15 : ARG BUILD_DATE
- ---> Running in 68de6bc27590
-Removing intermediate container 68de6bc27590
- ---> 2307ef987d29
+ ---> Running in 37845229444c
+Removing intermediate container 37845229444c
+ ---> 013459793530
 Step 6/15 : RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
- ---> Running in 53c34e1a4562
-VCS_REF: 2f3e179, BUILD_DATE: 2019-04-17T13:20:44Z, VERSION: docker
-Removing intermediate container 53c34e1a4562
- ---> 6c59362df11b
+ ---> Running in 81a3a2b27823
+VCS_REF: 11bb3b7, BUILD_DATE: 2019-04-25T09:11:16Z, VERSION: docker
+Removing intermediate container 81a3a2b27823
+ ---> 5fc929a37078
 Step 7/15 : LABEL maintainer="frank.foerster@ime.fraunhofer.de"       description="Dockerfile providing an image for fast-plast for our benchmark setup"       version=${VERSION}       org.label-schema.vcs-ref=${VCS_REF}       org.label-schema.build-date=${BUILD_DATE}       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
- ---> Running in fe6a53749bd2
-Removing intermediate container fe6a53749bd2
- ---> 6c69572a5ad0
+ ---> Running in c5fa27d25c96
+Removing intermediate container c5fa27d25c96
+ ---> 3097d6925e90
 Step 8/15 : WORKDIR /opt
- ---> Running in 362399b2eff3
-Removing intermediate container 362399b2eff3
- ---> a13239b7b235
+ ---> Running in 62431e865836
+Removing intermediate container 62431e865836
+ ---> 7cca88056d74
 Step 9/15 : ENV FASTPLASTVERSION ff9755f90791270af70f74d666cced05c211e682
- ---> Running in 71f43c4743d4
-Removing intermediate container 71f43c4743d4
- ---> 181976d73381
+ ---> Running in 8cc250b0125f
+Removing intermediate container 8cc250b0125f
+ ---> 725dbf3b44d3
 Step 10/15 : RUN git clone https://github.com/mrmckain/Fast-Plast.git &&     cd Fast-Plast &&     git checkout ${FASTPLASTVERSION} &&     rm -rf .git &&     cd afin &&     make &&     cd .. &&     echo "yes\n/usr/share/java\npath\n"$(dirname $(which spades.py))"\npath\npath\npath\nYes\npath" | perl INSTALL.pl &&     sed -i 's#\(my $TRIMMOMATIC="\)[^"]*#\1'$(find /usr -name "trimmomatic.jar")'#;s#\(my $BLAST="\)[^"]*#\1'$(dirname $(which blastn))'/#;' fast-plast.pl
- ---> Running in f413ca02d8a1
+ ---> Running in 3237282da0e6
 [91mCloning into 'Fast-Plast'...
 [0m[91mNote: checking out 'ff9755f90791270af70f74d666cced05c211e682'.
 
@@ -123,25 +123,25 @@ jellyfish executable located: jellyfish
 
 jellyfish executable located: jellyfish
 Fast-Plast installation complete.  See manual for directions on how to get started.
-Removing intermediate container f413ca02d8a1
- ---> 15a1716cbfbe
+Removing intermediate container 3237282da0e6
+ ---> d6ef18c2c1d7
 Step 11/15 : ENV PATH "/opt/Fast-Plast/:$PATH"
- ---> Running in 7d11965fec72
-Removing intermediate container 7d11965fec72
- ---> 038e7ce5c72e
+ ---> Running in ee7cf9a53b50
+Removing intermediate container ee7cf9a53b50
+ ---> 842bbf575c88
 Step 12/15 : ADD wrapper.sh /usr/local/bin/wrapper.sh
- ---> 2ef0916c8e91
+ ---> 9be543ad489c
 Step 13/15 : ENTRYPOINT ["wrapper.sh"]
- ---> Running in 53a5394de3ee
-Removing intermediate container 53a5394de3ee
- ---> 96103c8a082f
+ ---> Running in b4c893d691d3
+Removing intermediate container b4c893d691d3
+ ---> 7ab14fb9c1ec
 Step 14/15 : VOLUME /data
- ---> Running in fad0b9c0b327
-Removing intermediate container fad0b9c0b327
- ---> 9fdcad4aaa37
+ ---> Running in a30cdacb2a2a
+Removing intermediate container a30cdacb2a2a
+ ---> 3a048de5dd01
 Step 15/15 : WORKDIR /data
- ---> Running in 67617a7735cc
-Removing intermediate container 67617a7735cc
- ---> 6109096c1650
-Successfully built 6109096c1650
+ ---> Running in 20cb42db6ba4
+Removing intermediate container 20cb42db6ba4
+ ---> 6088eaf36b69
+Successfully built 6088eaf36b69
 Successfully tagged chloroextractorteam/benchmark_fastplast:docker
