@@ -1,7 +1,7 @@
 # Select/design representative datasets
 We use both simulated and real data.
 
-- Simulated: "perfect" datasets from *Arabidopsis thaliana* using different read lengths (150 and 250) and differenct genome:chloroplast ratios (1:10, 1:100, 1:1000)
+- Simulated: "perfect" datasets from *Arabidopsis thaliana* using different read lengths (150 and 250) and differenct genome:chloroplast ratios (1:10, 1:100, 1:1000, 0:1 (pure chloroplast data))
 - Real: public, Illumina, paired, plant, DNA, random, wgs datasets from [SRA](https://www.ncbi.nlm.nih.gov/sra) where a reference chloroplast for the species is present in [CpBase](http://rocaplab.ocean.washington.edu/old_website/tools/cpbase)
 
 ## Simulated Data
@@ -33,6 +33,10 @@ simulate.sh 300 150 C circular
 simulate.sh 500 250 C circular
 seqkit sample --threads 8 --proportion 0.6 --rand-seed 91685 --out-file chrC_1.250bp.300x.fq chrC_1.250bp.500x.fq
 seqkit sample --threads 8 --proportion 0.6 --rand-seed 91685 --out-file chrC_2.250bp.300x.fq chrC_2.250bp.500x.fq
+cp chrC_1.150bp.300x.fq sim_1.150bp.0-1.fq
+cp chrC_1.150bp.300x.fq sim_2.150bp.0-1.fq
+cp chrC_1.250bp.300x.fq sim_1.250bp.0-1.fq
+cp chrC_1.250bp.300x.fq sim_2.250bp.0-1.fq
 ```
 
 Create datasets for 1:10, 1:100, 1:1000
