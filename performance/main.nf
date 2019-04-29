@@ -126,7 +126,7 @@ process chloroplast_assembly_protocol {
 
     output:
     file("*.log") into cap_log
-    file("get_organelle/output.fa") into cap_assembly
+    file("chloroplastassemblyprotocol/output.fa") into cap_assembly
 
     container 'chloroextractorteam/benchmark_chloroplast_assembly_protocol:v1.0.9'
 
