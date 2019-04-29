@@ -71,3 +71,26 @@ process prepare_reads {
 }
 
 prepared_reads.into{prepared_reads_ce;prepared_reads_orgasm}
+
+process chloroextractor {
+    validExitStatus 0,129
+    publishDir "$baseDir/chloroextractor", mode: 'copy', overwrite: false
+
+    input:
+    file(input) from prepared_reads_ce
+    val cpu from cpus
+
+    output:
+    file("*.log") into chloroextractor_log
+    file("chloroextractor/output.fa") into chloroextractor_assembly
+    file("chloroextractor/ptx/ass/*.fastg") into chloroextractor_assembly_fastg
+    file("chloroextractor/ptx/ass/*.gfa") into chloroextractor_assembly_gfa
+
+    container 'chloroextractorteam/benchmark_chloroextractor:v1.0.9'
+
+    script:
+    """
+    export NUMCPUS=$cpu
+    wrapper.sh 2>&1 | tee --append chloroextractor.log
+    """
+}
