@@ -31,7 +31,7 @@ Channel
 .fromFilePairs( params.reads )
 .ifEmpty { error "Cannot find any reads matching: ${params.reads}" }
 .view()
-.into { read_pairs_preparation }
+.set { read_pairs_preparation }
 
 /*
 * Create the `cpus` channel that emits the number of CPUs to use
