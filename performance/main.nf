@@ -46,9 +46,7 @@ process prepare_reads {
     val cpu from cpus
 
     output:
-    file("*.fq") into prepared_reads
-    file("read_sets_changed.done") into flag_file
-    file("read_sets_changed.started") into flag_directory
+    file("*") into prepared_reads
 
 
     container 'chloroextractorteam/benchmark_chloroextractor:v1.0.8'
