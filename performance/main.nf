@@ -95,7 +95,7 @@ process chloroextractor {
     """
 }
 
-process org-asm {
+process org_asm {
     validExitStatus 0,129
     publishDir "$baseDir/org-asm", mode: 'copy', overwrite: false
 
@@ -104,8 +104,8 @@ process org-asm {
     val cpu from cpus
 
     output:
-    file("*.log") into org-asm_log
-    file("org-asm/output.fa") into org-asm_assembly
+    file("*.log") into org_asm_log
+    file("org-asm/output.fa") into org_asm_assembly
 
     container 'chloroextractorteam/benchmark_org-asm:v1.0.9'
 
