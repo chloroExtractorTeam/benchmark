@@ -69,3 +69,5 @@ process prepare_reads {
 
     """
 }
+
+prepared_reads.into{prepared_reads_ce;prepared_reads_orgasm}
