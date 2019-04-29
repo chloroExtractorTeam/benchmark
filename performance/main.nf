@@ -70,7 +70,7 @@ process prepare_reads {
     """
 }
 
-prepared_reads.into{prepared_reads_ce;prepared_reads_orgasm;prepared_reads_getorganelle;prepared_reads_cap;prepared_reads_novoplasty;prepared_reads_ioga}
+prepared_reads.into{prepared_reads_ce;prepared_reads_orgasm;prepared_reads_getorganelle;prepared_reads_cap;prepared_reads_novoplasty;prepared_reads_ioga;prepared_reads_fastplast}
 
 process chloroextractor {
     validExitStatus 0,129
@@ -192,6 +192,27 @@ process getorganelle {
     file("get_organelle/output.fa") into getorganelle_assembly
 
     container 'chloroextractorteam/benchmark_getorganelle:v1.0.9'
+
+    script:
+    """
+    export NUMCPUS=$cpu
+    wrapper.sh 2>&1 | tee --append org-asm.log
+    """
+}
+
+process fastplast {
+    validExitStatus 0,129
+    publishDir "$baseDir/fastplast", mode: 'copy', overwrite: false
+
+    input:
+    file(input) from prepared_reads_fastplast
+    val cpu from cpus
+
+    output:
+    file("*.log") into fastplast_log
+    file("fast-plast/output.fa") into fastplast_assembly
+
+    container 'chloroextractorteam/benchmark_fastplast:v1.0.9'
 
     script:
     """
