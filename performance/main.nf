@@ -70,7 +70,7 @@ process prepare_reads {
     """
 }
 
-prepared_reads.into{prepared_reads_ce;prepared_reads_orgasm;prepared_reads_getorganelle;prepared_reads_cap;prepared_reads_novoplasty}
+prepared_reads.into{prepared_reads_ce;prepared_reads_orgasm;prepared_reads_getorganelle;prepared_reads_cap;prepared_reads_novoplasty;prepared_reads_ioga}
 
 process chloroextractor {
     validExitStatus 0,129
@@ -150,6 +150,27 @@ process novoplasty {
     file("novo_plasty/output.fa") into novoplasty_assembly
 
     container 'chloroextractorteam/benchmark_novoplasty:v1.0.9'
+
+    script:
+    """
+    export NUMCPUS=$cpu
+    wrapper.sh 2>&1 | tee --append org-asm.log
+    """
+}
+
+process ioga {
+    validExitStatus 0,129
+    publishDir "$baseDir/ioga", mode: 'copy', overwrite: false
+
+    input:
+    file(input) from prepared_reads_ioga
+    val cpu from cpus
+
+    output:
+    file("*.log") into ioga_log
+    file("ioga/output.fa") into ioga_assembly
+
+    container 'chloroextractorteam/benchmark_ioga:v1.0.9'
 
     script:
     """
