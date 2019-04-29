@@ -70,7 +70,7 @@ process prepare_reads {
     """
 }
 
-prepared_reads.into{prepared_reads_ce;prepared_reads_orgasm}
+prepared_reads.into{prepared_reads_ce;prepared_reads_orgasm;prepared_reads_getorganelle}
 
 process chloroextractor {
     validExitStatus 0,129
@@ -108,6 +108,27 @@ process org-asm {
     file("org-asm/output.fa") into org-asm_assembly
 
     container 'chloroextractorteam/benchmark_org-asm:v1.0.9'
+
+    script:
+    """
+    export NUMCPUS=$cpu
+    wrapper.sh 2>&1 | tee --append org-asm.log
+    """
+}
+
+process getorganelle {
+    validExitStatus 0,129
+    publishDir "$baseDir/getorganelle", mode: 'copy', overwrite: false
+
+    input:
+    file(input) from prepared_reads_getorganelle
+    val cpu from cpus
+
+    output:
+    file("*.log") into getorganelle_log
+    file("get_organelle/output.fa") into getorganelle_assembly
+
+    container 'chloroextractorteam/benchmark_getorganelle:v1.0.9'
 
     script:
     """
