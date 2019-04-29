@@ -70,7 +70,7 @@ process prepare_reads {
     """
 }
 
-prepared_reads.into{prepared_reads_ce;prepared_reads_orgasm;prepared_reads_getorganelle}
+prepared_reads.into{prepared_reads_ce;prepared_reads_orgasm;prepared_reads_getorganelle;prepared_reads_cap}
 
 process chloroextractor {
     validExitStatus 0,129
@@ -113,6 +113,27 @@ process org_asm {
     """
     export NUMCPUS=$cpu
     wrapper.sh 2>&1 | tee --append org-asm.log
+    """
+}
+
+process chloroplast_assembly_protocol {
+    validExitStatus 0,129
+    publishDir "$baseDir/chloroplast_assembly_protocol", mode: 'copy', overwrite: false
+
+    input:
+    file(input) from prepared_reads_cap
+    val cpu from cpus
+
+    output:
+    file("*.log") into cap_log
+    file("get_organelle/output.fa") into cap_assembly
+
+    container 'chloroextractorteam/benchmark_chloroplast_assembly_protocol:v1.0.9'
+
+    script:
+    """
+    export NUMCPUS=$cpu
+    wrapper.sh 2>&1 | tee --append cap.log
     """
 }
 
