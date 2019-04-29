@@ -43,7 +43,6 @@ process prepare_reads {
 
     input:
     set pair_id, file(reads) from read_pairs_preparation
-    val cpu from cpus
 
     output:
     file("*") into prepared_reads
