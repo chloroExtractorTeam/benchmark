@@ -48,8 +48,7 @@ process prepare_reads {
     output:
     file("*") into prepared_reads
 
-
-    container 'chloroextractorteam/benchmark_chloroextractor:v1.0.8'
+    container 'chloroextractorteam/benchmark_chloroextractor:v1.0.9'
 
     script:
     forward=reads[0].toString()
