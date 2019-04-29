@@ -94,3 +94,24 @@ process chloroextractor {
     wrapper.sh 2>&1 | tee --append chloroextractor.log
     """
 }
+
+process org-asm {
+    validExitStatus 0,129
+    publishDir "$baseDir/org-asm", mode: 'copy', overwrite: false
+
+    input:
+    file(input) from prepared_reads_orgasm
+    val cpu from cpus
+
+    output:
+    file("*.log") into org-asm_log
+    file("org-asm/output.fa") into org-asm_assembly
+
+    container 'chloroextractorteam/benchmark_org-asm:v1.0.9'
+
+    script:
+    """
+    export NUMCPUS=$cpu
+    wrapper.sh 2>&1 | tee --append org-asm.log
+    """
+}
