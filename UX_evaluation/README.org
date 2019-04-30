@@ -248,7 +248,7 @@ yes, CeCILL License
 - Is there a tutorial on how to use the tool? GOOD
 - Is there a good documentation on the parameter settings? OK
 - Is the tool maintained (issues answered, implementation of new features)? GOOD
-- Is the tool Open Source? OK
+- Is the tool Open Source? GOOD
 
 ** NOVOPlasty
 *** questions
@@ -435,3 +435,45 @@ yes, GPL-2.0
 - Is the tool maintained (issues answered, implementation of new features)? OK
 - Is the tool Open Source? GOOD
 
+* Summary
+
+| Tool            | Installation | Test | Tutorial | Documentation | Maintenance | FLOSS |
+|-----------------+--------------+------+----------+---------------+-------------+-------|
+| GetOrganelle    | OK           | BAD  | OK       | GOOD          | GOOD        | GOOD  |
+| fast-plast      | BAD          | OK   | OK       | GOOD          | GOOD        | GOOD  |
+| org-asm         | BAD          | OK   | GOOD     | OK            | GOOD        | GOOD  |
+| NOVOPlasty      | GOOD         | BAD  | OK       | GOOD          | GOOD        | OK    |
+| ChloroExtractor | GOOD         | OK   | OK       | GOOD          | GOOD        | GOOD  |
+| IOGA            | BAD          | BAD  | BAD      | OK            |             | BAD   |
+| Chl Asm Prot    | OK           | OK   | GOOD     | OK            | OK          | GOOD  | 
+
+
+** issues to open
+GetOrganelle:
+- improve installation instructions (add pip, git, create directory
+- add test dataset (using mine with the examples, I got some strange errors)
+
+fast-plast:
+- improve installation instructions (some dependencies missing - maybe present on centOS wich was tested?)
+- phred score error
+
+org-asm:
+- improve istallation instructions
+- segfault in tutorial
+
+NOVOPlasty:
+- add Test data 
+
+ChloroExtractor:
+- disk size issue (get better error message, please)
+- provide a way to check the assembly from the test dataset
+
+IOGA:
+- improve installation instruction (many dependencies missing)
+- provide a way to test the installation
+- add a tutorial
+- add a license (already opened)
+
+Chloroplast assembly protocol:
+- improve installation instructions (dependencies missing)
+- examples: assembly fails (maybe a data problem - HOWTO-brachy works)
