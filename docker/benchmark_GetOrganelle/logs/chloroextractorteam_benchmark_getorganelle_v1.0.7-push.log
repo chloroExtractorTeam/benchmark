@@ -1,0 +1,39 @@
+The push refers to repository [docker.io/chloroextractorteam/benchmark_getorganelle]
+3f33b10960b7: Preparing
+82b2afb0ecae: Preparing
+0dbb2607d47f: Preparing
+722edda111d6: Preparing
+1288fa745891: Preparing
+92f28b591d1b: Preparing
+c05c26269268: Preparing
+7fc4ea0b32c4: Preparing
+31cb908ee11d: Preparing
+d2e69d9460af: Preparing
+b57c79f4a9f3: Preparing
+d60e01b37e74: Preparing
+e45cfbc98a50: Preparing
+762d8e1a6054: Preparing
+7fc4ea0b32c4: Waiting
+31cb908ee11d: Waiting
+d2e69d9460af: Waiting
+d60e01b37e74: Waiting
+b57c79f4a9f3: Waiting
+762d8e1a6054: Waiting
+92f28b591d1b: Waiting
+c05c26269268: Waiting
+e45cfbc98a50: Waiting
+1288fa745891: Mounted from chloroextractorteam/benchmark_fastplast
+722edda111d6: Mounted from chloroextractorteam/benchmark_fastplast
+3f33b10960b7: Pushed
+92f28b591d1b: Mounted from chloroextractorteam/benchmark_fastplast
+c05c26269268: Mounted from chloroextractorteam/benchmark_fastplast
+7fc4ea0b32c4: Mounted from chloroextractorteam/benchmark_fastplast
+31cb908ee11d: Mounted from chloroextractorteam/benchmark_fastplast
+b57c79f4a9f3: Layer already exists
+82b2afb0ecae: Pushed
+d2e69d9460af: Mounted from chloroextractorteam/benchmark_fastplast
+d60e01b37e74: Layer already exists
+e45cfbc98a50: Layer already exists
+762d8e1a6054: Layer already exists
+0dbb2607d47f: Pushed
+v1.0.7: digest: sha256:331ba71cce4d18174438e9cd3d8e580a37d0fccef76f2098ec5277f120aea3b8 size: 3249

@@ -1,0 +1,202 @@
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+SSH_CONNECTION=10.149.30.159 50967 10.149.20.57 22
+GIT_SHA1=a2e044e75a77d1ee86b9723f171c53eb88724a04
+LANG=de_DE.UTF-8
+OLDPWD=/tmp/benchmark/docker
+SSH_AUTH_SOCK=/tmp/ssh-lGsdvSFjZ7Qa/agent.14056
+XDG_SESSION_ID=23
+USER=ffoerster
+IMAGE_NAME=chloroextractorteam/benchmark_chloroplast_assembly_protocol:v1.0.8
+PWD=/tmp/benchmark/docker/benchmark_chloroplast_assembly_protocol
+HOME=/home/ffoerster
+SSH_AGENT_PID=14057
+SSH_CLIENT=10.149.30.159 58453 22
+TMUX=/tmp/tmux-1000/default,16631,0
+BUILD_DATE=2019-04-18T17:36:37Z
+SSH_TTY=/dev/pts/0
+MAIL=/var/mail/ffoerster
+VCS_REF=a2e044e
+TERM=screen
+SHELL=/bin/bash
+TMUX_PANE=%11
+SHLVL=4
+PROMPT_COMMAND=history -a; history -n
+DOCKER_REPO=chloroextractorteam/benchmark_chloroplast_assembly_protocol
+SOURCE_BRANCH=v1.0.8
+LOGNAME=ffoerster
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+XDG_RUNTIME_DIR=/run/user/1000
+PATH=/home/ffoerster/projects/tools/SeqFilter/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+_=/usr/bin/env
+Sending build context to Docker daemon    172kB
+Step 1/18 : ARG baseimageversion=latest
+Step 2/18 : FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
+v1.0.8: Pulling from chloroextractorteam/benchmark-baseimage
+Digest: sha256:e4644d0a7260638bfb281260ae234ebeecb869a85b9553324272481dbd0f57eb
+Status: Image is up to date for chloroextractorteam/benchmark-baseimage:v1.0.8
+ ---> 426f317d850d
+Step 3/18 : ARG VERSION=master
+ ---> Running in 02c47c2d1dcf
+Removing intermediate container 02c47c2d1dcf
+ ---> e1ce3f9e0a58
+Step 4/18 : ARG VCS_REF
+ ---> Running in c2a57fd63e5c
+Removing intermediate container c2a57fd63e5c
+ ---> f636bae83e0c
+Step 5/18 : ARG BUILD_DATE
+ ---> Running in 59bf94deb1bd
+Removing intermediate container 59bf94deb1bd
+ ---> cf26cab93f2f
+Step 6/18 : RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
+ ---> Running in 23f0720d89df
+VCS_REF: a2e044e, BUILD_DATE: 2019-04-18T17:36:37Z, VERSION: v1.0.8
+Removing intermediate container 23f0720d89df
+ ---> 56baadda72ec
+Step 7/18 : LABEL maintainer="frank.foerster@ime.fraunhofer.de"       description="Dockerfile providing an image for chloroplast-assembly-protocol for our benchmark setup"       version=${VERSION}       org.label-schema.vcs-ref=${VCS_REF}       org.label-schema.build-date=${BUILD_DATE}       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
+ ---> Running in b0a8ed5a42e2
+Removing intermediate container b0a8ed5a42e2
+ ---> 4be4fa50b247
+Step 8/18 : RUN apt install --yes libperl4-corelibs-perl
+ ---> Running in 768070f9b45d
+[91m
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+[0mReading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  libperl4-corelibs-perl
+0 upgraded, 1 newly installed, 0 to remove and 6 not upgraded.
+Need to get 37.3 kB of archives.
+After this operation, 143 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic/universe amd64 libperl4-corelibs-perl all 0.004-1 [37.3 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 37.3 kB in 1s (65.3 kB/s)
+Selecting previously unselected package libperl4-corelibs-perl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 52498 files and directories currently installed.)
+Preparing to unpack .../libperl4-corelibs-perl_0.004-1_all.deb ...
+Unpacking libperl4-corelibs-perl (0.004-1) ...
+Setting up libperl4-corelibs-perl (0.004-1) ...
+Processing triggers for man-db (2.8.3-2ubuntu0.1) ...
+Removing intermediate container 768070f9b45d
+ ---> 81a606d39ba0
+Step 9/18 : ENV CHLOROPLASTASSEMBLYPROTOCOL 750e241f2a51c3989d59a9c58ab48c4709aa9ccb
+ ---> Running in 6ce58dbb5307
+Removing intermediate container 6ce58dbb5307
+ ---> ecb649609aa3
+Step 10/18 : WORKDIR /opt
+ ---> Running in 1b79fbe67776
+Removing intermediate container 1b79fbe67776
+ ---> ff3a434b7754
+Step 11/18 : RUN git clone https://github.com/eead-csic-compbio/chloroplast_assembly_protocol.git &&     cd chloroplast_assembly_protocol &&     git checkout ${CHLOROPLASTASSEMBLYPROTOCOL} &&     rm -rf .git
+ ---> Running in 52080d72fd10
+[91mCloning into 'chloroplast_assembly_protocol'...
+[0m[91mNote: checking out '750e241f2a51c3989d59a9c58ab48c4709aa9ccb'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 750e241 Removed binaries to make sure they're compiled upon installation
+[0mRemoving intermediate container 52080d72fd10
+ ---> 7e7efc2c0231
+Step 12/18 : ENV PATH "/opt/chloroplast_assembly_protocol:$PATH"
+ ---> Running in 766a8a6d63e5
+Removing intermediate container 766a8a6d63e5
+ ---> 00c357167024
+Step 13/18 : RUN perl /opt/chloroplast_assembly_protocol/install.pl &&     chmod a+w /opt/chloroplast_assembly_protocol/1_cleanreads.pl
+ ---> Running in 1c81f5f0d7a3
+
+## checking software provided in binary form: 
+# bowtie (SSPACE-BASIC-2.0_linux-x86_64/bowtie/bowtie )
+>> OK
+
+## checking pre-compiled C software: 
+# velvet (velvet_1.2.08/)
+>> OK
+# seqtk (seqtk/)
+>> OK
+# bwa (bwa-0.7.6a/)
+>> OK
+
+## checking pre-compiled C++ software: 
+# musket (musket-1.0.6/)
+>> OK
+# split_pairs (split_pairs_v0.5/)
+
+# compiling split_pairs in split_pairs_v0.5/ (requires g++ compiler) ...
+rm -f split_pairs_bf kseqread pigz; cd pigz-2.3.1; make clean
+make[1]: Entering directory '/opt/chloroplast_assembly_protocol/bin/split_pairs_v0.5/pigz-2.3.1'
+make[1]: Leaving directory '/opt/chloroplast_assembly_protocol/bin/split_pairs_v0.5/pigz-2.3.1'
+cd kseq; g++ -g -Wall -O3 -DFULLHEADER  split_pairs_bf.cc -o split_pairs_bf -lz -lpcrecpp; mv split_pairs_bf ..
+cd kseq; g++ -g -Wall -O3 -DFULLHEADER  kseqread.cc -o kseqread -lz -lpcrecpp; mv kseqread ..		
+cd pigz-2.3.1; make pigz; rm -f unpigz; mv pigz ..
+make[1]: Entering directory '/opt/chloroplast_assembly_protocol/bin/split_pairs_v0.5/pigz-2.3.1'
+cc -O3 -Wall -Wextra   -c -o pigz.o pigz.c
+pigz.c: In function ‘option’:
+pigz.c:3838:17: warning: this statement may fall through [-Wimplicit-fallthrough=]
+                 bail("invalid option: LZW output not supported: ", bad);
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pigz.c:3839:13: note: here
+             case 'a':
+             ^~~~
+pigz.c:3840:17: warning: this statement may fall through [-Wimplicit-fallthrough=]
+                 bail("invalid option: ascii conversion not supported: ", bad);
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pigz.c:3841:13: note: here
+             case 'b':  get = 1;  break;
+             ^~~~
+pigz.c: In function ‘copymeta’:
+pigz.c:3258:5: warning: ignoring return value of ‘chown’, declared with attribute warn_unused_result [-Wunused-result]
+     (void)chown(to, st.st_uid, st.st_gid);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+pigz.c: In function ‘compress_thread’:
+pigz.c:1556:39: warning: ‘temp’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                                   temp->buf, temp->len, temp->len + len,
+                                   ~~~~^~~~~
+cc -O3 -Wall -Wextra   -c -o yarn.o yarn.c
+cc -O3 -Wall -Wextra   -c -o zopfli/deflate.o zopfli/deflate.c
+cc -O3 -Wall -Wextra   -c -o zopfli/blocksplitter.o zopfli/blocksplitter.c
+cc -O3 -Wall -Wextra   -c -o zopfli/tree.o zopfli/tree.c
+cc -O3 -Wall -Wextra   -c -o zopfli/lz77.o zopfli/lz77.c
+cc -O3 -Wall -Wextra   -c -o zopfli/cache.o zopfli/cache.c
+cc -O3 -Wall -Wextra   -c -o zopfli/hash.o zopfli/hash.c
+cc -O3 -Wall -Wextra   -c -o zopfli/util.o zopfli/util.c
+cc -O3 -Wall -Wextra   -c -o zopfli/squeeze.o zopfli/squeeze.c
+cc -O3 -Wall -Wextra   -c -o zopfli/katajainen.o zopfli/katajainen.c
+cc  -o pigz pigz.o yarn.o zopfli/deflate.o zopfli/blocksplitter.o zopfli/tree.o zopfli/lz77.o zopfli/cache.o zopfli/hash.o zopfli/util.o zopfli/squeeze.o zopfli/katajainen.o -lpthread -lz -lm
+ln -f pigz unpigz
+make[1]: Leaving directory '/opt/chloroplast_assembly_protocol/bin/split_pairs_v0.5/pigz-2.3.1'
+# duk (duk/)
+>> OK
+
+## checking JAVA software: 
+# fastqc (FastQC)
+>> OK
+# trimmomatic (java -jar Trimmomatic-0.32)
+>> OK
+Removing intermediate container 1c81f5f0d7a3
+ ---> e5da1f70255a
+Step 14/18 : ADD TAIR10_chrC.fas /opt/reference.fa
+ ---> 091e58e511b2
+Step 15/18 : ADD wrapper.sh /usr/local/bin/wrapper.sh
+ ---> f90343b92da7
+Step 16/18 : ENTRYPOINT ["wrapper.sh"]
+ ---> Running in 559ce4cfbfc3
+Removing intermediate container 559ce4cfbfc3
+ ---> ed7542deee34
+Step 17/18 : VOLUME /data
+ ---> Running in 09d64bc7f7a7
+Removing intermediate container 09d64bc7f7a7
+ ---> c201546a8644
+Step 18/18 : WORKDIR /data
+ ---> Running in fe13bd3dfa8b
+Removing intermediate container fe13bd3dfa8b
+ ---> 3c45c2c61d56
+Successfully built 3c45c2c61d56
+Successfully tagged chloroextractorteam/benchmark_chloroplast_assembly_protocol:v1.0.8

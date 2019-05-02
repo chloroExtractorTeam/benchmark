@@ -15,7 +15,7 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
 ### Installation of chloroExtractor
-ENV CHLOROEXTRACTORVERSION 2723dcd3e7bb94935ab6df27026bd518583eaaae
+ENV CHLOROEXTRACTORVERSION 87364e48ec84a3f6ee91fc8d995b0bda5a0fa82d
 
 RUN git clone --recursive https://github.com/chloroExtractorTeam/chloroExtractor.git /opt/chloroExtractor/ && \
     cd /opt/chloroExtractor/ && \

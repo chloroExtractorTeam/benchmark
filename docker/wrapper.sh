@@ -268,12 +268,21 @@ then
 
     fast-plast.pl -1 "${FW_READ}" -2 "${REV_READ}" -name fast-plast --threads ${NUMCPUS}
 
-    REQ_OUTFILE=$(find -name "*_FULLCP.fsa" | head -n 1)
-    if [ -e "${REQ_OUTFILE}" ]
+    if [ -e "$(find -name "*_FULLCP.fsa" | head -n 1)" ]
     then
-	cp "${REQ_OUTFILE}" output.fa
+	cp "$(find -name "*_FULLCP.fsa" | head -n 1)" output.fa
+	echo "FULLCP found"
+    elif [ -e "$(find -name "*_pieces.fsa" | head -n 1)" ]
+    then
+	cp "$(find -name "*_pieces.fsa" | head -n 1)" output.fa
+	echo "Pieces file found"
+    elif [ -e "$(find -name "*.fa" | head -n 1)" ]
+    then
+	cp "$(find -name "*.fa" | head -n 1)" output.fa
+	echo "Output of iteration found"
     else
 	touch output.fa
+	echo "No output found"
     fi
 fi
 
