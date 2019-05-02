@@ -1,0 +1,45 @@
+The push refers to repository [docker.io/chloroextractorteam/benchmark_chloroplast_assembly_protocol]
+8b874889c6f1: Preparing
+f13ad781ada4: Preparing
+a2f8ddbf95c2: Preparing
+17d6a85fbd45: Preparing
+e837290ce862: Preparing
+04b8f19445ae: Preparing
+93f9c1eef436: Preparing
+6412511315e7: Preparing
+d620299ba9dd: Preparing
+db3b27b40dbe: Preparing
+a1039b2c9915: Preparing
+f13470d0aff4: Preparing
+b57c79f4a9f3: Preparing
+d60e01b37e74: Preparing
+e45cfbc98a50: Preparing
+762d8e1a6054: Preparing
+f13470d0aff4: Waiting
+762d8e1a6054: Waiting
+e45cfbc98a50: Waiting
+b57c79f4a9f3: Waiting
+d60e01b37e74: Waiting
+d620299ba9dd: Waiting
+6412511315e7: Waiting
+db3b27b40dbe: Waiting
+a1039b2c9915: Waiting
+04b8f19445ae: Waiting
+93f9c1eef436: Waiting
+f13ad781ada4: Layer already exists
+17d6a85fbd45: Layer already exists
+e837290ce862: Layer already exists
+a2f8ddbf95c2: Layer already exists
+8b874889c6f1: Layer already exists
+93f9c1eef436: Layer already exists
+04b8f19445ae: Layer already exists
+6412511315e7: Layer already exists
+db3b27b40dbe: Layer already exists
+d620299ba9dd: Layer already exists
+a1039b2c9915: Layer already exists
+b57c79f4a9f3: Layer already exists
+e45cfbc98a50: Layer already exists
+f13470d0aff4: Layer already exists
+d60e01b37e74: Layer already exists
+762d8e1a6054: Layer already exists
+latest: digest: sha256:be7e1be787df17ea374148092f752baf2d881026257d32aea555beb377d9bfc3 size: 3666
