@@ -1,16 +1,20 @@
 * issues to open
 ** GetOrganelle:
-*** improve installation instructions (add pip, git, create directory
+*** improve installation instructions - OPENED
 I installed GetOrganelle on a fresh Ubuntu 18.04.2 installation (default settings)
 and noticed the following issues with the installation instructions:
 
 - pip and git are not installed by default
 - the ~/pplications/bin directory has to be created first
+- add test dataset
 
-*** add test dataset (using mine with the examples, I got some strange errors)
+*** dependencies not found
+dependencies are in PATH and can be called on the command line, but 
+GetOrganelle shows:
+WARNING: bowtie2 not in the path!
 
 ** fast-plast:
-*** improve installation instructions
+*** improve installation instructions - OPENED
 some dependencies are not listed (maybe present on centOS wich was tested?)
 - git
 - make
@@ -31,18 +35,18 @@ I think Frank already opened these
 *** segfault in tutorial
 
 ** NOVOPlasty:
-*** add Test data 
+*** add Test data - OPENED
 A way to test the installation would be nice
 
 ** ChloroExtractor:
-*** disk size issue
+*** disk size issue - OPENED
 get better error message
 
-*** provide a way to check the assembly from the test dataset
+*** provide a way to check the assembly from the test dataset - OPENED
 test run is complete. Is there a way to verify, that the assembly is correct?
 
 ** IOGA:
-*** improve installation instructions
+*** improve installation instructions - OPENED
 the following packages were missing
 via apt:
 - python
@@ -57,14 +61,14 @@ via pip:
 - matplotlib
 - biopython
 
-*** provide a way to test the installation and/or a tutorial
+*** provide a way to test the installation and/or a tutorial - OPENED
 A test dataset together with some instructions on how to run IOGA would
 be nice.
-*** add a license 
+*** add a license - OPENED
 already opened this
 
 ** Chloroplast assembly protocol:
-*** improve installation instructions
+*** improve installation instructions - OPENED
 some dependencies were missing
 - g++
 - make
@@ -72,6 +76,6 @@ some dependencies were missing
 - libpcre3-dev
 - java
 
-*** examples from readme fail
+*** examples from readme fail - OPENED
 velvet assemblies fail,
 maybe a data problem - HOWTO-brachy works
