@@ -8,10 +8,17 @@ and noticed the following issues with the installation instructions:
 - the ~/pplications/bin directory has to be created first
 - add test dataset
 
-*** dependencies not found
+got an answer: "Thanks for the comments"
+
+*** dependencies not found - OPENED
 dependencies are in PATH and can be called on the command line, but 
 GetOrganelle shows:
 WARNING: bowtie2 not in the path!
+
+
+got an answer, asking about the environment. Answered it
+
+
 
 ** fast-plast:
 *** improve installation instructions - OPENED
@@ -23,6 +30,10 @@ some dependencies are not listed (maybe present on centOS wich was tested?)
 - java
 - python
 
+
+got an answer: thanks for the comments
+
+
 *** phred score error
 I got a useful error message (is a trimmomatic problem)
 
@@ -31,12 +42,22 @@ should we mention this at all?
 
 ** org-asm:
 I think Frank already opened these
-*** improve istallation instructions
+*** improve istallation instructions - OPENED
+
+
+
 *** segfault in tutorial
+already opened, Markus and Frank commented on it
+
+
 
 ** NOVOPlasty:
 *** add Test data - OPENED
 A way to test the installation would be nice
+
+got an answer: will look for a suitable testset
+
+
 
 ** ChloroExtractor:
 *** disk size issue - OPENED
@@ -67,6 +88,12 @@ be nice.
 *** add a license - OPENED
 already opened this
 
+
+*** answers
+
+I got answers: it is an old project, he does not have a lot of time, but will try
+to fix stuff
+
 ** Chloroplast assembly protocol:
 *** improve installation instructions - OPENED
 some dependencies were missing
@@ -76,6 +103,10 @@ some dependencies were missing
 - libpcre3-dev
 - java
 
+got an answer, Readme was updated
+
 *** examples from readme fail - OPENED
 velvet assemblies fail,
 maybe a data problem - HOWTO-brachy works
+
+
