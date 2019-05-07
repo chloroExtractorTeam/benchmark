@@ -16,5 +16,5 @@ rm ${NAME}_vs_ref.bam
 rm ref_vs_${NAME}.bam
 
 
-#for i in */*/output.fa ; do echo -ne "$(dirname $(dirname $i))\t" ; ../evaluate_completeness.sh /home/maa62rb/sim/athaliana_chloro_sim/TAIR10_chrC.fas $i $(basename $(dirname $i)) >> res.tsv ; done
+#for i in */*/output.fa ; do echo -ne "$(dirname $(dirname $i))\t"  >> res.tsv ; ../evaluate_completeness.sh /home/maa62rb/sim/athaliana_chloro_sim/TAIR10_chrC.fas $i $(basename $(dirname $i)) >> res.tsv ; done
 
