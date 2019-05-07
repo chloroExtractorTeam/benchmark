@@ -14,7 +14,7 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
-ENV NOVOPLASTYVERSION 8354548f3da5edaeadab094e26613990a4c328bb
+ENV NOVOPLASTYVERSION ab9720a02f9c80d5595cd0f9a53887565bbe9ef5
 
 WORKDIR /opt
 RUN git clone --recursive https://github.com/ndierckx/NOVOPlasty.git && \
