@@ -1,38 +1,37 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_novoplasty]
-643c9c6434d0: Preparing
-b523118a27aa: Preparing
-84a3347c4db4: Preparing
-ab667e922381: Preparing
-da9208212c08: Preparing
-a331224d57f7: Preparing
-e7329bae063a: Preparing
-0a8cc3f86588: Preparing
-49665f46fb68: Preparing
-29878a39773f: Preparing
+575123b59196: Preparing
+39efeae3b0f5: Preparing
+16022222e067: Preparing
+c2ede3a7e4cc: Preparing
+53670b88f31a: Preparing
+05426f264741: Preparing
+5f2aa193f131: Preparing
+61739d4d39be: Preparing
+87e7c1ddba6b: Preparing
+79f2ca95c106: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-0a8cc3f86588: Waiting
-49665f46fb68: Waiting
-d60e01b37e74: Waiting
-29878a39773f: Waiting
+05426f264741: Waiting
+5f2aa193f131: Waiting
+79f2ca95c106: Waiting
 e45cfbc98a50: Waiting
-b57c79f4a9f3: Waiting
-a331224d57f7: Waiting
-e7329bae063a: Waiting
-da9208212c08: Mounted from chloroextractorteam/benchmark_ioga
-ab667e922381: Mounted from chloroextractorteam/benchmark_ioga
-a331224d57f7: Mounted from chloroextractorteam/benchmark_ioga
-643c9c6434d0: Pushed
-b523118a27aa: Pushed
-84a3347c4db4: Pushed
-e7329bae063a: Mounted from chloroextractorteam/benchmark_ioga
+87e7c1ddba6b: Waiting
+61739d4d39be: Waiting
+d60e01b37e74: Waiting
+53670b88f31a: Mounted from chloroextractorteam/benchmark_ioga
+c2ede3a7e4cc: Mounted from chloroextractorteam/benchmark_ioga
+39efeae3b0f5: Pushed
+575123b59196: Pushed
+05426f264741: Mounted from chloroextractorteam/benchmark_ioga
+16022222e067: Pushed
+5f2aa193f131: Mounted from chloroextractorteam/benchmark_ioga
 b57c79f4a9f3: Layer already exists
+61739d4d39be: Mounted from chloroextractorteam/benchmark_ioga
 d60e01b37e74: Layer already exists
-0a8cc3f86588: Mounted from chloroextractorteam/benchmark_ioga
 762d8e1a6054: Layer already exists
 e45cfbc98a50: Layer already exists
-49665f46fb68: Mounted from chloroextractorteam/benchmark_ioga
-29878a39773f: Mounted from chloroextractorteam/benchmark_ioga
-master: digest: sha256:1210490dcc41b7564d408e2a574c5202713312c15f03849854abf48f81e54602 size: 3245
+87e7c1ddba6b: Mounted from chloroextractorteam/benchmark_ioga
+79f2ca95c106: Mounted from chloroextractorteam/benchmark_ioga
+master: digest: sha256:0dcfda4ecf1741a869ebad442c55c8689f900ec6083d13e22ce59764a3f8b120 size: 3245

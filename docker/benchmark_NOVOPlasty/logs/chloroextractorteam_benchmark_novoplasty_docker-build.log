@@ -1,7 +1,7 @@
-BRANCH_NAME=logs-2019-04-25T14-06-57
+BRANCH_NAME=logs-2019-05-02T09-02-08
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 SSH_CONNECTION=10.149.30.159 50967 10.149.20.57 22
-GIT_SHA1=5b2dc619126108f58484a6aa0ac07b5b9218b504
+GIT_SHA1=daf410def664b089b30ab6239d5afb004009a7de
 LANG=de_DE.UTF-8
 OLDPWD=/tmp/benchmark/docker
 LATESTLOG=logs/chloroextractorteam_benchmark_novoplasty_docker-push-latest.log
@@ -16,10 +16,10 @@ HOME=/home/ffoerster
 SSH_AGENT_PID=14057
 SSH_CLIENT=10.149.30.159 58453 22
 TMUX=/tmp/tmux-1000/default,16631,0
-BUILD_DATE=2019-05-02T06:56:45Z
+BUILD_DATE=2019-05-07T10:22:41Z
 SSH_TTY=/dev/pts/0
 MAIL=/var/mail/ffoerster
-VCS_REF=5b2dc61
+VCS_REF=daf410d
 TERM=screen
 SHELL=/bin/bash
 LOGBASE=logs/chloroextractorteam_benchmark_novoplasty_docker
@@ -33,78 +33,44 @@ DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 XDG_RUNTIME_DIR=/run/user/1000
 PATH=/home/ffoerster/projects/tools/SeqFilter/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 _=/usr/bin/env
-Sending build context to Docker daemon  231.4kB
+Sending build context to Docker daemon  242.2kB
 Step 1/16 : ARG baseimageversion=latest
 Step 2/16 : FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
 docker: Pulling from chloroextractorteam/benchmark-baseimage
-Digest: sha256:3decd20cb89adf55fbd63c3fa03ceaa8e2f7b158aa21dfe52e07d26c6977bcc4
+Digest: sha256:825d6e4a1f1940bf20c7a22623a52e90807834bc2a0d5f95f7a76438a079449b
 Status: Image is up to date for chloroextractorteam/benchmark-baseimage:docker
- ---> 6f6eb1a9f5c9
+ ---> 9d1ea3e5056e
 Step 3/16 : ARG VERSION=master
- ---> Running in 2d48afacda66
-Removing intermediate container 2d48afacda66
- ---> ef2fc67a4831
+ ---> Running in 4413abf4a9ba
+Removing intermediate container 4413abf4a9ba
+ ---> 180bd70db32b
 Step 4/16 : ARG VCS_REF
- ---> Running in bbf88ee43b48
-Removing intermediate container bbf88ee43b48
- ---> ba59090d6953
+ ---> Running in d62bc4979fd2
+Removing intermediate container d62bc4979fd2
+ ---> c0bc4dee20bb
 Step 5/16 : ARG BUILD_DATE
- ---> Running in cf70a8b66979
-Removing intermediate container cf70a8b66979
- ---> c46e1a62dd9d
+ ---> Running in 6b554bd9ca8a
+Removing intermediate container 6b554bd9ca8a
+ ---> 50806a86a193
 Step 6/16 : RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
- ---> Running in f5b07a42541a
-VCS_REF: 5b2dc61, BUILD_DATE: 2019-05-02T06:56:45Z, VERSION: docker
-Removing intermediate container f5b07a42541a
- ---> f9e77f77b7cb
+ ---> Running in 35250f9d21bc
+VCS_REF: daf410d, BUILD_DATE: 2019-05-07T10:22:41Z, VERSION: docker
+Removing intermediate container 35250f9d21bc
+ ---> ce6310de5df6
 Step 7/16 : LABEL maintainer="frank.foerster@ime.fraunhofer.de"       description="Dockerfile providing an image for NOVOPlasty for our benchmark setup"       version=${VERSION}       org.label-schema.vcs-ref=${VCS_REF}       org.label-schema.build-date=${BUILD_DATE}       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
- ---> Running in 277fbe50b295
-Removing intermediate container 277fbe50b295
- ---> 0cd7b743b8e6
-Step 8/16 : ENV NOVOPLASTYVERSION 8354548f3da5edaeadab094e26613990a4c328bb
- ---> Running in d9561a826bbf
-Removing intermediate container d9561a826bbf
- ---> 9fe81421d070
+ ---> Running in 908ed58d4c94
+Removing intermediate container 908ed58d4c94
+ ---> cea9b39dc78b
+Step 8/16 : ENV NOVOPLASTYVERSION ab9720a02f9c80d5595cd0f9a53887565bbe9ef5
+ ---> Running in 990a951878a3
+Removing intermediate container 990a951878a3
+ ---> 9b6f0e490a65
 Step 9/16 : WORKDIR /opt
- ---> Running in b934f67f3f44
-Removing intermediate container b934f67f3f44
- ---> 2eceee8bfb39
+ ---> Running in 11db8fa5dc9a
+Removing intermediate container 11db8fa5dc9a
+ ---> 23249f3f3105
 Step 10/16 : RUN git clone --recursive https://github.com/ndierckx/NOVOPlasty.git &&     cd NOVOPlasty &&     git checkout ${NOVOPLASTYVERSION} &&     rm -rf .git &&     chmod +x NOVOPlasty3.0.pl &&     ln -s NOVOPlasty3.0.pl NOVOPlasty.pl
- ---> Running in e863696f6811
+ ---> Running in 1e7bfa4345cd
 [91mCloning into 'NOVOPlasty'...
-[0m[91mNote: checking out '8354548f3da5edaeadab094e26613990a4c328bb'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
-  git checkout -b <new-branch-name>
-
-HEAD is now at 8354548 Update README.md
-[0mRemoving intermediate container e863696f6811
- ---> 46e59c576fa9
-Step 11/16 : ENV PATH "/opt/NOVOPlasty:$PATH"
- ---> Running in ccf6cfb60788
-Removing intermediate container ccf6cfb60788
- ---> 2ad68294f126
-Step 12/16 : ADD TAIR10_chrC.fas /opt/reference.fa
- ---> 099dbe0455ee
-Step 13/16 : ADD wrapper.sh /usr/local/bin/wrapper.sh
- ---> 5d3ad50ac9fc
-Step 14/16 : ENTRYPOINT ["wrapper.sh"]
- ---> Running in 2ac2d2a58bc8
-Removing intermediate container 2ac2d2a58bc8
- ---> e7279fdd2cea
-Step 15/16 : VOLUME /data
- ---> Running in f2a1197b8498
-Removing intermediate container f2a1197b8498
- ---> 037f551581a3
-Step 16/16 : WORKDIR /data
- ---> Running in 3fa6a3294783
-Removing intermediate container 3fa6a3294783
- ---> 94c14a199e4d
-Successfully built 94c14a199e4d
-Successfully tagged chloroextractorteam/benchmark_novoplasty:docker
+[0m[91mfatal: unable to access 'https://github.com/ndierckx/NOVOPlasty.git/': The requested URL returned error: 503
+[0mThe command '/bin/sh -c git clone --recursive https://github.com/ndierckx/NOVOPlasty.git &&     cd NOVOPlasty &&     git checkout ${NOVOPLASTYVERSION} &&     rm -rf .git &&     chmod +x NOVOPlasty3.0.pl &&     ln -s NOVOPlasty3.0.pl NOVOPlasty.pl' returned a non-zero code: 128
