@@ -15,7 +15,7 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
 WORKDIR /opt
-ENV FASTPLASTVERSION ff9755f90791270af70f74d666cced05c211e682
+ENV FASTPLASTVERSION 7e32b2e797fd1f49d32d6559e8345afefbaff803
 RUN git clone https://github.com/mrmckain/Fast-Plast.git && \
     cd Fast-Plast && \
     git checkout ${FASTPLASTVERSION} && \

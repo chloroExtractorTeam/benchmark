@@ -1,36 +1,36 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_chloroextractor]
-7144cb54de98: Preparing
-b5f35d10608f: Preparing
-2ce5db4aca6c: Preparing
-e81d040f0424: Preparing
-94b39a6fd54b: Preparing
-94fbdf15cded: Preparing
-2c55dda73587: Preparing
-84aa5566faae: Preparing
-91952daa90ed: Preparing
+8d82eacb9df8: Preparing
+baf97cd17f0e: Preparing
+7e6e063f29b6: Preparing
+be2b03cd3d36: Preparing
+3e4426207034: Preparing
+cf236300b132: Preparing
+5723b5cba297: Preparing
+556eb97b29c4: Preparing
+382ed9075f32: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-94fbdf15cded: Waiting
-b57c79f4a9f3: Waiting
-91952daa90ed: Waiting
+cf236300b132: Waiting
+5723b5cba297: Waiting
 d60e01b37e74: Waiting
-762d8e1a6054: Waiting
-2c55dda73587: Waiting
 e45cfbc98a50: Waiting
-84aa5566faae: Waiting
-94b39a6fd54b: Mounted from chloroextractorteam/benchmark-baseimage
-e81d040f0424: Mounted from chloroextractorteam/benchmark-baseimage
-2ce5db4aca6c: Mounted from chloroextractorteam/benchmark-baseimage
-94fbdf15cded: Mounted from chloroextractorteam/benchmark-baseimage
-7144cb54de98: Pushed
-2c55dda73587: Mounted from chloroextractorteam/benchmark-baseimage
+556eb97b29c4: Waiting
+382ed9075f32: Waiting
+762d8e1a6054: Waiting
+b57c79f4a9f3: Waiting
+be2b03cd3d36: Mounted from chloroextractorteam/benchmark-baseimage
+3e4426207034: Mounted from chloroextractorteam/benchmark-baseimage
+7e6e063f29b6: Mounted from chloroextractorteam/benchmark-baseimage
+cf236300b132: Mounted from chloroextractorteam/benchmark-baseimage
+8d82eacb9df8: Pushed
+5723b5cba297: Mounted from chloroextractorteam/benchmark-baseimage
 b57c79f4a9f3: Layer already exists
+556eb97b29c4: Mounted from chloroextractorteam/benchmark-baseimage
 d60e01b37e74: Layer already exists
-762d8e1a6054: Layer already exists
-84aa5566faae: Mounted from chloroextractorteam/benchmark-baseimage
 e45cfbc98a50: Layer already exists
-91952daa90ed: Mounted from chloroextractorteam/benchmark-baseimage
-b5f35d10608f: Pushed
-docker: digest: sha256:cea9fbefae7b5b92827165bd796945a106b9831affd192a5fd509306cdd6a84b size: 3038
+762d8e1a6054: Layer already exists
+382ed9075f32: Mounted from chloroextractorteam/benchmark-baseimage
+baf97cd17f0e: Pushed
+docker: digest: sha256:7e9d85b19c0cc0c6bea0bdba5d121bd10b143f0e2b965e21e4203af0131be8f3 size: 3038
