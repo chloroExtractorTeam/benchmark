@@ -1,27 +1,32 @@
 #!/bin/bash
 
-PROGRAM2CALL=$1
-THREADS=$2
-LENGTH_READS=$3
-READ_RATIO=$4
-AMOUNT=$5
-REPLICATE=$6
+TYPE=$1
+REPLICATE=$2
+NAME=$3
+OUTPUTDIR=$4
 
-VERSION=v1.0
+LOGBASE=~/projects/benchmark/benchmark/performance/performance/logs/"${TYPE}"_"${REPLICATE}"_"${NAME}"
 
-cat <<EOF
+DOCKERID=$(docker run -v ${OUTPUTDIR}:/data --workdir /data/${REPLICATE} --user $(id -u):$(id -g) --name ${NAME} -d chloroextractorteam/benchmark_${TYPE}:v2.0.0)
 
-C H L O R O P L A S T   A S S E M B L Y   T O O L   B E N C H M A R K
-=====================================================================
+while true
+do
+    date +"%Y%m%d-T-%H:%M:%S" >>${LOGBASE}.docker-stats.log;
+    docker stats ${DOCKERID} --no-stream >>${LOGBASE}.docker-stats.log;
 
-Version ${VERSION}
+    date +"%Y%m%d-T-%H:%M:%S" >>${LOGBASE}.du.log;
+    du --apparent-size --bytes -s ${OUTDIR} >>${LOGBASE}.du.log;
 
-Parameters:
-   Assembler:                ${PROGRAM2CALL}
-   Threads:                  ${THREADS}
-   Read length:              ${LENGTH_READS}
-   Genome-chloroplast ratio: ${READ_RATIO}
-   Input read number:        ${AMOUNT}
-   Replicate number:         ${REPLICATE}
+    curl --silent --unix-socket /var/run/docker.sock http://localhost/containers/${DOCKERID}/stats | head -n1 >>${LOGBASE}.stats.json
 
-EOF
+    docker ps --no-trunc | grep ${DOCKERID} >/dev/null;
+    if [ $? -ne 0 ]
+    then
+	break;
+    fi
+done
+
+docker logs --timestamps ${NAME} &>${LOGBASE}.log
+
+curl --silent --unix-socket /var/run/docker.sock http://localhost/containers/${DOCKERID}/json >${LOGBASE}.json
+docker rm ${DOCKERID}
