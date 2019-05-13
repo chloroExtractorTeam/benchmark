@@ -3,9 +3,10 @@
 REF=$1
 QRY=$2
 NAME=$3
-
-minimap2 -a -N 5 -x asm5 --cs -c $REF $QRY | samtools view -Sb | samtools sort >${NAME}_vs_ref.bam
-minimap2 -a -N 5 -x asm5 --cs -c $QRY $REF | samtools view -Sb | samtools sort >ref_vs_${NAME}.bam
+QRYF=$(tempfile)  
+cat $QRY | sed 's/>.*/>c/g' | seqkit rename  > $QRYF
+minimap2 -a -N 5 -x asm5 --cs -c $REF $QRYF | samtools view -Sb | samtools sort >${NAME}_vs_ref.bam
+minimap2 -a -N 5 -x asm5 --cs -c $QRYF $REF | samtools view -Sb | samtools sort >ref_vs_${NAME}.bam
 
 echo -ne "$NAME\t"
 bedtools genomecov -ibam ${NAME}_vs_ref.bam -bga | perl -ane '$l=$F[2]-$F[1];$t+=$l;$c+=$l if($F[3]>0);END{print "$t\t$c\t".($c/$t)}'
