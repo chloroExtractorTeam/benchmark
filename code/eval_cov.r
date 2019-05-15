@@ -1,4 +1,4 @@
-dps = c("tidyverse","dabestr","UpSetR","RColorBrewer","ggbeeswarm")                   
+dps = c("tidyverse","dabestr","UpSetR","RColorBrewer","ggbeeswarm","ggpmisc")                   
 sapply(dps,function(x){if(!require(x,character.only = T)){install.packages(x);library(x,character.only = T)}else{library(x,character.only = T)}})
 
 
@@ -132,12 +132,10 @@ out_re2 <- out_tibble_re[paste0(unlist(out_tibble_re[,1]),unlist(out_tibble_re[,
 
 out_j <- out_re %>% add_column(score_rerun = out_re2$score)
 out_j %>% ggplot(aes(x=score,y=score_rerun,col=assembler)) + geom_point()  + theme_bw() +
-    facet_wrap(~assembler,ncol=3,scales="free") +
+    facet_wrap(~assembler,ncol=3,scales="free") + geom_smooth(method="lm", se = T) +
+    stat_poly_eq(formula = x ~ y,parse=T) +
     guides(col=guide_legend(ncol=2)) +
     theme(legend.title = element_blank(),legend.position = c(0.5,0.2), text=element_text(size=15)) +
     xlab("Score run 1") + ylab("Score run 2")
 
 ggsave("repro.pdf")
-
-
-
