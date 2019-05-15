@@ -5,7 +5,9 @@ THREADS=$2
 LENGTH_READS=$3
 READ_RATIO=$4
 AMOUNT=$5
-REPLICATE=$6
+ITERATION=$6
+
+REPLICATE="${ITERATION}"_"${THREADS}"_"${RANDOM}"
 
 VERSION=v1.0
 
@@ -49,7 +51,7 @@ Parameters:
    Read length:              ${LENGTH_READS}
    Genome-chloroplast ratio: ${READ_RATIO}
    Input read number:        ${AMOUNT}
-   Replicate number:         ${REPLICATE}
+   Replicate number:         ${ITERATION}
 
 Output:
    Docker image to use:      ${DOCKERIMAGE}
@@ -57,6 +59,7 @@ Output:
    Assembler output folder:  ${OUTFOLDER}
    Name of output file:      ${NAME}
    Basename of logfolder:    ${LOGBASE}
+   Folder for calulations:   ${REPLICATE}
 
 EOF
 
@@ -142,6 +145,6 @@ docker rm ${DOCKERID}
 
 date +"[%Y-%m-%d %H:%M:%S] Removing output folder"
 cp "${REPLICATE}"/"${OUTFOLDER}"/output.fa ${LOGBASE}.output.fa
-rm -rf "${REPLICATE}"/"${OUTFOLDER}"
+rm -rf "${REPLICATE}"
 
 date +"[%Y-%m-%d %H:%M:%S] Finished benchmark"
