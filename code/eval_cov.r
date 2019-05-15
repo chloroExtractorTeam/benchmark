@@ -96,14 +96,48 @@ run_log_mem$amount_f <- factor(run_log_mem$amount, levels=c("25K","250K","2.5M")
 run_log_mem %>% ggplot(aes(y=mag,x=as.factor(threads), fill=program)) + geom_boxplot()  + theme_bw() +
     scale_fill_manual(values=my_col) + facet_grid(usage~. ,scales = "free_y")  + scale_color_manual(values=my_col) +
     theme(text = element_text(size=15), legend.title=element_blank(),axis.title.y=element_blank()) +
-    xlab("Number of threads")
+    xlab("Number of threads") + scale_y_log10()
 ggsave("cpu_mem_disk_usage.pdf")
 
 
 
 ## plot disk usage and memory vs input size and number of threads 
 run_log_mem %>%   ggplot(aes(y=mag,x=as.factor(threads), fill=program)) + geom_boxplot()  +
-    theme_bw() +scale_fill_manual(values=my_col) + facet_grid(usage~amount_f ,scales = "free_y")  + scale_color_manual(values=my_col) +
+    theme_bw() +scale_fill_manual(values=my_col) + facet_grid(usage~amount_f ,scales = "free_y")  +
+    scale_color_manual(values=my_col) + 
     theme(text = element_text(size=15), legend.title=element_blank(),axis.title.y=element_blank()) +
     xlab("Number of threads") + scale_y_log10()
 ggsave("usage_amount_threads.pdf")
+
+
+
+### Analyze re runs
+
+
+res_re  <- read_tsv("res_re_clean.tsv",col_names=c("dataset","assembler","ref_tot","ref_cov","ref_cov_frac","qry_tot","qry_cov","qry_cov_frac","contig_num"))
+
+
+out_tibble_re <- res_re %>% mutate(rep_res = exp(-abs(log(qry_cov/ref_cov)))) %>%
+    mutate(score =  (1 - ((abs(1-ref_cov_frac)/4) + (abs(1-qry_cov_frac)/4) + (abs(1-rep_res)/4) + (abs(1-(1/contig_num))/4)))*100)
+
+## order the assemblers for ggplot
+out_tibble_re$assembler_f <- factor(out_tibble_re$assembler, levels=c("CAP","CE","Fast-Plast","GetOrganelle","IOGA","NOVOPlasty","org.ASM"))
+
+
+##filter out_tibble with re run datasets
+
+out_re <- out_tibble[paste0(unlist(out_tibble[,1]),unlist(out_tibble[,2])) %in% paste0(unlist(out_tibble_re[,1]),unlist(out_tibble_re[,2])),]
+
+out_re2 <- out_tibble_re[paste0(unlist(out_tibble_re[,1]),unlist(out_tibble_re[,2])) %in% paste0(unlist(out_re[,1]),unlist(out_re[,2])),]
+
+out_j <- out_re %>% add_column(score_rerun = out_re2$score)
+out_j %>% ggplot(aes(x=score,y=score_rerun,col=assembler)) + geom_point()  + theme_bw() +
+    facet_wrap(~assembler,ncol=3,scales="free") +
+    guides(col=guide_legend(ncol=2)) +
+    theme(legend.title = element_blank(),legend.position = c(0.5,0.2), text=element_text(size=15)) +
+    xlab("Score run 1") + ylab("Score run 2")
+
+ggsave("repro.pdf")
+
+
+
