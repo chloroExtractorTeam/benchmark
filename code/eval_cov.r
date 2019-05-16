@@ -7,7 +7,7 @@ sapply(dps,function(x){if(!require(x,character.only = T)){install.packages(x);li
 res <- read_tsv("res2_clean.tsv",col_names=c("dataset","assembler","ref_tot","ref_cov","ref_cov_frac","qry_tot","qry_cov","qry_cov_frac","contig_num"))
 
 ## simulated data 
-res_sim  <- read_tsv("res_clean.tsv",col_names=c("dataset","assembler","ref_tot","ref_cov","ref_cov_frac","qry_tot","qry_cov","qry_cov_frac","contig_num"))
+res_sim  <- read_tsv("res_sim_clean.tsv",col_names=c("dataset","assembler","ref_tot","ref_cov","ref_cov_frac","qry_tot","qry_cov","qry_cov_frac","contig_num"))
 
 ## calculate the score for each assembly for real data
 out_tibble <- res %>% mutate(rep_res = exp(-abs(log(qry_cov/ref_cov)))) %>%
@@ -45,7 +45,7 @@ ggsave("swarm.pdf")
 
 ### count the number of runs with output 
 n_obs = paste0("n=", out_tibble %>% drop_na %>% group_by(assembler) %>%  tally() %>% select(n) %>% unlist)
-
+n_obs
 
 ## create upsetplot 
 pdf("upset.pdf")
@@ -65,14 +65,14 @@ run_log <- read_tsv("log_clean.tsv")
 run_log[,14:15] <- run_log[,14:15]  / 10^9
 
 ## plot boxplots for computataion times 
-run_log %>% filter(exit_code==0) %>% ggplot(aes(y=run_time_sec,x=as.factor(threads), fill=program)) +
+run_log_mem %>% filter(exit_code==0) %>% ggplot(aes(y=run_time_sec,x=as.factor(program), fill=as.factor(threads))) +
     geom_boxplot() + 
     theme_bw() + scale_fill_manual(values=my_col) +
-    theme(text = element_text(size=15), legend.title=element_blank()) +
-    xlab("Number of threads") + ylab("Run time (s)") +
+    theme(text = element_text(size=15),legend.position = c(0.65,0.3)) +
+    guides(fill=guide_legend(title="Number of threads")) +
+    xlab("Assembler") + ylab("Run time (s)") + facet_wrap(amount_f~.,ncol=2) +
     scale_y_log10()
 
-coord_cartesian (ylim=c(0,3500))
 ggsave("comp_time_log.pdf")
 
 
@@ -132,10 +132,9 @@ out_re2 <- out_tibble_re[paste0(unlist(out_tibble_re[,1]),unlist(out_tibble_re[,
 
 out_j <- out_re %>% add_column(score_rerun = out_re2$score)
 out_j %>% ggplot(aes(x=score,y=score_rerun,col=assembler)) + geom_point()  + theme_bw() +
-    facet_wrap(~assembler,ncol=3,scales="free") + geom_smooth(method="lm", se = T) +
+    facet_wrap(~assembler,ncol=3) + 
     stat_poly_eq(formula = x ~ y,parse=T) +
     guides(col=guide_legend(ncol=2)) +
     theme(legend.title = element_blank(),legend.position = c(0.5,0.2), text=element_text(size=15)) +
-    xlab("Score run 1") + ylab("Score run 2")
-
+    xlab("Score 1. run ") + ylab("Score 2. run")
 ggsave("repro.pdf")
