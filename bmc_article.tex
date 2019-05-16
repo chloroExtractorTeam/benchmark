@@ -54,7 +54,7 @@
 \usepackage[utf8]{inputenc} %unicode support
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
-
+\usepackage{graphicx}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
@@ -127,11 +127,16 @@
 
 \author[
     addressref={aff2},
+    email={simon-pfaff@gmx.de}
+    ]{\inits{SP}\fnm{Simon} \snm{Pfaff}}
+
+\author[
+    addressref={aff2},
     email={jan.freudenthal@uni-wuerzburg.de}
     ]{\inits{JAF}\fnm{Jan A} \snm{Freudenthal}}
  
 \author[
-   addressref={aff1,aff2},
+   addressref={aff2,aff3},
    email={niklas.terhoeven@uni-wuerzubrg.de}
 ]{\inits{NT}\fnm{Niklas} \snm{Terhoeven}}
   
@@ -154,8 +159,15 @@
 }
 \address[id=aff2]{%
   \orgname{Center for Computational and Theoretical Biology, University of W\"{u}rzburg},
-  \street{Biozentrum, Am Hubland},
+  \street{Campus Hubland Nord},
   \postcode{97074}
+  \city{W\"{u}rzburg},
+  \cny{Germany}
+}
+\address[id=aff3]{%
+  \orgname{AnaLife Data Science},
+  \street{Friedrich-Bergius-Ring 15},
+  \postcode{97076}
   \city{W\"{u}rzburg},
   \cny{Germany}
 }
@@ -321,18 +333,15 @@ Description of our performance measurement with docker. List metrics that are mo
 On simulated dataset with different read counts and different number of threads given.
 
 \subsubsection*{Qualitative}
-List evaluation criteria, cite JOSS reviewer guidelines.
 
-The qualitative evaluation is mainly based on the reviewer guidelines for the Journal of Open Source
-Software (JOSS). \textbf{TODO:CITE}
-To create a standard environment, all tools were tested in a fresh default installation of Ubuntu 18.04.2 running in a virtual machine. The tools were installed according to their installation 
-instructions and a tutorial was followed, if one existed. During the evaluation, the following
+The qualitative evaluation is mainly based on the reviewer guidelines for the Journal of Open Source Software (JOSS) \cite{joss}.
+To create a standard environment, all tools were tested in a fresh default installation of Ubuntu 18.04.2 running in a virtual machine. The tools were installed according to their installation instructions and
+the provided tutorial or example usage was executed. During the evaluation, the following
 questions were asked:
 
 \begin{itemize}
     \item Is the tool easy to install? 
-    \item Is there a way to test the installation? 
-    \item Is there a tutorial on how to use the tool? 
+    \item Is there a way to test the installation or a tutorial on how to use the tool? 
     \item Is there a good documentation on the parameter settings? 
     \item Is the tool maintained (issues answered, implementation of new features)? 
     \item Is the tool Open Source?
@@ -358,11 +367,13 @@ Repeat resolution: Difference between above two measures (indicates collapsed or
 
 Foreach dataset and assembler the proposed chloroplast was compared to the respective reference chloroplast using minimap2 v2.16 for pairwise alignment \cite{li2018minimap2}.
 
-\[ score = 1 - ( |1- cov_{ref}| +  |1- cov_{qry}| + |1- \frac{cov_{qry}}{cov_{ref}}| ) \]
+\[ score = 1 - ( |1- cov_{ref}| +  |1- cov_{qry}| + |1- e^{ \ln{\frac{cov_{qry}}{cov_{ref}}| }}) \]
 
 %% score = 1 - (abs(1-ref_cov_frac) + abs(1-qry_cov_frac) + abs(1-rep_res) + abs(1-(1/contig_num))))
 
 
+\subsubsection{reproducibility}
+For reproducibility testing we randomly choose 100 data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before. The resulting assemblies were scored again as described above and the scores of the 1. and the 2. run were compared to each other. 
 
 \section*{Results}
 \subsection*{Computational Resources}
@@ -376,14 +387,14 @@ Table and figure of performance evaluation. Including RAM, I/O, runtime, paralle
 \begin{table}[]
     \centering
 \begin{tabular}{lcccccc}   
-Tool & Installation & Test & Tutorial & Documentation & Maintenance & FLOSS\\                           \hline 
-GetOrganelle & OK & BAD & OK & GOOD & GOOD & GOOD\\  
-fast-plast & BAD & OK & OK & GOOD & GOOD & GOOD\\ 
-org.ASM & BAD & OK & GOOD & OK & GOOD & GOOD\\ 
-NOVOPlasty & GOOD & OK & OK & GOOD & GOOD & OK\\
-ChloroExtractor & GOOD & OK & OK & GOOD & GOOD & GOOD\\
-IOGA & BAD & BAD & BAD & OK & OK  & BAD\\
-Chl Asm Prot & OK & OK & GOOD & OK & GOOD & GOOD\\ 
+Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\                           \hline 
+GetOrganelle    & OK   & OK   & GOOD & GOOD & GOOD\\  
+Fast-Plast      & BAD  & OK   & GOOD & GOOD & GOOD\\ 
+org.ASM         & BAD  & BAD  & OK   & GOOD & GOOD\\ 
+NOVOPlasty      & GOOD & GOOD & GOOD & GOOD & OK\\
+CE & GOOD & GOOD & GOOD & GOOD & GOOD\\
+IOGA            & BAD  & BAD  & OK   & OK   & BAD\\
+CAP    & OK   & GOOD & OK   & GOOD & GOOD\\ 
 \end{tabular}      
     \caption{Overview of the results of the qualitative usability evaluation. Each tool 
     could score "GOOD", "OK" or "BAD" in each of the categories.}
@@ -392,19 +403,47 @@ Chl Asm Prot & OK & OK & GOOD & OK & GOOD & GOOD\\
 
 
 Most of the tools were evaluated as mainly "GOOD" (see table \ref{tab:resultsQual}). However, a few critique points remained.
-Two minor dependencies were missing in the GetOrganelle installation instructions. This was fixed by the authors after we opened an issue. There was also no test data available and an issue occurred when running it on a \textit{A. thaliana} dataset. We are currently in the process of resolving this with the authors.
+Two minor dependencies were missing in the GetOrganelle installation instructions. There was also no test data available and an issue occurred when running it on a \textit{A.~thaliana} dataset. We are currently in the process of resolving this with the authors.
 
-Also the fast-plast installation instruction were missing some dependencies. Like GetOrganelle, fast-plast does not offer a test dataset or a tutorial, except from some example commands. 
+The fast-plast installation instructions were missing some dependencies. Like GetOrganelle, fast-plast does not offer a test dataset or a tutorial, except from some example commands. 
 
-The org.ASM installation instructions did not work. We found some issues, which are probably related to the requirement of python3.7. Instead of a test, there is a tutorial with sample data available. However following this resulted in a segmentation fault.
+The org.ASM installation instructions did not work. We found some issues, which are probably related to the requirement of python3.7. There is a tutorial with sample data available. However following the instructions resulted in a segmentation fault. We found a workaround for this bug and contacted the authors.
 
-The main critique points of NOVOPlasty was the lack of a test dataset with instructions. This was fixed by the authors after we contacted them. NOVOPlasty uses a custom license. An OSI approved license would be preferred here.
+The main critique point of NOVOPlasty was the lack of a test dataset with instructions. This was fixed by the authors after we contacted them. NOVOPlasty uses a custom license. An OSI approved license would be preferred here.
 
 ChloroExtractor does come with a test dataset and a short tutorial. However, a way to evaluate the results of the test run would be nice.
 
 The IOGA installation instructions were missing many dependencies. Also, there was no test data or tutorial available and there is no license assigned to it. Since there was no update to the github repository for the last three years, the project can be seen as inactive. After contact, the authors promised to resolve the mentioned issues.
 
 As many of the other tools, the installation instructions for the Chloroplast Assembly Protocol were missing some dependencies. The list was updated after we contacted the authors. This tool does come with a test dataset, however a note about the expected outcome would be nice. A more extensive tutorial is provided. The description about the parameter is short, but seems to be sufficient.
+
+\subsection*{Quantitative}
+\subsubsection*{Simulated data}
+\textit{tile plot for simulated data goes here}
+The only assembler obtaining perfect results according to our score for the simulated datasets is getOrganelle. IOGA and CAP showed the worst performance being unable to fully assemble a single chloroplast out of 14. NOVOPlasty performed second best with scores above 80 for all datasets, only failing to resolve the chloroplast contig into one single circular assembly. As could have been expected the overall performance is best, when the input data data consists purely of chloroplast reads. Only IOGA and CAP failed to deliver any results once each. Besides that no clear causality between length of the input reads, ratio of core vs chloroplast reads and the performance can be clearly observed. 
+
+\subsubsection*{real data sets}
+\textit{swarm plot goes here }
+%% Den upset plot eventuell erst in die Discussion reinbringen ? Da wir davon ableiten welche tools wir empfehlen?
+
+
+\subsubsection{Reproducability}
+\textit{plot repro.pdf goes here}
+
+
+\subsection*{Performance metrics}
+
+\subsubsection*{Time requirements}
+
+\textit{plot comp_time_log.pdf goes here}
+
+
+\subsubsection*{Memory and CPU Usage }
+\textit{plot usage_amout_threads.pdf goes here}
+
+
+\[ CAP_n=221 , CE_n=205 , Fast-Plast_n=352 , GetOrganelle_n=356" IOGA_n=296, NOVOPlasty_n=270 org.ASM_n=228 \]
+
 
 
 
@@ -443,7 +482,15 @@ A large scale study reconstructing chloroplasts throughout SRA (or 1001 genome p
   The authors disclose that SP, NT, FF, and MJA are developers of ChloroExtractor, one of the tools benchmarked in this article. The authors exercised caution not to let this fact unfairly influence their judgement.
 
 \section*{Author's contributions}
-    Text for this section \ldots
+    MJA and FF conceived of the presented idea and supervised the findings of this manuscript.
+SP and FF created the docker images.
+NT performed the qualitative analysis for all assemblers.
+MJA prepared the simulated and real data sets.
+JAF assembled the real data sets.
+FF ran the performance assemblies on the simulated data sets.
+All authors developed the score model.
+JAF and MJA implemented the score model and prepared the figures.
+All authors discussed the results and contributed to the final manuscript.
 
 \section*{Acknowledgements}
   Text for this section \ldots
