@@ -72,13 +72,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\def\includegraphic{}
-\def\includegraphics{}
+%\def\includegraphic{}
+%\def\includegraphics{}
 
 
 
 %%% Put your definitions there:
 \startlocaldefs
+\newcommand{\formatprogramnames}[1]{\texttt{#1}}
+\newcommand{\ce}{\formatprogramnames{chloroExtractor}}
+\newcommand{\oa}{\formatprogramnames{ORG.Asm}}
+\newcommand{\fp}{\formatprogramnames{Fast-Plast}}
+\newcommand{\ioga}{\formatprogramnames{IOGA}}
+\newcommand{\np}{\formatprogramnames{NOVOPlasty}}
+\newcommand{\go}{\formatprogramnames{GetOrganelle}}
+\newcommand{\cassp}{\formatprogramnames{Chloroplast assembly protocol}}
+\newcommand{\docker}[2]{\href{https://cloud.docker.com/u/chloroextractorteam/repository/docker/chloroextractorteam/#1}{chloroextracteam/#1:#2}}
+\newcommand{\dockerce}{\docker{benchmark\_chloroextractor}{v2.0.0}}
+\newcommand{\dockercesha}{sha256:8f49e03424b37e699c5fea9391f79dbb9f2d0dc550ce86c4c700f39deec2dacd}
 \endlocaldefs
 
 
@@ -114,32 +125,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \author[
-   addressref={aff1},                   % id's of addresses, e.g. {aff1,aff2}
-   corref={aff1},                       % id of corresponding address, if any
-   noteref={n1},                        % id's of article notes, if any
-   email={jane.e.doe@cambridge.co.uk}   % email address
-]{\inits{JE}\fnm{Jane E} \snm{Doe}}
-
-\author[
-   addressref={aff1,aff2},
-   email={markus.ankenbrand@uni-wuerzubrg.de}
-]{\inits{MJA}\fnm{Markus J} \snm{Ankenbrand}}
-
-\author[
     addressref={aff2},
-    email={simon-pfaff@gmx.de}
-    ]{\inits{SP}\fnm{Simon} \snm{Pfaff}}
-
-\author[
-    addressref={aff2},
+    noteref={n1},
     email={jan.freudenthal@uni-wuerzburg.de}
     ]{\inits{JAF}\fnm{Jan A} \snm{Freudenthal}}
- 
+\author[
+    addressref={aff2},
+    noteref={n1},
+    email={simon-pfaff@gmx.de}
+    ]{\inits{SP}\fnm{Simon} \snm{Pfaff}}
 \author[
    addressref={aff2,aff3},
    email={niklas.terhoeven@uni-wuerzubrg.de}
 ]{\inits{NT}\fnm{Niklas} \snm{Terhoeven}}
-  
+\author[
+   addressref={aff1,aff2},
+   noteref={n2},
+   email={markus.ankenbrand@uni-wuerzubrg.de}
+]{\inits{MJA}\fnm{Markus J} \snm{Ankenbrand}}
+\author[
+   addressref={aff1,aff4},                   % id's of addresses, e.g. {aff1,aff2}
+   corref={aff1},                       % id of corresponding address, if any
+   noteref={n2},                        % id's of article notes, if any
+   email={frank.foerster@uni-wuerzburg.de}   % email address
+]{\inits{FF}\fnm{Frank} \snm{Förster}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -150,14 +160,14 @@
 %%                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\address[id=aff1]{%                           % unique id
+\address[id=aff2]{%                           % unique id
   \orgname{Department of Bioinformatics, University of W\"{u}rzburg}, % university, etc
   \street{Biozentrum, Am Hubland},                     %
   \postcode{97074},                                % post or zip code
   \city{W\"{u}rzburg},                              % city
   \cny{Germany}                                    % country
 }
-\address[id=aff2]{%
+\address[id=aff1]{%
   \orgname{Center for Computational and Theoretical Biology, University of W\"{u}rzburg},
   \street{Campus Hubland Nord},
   \postcode{97074}
@@ -169,6 +179,13 @@
   \street{Friedrich-Bergius-Ring 15},
   \postcode{97076}
   \city{W\"{u}rzburg},
+  \cny{Germany}
+}
+\address[id=aff4]{%
+  \orgname{Fraunhofer IME-BR},
+  \street{Winchester Str.\ 2},
+  \postcode{97076}
+  \city{Gie\ss{}en},
   \cny{Germany}
 }
 
@@ -184,6 +201,7 @@
 \begin{artnotes}
 %\note{Sample of title note}     % note to the article
 \note[id=n1]{Equal contributor} % note, connected to author
+\note[id=n2]{Corresponding author} % note, connected to author
 \end{artnotes}
 
 \end{fmbox}% comment this for two column layout
@@ -277,17 +295,19 @@ Text for this section.
 \subsection*{General introduction and motivation}
 Genome sequencing - important bilogical insights.
 Eukaryotes have organelles with separate genomes.
-Particularly plants have chloroplasts beside mitochondria (generally chloroplast or plastid? plastid bit more general, I think also chromoplasts etc).
+Particularly, plants have chloroplasts beside mitochondria (generally chloroplast or plastid? plastid bit more general, I think also chromoplasts etc).
+Chloroplast genome content and structure reviewed elsewhere \cite{wicke_evolution_2011,green_chloroplast_2011}.
 Chloroplast genomes are widely used for evolutionary analyses.
 Comparative genomics even more informative.
-Complete chloro genome much easier to get than complete core genome.
+Complete chloroplast genome much easier to get than complete core genome.
 But specific genome structure (esp. inverted repeat) makes automated resolution with short reads hard.
 Many genome sequencing project contain chloroplast reads as a by-product even though that was not the aim of the study.
 Resolved chloroplast helps to remove these reads which can improve assembly of the core.
 Databases contain short read data for species where no reference chloroplast is available in the databases.
+There is a lot of potential use cases for chloroplast genomes \cite{tonti-filippini_what_2017}
 Resolving these would allow for more and larger scale comparative studies on whole chloroplasts.
 Open question (?) structural variation across taxonomic groups.
-Some researchers (e.g. Coissac et al.) use shallow genome sequencing to reconstruct full chloroplast genomes for use as super barcodes.
+Some researchers use shallow genome sequencing to reconstruct full chloroplast genomes for use as super-barcodes \cite{coissac_barcodes_2016}.
 
 \subsection*{Chloroplast genome architecture}
 Maybe separate section describing a prototypical chloroplast: LSC, IRa, SSC, IRb. Gene number and content. Size ranges. Evolutionary history incl. endosymbiontic gene transfer. Reduced genomes in parasitic plants. Loss of ndh gene family (maybe too specific). Preliminary SNP analysis in A. thaliana to estimate intraspecific variability? Is there anything known about intra-organismic variability (do some plants have multiple populations of chloroplasts? probably off topic).
@@ -304,20 +324,21 @@ Clearly state criteria. Work with mixed data. Full automation. De novo - no manu
 
 \section*{Methods}
 Source code for all methods at \url{https://github.com/chloroExtractorTeam/benchmark} (zenodo doi), docker containers at ..., datasets at (zenodo links for simulated and real).
+This study adheres to the guidelines for computational method benchmarking \cite{weber_essential_2018}.
 
 \subsection*{Inclusion Criteria}
 List criteria that tools had to fulfill to be included in this study (maybe redundant with purpose and scope section).
 List all programs that met the criteria with reference and very brief description:
-org-asm, chloroExtractor, fast-plast, IOGA, NovoPlasty, GetOrganelle, chloroplast assembly protocol.
+\oa{}, \ce{}, \fp{}, \ioga{}, \np{}, \go{}, \cassp{}.
 Name other relevant methods that were excluded (short description, reference, reason for exclusion).
 
 \subsection*{Our Setup}
+\dockerce{}
+
 Defined interface, forward.fq and reverse.fq as only input. output.fa as only relevant output.
 Docker container, all derived from main container, wrapper script makes all tools work conforming to the defined interface. Run docker containers for performance measurement and singularity containers on real datasets.
 Singularity container were built from docker containers for usage on Julia-HPC of JMU using Singularity v.2.5.2 \cite{kurtzer2017singularity}
 All singularity containers were run on the Julia-HPC on Intel® Xeon® Gold 6140 Processors using slurm workload manager version 17.11.8 \cite{Jette02slurm}. Assemblies run on 4 threads using 10 GB RAM with a timelimit of 48 hours 
-
-
 
 \subsection*{Data}
 \subsubsection*{Simulated}
@@ -367,12 +388,16 @@ Repeat resolution: Difference between above two measures (indicates collapsed or
 
 Foreach dataset and assembler the proposed chloroplast was compared to the respective reference chloroplast using minimap2 v2.16 for pairwise alignment \cite{li2018minimap2}.
 
-\[ score = 1 - ( |1- cov_{ref}| +  |1- cov_{qry}| + |1- e^{ \ln{\frac{cov_{qry}}{cov_{ref}}| }}) \]
+\[ score = 1 - \frac{1}{4} \cdot \left( |1- cov_{ref}| +  |1- cov_{qry}| + \left|1- e^{-\left| \ln{\frac{cov_{qry}}{cov_{ref}}}\right|}\right| + \left| 1 - \frac{1}{n_{contigs}} \right| \right) \]
+
+Ich glaube diese Formel lässt sich vereinfachen zu:
+\[ score = \frac{1}{4} \cdot \left( cov_{ref} +  cov_{qry} + e^{-\left| \ln{\frac{cov_{qry}}{cov_{ref}}}\right|} + \frac{1}{n_{contigs} }\right) \]
+
 
 %% score = 1 - (abs(1-ref_cov_frac) + abs(1-qry_cov_frac) + abs(1-rep_res) + abs(1-(1/contig_num))))
 
 
-\subsubsection{reproducibility}
+\subsubsection*{reproducibility}
 For reproducibility testing we randomly choose 100 data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before. The resulting assemblies were scored again as described above and the scores of the 1. and the 2. run were compared to each other. 
 
 \section*{Results}
@@ -380,50 +405,48 @@ For reproducibility testing we randomly choose 100 data sets, that in the previo
 Table and figure of performance evaluation. Including RAM, I/O, runtime, parallelization ability, CPU usage. Free text description of results, range, mean/median, effect of input size, threads parameter, ...
 \subsection*{Quantitative}
 
-\includegraphics{Violin.png}
-
 \subsection*{Qualitative}
 
 \begin{table}[]
     \centering
-\begin{tabular}{lcccccc}   
-Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\                           \hline 
-GetOrganelle    & OK   & OK   & GOOD & GOOD & GOOD\\  
-Fast-Plast      & BAD  & OK   & GOOD & GOOD & GOOD\\ 
-org.ASM         & BAD  & BAD  & OK   & GOOD & GOOD\\ 
-NOVOPlasty      & GOOD & GOOD & GOOD & GOOD & OK\\
-CE & GOOD & GOOD & GOOD & GOOD & GOOD\\
-IOGA            & BAD  & BAD  & OK   & OK   & BAD\\
-CAP    & OK   & GOOD & OK   & GOOD & GOOD\\ 
-\end{tabular}      
     \caption{Overview of the results of the qualitative usability evaluation. Each tool 
     could score "GOOD", "OK" or "BAD" in each of the categories.}
     \label{tab:resultsQual}
+\begin{tabular}{lcccccc}   
+Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\                           \hline 
+\go{}    & OK   & OK   & GOOD & GOOD & GOOD\\  
+\fp{}      & BAD  & OK   & GOOD & GOOD & GOOD\\ 
+\oa{}         & BAD  & BAD  & OK   & GOOD & GOOD\\ 
+\np{}      & GOOD & GOOD & GOOD & GOOD & OK\\
+\ce{} & GOOD & GOOD & GOOD & GOOD & GOOD\\
+\ioga{}            & BAD  & BAD  & OK   & OK   & BAD\\
+\cassp{}    & OK   & GOOD & OK   & GOOD & GOOD\\ 
+\end{tabular}      
 \end{table}
 
 
 Most of the tools were evaluated as mainly "GOOD" (see table \ref{tab:resultsQual}). However, a few critique points remained.
-Two minor dependencies were missing in the GetOrganelle installation instructions. There was also no test data available and an issue occurred when running it on a \textit{A.~thaliana} dataset. We are currently in the process of resolving this with the authors.
+Two minor dependencies were missing in the \go{} installation instructions. There was also no test data available and an issue occurred when running it on a \textit{A.~thaliana} dataset. We are currently in the process of resolving this with the authors.
 
-The fast-plast installation instructions were missing some dependencies. Like GetOrganelle, fast-plast does not offer a test dataset or a tutorial, except from some example commands. 
+The \fp{ installation instructions were missing some dependencies. Like \go{}, \fp{} does not offer a test dataset or a tutorial, except from some example commands. 
 
-The org.ASM installation instructions did not work. We found some issues, which are probably related to the requirement of python3.7. There is a tutorial with sample data available. However following the instructions resulted in a segmentation fault. We found a workaround for this bug and contacted the authors.
+The \oa{} installation instructions did not work. We found some issues, which are probably related to the requirement of python3.7. There is a tutorial with sample data available. However following the instructions resulted in a segmentation fault. We found a workaround for this bug and contacted the authors.
 
-The main critique point of NOVOPlasty was the lack of a test dataset with instructions. This was fixed by the authors after we contacted them. NOVOPlasty uses a custom license. An OSI approved license would be preferred here.
+The main critique point of \np{} was the lack of a test dataset with instructions. This was fixed by the authors after we contacted them. \np{} uses a custom license. An OSI approved license would be preferred here.
 
-ChloroExtractor does come with a test dataset and a short tutorial. However, a way to evaluate the results of the test run would be nice.
+The \ce{} does come with a test dataset and a short tutorial. However, a way to evaluate the results of the test run would be nice.
 
-The IOGA installation instructions were missing many dependencies. Also, there was no test data or tutorial available and there is no license assigned to it. Since there was no update to the github repository for the last three years, the project can be seen as inactive. After contact, the authors promised to resolve the mentioned issues.
+The \ioga{} installation instructions were missing many dependencies. Also, there was no test data or tutorial available and there is no license assigned to it. Since there was no update to the github repository for the last three years, the project can be seen as inactive. After contact, the authors promised to resolve the mentioned issues.
 
-As many of the other tools, the installation instructions for the Chloroplast Assembly Protocol were missing some dependencies. The list was updated after we contacted the authors. This tool does come with a test dataset, however a note about the expected outcome would be nice. A more extensive tutorial is provided. The description about the parameter is short, but seems to be sufficient.
+As many of the other tools, the installation instructions for the \cassp{} were missing some dependencies. The list was updated after we contacted the authors. This tool does come with a test dataset, however a note about the expected outcome would be nice. A more extensive tutorial is provided. The description about the parameter is short, but seems to be sufficient.
 
 \subsection*{Quantitative}
 \subsubsection*{Simulated data}
 \textit{tile plot for simulated data goes here}
-The only assembler obtaining perfect results according to our score for the simulated datasets is getOrganelle. IOGA and CAP showed the worst performance being unable to fully assemble a single chloroplast out of 14. NOVOPlasty performed second best with scores above 80 for all datasets, only failing to resolve the chloroplast contig into one single circular assembly. As could have been expected the overall performance is best, when the input data data consists purely of chloroplast reads. Only IOGA and CAP failed to deliver any results once each. Besides that no clear causality between length of the input reads, ratio of core vs chloroplast reads and the performance can be clearly observed. 
+The only assembler obtaining perfect results according to our score for the simulated datasets is \go{}. \ioga{} and CAP showed the worst performance being unable to fully assemble a single chloroplast out of 14. \np{} performed second best with scores above 80 for all datasets, only failing to resolve the chloroplast contig into one single circular assembly. As could have been expected the overall performance is best, when the input data data consists purely of chloroplast reads. Only \ioga{} and CAP failed to deliver any results once each. Besides that no clear causality between length of the input reads, ratio of core vs chloroplast reads and the performance can be clearly observed. 
 
 \subsubsection*{real data sets}
-\textit{swarm plot goes here }
+\textit{swarm plot goes here}
 %% Den upset plot eventuell erst in die Discussion reinbringen ? Da wir davon ableiten welche tools wir empfehlen?
 
 
@@ -435,14 +458,14 @@ The only assembler obtaining perfect results according to our score for the simu
 
 \subsubsection*{Time requirements}
 
-\textit{plot comp_time_log.pdf goes here}
+\textit{plot comp\_time\_log.pdf goes here}
 
 
 \subsubsection*{Memory and CPU Usage }
-\textit{plot usage_amout_threads.pdf goes here}
+\textit{plot usage\_amout\_threads.pdf goes here}
 
 
-\[ CAP_n=221 , CE_n=205 , Fast-Plast_n=352 , GetOrganelle_n=356" IOGA_n=296, NOVOPlasty_n=270 org.ASM_n=228 \]
+\[ CAP_n=221 , CE_n=205 , Fast-Plast_n=352 , GetOrganelle_n=356 IOGA_n=296, NOVOPlasty_n=270 org.ASM_n=228 \]
 
 
 
@@ -456,7 +479,7 @@ We evaluated all tools under the assumption that they are used in the most basic
 Which program (or combination of programs) to use? Does the decision depend on some parameter of the data (read length, amount, taxonomic group, ...)?
 
 \subsection*{Ideas for future development}
-Combining components from different tools might be a promising approach. E.g. read scaling from ChloroExtractor, assembly from GetOrganelle and structural resolution with fast-plast.
+Combining components from different tools might be a promising approach. E.g. read scaling from \ce{}, assembly from \go{} and structural resolution with fast-plast.
 Mitigate installation issues e.g. by containerization.
 Improve documentation and usability.
 Maybe better integrated guessing of parameters (?) at least for automatization (but also because users tend to run a tool with default settings and look on what they get, only powerusers tweak parameters - and if it is possible to get a full chloroplast by guessing the best parameters there is no need for specific knowledge of parameters and their effects by the end user).
@@ -479,7 +502,7 @@ A large scale study reconstructing chloroplasts throughout SRA (or 1001 genome p
 \begin{backmatter}
 
 \section*{Competing interests}
-  The authors disclose that SP, NT, FF, and MJA are developers of ChloroExtractor, one of the tools benchmarked in this article. The authors exercised caution not to let this fact unfairly influence their judgement.
+  The authors disclose that SP, NT, FF, and MJA are developers of \ce{}, one of the tools benchmarked in this article. The authors exercised caution not to let this fact unfairly influence their judgement.
 
 \section*{Author's contributions}
     MJA and FF conceived of the presented idea and supervised the findings of this manuscript.
@@ -539,12 +562,38 @@ All authors discussed the results and contributed to the final manuscript.
 
 \section*{Figures}
   \begin{figure}[h!]
+  \includegraphics[width=\textwidth]{plots/swarm.pdf}
   \caption{\csentence{Sample figure title.}
       A short description of the figure content
       should go here.}
       \end{figure}
 
 \begin{figure}[h!]
+  \includegraphics[width=\textwidth]{plots/usage_amount_threads.pdf}
+  \caption{\csentence{Sample figure title.}
+      Figure legend text.}
+      \end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{plots/sim_tiles.pdf}
+  \caption{\csentence{Sample figure title.}
+      Figure legend text.}
+      \end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{plots/repro.pdf}
+  \caption{\csentence{Sample figure title.}
+      Figure legend text.}
+      \end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{plots/comp_time_log.pdf}
+  \caption{\csentence{Sample figure title.}
+      Figure legend text.}
+      \end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth,page=2]{plots/upset.pdf}
   \caption{\csentence{Sample figure title.}
       Figure legend text.}
       \end{figure}
