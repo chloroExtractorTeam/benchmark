@@ -56,6 +56,11 @@
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
 \usepackage{graphicx}
 
+\usepackage{cleveref}
+
+\usepackage{biocon}
+\newplant{At}{genus=Arabidopsis,epithet=thaliana}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
 %%  If you wish to display your graphics for   %%
@@ -87,9 +92,32 @@
 \newcommand{\np}{\formatprogramnames{NOVOPlasty}}
 \newcommand{\go}{\formatprogramnames{GetOrganelle}}
 \newcommand{\cassp}{\formatprogramnames{Chloroplast assembly protocol}}
+
+% Niklas table
+%\newcommand{\ok}{\textcolor[rgb]{0.7,0.7,0}{\textsc{\bfseries{}OKAY}}}
+%\newcommand{\bad}{\textcolor{red}{\textsc{\bfseries{}BAD}}}
+%\newcommand{\good}{\textcolor[rgb]{0,0.6,0}{\textsc{\bfseries{}GOOD}}}
+\newcommand{\ok}{\textsc{Okay}}
+\newcommand{\bad}{\textsc{Bad}}
+\newcommand{\good}{\textsc{Good}}
+
+
+% List of docker images
 \newcommand{\docker}[2]{\href{https://cloud.docker.com/u/chloroextractorteam/repository/docker/chloroextractorteam/#1}{chloroextracteam/#1:#2}}
 \newcommand{\dockerce}{\docker{benchmark\_chloroextractor}{v2.0.0}}
-\newcommand{\dockercesha}{sha256:8f49e03424b37e699c5fea9391f79dbb9f2d0dc550ce86c4c700f39deec2dacd}
+\newcommand{\dockercesha}{\texttt{8f49e03424b37e699c5fea9391f79dbb9f2d0dc550ce86c4c700f39deec2dacd}}
+\newcommand{\dockeroa}{\docker{benchmark\_org-asm}{v2.0.0}}
+\newcommand{\dockeroasha}{\texttt{ff83677c97b7c4e346191b9e04a5162eeea2a8dfd9e60ff84067d33747868f60}}
+\newcommand{\dockerfp}{\docker{benchmark\_fastplast}{v2.0.0}}
+\newcommand{\dockerfpsha}{\texttt{a3d06a610f8340ba49c3ff3b27342534e2a5348b17caa4fd3c3f3d327243a272}}
+\newcommand{\dockerioga}{\docker{benchmark\_ioga}{v2.0.0}}
+\newcommand{\dockeriogasha}{\texttt{4698a21c343c60290bbf16811165a654ff01e8fddeb41cd75d0771b7f45968c0}}
+\newcommand{\dockernp}{\docker{benchmark\_novoplasty}{v2.0.0}}
+\newcommand{\dockernpsha}{\texttt{106387bad4e8e5c53fb9d4c3bdd60cdddf05a47b52a38697369eeabb947c547c}}
+\newcommand{\dockergo}{\docker{benchmark\_getorganelle}{v2.0.0}}
+\newcommand{\dockergosha}{\texttt{2ed3a464a82025a196ea56c649d0b0a3472cef76994bb065d56054d93298d956}}
+\newcommand{\dockercassp}{\docker{benchmark\_chloroplast\_assembly\_protocol}{v2.0.0}}
+\newcommand{\dockercasspsha}{\texttt{d10d2317103d91fadec4cb1d5466ac109f23176ad74b6f44f0179175f050155d}}
 \endlocaldefs
 
 
@@ -293,7 +321,7 @@ Text for this section.
 %%
 \section*{Introduction}
 \subsection*{General introduction and motivation}
-Genome sequencing - important bilogical insights.
+Genome sequencing - important biological insights.
 Eukaryotes have organelles with separate genomes.
 Particularly, plants have chloroplasts beside mitochondria (generally chloroplast or plastid? plastid bit more general, I think also chromoplasts etc).
 Chloroplast genome content and structure reviewed elsewhere \cite{wicke_evolution_2011,green_chloroplast_2011}.
@@ -310,7 +338,7 @@ Open question (?) structural variation across taxonomic groups.
 Some researchers use shallow genome sequencing to reconstruct full chloroplast genomes for use as super-barcodes \cite{coissac_barcodes_2016}.
 
 \subsection*{Chloroplast genome architecture}
-Maybe separate section describing a prototypical chloroplast: LSC, IRa, SSC, IRb. Gene number and content. Size ranges. Evolutionary history incl. endosymbiontic gene transfer. Reduced genomes in parasitic plants. Loss of ndh gene family (maybe too specific). Preliminary SNP analysis in A. thaliana to estimate intraspecific variability? Is there anything known about intra-organismic variability (do some plants have multiple populations of chloroplasts? probably off topic).
+Maybe separate section describing a prototypical chloroplast: LSC, IRa, SSC, IRb. Gene number and content. Size ranges. Evolutionary history incl. endosymbiontic gene transfer. Reduced genomes in parasitic plants. Loss of ndh gene family (maybe too specific). Preliminary SNP analysis in \plant{At} to estimate intraspecific variability? Is there anything known about intra-organismic variability (do some plants have multiple populations of chloroplasts? probably off topic).
 
 \subsection*{Approaches to extracting chloroplasts from whole genome data}
 1. Getting chloroplast reads out of mixed files
@@ -323,7 +351,9 @@ Clearly state criteria. Work with mixed data. Full automation. De novo - no manu
 %\cite{koon,oreg,khar,zvai,xjon,schn,pond,smith,marg,hunn,advi,koha,mouse}
 
 \section*{Methods}
-Source code for all methods at \url{https://github.com/chloroExtractorTeam/benchmark} (zenodo doi), docker containers at ..., datasets at (zenodo links for simulated and real).
+Source code for all methods is available at \url{https://github.com/chloroExtractorTeam/benchmark} and archived under (zenodo doi).
+All docker images are published on \url{https://cloud.docker.com/u/chloroextractorteam/} and are named with a leading \texttt{benchmark\_} (\cref{tab:dockerimages}).
+datasets at (zenodo links for simulated and real).
 This study adheres to the guidelines for computational method benchmarking \cite{weber_essential_2018}.
 
 \subsection*{Inclusion Criteria}
@@ -342,7 +372,7 @@ All singularity containers were run on the Julia-HPC on Intel® Xeon® Gold 6140
 
 \subsection*{Data}
 \subsubsection*{Simulated}
-A. thaliana (TAIR10). Perfect data, sliding window with seqkit (circular for chloro and mito). No errors, no insert size variation, perfect quality, equal coverage.
+\plant{At} (TAIR10). Perfect data, sliding window with seqkit (circular for chloro and mito). No errors, no insert size variation, perfect quality, equal coverage.
 
 \subsubsection*{Real}
 Datasets in SRA with reference chloroplast in cp database.
@@ -368,10 +398,10 @@ questions were asked:
     \item Is the tool Open Source?
 \end{itemize}
 
-These questions were answered with "GOOD", "OK" or "BAD", depending on the quality of the result. 
-For example, a "GOOD" installation utilizes a automated package or dependency management like apt,
-CRAN, docker, etc. An "OK" installation procedure provides a custom script to install everything
-or at least lists all dependencies. A "BAD" installation procedure fails to list important dependencies
+These questions were answered with \good{}, \ok{} or \bad{}, depending on the quality of the result. 
+For example, a \good{} installation utilizes a automated package or dependency management like apt,
+CRAN, docker, etc. An \ok{} installation procedure provides a custom script to install everything
+or at least lists all dependencies. A \bad{} installation procedure fails to list important dependencies
 or produces errors, that prevent a successful installation. 
 
 After an initial evaluation, we contacted all authors via their github or gitlab issue tracking to
@@ -403,32 +433,12 @@ For reproducibility testing we randomly choose 100 data sets, that in the previo
 \section*{Results}
 \subsection*{Computational Resources}
 Table and figure of performance evaluation. Including RAM, I/O, runtime, parallelization ability, CPU usage. Free text description of results, range, mean/median, effect of input size, threads parameter, ...
-\subsection*{Quantitative}
 
 \subsection*{Qualitative}
+Most of the tools were evaluated as mainly \good{} (see table \ref{tab:resultsQual}). However, a few critique points remained.
+Two minor dependencies were missing in the \go{} installation instructions. There was also no test data available and an issue occurred when running it on a \plant{At} dataset. We are currently in the process of resolving this with the authors.
 
-\begin{table}[]
-    \centering
-    \caption{Overview of the results of the qualitative usability evaluation. Each tool 
-    could score "GOOD", "OK" or "BAD" in each of the categories.}
-    \label{tab:resultsQual}
-\begin{tabular}{lcccccc}   
-Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\                           \hline 
-\go{}    & OK   & OK   & GOOD & GOOD & GOOD\\  
-\fp{}      & BAD  & OK   & GOOD & GOOD & GOOD\\ 
-\oa{}         & BAD  & BAD  & OK   & GOOD & GOOD\\ 
-\np{}      & GOOD & GOOD & GOOD & GOOD & OK\\
-\ce{} & GOOD & GOOD & GOOD & GOOD & GOOD\\
-\ioga{}            & BAD  & BAD  & OK   & OK   & BAD\\
-\cassp{}    & OK   & GOOD & OK   & GOOD & GOOD\\ 
-\end{tabular}      
-\end{table}
-
-
-Most of the tools were evaluated as mainly "GOOD" (see table \ref{tab:resultsQual}). However, a few critique points remained.
-Two minor dependencies were missing in the \go{} installation instructions. There was also no test data available and an issue occurred when running it on a \textit{A.~thaliana} dataset. We are currently in the process of resolving this with the authors.
-
-The \fp{ installation instructions were missing some dependencies. Like \go{}, \fp{} does not offer a test dataset or a tutorial, except from some example commands. 
+The \fp{} installation instructions were missing some dependencies. Like \go{}, \fp{} does not offer a test dataset or a tutorial, except from some example commands. 
 
 The \oa{} installation instructions did not work. We found some issues, which are probably related to the requirement of python3.7. There is a tutorial with sample data available. However following the instructions resulted in a segmentation fault. We found a workaround for this bug and contacted the authors.
 
@@ -443,9 +453,16 @@ As many of the other tools, the installation instructions for the \cassp{} were 
 \subsection*{Quantitative}
 \subsubsection*{Simulated data}
 \textit{tile plot for simulated data goes here}
-The only assembler obtaining perfect results according to our score for the simulated datasets is \go{}. \ioga{} and CAP showed the worst performance being unable to fully assemble a single chloroplast out of 14. \np{} performed second best with scores above 80 for all datasets, only failing to resolve the chloroplast contig into one single circular assembly. As could have been expected the overall performance is best, when the input data data consists purely of chloroplast reads. Only \ioga{} and CAP failed to deliver any results once each. Besides that no clear causality between length of the input reads, ratio of core vs chloroplast reads and the performance can be clearly observed. 
+The only assembler obtaining perfect results according to our score for the simulated datasets is \go{}.
+\ioga{} and \cassp{} showed the worst performance being unable to fully assemble a single chloroplast out of 14.
+\np{} performed second best with scores above 80 for all datasets, only failing to resolve the chloroplast contig into one single circular assembly.
+(As could have been expected -> discussion) the overall performance is best, when the input data consists purely of chloroplast reads.
+Only \ioga{} and \cassp{} failed to deliver any results once each.
+Besides that no clear causality between length of the input reads, ratio of core vs chloroplast reads and the performance can be clearly observed. 
 
 \subsubsection*{real data sets}
+Highest scoring is \go{} next is \fp{} while \ioga{} and \cassp{} perform poorly, never reaching a score of 1 (figure 1). TODO: median/mean score, mad/sd Tabelle
+
 \textit{swarm plot goes here}
 %% Den upset plot eventuell erst in die Discussion reinbringen ? Da wir davon ableiten welche tools wir empfehlen?
 
@@ -598,6 +615,12 @@ All authors discussed the results and contributed to the final manuscript.
       Figure legend text.}
       \end{figure}
 
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{plots/real_datasets_tree.pdf}
+  \caption{\csentence{Sample figure title.}
+      Figure legend text.}
+      \end{figure}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
 %% Tables                        %%
@@ -607,6 +630,39 @@ All authors discussed the results and contributed to the final manuscript.
 %% Use of \listoftables is discouraged.
 %%
 \section*{Tables}
+\begin{table}[]
+    \centering
+    \caption{Overview of the results of the qualitative usability evaluation. Each tool 
+    could score \good{}, \ok{} or \bad{} in each of the categories.}
+    \label{tab:resultsQual}
+\begin{tabular}{p{3cm}cccccc}   
+Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\                           \hline \ce{}     &  \good{}  &  \good{}  &  \good{}  &  \good{}  &  \good{} \\
+\cassp{}  &  \ok{}    &  \good{}  &  \ok{}    &  \good{}  &  \good{} \\
+\fp{}     &  \bad{}   &  \ok{}    &  \good{}  &  \good{}  &  \good{} \\
+\go{}     &  \ok{}    &  \ok{}    &  \good{}  &  \good{}  &  \good{} \\
+\ioga{}   &  \bad{}   &  \bad{}   &  \ok{}    &  \ok{}    &  \bad{}  \\
+\np{}     &  \good{}  &  \good{}  &  \good{}  &  \good{}  &  \ok{}   \\
+\oa{}     &  \bad{}   &  \bad{}   &  \ok{}    &  \good{}  &  \good{} \\ \hline
+\end{tabular}      
+\end{table}
+
+\begin{table}[h!]
+\caption{Docker images used in our benchmark setup.}
+\label{tab:dockerimages}
+\centering
+      \resizebox{\textwidth}{!}{\begin{tabular}{ccc}
+        \hline
+          Tool & Image name and tag & SHA256 Checksum   \\ \hline
+          \ce & \dockerce & \dockercesha \\
+          \cassp & \dockercassp & \dockercasspsha \\
+          \fp & \dockerfp & \dockerfpsha \\
+          \go & \dockergo & \dockergosha \\
+          \ioga & \dockerioga & \dockeriogasha \\
+          \np & \dockernp & \dockernpsha \\
+          \oa & \dockeroa & \dockeroasha \\ \hline
+      \end{tabular}}
+\end{table}
+
 \begin{table}[h!]
 \caption{Sample table title. This is where the description of the table should go.}
       \begin{tabular}{cccc}
