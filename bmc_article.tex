@@ -424,10 +424,12 @@ Repeat resolution: Difference between above two measures (indicates collapsed or
 
 Foreach dataset and assembler the proposed chloroplast was compared to the respective reference chloroplast using minimap2 v2.16 for pairwise alignment \cite{li2018minimap2}.
 
-\[ score = 1 - \frac{1}{4} \cdot \left( |1- cov_{ref}| +  |1- cov_{qry}| + \left|1- e^{-\left| \ln{\frac{cov_{qry}}{cov_{ref}}}\right|}\right| + \left| 1 - \frac{1}{n_{contigs}} \right| \right) \]
 
-Ich glaube diese Formel lässt sich vereinfachen zu:
 \[ score = \frac{1}{4} \cdot \left( cov_{ref} +  cov_{qry} + e^{-\left| \ln{\frac{cov_{qry}}{cov_{ref}}}\right|} + \frac{1}{n_{contigs} }\right) \]
+
+% equivalenter Vorschlag mit min anstatt e^ln
+
+\[ score = \frac{1}{4} \cdot \left( cov_{ref} +  cov_{qry} + min\left\{ \frac{cov_{qry}}{cov_{ref}}, \frac{cov_{ref}}{cov_{qry}}\right\} + \frac{1}{n_{contigs} }\right) \cdot 100  \]
 
 
 %% score = 1 - (abs(1-ref_cov_frac) + abs(1-qry_cov_frac) + abs(1-rep_res) + abs(1-(1/contig_num))))
@@ -604,37 +606,37 @@ All authors discussed the results and contributed to the final manuscript.
 
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{plots/usage_amount_threads.pdf}
-  \caption{\csentence{Sample figure title.}
-      Figure legend text.}
+  \caption{\csentence{Performance metrics}
+      Boxplots depictiing the demand of CPU and RAM and disk space needed depending on the assembler, input data size and number of threads}
       \end{figure}
 
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{plots/sim_tiles.pdf}
-  \caption{\csentence{Sample figure title.}
+  \caption{\csentence{Score of assemblies on simulated data}
       Figure legend text.}
       \end{figure}
 
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{plots/repro.pdf}
-  \caption{\csentence{Scatterplot of scores between two independent runs for reproducibility testing}
-      Figure legend text.}
+  \caption{\csentence{Scores between two independent runs for reproducibility testing}
+      }
       \end{figure}
 
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{plots/comp_time_log.pdf}
-  \caption{\csentence{Sample figure title.}
-      Figure legend text.}
+  \caption{\csentence{Computation time depending on number of threads and size of input data}
+  }
       \end{figure}
 
 \begin{figure}[h!]
   \includegraphics[width=\textwidth,page=2]{plots/upset.pdf}
-  \caption{\csentence{Sample figure title.}
-      Figure legend text.}
+  \caption{\csentence{Upset plot \cite{lex2014upset} comparing success of assemblers on the real data sets}
+      The plot shows the intersection of success ($score > 99$) between assemblers. For 69 datasets only \go{} was able to obtain a complete chloroplast. 43 were successful with both \go{} and \fp{} and so on}
       \end{figure}
 
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{plots/real_datasets_tree.pdf}
-  \caption{\csentence{Sample figure title.}
+  \caption{\csentence{Sucess of assemblers on real data sets on tree derived from ncbi taxonomy \cite{ncbi2011}}
       Figure legend text.}
       \end{figure}
 
