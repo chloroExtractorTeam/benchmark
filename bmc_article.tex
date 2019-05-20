@@ -93,6 +93,7 @@
 \newcommand{\go}{\formatprogramnames{GetOrganelle}}
 \newcommand{\cassp}{\formatprogramnames{Chloroplast assembly protocol}}
 
+
 % Niklas table
 %\newcommand{\ok}{\textcolor[rgb]{0.7,0.7,0}{\textsc{\bfseries{}OKAY}}}
 %\newcommand{\bad}{\textcolor{red}{\textsc{\bfseries{}BAD}}}
@@ -321,21 +322,25 @@ Text for this section.
 %%
 \section*{Introduction}
 \subsection*{General introduction and motivation}
-Genome sequencing - important biological insights.
-Eukaryotes have organelles with separate genomes.
-Particularly, plants have chloroplasts beside mitochondria (generally chloroplast or plastid? plastid bit more general, I think also chromoplasts etc).
+The chloroplast as the photosynthetic organelle harboring its own genome has been an early target for sequencing.
+The first chloroplast genome sequences were obtained as early as 1986 \cite{ohyama_chloroplast_1986,shinozaki_complete_1986}.
+These efforts elucidated the general genome organization and structure of chloroplasts, expanded by many more studies over the years.
 Chloroplast genome content and structure reviewed elsewhere \cite{wicke_evolution_2011,green_chloroplast_2011}.
-Chloroplast genomes are widely used for evolutionary analyses.
-Comparative genomics even more informative.
-Complete chloroplast genome much easier to get than complete core genome.
-But specific genome structure (esp. inverted repeat) makes automated resolution with short reads hard.
-Many genome sequencing project contain chloroplast reads as a by-product even though that was not the aim of the study.
-Resolved chloroplast helps to remove these reads which can improve assembly of the core.
-Databases contain short read data for species where no reference chloroplast is available in the databases.
+Chloroplast genomes are widely used for evolutionary analyses (TODO cite), barcoding (TODO cite), and meta-barcoding (TODO cite).
+Interesting aspect of chloroplast genomes are their reduced size through endosymbiotic gene transfer \cite{martin_evolutionary_2002,timmis_endosymbiotic_2004} and the strong conservation of the remaining genes (cite).
+Despite the overall high conservation there are striking differences between groups (e.g. loss of whole gene families like ndh genes in /textit{Droseraceae} \cite{nevill_plastome-wide_2019} and extreme evolutionary cases with very low GC content and a modified genetic code \cite{su_novel_2019}).
+These differences call for comparative genomic approaches.
+
+It is much easier to decipher the complete chloroplast genome than the complete core genome (cite?).
+However, the specific genome structure (esp. the large inverted repeat) complicates automated resolution with short read technologies (cite?).
+Many genome sequencing projects contain chloroplast reads as by-product.
+In some cases the chloroplast data is even considered contamination so experimental protocols for reducing their content have been developed \cite{lutz_isolation_2011}.
+The resolved chloroplast genome helps to remove these reads, which can improve assembly of the core genome.
+Databases exist, containing short read data for species where no reference chloroplast is publicly available.
 There is a lot of potential use cases for chloroplast genomes \cite{tonti-filippini_what_2017}
-Resolving these would allow for more and larger scale comparative studies on whole chloroplasts.
-Open question (?) structural variation across taxonomic groups.
-Some researchers use shallow genome sequencing to reconstruct full chloroplast genomes for use as super-barcodes \cite{coissac_barcodes_2016}.
+Resolving these (hidden treasures) would allow for more and larger scale comparative studies on whole chloroplasts.
+In a different application researchers use shallow genome sequencing to reconstruct full chloroplast genomes for use as super-barcodes \cite{coissac_barcodes_2016}.
+There are also applications in biotechnology and genetic engineering \cite{daniell_chloroplast_2016}.
 
 \subsection*{Chloroplast genome architecture}
 Maybe separate section describing a prototypical chloroplast: LSC, IRa, SSC, IRb. Gene number and content. Size ranges. Evolutionary history incl. endosymbiontic gene transfer. Reduced genomes in parasitic plants. Loss of ndh gene family (maybe too specific). Preliminary SNP analysis in \plant{At} to estimate intraspecific variability? Is there anything known about intra-organismic variability (do some plants have multiple populations of chloroplasts? probably off topic).
@@ -345,6 +350,7 @@ Maybe separate section describing a prototypical chloroplast: LSC, IRa, SSC, IRb
 Mapping (potentially iterative), k-mer coverage analysis, seeded assembly
 2. Assembly of chloroplast (incl special structure with IRs)
 normal assembly - then blast, assembly then graph resolution, might be combined with step 1.
+\cite{twyford_strategies_2017}
 
 \subsection*{Purpose and scope of this study}
 Clearly state criteria. Work with mixed data. Full automation. De novo - no manual selection of appropriate reference. No manual finishing. The step we are interested in is: from raw paired Illumina (!) reads to a fasta file containing the assembly (optimally full, circularized and on one contig). We are not interested in annotation or any additional contigs (genomic, mitochondrion, rRNA, etc.).
@@ -427,8 +433,8 @@ Ich glaube diese Formel lässt sich vereinfachen zu:
 %% score = 1 - (abs(1-ref_cov_frac) + abs(1-qry_cov_frac) + abs(1-rep_res) + abs(1-(1/contig_num))))
 
 
-\subsubsection*{reproducibility}
-For reproducibility testing we randomly choose 100 data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before. The resulting assemblies were scored again as described above and the scores of the 1. and the 2. run were compared to each other. 
+\subsubsection*{Reproducibility}
+For reproducibility  testing we randomly choose 100 data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before. The resulting assemblies were scored again as described above and the scores of the 1. and the 2. run were compared to each other. 
 
 \section*{Results}
 \subsection*{Computational Resources}
@@ -467,15 +473,26 @@ Highest scoring is \go{} next is \fp{} while \ioga{} and \cassp{} perform poorly
 %% Den upset plot eventuell erst in die Discussion reinbringen ? Da wir davon ableiten welche tools wir empfehlen?
 
 
-\subsubsection{Reproducability}
+\subsubsection*{Reproducibility}
 \textit{plot repro.pdf goes here}
 
+Reproducibility was tested as described above, by re-unning assemblies and comparison of the scores of the two assemblies. Figure N shows the scores of the 1. runs versus the scores of the 2. scores. Runs that did not produce an output were manually scored with 0. 
+\go{}  was the only tool that succeeded in obtaining similar scores for all the assemblies, without having and completely unsuccessful assemblies for this subset of data. Except for \fp{} all the other tools had at least one assembly that was unsuccessful in either runs, but produced on output in the other.  Notably \ioga{} appears to have a tendency of being able to perform differently in independent runs. More that 10 \% of the assemblies failed once, but were successful in the other run.
+
+Both \fp{} and \np{} tend to have minor changes in the assembly when the overall performance is comparably well, leading to the arrow-shaped scatter plots. \ce{} and \cassp{} only have few deviations between the two runs, besides a few one-time non-performing datasets, the other all scored the same.
+1
 
 \subsection*{Performance metrics}
 
 \subsubsection*{Time requirements}
 
 \textit{plot comp\_time\_log.pdf goes here}
+
+In terms of time efficiency there was a great difference between input datasets, number of threads and the tool in use ranging from a few minutes to several hours. Some assemblies failed to finsih within the time-limit we set at 48 hours. 
+On average the longest time to complete assemblies was taken by \ioga{} and \fb{} followed by \oa{} and \go{} the most time efficient overall was \ce{} with on average is a little faster than \np{} and \cassp{}
+%% multithreading
+Not all the tools were able to benefit from having access to multiple threads. Both \no and \oa take about the same time independent of being able to utilize 1,2,4 or 8 threads. \cassp{}, \ce{} , \go and \fb{} all profit from multi-threading
+ 
 
 
 \subsubsection*{Memory and CPU Usage }
@@ -599,7 +616,7 @@ All authors discussed the results and contributed to the final manuscript.
 
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{plots/repro.pdf}
-  \caption{\csentence{Sample figure title.}
+  \caption{\csentence{Scatterplot of scores between two independent runs for reproducibility testing}
       Figure legend text.}
       \end{figure}
 
