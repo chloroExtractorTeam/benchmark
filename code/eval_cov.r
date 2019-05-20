@@ -51,8 +51,8 @@ n_obs
 pdf("upset.pdf")
 UL  = out_tibble %>% filter(score>99)  %>% select(dataset,assembler) %>% split(.$assembler) %>% lapply("[[",1)
 upset(fromList(UL), order.by = "freq",sets.bar.color=my_col[c(4,3,6,7,2)],
-      point.size=5,matrix.color = my_col[3],shade.color = my_col[c(1,5,4)],
-      shade.alpha = 0.5, main.bar.color = colorRamps::green2red(20),text.scale = 1.5)
+      point.size=5,matrix.color = my_col[3],
+      shade.alpha = 0.5, text.scale = 1.5)
 dev.off()
 
 
@@ -64,8 +64,13 @@ run_log <- read_tsv("log_clean.tsv")
 ## convert bytes to GB in log file 
 run_log[,14:15] <- run_log[,14:15]  / 10^9
 
+run_log_mem <- run_log %>%  filter(exit_code==0) %>%
+    gather(key="usage",value="mag", cpu_usage_percent, peak_cpu_usage_percent, peak_memory_bytes,peak_disk_usage_bytes)
+run_log_mem$amount_f <- factor(run_log_mem$amount, levels=c("25K","250K","2.5M"))
+
 ## plot boxplots for computataion times 
-run_log_mem %>% filter(exit_code==0) %>% ggplot(aes(y=run_time_sec,x=as.factor(program), fill=as.factor(threads))) +
+run_log_mem %>% filter(exit_code==0) %>%
+    ggplot(aes(y=run_time_sec,x=as.factor(program), fill=as.factor(threads))) +
     geom_boxplot() + 
     theme_bw() + scale_fill_manual(values=my_col) +
     theme(text = element_text(size=15),legend.position = c(0.65,0.3)) +
@@ -78,8 +83,7 @@ ggsave("comp_time_log.pdf")
 
 ##plot memory and cpu usage
 ## convert tibble to long format for ggplot
-run_log_mem <- run_log %>%  filter(exit_code==0) %>%
-    gather(key="usage",value="mag", cpu_usage_percent, peak_cpu_usage_percent, peak_memory_bytes,peak_disk_usage_bytes)
+
 
 ##rename usage parameters in tibble for ggplot
 new_usages = c("CPU usage (%)" , "Peak CPU usage (%)"," Peak memory (GB)", "Peak disk usage (GB)")
@@ -89,7 +93,7 @@ for( i in 1:4){
 }
 
 ## adjust order of input data size 
-run_log_mem$amount_f <- factor(run_log_mem$amount, levels=c("25K","250K","2.5M"))
+
 
 
 ## plot disk and memeory usage vs number of threads 
@@ -130,11 +134,14 @@ out_re <- out_tibble[paste0(unlist(out_tibble[,1]),unlist(out_tibble[,2])) %in% 
 
 out_re2 <- out_tibble_re[paste0(unlist(out_tibble_re[,1]),unlist(out_tibble_re[,2])) %in% paste0(unlist(out_re[,1]),unlist(out_re[,2])),]
 
-out_j <- out_re %>% add_column(score_rerun = out_re2$score)
+out_j <- out_re %>% add_column(score_rerun=out_re2$score)
+
+
 out_j %>% ggplot(aes(x=score,y=score_rerun,col=assembler)) + geom_point()  + theme_bw() +
     facet_wrap(~assembler,ncol=3) + 
     stat_poly_eq(formula = x ~ y,parse=T) +
     guides(col=guide_legend(ncol=2)) +
     theme(legend.title = element_blank(),legend.position = c(0.5,0.2), text=element_text(size=15)) +
     xlab("Score 1. run ") + ylab("Score 2. run")
+
 ggsave("repro.pdf")
