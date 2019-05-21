@@ -326,7 +326,7 @@ The chloroplast as the photosynthetic organelle harboring its own genome has bee
 The first chloroplast genome sequences were obtained as early as 1986 \cite{ohyama_chloroplast_1986,shinozaki_complete_1986}.
 These efforts elucidated the general genome organization and structure of chloroplasts, expanded by many more studies over the years.
 Chloroplast genome content and structure reviewed elsewhere \cite{wicke_evolution_2011,green_chloroplast_2011}.
-Chloroplast genomes are widely used for evolutionary analyses (TODO cite), barcoding (TODO cite), and meta-barcoding (TODO cite).
+Chloroplast genomes are widely used for evolutionary analyses \cite{martin_plastid_2010,xiao-ming_inferring_2017}, barcoding \cite{kress_use_2005,hollingsworth_dna_2009,de_vere_dna_2015}, and meta-barcoding \cite{bell_review_2016,deiner_environmental_2017}.
 Interesting aspect of chloroplast genomes are their reduced size through endosymbiotic gene transfer \cite{martin_evolutionary_2002,timmis_endosymbiotic_2004} and the strong conservation of the remaining genes (cite).
 Despite the overall high conservation there are striking differences between groups (e.g. loss of whole gene families like ndh genes in /textit{Droseraceae} \cite{nevill_plastome-wide_2019} and extreme evolutionary cases with very low GC content and a modified genetic code \cite{su_novel_2019}).
 These differences call for comparative genomic approaches.
@@ -353,7 +353,15 @@ normal assembly - then blast, assembly then graph resolution, might be combined 
 \cite{twyford_strategies_2017}
 
 \subsection*{Purpose and scope of this study}
-Clearly state criteria. Work with mixed data. Full automation. De novo - no manual selection of appropriate reference. No manual finishing. The step we are interested in is: from raw paired Illumina (!) reads to a fasta file containing the assembly (optimally full, circularized and on one contig). We are not interested in annotation or any additional contigs (genomic, mitochondrion, rRNA, etc.).
+The goal of this study is to compare the effectiveness and efficiency of existing tools to de-novo assemble whole chloroplast genomes from raw mixed genomic datasets with minimal configuration.
+This means: no data prep, no specific reference (but \plant{At} if required), default parameters, no manual finishing.
+We further restricted our benchmark to paired Illumina datasets as these are the most common (cite?) and most (all?) tools in this study can not handle any other types.
+
+In our opinion this reflects the most common use cases: (1) a user trying a tool quickly without digging into options for fine tuning and (2) large scale automatic applications.
+Still, we acknowledge that the performance of the tools might be significantly improved by optimizing parameters (and references if applicable) for each dataset specifically.
+(However, this was outside the scope of this study.)
+
+%Clearly state criteria. Work with mixed data. Full automation. De novo - no manual selection of appropriate reference. No manual finishing. The step we are interested in is: from raw paired Illumina (!) reads to a fasta file containing the assembly (optimally full, circularized and on one contig). We are not interested in annotation or any additional contigs (genomic, mitochondrion, rRNA, etc.).
 %\cite{koon,oreg,khar,zvai,xjon,schn,pond,smith,marg,hunn,advi,koha,mouse}
 
 \section*{Methods}
@@ -365,7 +373,7 @@ This study adheres to the guidelines for computational method benchmarking \cite
 \subsection*{Inclusion Criteria}
 List criteria that tools had to fulfill to be included in this study (maybe redundant with purpose and scope section).
 List all programs that met the criteria with reference and very brief description:
-\oa{}, \ce{}, \fp{}, \ioga{}, \np{}, \go{}, \cassp{}.
+\oa{}, \ce{}, \fp{}, \ioga{}, \np{} \cite{dierckxsens_novoplasty:_2017}, \go{}, \cassp{}.
 Name other relevant methods that were excluded (short description, reference, reason for exclusion).
 
 \subsection*{Our Setup}
@@ -528,6 +536,8 @@ Put results back in context: the multitude of available tools shows importance t
 
 Outlook: next step in the pipeline is annotation. There is a similar problem: many tools, which one to use? 
 A large scale study reconstructing chloroplasts throughout SRA (or 1001 genome project) is feasible and promising using the existing tools (estimated runtime, number of novel chloroplasts).
+A meta-tool that automatically combines the different programs could be developed.
+The benchmarking study could be augmented to automatically select the closest reference from the database and provide that to any tool that can take advantage of references.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -538,7 +548,7 @@ A large scale study reconstructing chloroplasts throughout SRA (or 1001 genome p
 \begin{backmatter}
 
 \section*{Competing interests}
-  The authors disclose that SP, NT, FF, and MJA are developers of \ce{}, one of the tools benchmarked in this article. The authors exercised caution not to let this fact unfairly influence their judgement.
+  The authors disclose that SP, NT, FF, and MJA are developers of \ce{}, one of the tools benchmarked in this article. The authors exercised caution not to let this fact unfairly influence their judgment.
 
 \section*{Author's contributions}
     MJA and FF conceived of the presented idea and supervised the findings of this manuscript.
