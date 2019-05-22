@@ -16,7 +16,7 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
 
 RUN apt install --yes libperl4-corelibs-perl
 
-ENV CHLOROPLASTASSEMBLYPROTOCOL 250d16ac02005d6a5939bf182b3d2995d0e88229
+ENV CHLOROPLASTASSEMBLYPROTOCOLVERSION 250d16ac02005d6a5939bf182b3d2995d0e88229
 WORKDIR /opt
 RUN git clone https://github.com/eead-csic-compbio/chloroplast_assembly_protocol.git && \
     cd chloroplast_assembly_protocol && \

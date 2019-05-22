@@ -195,7 +195,7 @@ EOF
 
 fi
 
-if [ -n "$CHLOROPLASTASSEMBLYPROTOCOL" ]
+if [ -n "$CHLOROPLASTASSEMBLYPROTOCOLVERSION" ]
 then
     date +"[%Y-%m-%d %H:%M:%S] Starting chloroplast-assembly-protocol"
 
