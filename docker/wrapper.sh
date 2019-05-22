@@ -249,8 +249,12 @@ then
 	sed 's/[[:space:]]*nd[[:space:]]*nd[[:space:]]*/ FR 250 /g' cp_noref/cleanreads.txt >cp_noref/assembly_pe
 	2_assemble_reads.pl cp_noref assembly_pe -threads ${NUMCPUS}
 
-	find -name "sspace.final.scaffolds.fasta" | sort | head -1 | xargs -I{} cp {} output.fa
-    else
+	find -name "sspace.final.scaffolds.fasta" | sort | head -1 | xargs --no-run-if-empty -I{} cp {} output.fa
+    fi
+
+    # finally check if an output file exists, if not, create an empty one
+    if [ ! -e output.fa ]
+    then
 	touch output.fa
     fi
 fi
