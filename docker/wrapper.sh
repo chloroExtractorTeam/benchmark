@@ -242,8 +242,6 @@ then
 
     0_get_cp_reads.pl input cp_noref $REFERENCE
 
-    # set threads
-    sed -i 's/\(CPUTHREADS[[:space:]]*=[[:space:]]*\)[0-9]*/\1'${NUMCPUS}'/g' $(which 1_cleanreads.pl)
     1_cleanreads.pl -folder cp_noref
 
     if [ -e cp_noref/cleanreads.txt ]
