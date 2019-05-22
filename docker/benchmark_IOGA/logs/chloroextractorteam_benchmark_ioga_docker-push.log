@@ -1,41 +1,40 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_ioga]
-5f75913acccf: Preparing
-d28d0614e509: Preparing
-5b8a80581d62: Preparing
-1e62d71579c4: Preparing
-a31c4eccce2e: Preparing
-aa55eb231027: Preparing
-31fc03353fc0: Preparing
-9b50d9e11f0c: Preparing
-e5a75526e659: Preparing
-73c8cd49ce0d: Preparing
-1ccbe6933bee: Preparing
+c596ae6659bd: Preparing
+f647a24a548e: Preparing
+0ce2722384cd: Preparing
+e2bc78633239: Preparing
+a13d3af40150: Preparing
+38d4573a3107: Preparing
+60d3760ca378: Preparing
+53a1b7a75d2e: Preparing
+64e99a088376: Preparing
+589f83eab126: Preparing
+abc57714d6f9: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-31fc03353fc0: Waiting
-9b50d9e11f0c: Waiting
-e5a75526e659: Waiting
-73c8cd49ce0d: Waiting
-b57c79f4a9f3: Waiting
+60d3760ca378: Waiting
 d60e01b37e74: Waiting
+b57c79f4a9f3: Waiting
+53a1b7a75d2e: Waiting
+64e99a088376: Waiting
+589f83eab126: Waiting
 e45cfbc98a50: Waiting
-1ccbe6933bee: Waiting
-aa55eb231027: Waiting
-a31c4eccce2e: Mounted from chloroextractorteam/benchmark_getorganelle
-5f75913acccf: Pushed
-d28d0614e509: Pushed
-aa55eb231027: Mounted from chloroextractorteam/benchmark_getorganelle
-9b50d9e11f0c: Mounted from chloroextractorteam/benchmark_getorganelle
-e5a75526e659: Mounted from chloroextractorteam/benchmark_getorganelle
-73c8cd49ce0d: Mounted from chloroextractorteam/benchmark_getorganelle
-31fc03353fc0: Pushed
-1ccbe6933bee: Mounted from chloroextractorteam/benchmark_getorganelle
+762d8e1a6054: Waiting
+a13d3af40150: Mounted from chloroextractorteam/benchmark_getorganelle
+c596ae6659bd: Pushed
+f647a24a548e: Pushed
+38d4573a3107: Mounted from chloroextractorteam/benchmark_getorganelle
+53a1b7a75d2e: Mounted from chloroextractorteam/benchmark_getorganelle
+60d3760ca378: Mounted from chloroextractorteam/benchmark_getorganelle
+64e99a088376: Mounted from chloroextractorteam/benchmark_getorganelle
+589f83eab126: Mounted from chloroextractorteam/benchmark_getorganelle
+abc57714d6f9: Mounted from chloroextractorteam/benchmark_getorganelle
 b57c79f4a9f3: Layer already exists
 d60e01b37e74: Layer already exists
 e45cfbc98a50: Layer already exists
 762d8e1a6054: Layer already exists
-5b8a80581d62: Pushed
-1e62d71579c4: Pushed
-docker: digest: sha256:2c4026a57807e560b9eafa84746ad61aec2c1eb04b24364dfb495f3d0542f8c3 size: 3459
+e2bc78633239: Pushed
+0ce2722384cd: Pushed
+docker: digest: sha256:322079f5e5fe7098ed5c0f2e536dea4bd84bb604efe2c148ba0a559bcaf61294 size: 3459

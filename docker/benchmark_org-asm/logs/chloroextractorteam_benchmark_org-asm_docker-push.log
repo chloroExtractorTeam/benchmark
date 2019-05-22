@@ -1,39 +1,39 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_org-asm]
-9c5ee80dc971: Preparing
-544db6ec6070: Preparing
-db4ada936d1a: Preparing
-a31c4eccce2e: Preparing
-aa55eb231027: Preparing
-31fc03353fc0: Preparing
-9b50d9e11f0c: Preparing
-e5a75526e659: Preparing
-73c8cd49ce0d: Preparing
-1ccbe6933bee: Preparing
+0f20a83592fe: Preparing
+b120961691e2: Preparing
+85926466f98e: Preparing
+a13d3af40150: Preparing
+38d4573a3107: Preparing
+60d3760ca378: Preparing
+53a1b7a75d2e: Preparing
+64e99a088376: Preparing
+589f83eab126: Preparing
+abc57714d6f9: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-73c8cd49ce0d: Waiting
-1ccbe6933bee: Waiting
 b57c79f4a9f3: Waiting
+60d3760ca378: Waiting
+64e99a088376: Waiting
 d60e01b37e74: Waiting
-31fc03353fc0: Waiting
+589f83eab126: Waiting
+53a1b7a75d2e: Waiting
+abc57714d6f9: Waiting
 e45cfbc98a50: Waiting
 762d8e1a6054: Waiting
-9b50d9e11f0c: Waiting
-e5a75526e659: Waiting
-a31c4eccce2e: Mounted from chloroextractorteam/benchmark_ioga
-aa55eb231027: Mounted from chloroextractorteam/benchmark_ioga
-31fc03353fc0: Mounted from chloroextractorteam/benchmark_ioga
-9c5ee80dc971: Pushed
-9b50d9e11f0c: Mounted from chloroextractorteam/benchmark_ioga
-544db6ec6070: Pushed
-e5a75526e659: Mounted from chloroextractorteam/benchmark_ioga
-73c8cd49ce0d: Mounted from chloroextractorteam/benchmark_ioga
+38d4573a3107: Mounted from chloroextractorteam/benchmark_novoplasty
+a13d3af40150: Mounted from chloroextractorteam/benchmark_novoplasty
+0f20a83592fe: Pushed
+60d3760ca378: Mounted from chloroextractorteam/benchmark_novoplasty
+53a1b7a75d2e: Mounted from chloroextractorteam/benchmark_novoplasty
+589f83eab126: Mounted from chloroextractorteam/benchmark_novoplasty
+b120961691e2: Pushed
+64e99a088376: Mounted from chloroextractorteam/benchmark_novoplasty
 b57c79f4a9f3: Layer already exists
 d60e01b37e74: Layer already exists
-1ccbe6933bee: Mounted from chloroextractorteam/benchmark_ioga
+abc57714d6f9: Mounted from chloroextractorteam/benchmark_novoplasty
 e45cfbc98a50: Layer already exists
 762d8e1a6054: Layer already exists
-db4ada936d1a: Pushed
-docker: digest: sha256:355ba8583dab98f0fcfd90c73c37b322bfdbdfb4b6b48fbed2bb264960a6d842 size: 3249
+85926466f98e: Pushed
+docker: digest: sha256:9525a968406fe0823f7ab864465d31281ebf4f2b6f28afdd13135409555f6d1b size: 3249
