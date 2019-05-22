@@ -1,9 +1,9 @@
-BRANCH_NAME=logs-2019-05-02T09-02-08
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
-SSH_CONNECTION=10.149.30.159 50967 10.149.20.57 22
-GIT_SHA1=daf410def664b089b30ab6239d5afb004009a7de
+blub=6b
+SSH_CONNECTION=10.149.30.123 50250 10.149.20.57 22
+GIT_SHA1=090a66eaae1e6c11424b5e84633d6c581b91f3bc
 LANG=de_DE.UTF-8
-OLDPWD=/tmp/benchmark/docker
+OLDPWD=/tmp/make_images/benchmark/docker
 LATESTLOG=logs/chloroextractorteam_benchmark_org-asm_docker-push-latest.log
 LOGFILE=logs/chloroextractorteam_benchmark_org-asm_docker-build.log
 SSH_AUTH_SOCK=/tmp/ssh-lGsdvSFjZ7Qa/agent.14056
@@ -11,19 +11,19 @@ XDG_SESSION_ID=23
 USER=ffoerster
 IMAGE_NAME=chloroextractorteam/benchmark_org-asm:docker
 PUSHLOG=logs/chloroextractorteam_benchmark_org-asm_docker-push.log
-PWD=/tmp/benchmark/docker/benchmark_org-asm
+PWD=/tmp/make_images/benchmark/docker/benchmark_org-asm
 HOME=/home/ffoerster
 SSH_AGENT_PID=14057
 SSH_CLIENT=10.149.30.159 58453 22
 TMUX=/tmp/tmux-1000/default,16631,0
-BUILD_DATE=2019-05-07T10:22:54Z
+BUILD_DATE=2019-05-22T11:07:36Z
 SSH_TTY=/dev/pts/0
 MAIL=/var/mail/ffoerster
-VCS_REF=daf410d
+VCS_REF=090a66e
 TERM=screen
 SHELL=/bin/bash
 LOGBASE=logs/chloroextractorteam_benchmark_org-asm_docker
-TMUX_PANE=%11
+TMUX_PANE=%32
 SHLVL=4
 PROMPT_COMMAND=history -a; history -n
 DOCKER_REPO=chloroextractorteam/benchmark_org-asm
@@ -31,46 +31,46 @@ SOURCE_BRANCH=docker
 LOGNAME=ffoerster
 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 XDG_RUNTIME_DIR=/run/user/1000
-PATH=/home/ffoerster/projects/tools/SeqFilter/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 _=/usr/bin/env
 Sending build context to Docker daemon   1.04MB
 Step 1/16 : ARG baseimageversion=latest
 Step 2/16 : FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
 docker: Pulling from chloroextractorteam/benchmark-baseimage
-Digest: sha256:825d6e4a1f1940bf20c7a22623a52e90807834bc2a0d5f95f7a76438a079449b
+Digest: sha256:8f08460fdd5c584f9e6a1c18e9017416ae9742adf7f3804c9c9619c0cbfda08e
 Status: Image is up to date for chloroextractorteam/benchmark-baseimage:docker
- ---> 9d1ea3e5056e
+ ---> be743d1e14b2
 Step 3/16 : ARG VERSION=master
- ---> Running in 4dce98c95734
-Removing intermediate container 4dce98c95734
- ---> 0ad6ab115974
+ ---> Running in 8ce6b6c8e305
+Removing intermediate container 8ce6b6c8e305
+ ---> ac90cdbbf8ba
 Step 4/16 : ARG VCS_REF
- ---> Running in 2e342b1833a6
-Removing intermediate container 2e342b1833a6
- ---> 94eabba49c76
+ ---> Running in 9e1dbd84b826
+Removing intermediate container 9e1dbd84b826
+ ---> 245355823fdc
 Step 5/16 : ARG BUILD_DATE
- ---> Running in b2312c81314a
-Removing intermediate container b2312c81314a
- ---> d5f85169426c
+ ---> Running in 677a3f714acf
+Removing intermediate container 677a3f714acf
+ ---> 72eaa8cd4bc8
 Step 6/16 : RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
- ---> Running in 6ad0aa9807f4
-VCS_REF: daf410d, BUILD_DATE: 2019-05-07T10:22:54Z, VERSION: docker
-Removing intermediate container 6ad0aa9807f4
- ---> 945ccfcbaa0d
+ ---> Running in 9ea9177f1091
+VCS_REF: 090a66e, BUILD_DATE: 2019-05-22T11:07:36Z, VERSION: docker
+Removing intermediate container 9ea9177f1091
+ ---> d7980361cf75
 Step 7/16 : LABEL maintainer="frank.foerster@ime.fraunhofer.de"       description="Dockerfile providing an image for ORG-asm for our benchmark setup"       version=${VERSION}       org.label-schema.vcs-ref=${VCS_REF}       org.label-schema.build-date=${BUILD_DATE}       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
- ---> Running in 868de9d33dbd
-Removing intermediate container 868de9d33dbd
- ---> 38da662a6fec
+ ---> Running in bd9428e9a5eb
+Removing intermediate container bd9428e9a5eb
+ ---> e4f4e8004a15
 Step 8/16 : ENV ORGASMVERSION 830313acae3ca773b63f6bea9fc6d017e021bde5
- ---> Running in d1d3bbabc2b6
-Removing intermediate container d1d3bbabc2b6
- ---> 6e238b12b33c
+ ---> Running in dca6644c9dce
+Removing intermediate container dca6644c9dce
+ ---> 7b8e33421eaf
 Step 9/16 : WORKDIR /opt
- ---> Running in 5e3d7510cd0d
-Removing intermediate container 5e3d7510cd0d
- ---> bb4023b6200b
+ ---> Running in 9d5e82618e5f
+Removing intermediate container 9d5e82618e5f
+ ---> cb0303770070
 Step 10/16 : RUN git clone https://git.metabarcoding.org/org-asm/org-asm.git &&     cd org-asm &&     git checkout ${ORGASMVERSION} &&     rm -rf .git &&     python3.7 get_orgasm/get-orgasm.py
- ---> Running in f83a4ca75f3a
+ ---> Running in e40a8c76749f
 [91mCloning into 'org-asm'...
 [0m[91mNote: checking out '830313acae3ca773b63f6bea9fc6d017e021bde5'.
 
@@ -86,9 +86,9 @@ do so (now or later) by using -b with the checkout command again. Example:
 HEAD is now at 830313a Tag version 1.0.3
 [0mCollecting ORG.asm
   Downloading https://files.pythonhosted.org/packages/a1/87/b5eb7e64531fd7185b7d5888727f0c952244ec793f6be648ccb55c7ddec2/ORG.asm-1.0.3.tar.gz (269kB)
-  Saved /tmp/tmpygcemblh/ORG.asm-1.0.3.tar.gz
+  Saved /tmp/tmppawfnc8w/ORG.asm-1.0.3.tar.gz
     Complete output from command python setup.py egg_info:
-    ['', '/usr/lib/python36.zip', '/usr/lib/python3.6', '/usr/lib/python3.6/lib-dynload', '/usr/local/lib/python3.6/dist-packages', '/usr/lib/python3/dist-packages', '/tmp/pip-build-ryp7a_ja/ORG.asm/distutils.ext', '/tmp/pip-build-ryp7a_ja/ORG.asm/python']
+    ['', '/usr/lib/python36.zip', '/usr/lib/python3.6', '/usr/lib/python3.6/lib-dynload', '/usr/local/lib/python3.6/dist-packages', '/usr/lib/python3/dist-packages', '/tmp/pip-build-a8o5t30z/ORG.asm/distutils.ext', '/tmp/pip-build-a8o5t30z/ORG.asm/python']
     ----------------
     -c egg_info --egg-base pip-egg-info
     ----------------
@@ -96,32 +96,32 @@ HEAD is now at 830313a Tag version 1.0.3
     You are running the good python
     Restarting installation within the ORG.asm-1.0.3 virtualenv
     Install script restarting...
-    ['/tmp/pip-build-ryp7a_ja/ORG.asm', '/usr/lib/python36.zip', '/usr/lib/python3.6', '/usr/lib/python3.6/lib-dynload', '/tmp/pip-build-ryp7a_ja/ORG.asm/ORG.asm-1.0.3/lib/python3.6/site-packages', '/tmp/pip-build-ryp7a_ja/ORG.asm/distutils.ext', '/tmp/pip-build-ryp7a_ja/ORG.asm/python']
+    ['/tmp/pip-build-a8o5t30z/ORG.asm', '/usr/lib/python36.zip', '/usr/lib/python3.6', '/usr/lib/python3.6/lib-dynload', '/tmp/pip-build-a8o5t30z/ORG.asm/ORG.asm-1.0.3/lib/python3.6/site-packages', '/tmp/pip-build-a8o5t30z/ORG.asm/distutils.ext', '/tmp/pip-build-a8o5t30z/ORG.asm/python']
     ----------------
     setup.py egg_info --egg-base pip-egg-info
     ----------------
     Installing ORG.asm (1.0.3) in serenity mode
     You are running the good python
-    ORG.asm will be installed with python : /tmp/pip-build-ryp7a_ja/ORG.asm/ORG.asm-1.0.3/bin/python
+    ORG.asm will be installed with python : /tmp/pip-build-a8o5t30z/ORG.asm/ORG.asm-1.0.3/bin/python
     Required packages for the installation :
     Traceback (most recent call last):
       File "setup.py", line 61, in <module>
         serenity=serenity_mode(PACKAGE,VERSION)
-      File "/tmp/pip-build-ryp7a_ja/ORG.asm/distutils.ext/obidistutils/serenity/__init__.py", line 105, in serenity_mode
+      File "/tmp/pip-build-a8o5t30z/ORG.asm/distutils.ext/obidistutils/serenity/__init__.py", line 105, in serenity_mode
         serenity_snake(args.virtual,package,version)
-      File "/tmp/pip-build-ryp7a_ja/ORG.asm/distutils.ext/obidistutils/serenity/__init__.py", line 55, in serenity_snake
+      File "/tmp/pip-build-a8o5t30z/ORG.asm/distutils.ext/obidistutils/serenity/__init__.py", line 55, in serenity_snake
         if install_requirements():
-      File "/tmp/pip-build-ryp7a_ja/ORG.asm/distutils.ext/obidistutils/serenity/checkpackage.py", line 92, in install_requirements
+      File "/tmp/pip-build-a8o5t30z/ORG.asm/distutils.ext/obidistutils/serenity/checkpackage.py", line 92, in install_requirements
         ok = is_installed(x)
-      File "/tmp/pip-build-ryp7a_ja/ORG.asm/distutils.ext/obidistutils/serenity/checkpackage.py", line 24, in is_installed
+      File "/tmp/pip-build-a8o5t30z/ORG.asm/distutils.ext/obidistutils/serenity/checkpackage.py", line 24, in is_installed
         capture_output=True).stdout
       File "/usr/lib/python3.6/subprocess.py", line 403, in run
         with Popen(*popenargs, **kwargs) as process:
     TypeError: __init__() got an unexpected keyword argument 'capture_output'
     
     ----------------------------------------
-[91mCommand "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-ryp7a_ja/ORG.asm/
-[0m['/tmp/tmpygcemblh/ORG.asm-1.0.3', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/usr/local/lib/python3.7/dist-packages', '/usr/lib/python3/dist-packages', '/tmp/tmpygcemblh/ORG.asm-1.0.3/distutils.ext', '/tmp/tmpygcemblh/ORG.asm-1.0.3/python']
+[91mCommand "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-a8o5t30z/ORG.asm/
+[0m['/tmp/tmppawfnc8w/ORG.asm-1.0.3', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/usr/local/lib/python3.7/dist-packages', '/usr/lib/python3/dist-packages', '/tmp/tmppawfnc8w/ORG.asm-1.0.3/distutils.ext', '/tmp/tmppawfnc8w/ORG.asm-1.0.3/python']
 ----------------
 setup.py --serenity --virtualenv=/opt/org-asm/ORG.asm-1.0.3 install
 ----------------
@@ -129,7 +129,7 @@ Installing ORG.asm (1.0.3) in serenity mode
 You are running the good python
 Restarting installation within the /opt/org-asm/ORG.asm-1.0.3 virtualenv
 Install script restarting...
-['/tmp/tmpygcemblh/ORG.asm-1.0.3', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages', '/tmp/tmpygcemblh/ORG.asm-1.0.3/distutils.ext', '/tmp/tmpygcemblh/ORG.asm-1.0.3/python']
+['/tmp/tmppawfnc8w/ORG.asm-1.0.3', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages', '/tmp/tmppawfnc8w/ORG.asm-1.0.3/distutils.ext', '/tmp/tmppawfnc8w/ORG.asm-1.0.3/python']
 ----------------
 setup.py --serenity --virtualenv=/opt/org-asm/ORG.asm-1.0.3 install
 ----------------
@@ -146,61 +146,61 @@ Collecting Cython
 Requirement already satisfied: pip in /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages (from -r requirements.txt (line 2)) (19.0.3)
 Collecting Sphinx (from -r requirements.txt (line 4))
   Downloading https://files.pythonhosted.org/packages/9a/b0/a8cf1d35237aebefd63f05543ed49ea24d302239828ca89409b0c1a35b27/Sphinx-2.0.1-py2.py3-none-any.whl (3.2MB)
-Collecting requests>=2.5.0 (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/7d/e3/20f3d364d6c8e5d2353c72a67778eb189176f08e873c9900e10c0287b84b/requests-2.21.0-py2.py3-none-any.whl (57kB)
-Collecting sphinxcontrib-htmlhelp (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/e4/35/80a67cc493f4a8a9634ab203a77aaa1b84d79ccb1c02eca72cb084d2c7f7/sphinxcontrib_htmlhelp-1.0.2-py2.py3-none-any.whl (96kB)
-Collecting snowballstemmer>=1.1 (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/d4/6c/8a935e2c7b54a37714656d753e4187ee0631988184ed50c0cf6476858566/snowballstemmer-1.2.1-py2.py3-none-any.whl (64kB)
-Collecting Pygments>=2.0 (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/13/e5/6d710c9cf96c31ac82657bcfb441df328b22df8564d58d0c4cd62612674c/Pygments-2.3.1-py2.py3-none-any.whl (849kB)
-Collecting babel!=2.0,>=1.3 (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/b8/ad/c6f60602d3ee3d92fbed87675b6fb6a6f9a38c223343ababdb44ba201f10/Babel-2.6.0-py2.py3-none-any.whl (8.1MB)
-Collecting sphinxcontrib-devhelp (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/b0/a3/fea98741f0b2f2902fbf6c35c8e91b22cd0dd13387291e81d457f9a93066/sphinxcontrib_devhelp-1.0.1-py2.py3-none-any.whl (84kB)
-Collecting sphinxcontrib-serializinghtml (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/57/b3/3648e48fa5682e61e9839d62de4e23af1795ceb738d68d73bd974257a95c/sphinxcontrib_serializinghtml-1.1.3-py2.py3-none-any.whl (89kB)
-Collecting Jinja2>=2.3 (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/1d/e7/fd8b501e7a6dfe492a433deb7b9d833d39ca74916fa8bc63dd1a4947a671/Jinja2-2.10.1-py2.py3-none-any.whl (124kB)
-Collecting imagesize (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/fc/b6/aef66b4c52a6ad6ac18cf6ebc5731ed06d8c9ae4d3b2d9951f261150be67/imagesize-1.1.0-py2.py3-none-any.whl
-Requirement already satisfied: setuptools in /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages (from Sphinx->-r requirements.txt (line 4)) (40.8.0)
-Collecting alabaster<0.8,>=0.7 (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/10/ad/00b090d23a222943eb0eda509720a404f531a439e803f6538f35136cae9e/alabaster-0.7.12-py2.py3-none-any.whl
-Collecting docutils>=0.12 (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/36/fa/08e9e6e0e3cbd1d362c3bbee8d01d0aedb2155c4ac112b19ef3cae8eed8d/docutils-0.14-py3-none-any.whl (543kB)
-Collecting sphinxcontrib-qthelp (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/ce/5b/4747c3ba98b3a3e21a66faa183d8f79b9ded70e74212a7988d236a6eb78a/sphinxcontrib_qthelp-1.0.2-py2.py3-none-any.whl (90kB)
-Collecting sphinxcontrib-jsmath (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/c2/42/4c8646762ee83602e3fb3fbe774c2fac12f317deb0b5dbeeedd2d3ba4b77/sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl
-Collecting packaging (from Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/91/32/58bc30e646e55eab8b21abf89e353f59c0cc02c417e42929f4a9546e1b1d/packaging-19.0-py2.py3-none-any.whl
 Collecting sphinxcontrib-applehelp (from Sphinx->-r requirements.txt (line 4))
   Downloading https://files.pythonhosted.org/packages/13/9a/4428b3114d654cb1cd34d90d5e6fab938d5436f94a571155187ea1dd78b4/sphinxcontrib_applehelp-1.0.1-py2.py3-none-any.whl (121kB)
-Collecting urllib3<1.25,>=1.21.1 (from requests>=2.5.0->Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/01/11/525b02e4acc0c747de8b6ccdab376331597c569c42ea66ab0a1dbd36eca2/urllib3-1.24.3-py2.py3-none-any.whl (118kB)
+Collecting docutils>=0.12 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/36/fa/08e9e6e0e3cbd1d362c3bbee8d01d0aedb2155c4ac112b19ef3cae8eed8d/docutils-0.14-py3-none-any.whl (543kB)
+Collecting sphinxcontrib-devhelp (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/b0/a3/fea98741f0b2f2902fbf6c35c8e91b22cd0dd13387291e81d457f9a93066/sphinxcontrib_devhelp-1.0.1-py2.py3-none-any.whl (84kB)
+Collecting imagesize (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/fc/b6/aef66b4c52a6ad6ac18cf6ebc5731ed06d8c9ae4d3b2d9951f261150be67/imagesize-1.1.0-py2.py3-none-any.whl
+Collecting Pygments>=2.0 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/6e/00/c5cb5fc7c047da4af049005d0146b3a961b1a25d9cefbbe24bf0882a11ad/Pygments-2.4.0-py2.py3-none-any.whl (882kB)
+Collecting sphinxcontrib-htmlhelp (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/e4/35/80a67cc493f4a8a9634ab203a77aaa1b84d79ccb1c02eca72cb084d2c7f7/sphinxcontrib_htmlhelp-1.0.2-py2.py3-none-any.whl (96kB)
+Collecting Jinja2>=2.3 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/1d/e7/fd8b501e7a6dfe492a433deb7b9d833d39ca74916fa8bc63dd1a4947a671/Jinja2-2.10.1-py2.py3-none-any.whl (124kB)
+Collecting snowballstemmer>=1.1 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/d4/6c/8a935e2c7b54a37714656d753e4187ee0631988184ed50c0cf6476858566/snowballstemmer-1.2.1-py2.py3-none-any.whl (64kB)
+Collecting packaging (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/91/32/58bc30e646e55eab8b21abf89e353f59c0cc02c417e42929f4a9546e1b1d/packaging-19.0-py2.py3-none-any.whl
+Collecting requests>=2.5.0 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/51/bd/23c926cd341ea6b7dd0b2a00aba99ae0f828be89d72b2190f27c11d4b7fb/requests-2.22.0-py2.py3-none-any.whl (57kB)
+Collecting sphinxcontrib-jsmath (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/c2/42/4c8646762ee83602e3fb3fbe774c2fac12f317deb0b5dbeeedd2d3ba4b77/sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl
+Collecting sphinxcontrib-serializinghtml (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/57/b3/3648e48fa5682e61e9839d62de4e23af1795ceb738d68d73bd974257a95c/sphinxcontrib_serializinghtml-1.1.3-py2.py3-none-any.whl (89kB)
+Collecting alabaster<0.8,>=0.7 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/10/ad/00b090d23a222943eb0eda509720a404f531a439e803f6538f35136cae9e/alabaster-0.7.12-py2.py3-none-any.whl
+Requirement already satisfied: setuptools in /opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages (from Sphinx->-r requirements.txt (line 4)) (40.8.0)
+Collecting babel!=2.0,>=1.3 (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/b8/ad/c6f60602d3ee3d92fbed87675b6fb6a6f9a38c223343ababdb44ba201f10/Babel-2.6.0-py2.py3-none-any.whl (8.1MB)
+Collecting sphinxcontrib-qthelp (from Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/ce/5b/4747c3ba98b3a3e21a66faa183d8f79b9ded70e74212a7988d236a6eb78a/sphinxcontrib_qthelp-1.0.2-py2.py3-none-any.whl (90kB)
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.3->Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/98/7b/ff284bd8c80654e471b769062a9b43cc5d03e7a615048d96f4619df8d420/MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl
+Collecting six (from packaging->Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
+Collecting pyparsing>=2.0.2 (from packaging->Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/dd/d9/3ec19e966301a6e25769976999bd7bbe552016f0d32b577dc9d63d2e0c49/pyparsing-2.4.0-py2.py3-none-any.whl (62kB)
 Collecting certifi>=2017.4.17 (from requests>=2.5.0->Sphinx->-r requirements.txt (line 4))
   Downloading https://files.pythonhosted.org/packages/60/75/f692a584e85b7eaba0e03827b3d51f45f571c2e793dd731e598828d380aa/certifi-2019.3.9-py2.py3-none-any.whl (158kB)
 Collecting chardet<3.1.0,>=3.0.2 (from requests>=2.5.0->Sphinx->-r requirements.txt (line 4))
   Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl (133kB)
+Collecting urllib3!=1.25.0,!=1.25.1,<1.26,>=1.21.1 (from requests>=2.5.0->Sphinx->-r requirements.txt (line 4))
+  Downloading https://files.pythonhosted.org/packages/39/ec/d93dfc69617a028915df914339ef66936ea976ef24fa62940fd86ba0326e/urllib3-1.25.2-py2.py3-none-any.whl (150kB)
 Collecting idna<2.9,>=2.5 (from requests>=2.5.0->Sphinx->-r requirements.txt (line 4))
   Downloading https://files.pythonhosted.org/packages/14/2c/cd551d81dbe15200be1cf41cd03869a46fe7226e7450af7a6545bfc474c9/idna-2.8-py2.py3-none-any.whl (58kB)
 Collecting pytz>=0a (from babel!=2.0,>=1.3->Sphinx->-r requirements.txt (line 4))
   Downloading https://files.pythonhosted.org/packages/3d/73/fe30c2daaaa0713420d0382b16fbb761409f532c56bdcc514bf7b6262bb6/pytz-2019.1-py2.py3-none-any.whl (510kB)
-Collecting MarkupSafe>=0.23 (from Jinja2>=2.3->Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/98/7b/ff284bd8c80654e471b769062a9b43cc5d03e7a615048d96f4619df8d420/MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl
-Collecting pyparsing>=2.0.2 (from packaging->Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/dd/d9/3ec19e966301a6e25769976999bd7bbe552016f0d32b577dc9d63d2e0c49/pyparsing-2.4.0-py2.py3-none-any.whl (62kB)
-Collecting six (from packaging->Sphinx->-r requirements.txt (line 4))
-  Downloading https://files.pythonhosted.org/packages/73/fb/00a976f728d0d1fecfe898238ce23f502a721c0ac0ecfedb80e0d88c64e9/six-1.12.0-py2.py3-none-any.whl
-Installing collected packages: Cython, urllib3, certifi, chardet, idna, requests, sphinxcontrib-htmlhelp, snowballstemmer, Pygments, pytz, babel, sphinxcontrib-devhelp, sphinxcontrib-serializinghtml, MarkupSafe, Jinja2, imagesize, alabaster, docutils, sphinxcontrib-qthelp, sphinxcontrib-jsmath, pyparsing, six, packaging, sphinxcontrib-applehelp, Sphinx
-Successfully installed Cython-0.29.7 Jinja2-2.10.1 MarkupSafe-1.1.1 Pygments-2.3.1 Sphinx-2.0.1 alabaster-0.7.12 babel-2.6.0 certifi-2019.3.9 chardet-3.0.4 docutils-0.14 idna-2.8 imagesize-1.1.0 packaging-19.0 pyparsing-2.4.0 pytz-2019.1 requests-2.21.0 six-1.12.0 snowballstemmer-1.2.1 sphinxcontrib-applehelp-1.0.1 sphinxcontrib-devhelp-1.0.1 sphinxcontrib-htmlhelp-1.0.2 sphinxcontrib-jsmath-1.0.1 sphinxcontrib-qthelp-1.0.2 sphinxcontrib-serializinghtml-1.1.3 urllib3-1.24.3
+Installing collected packages: Cython, sphinxcontrib-applehelp, docutils, sphinxcontrib-devhelp, imagesize, Pygments, sphinxcontrib-htmlhelp, MarkupSafe, Jinja2, snowballstemmer, six, pyparsing, packaging, certifi, chardet, urllib3, idna, requests, sphinxcontrib-jsmath, sphinxcontrib-serializinghtml, alabaster, pytz, babel, sphinxcontrib-qthelp, Sphinx
+Successfully installed Cython-0.29.7 Jinja2-2.10.1 MarkupSafe-1.1.1 Pygments-2.4.0 Sphinx-2.0.1 alabaster-0.7.12 babel-2.6.0 certifi-2019.3.9 chardet-3.0.4 docutils-0.14 idna-2.8 imagesize-1.1.0 packaging-19.0 pyparsing-2.4.0 pytz-2019.1 requests-2.22.0 six-1.12.0 snowballstemmer-1.2.1 sphinxcontrib-applehelp-1.0.1 sphinxcontrib-devhelp-1.0.1 sphinxcontrib-htmlhelp-1.0.2 sphinxcontrib-jsmath-1.0.1 sphinxcontrib-qthelp-1.0.2 sphinxcontrib-serializinghtml-1.1.3 urllib3-1.25.2
 [91mYou are using pip version 19.0.3, however version 19.1.1 is available.
 You should consider upgrading via the 'pip install --upgrade pip' command.
 [0mLook for package Sphinx : ok version 2.0.1 installed
 Restarting installation with all dependencies ok
 Install script restarting...
-['/tmp/tmpygcemblh/ORG.asm-1.0.3', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages', '/tmp/tmpygcemblh/ORG.asm-1.0.3/distutils.ext', '/tmp/tmpygcemblh/ORG.asm-1.0.3/python']
+['/tmp/tmppawfnc8w/ORG.asm-1.0.3', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages', '/tmp/tmppawfnc8w/ORG.asm-1.0.3/distutils.ext', '/tmp/tmppawfnc8w/ORG.asm-1.0.3/python']
 ----------------
 setup.py --serenity --virtualenv=/opt/org-asm/ORG.asm-1.0.3 install
 ----------------
@@ -390,7 +390,7 @@ src/fastq.c:42:11: warning: implicit declaration of function ‘fgetln’; did y
 src/fastq.c:42:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
   buffer = fgetln(in,&lseq);
          ^
-[0m[91msrc/fastq.c:45:10: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+src/fastq.c:45:10: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
    buffer = fgetln(in,&lseq);
           ^
 [0m[91msrc/fastq.c:59:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
@@ -608,7 +608,7 @@ src/fastq.c:42:9: warning: assignment makes pointer from integer without a cast 
 src/fastq.c:45:10: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
    buffer = fgetln(in,&lseq);
           ^
-[0m[91msrc/fastq.c:59:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+src/fastq.c:59:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
   buffer = fgetln(in,&lseq);
          ^
 src/fastq.c:60:9: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
@@ -677,7 +677,7 @@ x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-ma
 build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/counter.c:2336:47: warning: field width specifier ‘*’ expects argument of type ‘int’, but argument 4 has type ‘long long unsigned int’ [-Wformat=]
        ((void)fprintf(stderr, ((char *)"\r%s [%*d] speed : %*.1f %s/s"), __pyx_v_self->chead, __pyx_v_self->digits, __pyx_v_ipos, __pyx_v_self->digits, __pyx_v_speed, __pyx_v_self->cunit));
                                               ~^~                                             ~~~~~~~~~~~~~~~~~~~~
-[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/apps/counter.c:2336:48: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘long long unsigned int’ [-Wformat=]
+build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/counter.c:2336:48: warning: format ‘%d’ expects argument of type ‘int’, but argument 5 has type ‘long long unsigned int’ [-Wformat=]
        ((void)fprintf(stderr, ((char *)"\r%s [%*d] speed : %*.1f %s/s"), __pyx_v_self->chead, __pyx_v_self->digits, __pyx_v_ipos, __pyx_v_self->digits, __pyx_v_speed, __pyx_v_self->cunit));
                                               ~~^
                                               %*lld
@@ -690,7 +690,7 @@ cythoning python/orgasm/apps/progress.pyx to build/temp.linux-x86_64-3.7/pyrex/o
 building 'orgasm.apps.progress' extension
 x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-map=/build/python3.7-0Cmdei/python3.7-3.7.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -DLITTLE_END -I/opt/org-asm/ORG.asm-1.0.3/include -I/usr/include/python3.7m -c build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.c -o build/temp.linux-x86_64-3.7/build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.o
 [91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.c: In function ‘__pyx_pf_6orgasm_4apps_8progress_11ProgressBar_2__call__’:
-[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.c:2445:59: warning: field precision specifier ‘.*’ expects argument of type ‘int’, but argument 5 has type ‘long long unsigned int’ [-Wformat=]
+build/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.c:2445:59: warning: field precision specifier ‘.*’ expects argument of type ‘int’, but argument 5 has type ‘long long unsigned int’ [-Wformat=]
          ((void)fprintf(stderr, ((char *)"\r%s %5.1f %% |%.*s%c%.*s] remain : %d days %02d:%02d:%02d"), __pyx_v_self->chead, (__pyx_v_percent * 100.0), __pyx_v_fraction, __pyx_v_self->diese, (__pyx_v_self->wheel[__pyx_v_self->arrow]), (50 - __pyx_v_fraction), __pyx_v_self->spaces, __pyx_v_days, __pyx_v_hour, __pyx_v_minu, __pyx_v_sec));
                                                          ~~^~
 [0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/apps/progress.c:2445:65: warning: field precision specifier ‘.*’ expects argument of type ‘int’, but argument 8 has type ‘long long unsigned int’ [-Wformat=]
@@ -759,7 +759,7 @@ x86_64-linux-gnu-gcc -pthread -DNDEBUG -g -fwrapv -O2 -Wall -g -fdebug-prefix-ma
 build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c:506:40: warning: ‘__pyx_v_maxend’ may be used uninitialized in this function [-Wmaybe-uninitialized]
    #define PyInt_FromLong               PyLong_FromLong
                                         ^~~~~~~~~~~~~~~
-[0m[91mbuild/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c:5461:7: note: ‘__pyx_v_maxend’ was declared here
+build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c:5461:7: note: ‘__pyx_v_maxend’ was declared here
    int __pyx_v_maxend;
        ^~~~~~~~~~~~~~
 build/temp.linux-x86_64-3.7/pyrex/orgasm/reads/_sequences.c:506:40: warning: ‘__pyx_v_maxbegin’ may be used uninitialized in this function [-Wmaybe-uninitialized]
@@ -831,21 +831,21 @@ reading sources... [ 94%] unfolding
 reading sources... [ 97%] userapi
 reading sources... [100%] utilities
 
-[91m/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/Cython/Compiler/Main.py:367: FutureWarning: Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /tmp/tmpygcemblh/ORG.asm-1.0.3/python/orgasm/assembler/_assembler.pxd
+[91m/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/Cython/Compiler/Main.py:367: FutureWarning: Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /tmp/tmppawfnc8w/ORG.asm-1.0.3/python/orgasm/assembler/_assembler.pxd
   tree = Parsing.p_module(s, pxd, full_module_name)
 warning: python/orgasm/assembler/_asmbgraph.pyx:161:4: Overriding cdef method with def method.
-/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/Cython/Compiler/Main.py:367: FutureWarning: Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /tmp/tmpygcemblh/ORG.asm-1.0.3/python/orgasm/reads/_fasta.pxd
+/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/Cython/Compiler/Main.py:367: FutureWarning: Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /tmp/tmppawfnc8w/ORG.asm-1.0.3/python/orgasm/reads/_fasta.pxd
   tree = Parsing.p_module(s, pxd, full_module_name)
-/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/Cython/Compiler/Main.py:367: FutureWarning: Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /tmp/tmpygcemblh/ORG.asm-1.0.3/python/orgasm/reads/_sequences.pxd
+/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/Cython/Compiler/Main.py:367: FutureWarning: Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /tmp/tmppawfnc8w/ORG.asm-1.0.3/python/orgasm/reads/_sequences.pxd
   tree = Parsing.p_module(s, pxd, full_module_name)
-/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/Cython/Compiler/Main.py:367: FutureWarning: Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /tmp/tmpygcemblh/ORG.asm-1.0.3/python/orgasm/reads/_fastq.pxd
+/opt/org-asm/ORG.asm-1.0.3/lib/python3.7/site-packages/Cython/Compiler/Main.py:367: FutureWarning: Cython directive 'language_level' not set, using 2 for now (Py2). This will change in a later release! File: /tmp/tmppawfnc8w/ORG.asm-1.0.3/python/orgasm/reads/_fastq.pxd
   tree = Parsing.p_module(s, pxd, full_module_name)
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst:32: WARNING: Unexpected indentation.
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst:59: WARNING: Inline substitution_reference start-string without end-string.
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst:60: WARNING: Definition list ends without a blank line; unexpected unindent.
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst:105: WARNING: Unexpected indentation.
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:235: WARNING: Duplicate explicit target name: "bwa".
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:26: WARNING: Error in "program" directive:
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst:32: WARNING: Unexpected indentation.
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst:59: WARNING: Inline substitution_reference start-string without end-string.
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst:60: WARNING: Definition list ends without a blank line; unexpected unindent.
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst:105: WARNING: Unexpected indentation.
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:235: WARNING: Duplicate explicit target name: "bwa".
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:26: WARNING: Error in "program" directive:
 no content permitted.
 
 .. program:: oa fillgaps
@@ -860,35 +860,35 @@ no content permitted.
                        [--adapt5 adapt5] [--adapt3 adapt3]
                        [--seeds seeds] [--kup ORGASM:KUP]
                        index [output]
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:196: WARNING: Duplicate explicit target name: "bwa".
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:132: WARNING: Explicit markup ends without a blank line; unexpected unindent.
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:156: WARNING: Footnote [2] is not referenced.
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:160: WARNING: image file not readable: Probabilitymetrics.png
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://pypi.python.org/pypi/org.asm".
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://git.metabarcoding.org/org-asm/org-asm".
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:55: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:58: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:95: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:2: WARNING: Duplicate explicit target name: "yed".
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:12: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/papi_R1.fastq.gz
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:13: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/papi_R2.fastq.gz
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:440: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/tuto/butterfly.mito.gml
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:575: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/butterfly.mito.path.gml
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:596: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/butterfly.mito.fasta
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/build/lib.linux-x86_64-3.7/orgasm/assembler/__init__.py:docstring of orgasm.assembler:13: WARNING: Duplicate ID: "module-orgasm.assembler".
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/build/lib.linux-x86_64-3.7/orgasm/tango.py:docstring of orgasm.tango.unfoldAssembling:14: WARNING: Duplicate ID: "module-orgasm.tango".
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:196: WARNING: Duplicate explicit target name: "bwa".
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:132: WARNING: Explicit markup ends without a blank line; unexpected unindent.
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:156: WARNING: Footnote [2] is not referenced.
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:160: WARNING: image file not readable: Probabilitymetrics.png
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://pypi.python.org/pypi/org.asm".
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://git.metabarcoding.org/org-asm/org-asm".
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:55: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:58: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:95: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:2: WARNING: Duplicate explicit target name: "yed".
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:12: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/papi_R1.fastq.gz
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:13: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/papi_R2.fastq.gz
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:440: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/tuto/butterfly.mito.gml
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:575: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/butterfly.mito.path.gml
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:596: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/butterfly.mito.fasta
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/build/lib.linux-x86_64-3.7/orgasm/assembler/__init__.py:docstring of orgasm.assembler:13: WARNING: Duplicate ID: "module-orgasm.assembler".
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/build/lib.linux-x86_64-3.7/orgasm/tango.py:docstring of orgasm.tango.unfoldAssembling:14: WARNING: Duplicate ID: "module-orgasm.tango".
 [0mlooking for now-outdated files... none found
 pickling environment... done
-checking consistency... [91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/fasta.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/graph.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/graphstats.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/path.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/iupac.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/userapi.rst: WARNING: document isn't included in any toctree
+checking consistency... [91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/fasta.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/graph.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/graphstats.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/path.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/iupac.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/userapi.rst: WARNING: document isn't included in any toctree
 [0mdone
 preparing documents... done
 writing output... [  2%] algorithms
@@ -926,32 +926,32 @@ writing output... [ 94%] unfolding
 writing output... [ 97%] userapi
 writing output... [100%] utilities
 
-[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/algorithms.rst:: WARNING: a suitable image for html builder not found: genome_size.*
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/algorithms.rst:: WARNING: a suitable image for html builder not found: [None] (algorithms.*)
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/algorithms/graphextension.rst:9: WARNING: a suitable image for html builder not found: algorithms/../extension.*
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:17: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:: WARNING: a suitable image for html builder not found: algorithms/ahocorasick.*
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:15: WARNING: a suitable image for html builder not found: commands/../oa-buildgraph.*
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:107: WARNING: a suitable image for html builder not found: commands/../extension.*
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/cutlow.rst:17: WARNING: a suitable image for html builder not found: commands/../oa-cutlow.*
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:19: WARNING: a suitable image for html builder not found: commands/../oa-fillgaps.*
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:81: WARNING: a suitable image for html builder not found: commands/../extension.*
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --length ###
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --estimate-length #.##
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/seeds.rst:21: WARNING: a suitable image for html builder not found: commands/../oa-seeds.*
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:199: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:: WARNING: a suitable image for html builder not found: butterfly.mito.path.*
+[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/algorithms.rst:: WARNING: a suitable image for html builder not found: genome_size.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/algorithms.rst:: WARNING: a suitable image for html builder not found: [None] (algorithms.*)
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/algorithms/graphextension.rst:9: WARNING: a suitable image for html builder not found: algorithms/../extension.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:17: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:: WARNING: a suitable image for html builder not found: algorithms/ahocorasick.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:15: WARNING: a suitable image for html builder not found: commands/../oa-buildgraph.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:107: WARNING: a suitable image for html builder not found: commands/../extension.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/cutlow.rst:17: WARNING: a suitable image for html builder not found: commands/../oa-cutlow.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:19: WARNING: a suitable image for html builder not found: commands/../oa-fillgaps.*
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:81: WARNING: a suitable image for html builder not found: commands/../extension.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --length ###
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --estimate-length #.##
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/seeds.rst:21: WARNING: a suitable image for html builder not found: commands/../oa-seeds.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:199: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:: WARNING: a suitable image for html builder not found: butterfly.mito.path.*
 doc/sphinx/source/strategy.txt:: WARNING: a suitable image for html builder not found: ./Kmer-histogram.*
 [0m[91mdoc/sphinx/source/assembly-graph.txt:14: WARNING: a suitable image for html builder not found: ./graph.*
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/oa.rst:25: WARNING: a suitable image for html builder not found: command-flowgram.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/oa.rst:25: WARNING: a suitable image for html builder not found: command-flowgram.*
 [0mgenerating indices... genindex py-modindex
 highlighting module code... [ 50%] orgasm.assembler._assembler
 highlighting module code... [100%] orgasm.tango
 
 writing additional pages... search
-copying static files... [91mWARNING: html_static_path entry '/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/_static' does not exist
+copying static files... done
+copying extra files... [91mWARNING: html_static_path entry '/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/_static' does not exist
 [0mdone
-copying extra files... done
 dumping search index in English (code: en) ... done
 dumping object inventory... done
 build succeeded, 52 warnings.
@@ -967,31 +967,31 @@ reading sources... [ 33%] fastq
 reading sources... [ 66%] install
 reading sources... [100%] mitochondrion
 
-[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:156: WARNING: Footnote [2] is not referenced.
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:160: WARNING: image file not readable: Probabilitymetrics.png
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://pypi.python.org/pypi/org.asm".
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://git.metabarcoding.org/org-asm/org-asm".
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:55: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:58: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:95: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:2: WARNING: Duplicate explicit target name: "yed".
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:12: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/papi_R1.fastq.gz
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:13: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/papi_R2.fastq.gz
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:440: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/tuto/butterfly.mito.gml
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:575: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/butterfly.mito.path.gml
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:596: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/butterfly.mito.fasta
+[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:156: WARNING: Footnote [2] is not referenced.
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:160: WARNING: image file not readable: Probabilitymetrics.png
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://pypi.python.org/pypi/org.asm".
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://git.metabarcoding.org/org-asm/org-asm".
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:55: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:58: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:95: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:2: WARNING: Duplicate explicit target name: "yed".
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:12: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/papi_R1.fastq.gz
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:13: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/papi_R2.fastq.gz
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:440: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/tuto/butterfly.mito.gml
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:575: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/butterfly.mito.path.gml
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:596: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/butterfly.mito.fasta
 [0mlooking for now-outdated files... none found
 pickling environment... done
-checking consistency... [91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst: WARNING: document isn't included in any toctree
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/fasta.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/graph.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/graphstats.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/path.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/iupac.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/userapi.rst: WARNING: document isn't included in any toctree
+checking consistency... [91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst: WARNING: document isn't included in any toctree
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/fasta.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/graph.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/graphstats.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/path.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/iupac.rst: WARNING: document isn't included in any toctree
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/userapi.rst: WARNING: document isn't included in any toctree
 [0mdone
 preparing documents... done
 writing output... [  2%] algorithms
@@ -1029,32 +1029,32 @@ writing output... [ 94%] unfolding
 writing output... [ 97%] userapi
 writing output... [100%] utilities
 
-[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/algorithms.rst:: WARNING: a suitable image for epub builder not found: genome_size.*
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/algorithms.rst:: WARNING: a suitable image for epub builder not found: [None] (algorithms.*)
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/algorithms/graphextension.rst:9: WARNING: a suitable image for epub builder not found: algorithms/../extension.*
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:17: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:: WARNING: a suitable image for epub builder not found: algorithms/ahocorasick.*
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:15: WARNING: a suitable image for epub builder not found: commands/../oa-buildgraph.*
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:107: WARNING: a suitable image for epub builder not found: commands/../extension.*
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/cutlow.rst:17: WARNING: a suitable image for epub builder not found: commands/../oa-cutlow.*
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:19: WARNING: a suitable image for epub builder not found: commands/../oa-fillgaps.*
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:81: WARNING: a suitable image for epub builder not found: commands/../extension.*
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --length ###
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --estimate-length #.##
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/seeds.rst:21: WARNING: a suitable image for epub builder not found: commands/../oa-seeds.*
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:199: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:: WARNING: a suitable image for epub builder not found: butterfly.mito.path.*
+[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/algorithms.rst:: WARNING: a suitable image for epub builder not found: genome_size.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/algorithms.rst:: WARNING: a suitable image for epub builder not found: [None] (algorithms.*)
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/algorithms/graphextension.rst:9: WARNING: a suitable image for epub builder not found: algorithms/../extension.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:17: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:: WARNING: a suitable image for epub builder not found: algorithms/ahocorasick.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:15: WARNING: a suitable image for epub builder not found: commands/../oa-buildgraph.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/buildgraph.rst:107: WARNING: a suitable image for epub builder not found: commands/../extension.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/cutlow.rst:17: WARNING: a suitable image for epub builder not found: commands/../oa-cutlow.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:19: WARNING: a suitable image for epub builder not found: commands/../oa-fillgaps.*
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst:81: WARNING: a suitable image for epub builder not found: commands/../extension.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --length ###
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --estimate-length #.##
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/seeds.rst:21: WARNING: a suitable image for epub builder not found: commands/../oa-seeds.*
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:199: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:: WARNING: a suitable image for epub builder not found: butterfly.mito.path.*
 [0m[91mdoc/sphinx/source/strategy.txt:: WARNING: a suitable image for epub builder not found: ./Kmer-histogram.*
 [0m[91mdoc/sphinx/source/assembly-graph.txt:14: WARNING: a suitable image for epub builder not found: ./graph.*
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/oa.rst:25: WARNING: a suitable image for epub builder not found: command-flowgram.*
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/oa.rst:25: WARNING: a suitable image for epub builder not found: command-flowgram.*
 [0mgenerating indices... genindex py-modindex
 highlighting module code... [ 50%] orgasm.assembler._assembler
 highlighting module code... [100%] orgasm.tango
 
 writing additional pages...
-copying static files... [91mWARNING: html_static_path entry '/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/_static' does not exist
+copying static files... done
+copying extra files... [91mWARNING: html_static_path entry '/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/_static' does not exist
 [0mdone
-copying extra files... done
 writing mimetype file...
 writing META-INF/container.xml file...
 writing content.opf file...
@@ -1062,15 +1062,15 @@ writing nav.xhtml file...
 writing toc.ncx file...
 [91mWARNING: duplicated ToC entry found: commands/buildgraph.xhtml
 WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#command-prototype
-WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#positional-arguments
+[0m[91mWARNING: duplicated ToC entry found: commands/buildgraph.xhtml#positional-arguments
 [0m[91mWARNING: duplicated ToC entry found: commands/buildgraph.xhtml#optional-arguments
-WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#general-option
+[0m[91mWARNING: duplicated ToC entry found: commands/buildgraph.xhtml#general-option
 [0m[91mWARNING: duplicated ToC entry found: commands/buildgraph.xhtml#graph-initialisation-options
 WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#graph-extension-options
-WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#graph-filtering-options
-[0m[91mWARNING: duplicated ToC entry found: commands/buildgraph.xhtml#graph-limit-option
+[0m[91mWARNING: duplicated ToC entry found: commands/buildgraph.xhtml#graph-filtering-options
+WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#graph-limit-option
 [0m[91mWARNING: duplicated ToC entry found: commands/buildgraph.xhtml#graph-cleaning-options
-[0m[91mWARNING: duplicated ToC entry found: commands/buildgraph.xhtml#scaffolding-option
+WARNING: duplicated ToC entry found: commands/buildgraph.xhtml#scaffolding-option
 [0mwriting OrganelleAssembler.epub file...
 build succeeded, 53 warnings.
 
@@ -1085,36 +1085,36 @@ reading sources... [ 33%] fastq
 reading sources... [ 66%] install
 reading sources... [100%] mitochondrion
 
-[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:156: WARNING: Footnote [2] is not referenced.
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:160: WARNING: image file not readable: Probabilitymetrics.png
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://pypi.python.org/pypi/org.asm".
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://git.metabarcoding.org/org-asm/org-asm".
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:55: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:58: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/install.rst:95: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:2: WARNING: Duplicate explicit target name: "yed".
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:12: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/papi_R1.fastq.gz
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:13: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/papi_R2.fastq.gz
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:440: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/tuto/butterfly.mito.gml
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:575: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/butterfly.mito.path.gml
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:596: WARNING: download file not readable: /tmp/tmpygcemblh/ORG.asm-1.0.3/samples/butterfly.mito.fasta
+[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:156: WARNING: Footnote [2] is not referenced.
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/fastq.rst:160: WARNING: image file not readable: Probabilitymetrics.png
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://pypi.python.org/pypi/org.asm".
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:10: WARNING: Unknown target name: "https://git.metabarcoding.org/org-asm/org-asm".
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:55: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:58: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/install.rst:95: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/get_orgasm/get-orgasm.py
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:564: WARNING: Inline literal start-string without end-string.
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:2: WARNING: Duplicate explicit target name: "yed".
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:12: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/papi_R1.fastq.gz
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:13: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/papi_R2.fastq.gz
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:440: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/tuto/butterfly.mito.gml
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:575: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/butterfly.mito.path.gml
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:596: WARNING: download file not readable: /tmp/tmppawfnc8w/ORG.asm-1.0.3/samples/butterfly.mito.fasta
 [0mlooking for now-outdated files... none found
 pickling environment... done
-checking consistency... [91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/fasta.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/graph.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/graphstats.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/path.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/iupac.rst: WARNING: document isn't included in any toctree
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/userapi.rst: WARNING: document isn't included in any toctree
+checking consistency... [91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/chroroplast.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/fasta.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/fillgaps.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/graph.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/graphstats.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/path.rst: WARNING: document isn't included in any toctree
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/iupac.rst: WARNING: document isn't included in any toctree
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/userapi.rst: WARNING: document isn't included in any toctree
 [0mdone
-writing... organelleassembler.1 { install oa preparing commands/index assembling commands/seeds commands/buildgraph finishing commands/cutlow unfolding commands/unfold commands/unfoldrdna utilities commands/list commands/compact fasta fastq embl mitochondrion algorithms algorithms/seedselection algorithms/graphextension algorithms/graphcleanning algorithms/gapfilling algorithms/graphunfolding } [91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --length ###
-/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --estimate-length #.##
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:199: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
-[0m[91m/tmp/tmpygcemblh/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:17: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
+writing... organelleassembler.1 { install oa preparing commands/index assembling commands/seeds commands/buildgraph finishing commands/cutlow unfolding commands/unfold commands/unfoldrdna utilities commands/list commands/compact fasta fastq embl mitochondrion algorithms algorithms/seedselection algorithms/graphextension algorithms/graphcleanning algorithms/gapfilling algorithms/graphunfolding } [91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --length ###
+/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/commands/index.rst:263: WARNING: unknown option: --estimate-length #.##
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/mitochondrion.rst:199: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
+[0m[91m/tmp/tmppawfnc8w/ORG.asm-1.0.3/doc/sphinx/source/algorithms/seedselection.rst:17: WARNING: undefined label: buildgraph.seeds (if the link has no caption the label must precede a section header)
 [0mdone
 build succeeded, 27 warnings.
 
@@ -1365,30 +1365,30 @@ copying doc/sphinx/build/man/organelleassembler.1 -> /opt/org-asm/ORG.asm-1.0.3/
 creating /opt/org-asm/ORG.asm-1.0.3/export/share/man/man1/_static
 copying doc/sphinx/build/man/_static/graphviz.css -> /opt/org-asm/ORG.asm-1.0.3/export/share/man/man1/_static
 copying doc/sphinx/build/epub/OrganelleAssembler.epub -> /opt/org-asm/ORG.asm-1.0.3/export/share
-['/tmp/tmpygcemblh/ORG.asm-1.0.3', '/opt/org-asm/get_orgasm', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/usr/local/lib/python3.7/dist-packages', '/usr/lib/python3/dist-packages', '/tmp/tmpygcemblh/ORG.asm-1.0.3/distutils.ext', '/tmp/tmpygcemblh/ORG.asm-1.0.3/python']
+['/tmp/tmppawfnc8w/ORG.asm-1.0.3', '/opt/org-asm/get_orgasm', '/usr/lib/python37.zip', '/usr/lib/python3.7', '/usr/lib/python3.7/lib-dynload', '/usr/local/lib/python3.7/dist-packages', '/usr/lib/python3/dist-packages', '/tmp/tmppawfnc8w/ORG.asm-1.0.3/distutils.ext', '/tmp/tmppawfnc8w/ORG.asm-1.0.3/python']
 [91mget_orgasm/get-orgasm.py:37319: DeprecationWarning: decodestring() is a deprecated alias since Python 3.1, use decodebytes()
   fp.write(base64.decodestring(ZIPFILE))
 Unable to install ORG.asm on your system
-[0mRemoving intermediate container f83a4ca75f3a
- ---> 7eb30691c000
+[0mRemoving intermediate container e40a8c76749f
+ ---> fe9a3159a04b
 Step 11/16 : RUN cd org-asm/src &&     sed -i 's#<stdio.h>#<bsd/stdio.h>#' fastq.c &&     make &&     cp orgasmi /opt/org-asm/ORG.asm-1.0.3/bin
- ---> Running in ab9b78043a98
+ ---> Running in d92a475aba99
 [91mglobal.mk:20: fastq.P: No such file or directory
 global.mk:20: encode.P: No such file or directory
-[0m[91mglobal.mk:20: decode.P: No such file or directory
+global.mk:20: decode.P: No such file or directory
 global.mk:20: buffer.P: No such file or directory
-[0m[91mglobal.mk:20: debug.P: No such file or directory
+global.mk:20: debug.P: No such file or directory
 [0m[91mglobal.mk:20: malloc.P: No such file or directory
-[0m[91mglobal.mk:20: sort.P: No such file or directory
-[0m[91mglobal.mk:20: indexoutput.P: No such file or directory
+global.mk:20: sort.P: No such file or directory
+global.mk:20: indexoutput.P: No such file or directory
 [0m[91mglobal.mk:20: indexinput.P: No such file or directory
 [0m[91mglobal.mk:20: code16bits.P: No such file or directory
-global.mk:20: codecomp.P: No such file or directory
-[0m[91mglobal.mk:20: buildindex.P: No such file or directory
-[0m[91mglobal.mk:20: compsort.P: No such file or directory
+[0m[91mglobal.mk:20: codecomp.P: No such file or directory
+global.mk:20: buildindex.P: No such file or directory
+global.mk:20: compsort.P: No such file or directory
 [0m[91mglobal.mk:20: load.P: No such file or directory
-[0m[91mglobal.mk:20: lookfor.P: No such file or directory
-[0m[91mglobal.mk:20: fgetln.P: No such file or directory
+global.mk:20: lookfor.P: No such file or directory
+global.mk:20: fgetln.P: No such file or directory
 [0m[91mglobal.mk:20: orgasmi.P: No such file or directory
 [0mgcc -DMAC_OS_X -M  -o orgasmi.d orgasmi.c
 gcc -DMAC_OS_X -M  -o fgetln.d fgetln.c
@@ -1487,18 +1487,18 @@ malloc.c:12:52: warning: unused parameter ‘filename’ [-Wunused-parameter]
 malloc.c:12:70: warning: unused parameter ‘line’ [-Wunused-parameter]
  void   *util_malloc(int32_t chunksize, const char *filename, int32_t line)
                                                                       ^~~~
-[0m[91mmalloc.c: In function ‘util_realloc’:
+malloc.c: In function ‘util_realloc’:
 malloc.c:31:64: warning: unused parameter ‘filename’ [-Wunused-parameter]
  void   *util_realloc(void *chunk, int32_t newsize, const char *filename, int32_t    line)
                                                                 ^~~~~~~~
-malloc.c:31:85: warning: unused parameter ‘line’ [-Wunused-parameter]
+[0m[91mmalloc.c:31:85: warning: unused parameter ‘line’ [-Wunused-parameter]
  void   *util_realloc(void *chunk, int32_t newsize, const char *filename, int32_t    line)
                                                                                      ^~~~
 malloc.c: In function ‘util_free’:
 malloc.c:49:44: warning: unused parameter ‘filename’ [-Wunused-parameter]
  void    util_free(void *chunk, const char *filename, int32_t    line)
                                             ^~~~~~~~
-[0m[91mmalloc.c:49:65: warning: unused parameter ‘line’ [-Wunused-parameter]
+malloc.c:49:65: warning: unused parameter ‘line’ [-Wunused-parameter]
  void    util_free(void *chunk, const char *filename, int32_t    line)
                                                                  ^~~~
 [0mgcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o sort.o sort.c
@@ -1556,25 +1556,25 @@ gcc -DMAC_OS_X -W -Wall -O3 -g -DLITTLE_END -msse2 -D__SSE2__  -c -o orgasmi.o o
 gcc -g -o orgasmi fastq.o encode.o decode.o buffer.o debug.o malloc.o sort.o indexoutput.o indexinput.o code16bits.o codecomp.o buildindex.o compsort.o load.o lookfor.o fgetln.o orgasmi.o  -lz -lm -lpthread
 gcc -o buildexpand8bits -DLITTLE_END buildexpand8bits.c
 ./buildexpand8bits > expand8bits.c
-Removing intermediate container ab9b78043a98
- ---> 80c11a9d685b
+Removing intermediate container d92a475aba99
+ ---> 45c152b0f542
 Step 12/16 : ENV PATH "/opt/org-asm/ORG.asm-1.0.3/bin:$PATH"
- ---> Running in 26f3adb98f49
-Removing intermediate container 26f3adb98f49
- ---> ef38388bcfc8
+ ---> Running in 83fffa6d1fe5
+Removing intermediate container 83fffa6d1fe5
+ ---> 63a61fd18e05
 Step 13/16 : ADD wrapper.sh /usr/local/bin/wrapper.sh
- ---> c4143f39dbe4
+ ---> 7fba7798d19d
 Step 14/16 : ENTRYPOINT ["wrapper.sh"]
- ---> Running in c5975ca813a6
-Removing intermediate container c5975ca813a6
- ---> 3302176f90cf
+ ---> Running in c485e8fa1572
+Removing intermediate container c485e8fa1572
+ ---> 86a3ca6f7805
 Step 15/16 : VOLUME /data
- ---> Running in d989e0c596de
-Removing intermediate container d989e0c596de
- ---> e616f9645097
+ ---> Running in 0111c4490827
+Removing intermediate container 0111c4490827
+ ---> b5d39353972b
 Step 16/16 : WORKDIR /data
- ---> Running in d17a49b4b97a
-Removing intermediate container d17a49b4b97a
- ---> 0dab2fd49941
-Successfully built 0dab2fd49941
+ ---> Running in d27c71a472aa
+Removing intermediate container d27c71a472aa
+ ---> 49c00e7ad595
+Successfully built 49c00e7ad595
 Successfully tagged chloroextractorteam/benchmark_org-asm:docker

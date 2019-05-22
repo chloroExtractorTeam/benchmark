@@ -1,38 +1,39 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_org-asm]
-9c5ee80dc971: Preparing
-544db6ec6070: Preparing
-db4ada936d1a: Preparing
-a31c4eccce2e: Preparing
-aa55eb231027: Preparing
-31fc03353fc0: Preparing
-9b50d9e11f0c: Preparing
-e5a75526e659: Preparing
-73c8cd49ce0d: Preparing
-1ccbe6933bee: Preparing
+512e89d5d81c: Preparing
+ed9a69111737: Preparing
+f1843cb8d675: Preparing
+1005e0c35fcb: Preparing
+fff26739fae3: Preparing
+e0c4f376211b: Preparing
+4c146a13665d: Preparing
+b34ee9e6ef9b: Preparing
+b488c1b5ad92: Preparing
+0aee0163fd06: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-31fc03353fc0: Waiting
-9b50d9e11f0c: Waiting
-1ccbe6933bee: Waiting
-e45cfbc98a50: Waiting
-e5a75526e659: Waiting
+b488c1b5ad92: Waiting
+0aee0163fd06: Waiting
+b57c79f4a9f3: Waiting
 762d8e1a6054: Waiting
-73c8cd49ce0d: Waiting
 d60e01b37e74: Waiting
-544db6ec6070: Layer already exists
-a31c4eccce2e: Layer already exists
-9c5ee80dc971: Layer already exists
-aa55eb231027: Layer already exists
-db4ada936d1a: Layer already exists
-31fc03353fc0: Layer already exists
-73c8cd49ce0d: Layer already exists
-e5a75526e659: Layer already exists
-9b50d9e11f0c: Layer already exists
-1ccbe6933bee: Layer already exists
-e45cfbc98a50: Layer already exists
+e45cfbc98a50: Waiting
+4c146a13665d: Waiting
+b34ee9e6ef9b: Waiting
+e0c4f376211b: Waiting
+512e89d5d81c: Layer already exists
+1005e0c35fcb: Layer already exists
+fff26739fae3: Layer already exists
+ed9a69111737: Layer already exists
+f1843cb8d675: Layer already exists
+e0c4f376211b: Layer already exists
+b34ee9e6ef9b: Layer already exists
+b488c1b5ad92: Layer already exists
+4c146a13665d: Layer already exists
+0aee0163fd06: Layer already exists
 d60e01b37e74: Layer already exists
-762d8e1a6054: Layer already exists
 b57c79f4a9f3: Layer already exists
-latest: digest: sha256:355ba8583dab98f0fcfd90c73c37b322bfdbdfb4b6b48fbed2bb264960a6d842 size: 3249
+762d8e1a6054: Layer already exists
+e45cfbc98a50: Layer already exists
+latest: digest: sha256:48cf69d2097439222a7cb1f572b68d8e982af555d1d468b257f550a71d5f95af size: 3249
