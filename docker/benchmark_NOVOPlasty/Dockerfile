@@ -21,8 +21,8 @@ RUN git clone --recursive https://github.com/ndierckx/NOVOPlasty.git && \
     cd NOVOPlasty && \
     git checkout ${NOVOPLASTYVERSION} && \
     rm -rf .git && \
-    chmod +x NOVOPlasty3.0.pl && \
-    ln -s NOVOPlasty3.0.pl NOVOPlasty.pl
+    chmod +x NOVOPlasty*.pl && \
+    ln -s NOVOPlasty*.pl NOVOPlasty.pl
 ENV PATH "/opt/NOVOPlasty:$PATH"
 
 ADD TAIR10_chrC.fas /opt/reference.fa
