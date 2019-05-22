@@ -1,39 +1,38 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_org-asm]
-c4197c49f01b: Preparing
-ff289dd5ba9f: Preparing
-5c3d18c22e60: Preparing
-7e6e063f29b6: Preparing
-be2b03cd3d36: Preparing
-3e4426207034: Preparing
-cf236300b132: Preparing
-5723b5cba297: Preparing
-556eb97b29c4: Preparing
-382ed9075f32: Preparing
+9c5ee80dc971: Preparing
+544db6ec6070: Preparing
+db4ada936d1a: Preparing
+a31c4eccce2e: Preparing
+aa55eb231027: Preparing
+31fc03353fc0: Preparing
+9b50d9e11f0c: Preparing
+e5a75526e659: Preparing
+73c8cd49ce0d: Preparing
+1ccbe6933bee: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-5723b5cba297: Waiting
-556eb97b29c4: Waiting
-382ed9075f32: Waiting
-b57c79f4a9f3: Waiting
-762d8e1a6054: Waiting
-d60e01b37e74: Waiting
+31fc03353fc0: Waiting
+9b50d9e11f0c: Waiting
+1ccbe6933bee: Waiting
 e45cfbc98a50: Waiting
-3e4426207034: Waiting
-cf236300b132: Waiting
-be2b03cd3d36: Layer already exists
-ff289dd5ba9f: Layer already exists
-c4197c49f01b: Layer already exists
-5c3d18c22e60: Layer already exists
-7e6e063f29b6: Layer already exists
-556eb97b29c4: Layer already exists
-3e4426207034: Layer already exists
-382ed9075f32: Layer already exists
-cf236300b132: Layer already exists
-5723b5cba297: Layer already exists
+e5a75526e659: Waiting
+762d8e1a6054: Waiting
+73c8cd49ce0d: Waiting
+d60e01b37e74: Waiting
+544db6ec6070: Layer already exists
+a31c4eccce2e: Layer already exists
+9c5ee80dc971: Layer already exists
+aa55eb231027: Layer already exists
+db4ada936d1a: Layer already exists
+31fc03353fc0: Layer already exists
+73c8cd49ce0d: Layer already exists
+e5a75526e659: Layer already exists
+9b50d9e11f0c: Layer already exists
+1ccbe6933bee: Layer already exists
 e45cfbc98a50: Layer already exists
-b57c79f4a9f3: Layer already exists
 d60e01b37e74: Layer already exists
 762d8e1a6054: Layer already exists
-latest: digest: sha256:e5b34090c4b87f141dbdeceee6c91e90d14a0d112098557209484a777ab13370 size: 3249
+b57c79f4a9f3: Layer already exists
+latest: digest: sha256:355ba8583dab98f0fcfd90c73c37b322bfdbdfb4b6b48fbed2bb264960a6d842 size: 3249

@@ -16,7 +16,7 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
 
 RUN apt install --yes libperl4-corelibs-perl
 
-ENV CHLOROPLASTASSEMBLYPROTOCOL 250d16ac02005d6a5939bf182b3d2995d0e88229
+ENV CHLOROPLASTASSEMBLYPROTOCOLVERSION 250d16ac02005d6a5939bf182b3d2995d0e88229
 WORKDIR /opt
 RUN git clone https://github.com/eead-csic-compbio/chloroplast_assembly_protocol.git && \
     cd chloroplast_assembly_protocol && \
@@ -26,7 +26,7 @@ RUN git clone https://github.com/eead-csic-compbio/chloroplast_assembly_protocol
 ENV PATH "/opt/chloroplast_assembly_protocol:$PATH"
 
 RUN perl /opt/chloroplast_assembly_protocol/install.pl && \
-    chmod a+w /opt/chloroplast_assembly_protocol/1_cleanreads.pl
+    sed -i '/^[[:space:]]*my \$CPUTHREADS = 4;/{=;s/^\([[:space:]]*my \$CPUTHREADS = 4;.*\)/my $CPUTHREADS = (exists $ENV{NUMCPUS} && $ENV{NUMCPUS} =~ \/^\\d+$\/) ? $ENV{NUMCPUS} : 4; # old line content: \1/};' /opt/chloroplast_assembly_protocol/1_cleanreads.pl
 
 ADD TAIR10_chrC.fas /opt/reference.fa
 

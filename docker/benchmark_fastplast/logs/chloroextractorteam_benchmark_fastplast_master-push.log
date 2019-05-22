@@ -1,35 +1,35 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_fastplast]
-d55da9dd6e12: Preparing
-5b1cecca58ee: Preparing
-ab667e922381: Preparing
-da9208212c08: Preparing
-a331224d57f7: Preparing
-e7329bae063a: Preparing
-0a8cc3f86588: Preparing
-49665f46fb68: Preparing
-29878a39773f: Preparing
+5e85b56bb92f: Preparing
+be80c8f800d9: Preparing
+c2ede3a7e4cc: Preparing
+53670b88f31a: Preparing
+05426f264741: Preparing
+5f2aa193f131: Preparing
+61739d4d39be: Preparing
+87e7c1ddba6b: Preparing
+79f2ca95c106: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-49665f46fb68: Waiting
-29878a39773f: Waiting
+87e7c1ddba6b: Waiting
+79f2ca95c106: Waiting
 e45cfbc98a50: Waiting
+5f2aa193f131: Waiting
 b57c79f4a9f3: Waiting
-762d8e1a6054: Waiting
-0a8cc3f86588: Waiting
-e7329bae063a: Waiting
-ab667e922381: Mounted from chloroextractorteam/benchmark_chloroextractor
-da9208212c08: Mounted from chloroextractorteam/benchmark_chloroextractor
-a331224d57f7: Mounted from chloroextractorteam/benchmark_chloroextractor
-d55da9dd6e12: Pushed
-0a8cc3f86588: Mounted from chloroextractorteam/benchmark_chloroextractor
-e7329bae063a: Mounted from chloroextractorteam/benchmark_chloroextractor
-49665f46fb68: Mounted from chloroextractorteam/benchmark_chloroextractor
+d60e01b37e74: Waiting
+61739d4d39be: Waiting
+c2ede3a7e4cc: Mounted from chloroextractorteam/benchmark_chloroextractor
+53670b88f31a: Mounted from chloroextractorteam/benchmark_chloroextractor
+05426f264741: Mounted from chloroextractorteam/benchmark_chloroextractor
+5f2aa193f131: Mounted from chloroextractorteam/benchmark_chloroextractor
+61739d4d39be: Mounted from chloroextractorteam/benchmark_chloroextractor
+5e85b56bb92f: Pushed
+87e7c1ddba6b: Mounted from chloroextractorteam/benchmark_chloroextractor
 b57c79f4a9f3: Layer already exists
 d60e01b37e74: Layer already exists
 e45cfbc98a50: Layer already exists
 762d8e1a6054: Layer already exists
-29878a39773f: Mounted from chloroextractorteam/benchmark_chloroextractor
-5b1cecca58ee: Pushed
-master: digest: sha256:8c24c27b0ebc0910b266cf7491fcb69a1aa995d869bd5f23cf7a47f692fb857c size: 3038
+79f2ca95c106: Mounted from chloroextractorteam/benchmark_chloroextractor
+be80c8f800d9: Pushed
+master: digest: sha256:8a9e64b67e284c9611548a7ee986817561af8a94613d889afc6bcb9468a94070 size: 3038

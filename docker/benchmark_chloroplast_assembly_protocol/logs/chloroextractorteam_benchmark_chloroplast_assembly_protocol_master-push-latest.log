@@ -1,44 +1,43 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_chloroplast_assembly_protocol]
-20c989479689: Preparing
-4b5c9ef4b824: Preparing
-4951bb24d182: Preparing
-edc135626ae3: Preparing
-7dbe6d5a2bdf: Preparing
-ab667e922381: Preparing
-da9208212c08: Preparing
-a331224d57f7: Preparing
-e7329bae063a: Preparing
-0a8cc3f86588: Preparing
-49665f46fb68: Preparing
-29878a39773f: Preparing
+102dfff2e2bd: Preparing
+3a84a37dc6c3: Preparing
+bcac6fecf19f: Preparing
+602db581ba75: Preparing
+20caed0c7576: Preparing
+c2ede3a7e4cc: Preparing
+53670b88f31a: Preparing
+05426f264741: Preparing
+5f2aa193f131: Preparing
+61739d4d39be: Preparing
+87e7c1ddba6b: Preparing
+79f2ca95c106: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-49665f46fb68: Waiting
-29878a39773f: Waiting
-b57c79f4a9f3: Waiting
-0a8cc3f86588: Waiting
-e7329bae063a: Waiting
+c2ede3a7e4cc: Waiting
+5f2aa193f131: Waiting
+53670b88f31a: Waiting
+61739d4d39be: Waiting
+87e7c1ddba6b: Waiting
 d60e01b37e74: Waiting
-da9208212c08: Waiting
-762d8e1a6054: Waiting
+79f2ca95c106: Waiting
+b57c79f4a9f3: Waiting
 e45cfbc98a50: Waiting
-ab667e922381: Waiting
-4951bb24d182: Layer already exists
-edc135626ae3: Layer already exists
-20c989479689: Layer already exists
-4b5c9ef4b824: Layer already exists
-7dbe6d5a2bdf: Layer already exists
-da9208212c08: Layer already exists
-ab667e922381: Layer already exists
-e7329bae063a: Layer already exists
-a331224d57f7: Layer already exists
-0a8cc3f86588: Layer already exists
-49665f46fb68: Layer already exists
-29878a39773f: Layer already exists
-d60e01b37e74: Layer already exists
+3a84a37dc6c3: Layer already exists
+102dfff2e2bd: Layer already exists
+20caed0c7576: Layer already exists
+602db581ba75: Layer already exists
+bcac6fecf19f: Layer already exists
+c2ede3a7e4cc: Layer already exists
+5f2aa193f131: Layer already exists
+53670b88f31a: Layer already exists
+61739d4d39be: Layer already exists
+05426f264741: Layer already exists
 b57c79f4a9f3: Layer already exists
+87e7c1ddba6b: Layer already exists
+79f2ca95c106: Layer already exists
 e45cfbc98a50: Layer already exists
+d60e01b37e74: Layer already exists
 762d8e1a6054: Layer already exists
-latest: digest: sha256:3885c9d634d4c4232ffaaaf6a71b292c9718038d31c556dc16a7bc5c3e7b65d4 size: 3666
+latest: digest: sha256:a1e54dc098aaa9a64b30b73e4828f625f0e56797d750758100953d89bbf3f546 size: 3666

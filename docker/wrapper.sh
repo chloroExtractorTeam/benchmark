@@ -195,7 +195,7 @@ EOF
 
 fi
 
-if [ -n "$CHLOROPLASTASSEMBLYPROTOCOL" ]
+if [ -n "$CHLOROPLASTASSEMBLYPROTOCOLVERSION" ]
 then
     date +"[%Y-%m-%d %H:%M:%S] Starting chloroplast-assembly-protocol"
 
@@ -242,8 +242,6 @@ then
 
     0_get_cp_reads.pl input cp_noref $REFERENCE
 
-    # set threads
-    sed -i 's/\(CPUTHREADS[[:space:]]*=[[:space:]]*\)[0-9]*/\1'${NUMCPUS}'/g' $(which 1_cleanreads.pl)
     1_cleanreads.pl -folder cp_noref
 
     if [ -e cp_noref/cleanreads.txt ]
@@ -251,8 +249,12 @@ then
 	sed 's/[[:space:]]*nd[[:space:]]*nd[[:space:]]*/ FR 250 /g' cp_noref/cleanreads.txt >cp_noref/assembly_pe
 	2_assemble_reads.pl cp_noref assembly_pe -threads ${NUMCPUS}
 
-	find -name "sspace.final.scaffolds.fasta" | sort | head -1 | xargs -I{} cp {} output.fa
-    else
+	find -name "sspace.final.scaffolds.fasta" | sort | head -1 | xargs --no-run-if-empty -I{} cp {} output.fa
+    fi
+
+    # finally check if an output file exists, if not, create an empty one
+    if [ ! -e output.fa ]
+    then
 	touch output.fa
     fi
 fi
