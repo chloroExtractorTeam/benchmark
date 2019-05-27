@@ -11,12 +11,14 @@
 	title   = {},
 	journal = {}, 
 	year  = {},
-	  month = {}, 
+	month = {}, 
 	  volume= {}, 
 	  number= {}, 
 	  pages = {},
 	  note  = {} 
 }	
+
+
 
 @article{lex2014upset,
   title={UpSet: visualization of intersecting sets},
@@ -221,6 +223,76 @@
 	journal = {bioRxiv}
 }
 
+@article{mitobim2013,
+    author = {Hahn, Christoph and Bachmann, Lutz and Chevreux, Bastien},
+    title = "{Reconstructing mitochondrial genomes directly from genomic next-generation sequencing reads—a baiting and iterative mapping approach}",
+    journal = {Nucleic Acids Research},
+    volume = {41},
+    number = {13},
+    pages = {e129-e129},
+    year = {2013},
+    month = {05},
+    abstract = "{We present an in silico approach for the reconstruction of complete mitochondrial genomes of non-model organisms directly from next-generation sequencing (NGS) data—mitochondrial baiting and iterative mapping (MITObim). The method is straightforward even if only (i) distantly related mitochondrial genomes or (ii) mitochondrial barcode sequences are available as starting-reference sequences or seeds, respectively. We demonstrate the efficiency of the approach in case studies using real NGS data sets of the two monogenean ectoparasites species Gyrodactylus thymalli and Gyrodactylus derjavinoides including their respective teleost hosts European grayling (Thymallus thymallus) and Rainbow trout (Oncorhynchus mykiss). MITObim appeared superior to existing tools in terms of accuracy, runtime and memory requirements and fully automatically recovered mitochondrial genomes exceeding 99.5\\% accuracy from total genomic DNA derived NGS data sets in \\&lt;24 h using a standard desktop computer. The approach overcomes the limitations of traditional strategies for obtaining mitochondrial genomes for species with little or no mitochondrial sequence information at hand and represents a fast and highly efficient in silico alternative to laborious conventional strategies relying on initial long-range PCR. We furthermore demonstrate the applicability of MITObim for metagenomic/pooled data sets using simulated data. MITObim is an easy to use tool even for biologists with modest bioinformatics experience. The software is made available as open source pipeline under the MIT license at https://github.com/chrishah/MITObim.}",
+    issn = {0305-1048},
+    doi = {10.1093/nar/gkt371},
+    url = {https://doi.org/10.1093/nar/gkt371},
+    eprint = {http://oup.prod.sis.lan/nar/article-pdf/41/13/e129/25367803/gkt371.pdf},
+}
+
+@Article{Al-Nakeeb2017,
+author="Al-Nakeeb, Kosai
+and Petersen, Thomas Nordahl
+and Sicheritz-Pont{\'e}n, Thomas",
+title="Norgal: extraction and de novo assembly of mitochondrial DNA from whole-genome sequencing data",
+journal="BMC Bioinformatics",
+year="2017",
+month="Nov",
+day="21",
+volume="18",
+number="1",
+pages="510",
+abstract="Whole-genome sequencing (WGS) projects provide short read nucleotide sequences from nuclear and possibly organelle DNA depending on the source of origin. Mitochondrial DNA is present in animals and fungi, while plants contain DNA from both mitochondria and chloroplasts. Current techniques for separating organelle reads from nuclear reads in WGS data require full reference or partial seed sequences for assembling.",
+issn="1471-2105",
+doi="10.1186/s12859-017-1927-y",
+url="https://doi.org/10.1186/s12859-017-1927-y"
+}
+
+@Article{Soorni2017,
+author="Soorni, Aboozar
+and Haak, David
+and Zaitlin, David
+and Bombarely, Aureliano",
+title="Organelle{\_}PBA, a pipeline for assembling chloroplast and mitochondrial genomes from PacBio DNA sequencing data",
+journal="BMC Genomics",
+year="2017",
+month="Jan",
+day="07",
+volume="18",
+number="1",
+pages="49",
+abstract="The development of long-read sequencing technologies, such as single-molecule real-time (SMRT) sequencing by PacBio, has produced a revolution in the sequencing of small genomes. Sequencing organelle genomes using PacBio long-read data is a cost effective, straightforward approach. Nevertheless, the availability of simple-to-use software to perform the assembly from raw reads is limited at present.",
+issn="1471-2164",
+doi="10.1186/s12864-016-3412-9",
+url="https://doi.org/10.1186/s12864-016-3412-9"
+}
+
+@article{sra2010,
+    author = {Leinonen, Rasko and Sugawara, Hideaki and Shumway, Martin and on behalf of the International Nucleotide Sequence Database Collaboration},
+    title = "{The Sequence Read Archive}",
+    journal = {Nucleic Acids Research},
+    volume = {39},
+    number = {suppl_1},
+    pages = {D19-D21},
+    year = {2010},
+    month = {11},
+    abstract = "{ The combination of significantly lower cost and increased speed of sequencing has resulted in an explosive growth of data submitted into the primary next-generation sequence data archive, the Sequence Read Archive (SRA). The preservation of experimental data is an important part of the scientific record, and increasing numbers of journals and funding agencies require that next-generation sequence data are deposited into the SRA. The SRA was established as a public repository for the next-generation sequence data and is operated by the International Nucleotide Sequence Database Collaboration (INSDC). INSDC partners include the National Center for Biotechnology Information (NCBI), the European Bioinformatics Institute (EBI) and the DNA Data Bank of Japan (DDBJ). The SRA is accessible at http://www.ncbi.nlm.nih.gov/Traces/sra from NCBI, at http://www.ebi.ac.uk/ena from EBI and at http://trace.ddbj.nig.ac.jp from DDBJ. In this article, we present the content and structure of the SRA, detail our support for sequencing platforms and provide recommended data submission levels and formats. We also briefly outline our response to the challenge of data growth. }",
+    issn = {0305-1048},
+    doi = {10.1093/nar/gkq1019},
+    url = {https://doi.org/10.1093/nar/gkq1019},
+    eprint = {http://oup.prod.sis.lan/nar/article-pdf/39/suppl\_1/D19/7624335/gkq1019.pdf},
+}
+
+
 %%%%%%%%
 % PHD Thesis
 %
@@ -240,11 +312,129 @@
 	url = {http://tumor.informatics.jax.org/cancer\_links.html}
 }
 
+@webpage{cpbase,
+    author = {{Rocaps Lab}},
+    title = {CpBase},
+    url = {http://rocaplab.ocean.washington.edu/old_website/tools/cpbase},
+    note = {Accessed: 2019-04-01, Version: 8/20/2017}
+}
+
 @webpage{joss,
 	title  = {JOSS Review Criteria},
 	url = {https://joss.readthedocs.io/en/latest/review\_criteria.html},
 	note = {Accessed: 2019-05-15}
 }
+%%%%%%%
+% From Niklas - chloro-Tools
+
+@misc{mckain__fast-plast_2017,
+	title = {Mrmckain/{Fast}-{Plast}: {Fast}-{Plast} {V}.1.2.6},
+	shorttitle = {Mrmckain/{Fast}-{Plast}},
+	url = {https://zenodo.org/record/973887},
+	urldate = {2019-05-22TZ},
+	publisher = {Zenodo},
+	author = {McKain, Michael and {Afinit}},
+	month = sep,
+	year = {2017},
+	doi = {10.5281/zenodo.973887}
+}
+
+@article{j_ankenbrand_chloroextractor:_2018,
+	title = {{chloroExtractor}: extraction and assembly of the chloroplast genome from whole genome shotgun data},
+	volume = {3},
+	issn = {2475-9066},
+	shorttitle = {{chloroExtractor}},
+	url = {http://joss.theoj.org/papers/10.21105/joss.00464},
+	doi = {10.21105/joss.00464},
+	number = {21},
+	urldate = {2019-05-22TZ},
+	journal = {The Journal of Open Source Software},
+	author = {J Ankenbrand, Markus and Pfaff, Simon and Terhoeven, Niklas and Qureischi, Musga and Gündel, Maik and L. Weiß, Clemens and Hackl, Thomas and Förster, Frank},
+	month = jan,
+	year = {2018},
+	pages = {464}
+}
+
+@article{bakker_herbarium_2016,
+	title = {Herbarium genomics: plastome sequence assembly from a range of herbarium specimens using an {Iterative} {Organelle} {Genome} {Assembly} pipeline},
+	volume = {117},
+	issn = {00244066},
+	shorttitle = {Herbarium genomics},
+	url = {https://academic.oup.com/biolinnean/article-lookup/doi/10.1111/bij.12642},
+	doi = {10.1111/bij.12642},
+	language = {en},
+	number = {1},
+	urldate = {2019-05-22TZ},
+	journal = {Biological Journal of the Linnean Society},
+	author = {Bakker, Freek T. and Lei, Di and Yu, Jiaying and Mohammadin, Setareh and Wei, Zhen and van de Kerke, Sara and Gravendeel, Barbara and Nieuwenhuis, Mathijs and Staats, Martijn and Alquezar-Planas, David E. and Holmer, Rens},
+	month = jan,
+	year = {2016},
+	pages = {33--43}
+}
+
+@article{jin_getorganelle:_2018,
+	title = {{GetOrganelle}: a simple and fast pipeline for de novo assembly of a complete circular chloroplast genome using genome skimming data},
+	shorttitle = {{GetOrganelle}},
+	url = {http://biorxiv.org/lookup/doi/10.1101/256479},
+	doi = {10.1101/256479},
+	urldate = {2019-05-22TZ},
+	journal = {bioRxiv},
+	author = {Jin, Jian-Jun and Yu, Wen-Bin and Yang, Jun-Bo and Song, Yu and Yi, Ting-Shuang and Li, De-Zhu},
+	month = mar,
+	year = {2018}
+}
+
+@article{sancho_comparative_2018,
+	title = {Comparative plastome genomics and phylogenomics of \textit{{Brachypodium}} : flowering time signatures, introgression and recombination in recently diverged ecotypes},
+	volume = {218},
+	issn = {0028646X},
+	shorttitle = {Comparative plastome genomics and phylogenomics of \textit{{Brachypodium}}},
+	url = {http://doi.wiley.com/10.1111/nph.14926},
+	doi = {10.1111/nph.14926},
+	language = {en},
+	number = {4},
+	urldate = {2019-05-22TZ},
+	journal = {New Phytologist},
+	author = {Sancho, Rubén and Cantalapiedra, Carlos P. and López-Alvarez, Diana and Gordon, Sean P. and Vogel, John P. and Catalán, Pilar and Contreras-Moreira, Bruno},
+	month = jun,
+	year = {2018},
+	pages = {1631--1644}
+}
+
+%%%%%%
+% by Frank, latest publication from https://www.arabidopsis.org/about/citingtair.jsp
+
+@article{tair10,
+author = {Berardini, Tanya Z. and Reiser, Leonore and Li, Donghui and Mezheritsky, Yarik and Muller, Robert and Strait, Emily and Huala, Eva},
+title = {The \textit{Arabidopsis} information resource: Making and mining the ``gold standard''annotated reference plant genome},
+journal = {genesis},
+volume = {53},
+number = {8},
+pages = {474-485},
+keywords = {genome database, plant, sustainable funding},
+doi = {10.1002/dvg.22877},
+url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/dvg.22877},
+eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/dvg.22877},
+abstract = {Summary The Arabidopsis Information Resource (TAIR) is a continuously updated, online database of genetic and molecular biology data for the model plant Arabidopsis thaliana that provides a global research community with centralized access to data for over 30,000 Arabidopsis genes. TAIR's biocurators systematically extract, organize, and interconnect experimental data from the literature along with computational predictions, community submissions, and high throughput datasets to present a high quality and comprehensive picture of Arabidopsis gene function. TAIR provides tools for data visualization and analysis, and enables ordering of seed and DNA stocks, protein chips, and other experimental resources. TAIR actively engages with its users who contribute expertise and data that augments the work of the curatorial staff. TAIR's focus in an extensive and evolving ecosystem of online resources for plant biology is on the critically important role of extracting experimentally based research findings from the literature and making that information computationally accessible. In response to the loss of government grant funding, the TAIR team founded a nonprofit entity, Phoenix Bioinformatics, with the aim of developing sustainable funding models for biological databases, using TAIR as a test case. Phoenix has successfully transitioned TAIR to subscription-based funding while still keeping its data relatively open and accessible. genesis 53:474–485, 2015. © 2015 Wiley Periodicals, Inc.},,
+year = {2015}
+}
+
+% Seqkit
+@article{seqkit,
+    author = {Shen, Wei AND Le, Shuai AND Li, Yan AND Hu, Fuquan},
+    journal = {PLOS ONE},
+    publisher = {Public Library of Science},
+    title = {SeqKit: A Cross-Platform and Ultrafast Toolkit for FASTA/Q File Manipulation},
+    year = {2016},
+    month = {10},
+    volume = {11},
+    url = {https://doi.org/10.1371/journal.pone.0163962},
+    pages = {1-10},
+    abstract = {FASTA and FASTQ are basic and ubiquitous formats for storing nucleotide and protein sequences. Common manipulations of FASTA/Q file include converting, searching, filtering, deduplication, splitting, shuffling, and sampling. Existing tools only implement some of these manipulations, and not particularly efficiently, and some are only available for certain operating systems. Furthermore, the complicated installation process of required packages and running environments can render these programs less user friendly. This paper describes a cross-platform ultrafast comprehensive toolkit for FASTA/Q processing. SeqKit provides executable binary files for all major operating systems, including Windows, Linux, and Mac OSX, and can be directly used without any dependencies or pre-configurations. SeqKit demonstrates competitive performance in execution time and memory usage compared to similar tools. The efficiency and usability of SeqKit enable researchers to rapidly accomplish common FASTA/Q file manipulations. SeqKit is open source and available on Github at https://github.com/shenwei356/seqkit.},
+    number = {10},
+    doi = {10.1371/journal.pone.0163962}
+}
+
 
 %%%%%%%%%%
 % From Markus (zotero)
@@ -699,22 +889,6 @@
 	keywords = {{DNA} Barcoding, chloroplast {DNA}, genome skimming, mitochondrial {DNA}, next-generation {DNA} sequencing, ribosomal {DNA}},
 }
 
-@article{xiao-ming_inferring_2017,
-	title = {Inferring the evolutionary mechanism of the chloroplast genome size by comparing whole-chloroplast genome sequences in seed plants},
-	volume = {7},
-	rights = {2017 The Author(s)},
-	issn = {2045-2322},
-	url = {https://www.nature.com/articles/s41598-017-01518-5},
-	doi = {10.1038/s41598-017-01518-5},
-	abstract = {The chloroplast genome originated from photosynthetic organisms and has retained the core genes that mainly encode components of photosynthesis. However, the causes of variations in chloroplast genome size in seed plants have only been thoroughly analyzed within small subsets of spermatophytes. In this study, we conducted the first comparative analysis on a large scale to examine the relationship between sequence characteristics and genome size in 272 seed plants based on cross-species and phylogenetic signal analysis. Our results showed that inverted repeat regions, large or small single copies, intergenic regions, and gene number can be attributed to the variations in chloroplast genome size among closely related species. However, chloroplast gene length underwent evolution affecting chloroplast genome size in seed plants irrespective of whether phylogenetic information was incorporated. Among chloroplast genes, {atpA}, {accD} and ycf1 account for 13\% of the variation in genome size, and the average Ka/Ks values of homologous pairs of the three genes are larger than 1. The relationship between chloroplast genome size and gene length might be affected by selection during the evolution of spermatophytes. The variation in chloroplast genome size may influence energy generation and ecological strategy in seed plants.},
-	pages = {1555},
-	number = {1},
-	journaltitle = {Scientific Reports},
-	author = {Xiao-Ming, Zheng and Junrui, Wang and Li, Feng and Sha, Liu and Hongbo, Pang and Lan, Qi and Jing, Li and Yan, Sun and Weihua, Qiao and Lifang, Zhang and Yunlian, Cheng and Qingwen, Yang},
-	urldate = {2019-05-16},
-	date = {2017-05-08},
-}
-
 @article{ohyama_chloroplast_1986,
 	title = {Chloroplast gene organization deduced from complete sequence of liverwort Marchantia polymorpha chloroplast {DNA}},
 	volume = {322},
@@ -851,6 +1025,20 @@
 	langid = {english},
 	pmid = {30598433},
 	keywords = {{AT}-biased base composition, genetic code change, genome reduction, overlapping genes, parasitic plants},
+}
+
+@article{Tange2011a,
+  title = {GNU Parallel - The Command-Line Power Tool},
+  author = {O. Tange},
+  address = {Frederiksberg, Denmark},
+  journal = {;login: The USENIX Magazine},
+  month = {Feb},
+  number = {1},
+  volume = {36},
+  url = {http://www.gnu.org/s/parallel},
+  year = {2011},
+  pages = {42-47},
+  doi = {http://dx.doi.org/10.5281/zenodo.16303}
 }
 
 
