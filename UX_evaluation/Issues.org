@@ -1,0 +1,81 @@
+* issues to open
+** GetOrganelle:
+*** improve installation instructions - OPENED
+I installed GetOrganelle on a fresh Ubuntu 18.04.2 installation (default settings)
+and noticed the following issues with the installation instructions:
+
+- pip and git are not installed by default
+- the ~/pplications/bin directory has to be created first
+- add test dataset
+
+*** dependencies not found
+dependencies are in PATH and can be called on the command line, but 
+GetOrganelle shows:
+WARNING: bowtie2 not in the path!
+
+** fast-plast:
+*** improve installation instructions - OPENED
+some dependencies are not listed (maybe present on centOS wich was tested?)
+- git
+- make
+- g++
+- libz-dev
+- java
+- python
+
+*** phred score error
+I got a useful error message (is a trimmomatic problem)
+
+should we mention this at all?
+
+
+** org-asm:
+I think Frank already opened these
+*** improve istallation instructions
+*** segfault in tutorial
+
+** NOVOPlasty:
+*** add Test data - OPENED
+A way to test the installation would be nice
+
+** ChloroExtractor:
+*** disk size issue - OPENED
+get better error message
+
+*** provide a way to check the assembly from the test dataset - OPENED
+test run is complete. Is there a way to verify, that the assembly is correct?
+
+** IOGA:
+*** improve installation instructions - OPENED
+the following packages were missing
+via apt:
+- python
+- python-pip
+- wget
+- build-essential
+- default-jre
+- libz-dev
+- libcurses5-dev
+
+via pip:
+- matplotlib
+- biopython
+
+*** provide a way to test the installation and/or a tutorial - OPENED
+A test dataset together with some instructions on how to run IOGA would
+be nice.
+*** add a license - OPENED
+already opened this
+
+** Chloroplast assembly protocol:
+*** improve installation instructions - OPENED
+some dependencies were missing
+- g++
+- make
+- libz-dev
+- libpcre3-dev
+- java
+
+*** examples from readme fail - OPENED
+velvet assemblies fail,
+maybe a data problem - HOWTO-brachy works

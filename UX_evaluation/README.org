@@ -1,0 +1,479 @@
+* Purpose
+We want to evaluate the user friendliness of the different tools.
+Therefore we will check the tools based on the following criteria.
+
+* Criteria
+
+The evaluation will be based on the following statements/questions. 
+For each point, a tool can be evaluated as *GOOD*, *OK* or *BAD*.
+Example:
+
+
+Q: The tool is easy to install
+GOOD: The tool can be installed by using a package archive, such as CRAN, docker, etc
+OK: All dependencies are listed. A complete "install" script is preferred over a simple list
+BAD: Dependencies are missing from the installation instructions or the tool cannot be installed at all
+
+
+** List of questions 
+
+- Is the tool easy to install?
+- Is there a way to test the installation?
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings?
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+* Evaluation procedure
+The tools will be installed in a Virtual Machine running Ubuntu 18.04 with no additional packages
+installed. All further questions will be answered based on this installation.
+
+** create base image
+
+- using VirtualBox Version 5.2.18_Ubuntu r123745
+- installing Ubuntu 18.04.2 (sha256: 22580b9f3b186cc66818e60f44c46f795d708a1ad86b9225c458413b638459c4)
+- installed all updates via apt
+- created a snapshot {87710da5-fb80-40e9-8a56-43ae639886b5}.vdi
+
+* Evaluation of the tools
+** GetOrganelle
+- cloned the base VM
+*** questions
+**** Is the tool easy to install?
+requirements from readme on github:
+- python 3
+- python libraries numpy, scipy, sympy ~pip install numpy scipy sympy~
+- SPAdes (link in readme)
+- Bowtie2 (link in readme)
+- BLAST+ (link in readme)
+- Bandage (link in readme)
+
+installing dependencies:
+- python3 is already installed
+- pip has to be installed (not mentioned in readme)
+- installation of modules successful
+- spades installation successful (downloaded binary from their homepage and add to $PATH) Version 3.13.0 installed
+- bowtie2 installation successful (downloaded binary from their sourceforge and add to $PATH) Version 2.3.5 installed
+- blast+ installation successful (downloaded binary from their ftp and add to $PATH) Version 2.9.0 installed
+- bandage installation successful(downloaded binary from their homepage, installed qt5-default and add to $PATH) Version 0.8.1 installed
+
+installing GetOrganelle:
+- following the description in the readme
+- creating and moving to dir ~/Appilcations/bin
+- not mentioned, that the directory has to be created first
+- git is not installed
+- git clone repo
+- adding executables to PATH like described in Readme
+
+Conclusion:
+Except for git and pip, everything needed to install GetOrganelle is listed. The installation seems to work.
+There seems to be a minimal installation without the dependecies, as they are not needed for the main task. 
+However, I want to have the full installation running. 
+
+
+**** Is there a way to test the installation?
+- running ~get_organelle_reads.py -h~ and  ~get_organelle_reads.py --help~ works.
+- there are usage examples in the readme, but no test data is shipped
+
+I will test it using the chloroextractor test dataset
+- apparently, I have to install python, too
+- I get some warnings about bowtie, spades and blast not being in PATH, but they are
+- seems to be running though
+- ends with segmentation fault
+- installed psutil via pip3 to log memory
+- try again
+- it finished, but I only get the reads since the dependencies are not found
+**** Is there a tutorial on how to use the tool?
+There are some examples in the Readme
+**** Is there a good documentation on the parameter settings?
+There is an extensive description of the parameters when runnin  ~get_organelle_reads.py --help~
+**** Is the tool maintained (issues answered, implementation of new features)?
+Yes, there are recent commits and issues opened and closed
+**** Is the tool Open Source?
+Yes, GPL-3.0
+
+*** summary
+- Is the tool easy to install? OK
+- Is there a way to test the installation? BAD
+- Is there a tutorial on how to use the tool? OK
+- Is there a good documentation on the parameter settings? GOOD
+- Is the tool maintained (issues answered, implementation of new features)? GOOD
+- Is the tool Open Source? GOOD
+
+** fast-plast
+cloned VM from base
+*** questions
+**** Is the tool easy to install?
+There is a long list of dependencies on the github readme. However, the offer an
+installation script. I will use this:
+
+- install git (not mentioned in readme)
+- clone repo
+- running the installation perl script. It is semi automatic (had to answer 2 questions about dependency installation at the beginning)
+- error while compiling something
+- installed make
+- delete fast-plast dir and run again -> error
+- installed g++
+- try again
+- error
+- install libz-dev
+- try again
+- success
+- try again as a whole
+- success
+
+**** Is there a way to test the installation?
+No - But I will try the example command from the readme with one of our simulated datasets
+sim_1.150bp.1-100.2M.fq and sim_2.150bp.1-100.2M.fq
+
+it looks like java is missing - installing default-jre and try again
+dies with the message, unable to detect quality encoding - maybe an issues due to the simulated reads all having ~I~ as phred score?
+
+I will try with the example data from chloroextractor
+
+different error - can't locate python, installing python and try again
+
+works.
+
+**** Is there a tutorial on how to use the tool?
+Not a real tutorial, but explanations of the parameters, input and output
+**** Is there a good documentation on the parameter settings?
+Yes, the documentation in the readme file looks good
+**** Is the tool maintained (issues answered, implementation of new features)?
+Yes
+**** Is the tool Open Source?
+Yes, MIT License
+*** summary
+- Is the tool easy to install? BAD (many dependencies missing)
+- Is there a way to test the installation? OK
+- Is there a tutorial on how to use the tool? OK
+- Is there a good documentation on the parameter settings? GOOD
+- Is the tool maintained (issues answered, implementation of new features)? GOOD
+- Is the tool Open Source? GOOD
+
+** org-asm
+cloned base VM image 
+*** questions
+**** Is the tool easy to install?
+following the instructions here:
+https://docs.metabarcoding.org/asm/install.html
+
+requirements:
+- python 3.5 (3.6.7 is installed)
+- gcc (installed version 7.3.0 via apt)
+
+downloaded org-asm as .tar.gz from https://git.metabarcoding.org/org-asm/org-asm
+https://git.metabarcoding.org/org-asm/org-asm/repository/master/archive.tar.gz
+
+running python3 get-orgasm.py returns an error:
+ModuleNotFoundError: No module named 'distutils.errors'
+
+installing python3-distutils via apt
+
+-> different error, pip seems to be missing
+installing python3-pip
+
+different error, suggest to install python3-venv
+
+got an error unexpected keyword argument 'capture_output' - according to 
+Stackoverflow, this is was introduced in python 3.7 
+
+installing python 3.7 via apt as mentioned here:
+https://linuxize.com/post/how-to-install-python-3-7-on-ubuntu-18-04/
+
+same error... strangely the first output line is always
+Unable to install ORG.asm on your system
+but then it starts installing anyway...
+
+next try: fresh VM, installed python3.7 via apt, gcc, python3-pip, python3-distutils and python3.7-venv
+download the tar like above
+
+looks better, different error
+
+installing python3.7-dev
+
+seems to be working, trying again with a fresh VM just to be sure.
+
+Installation procedure:
+- apt update
+- add-apt-repository ppa:deadsnakes/ppa
+- apt install python3.7
+- apt install gcc python3-pip python3-distutils python3.7-venv python3.7-dev
+- download tar from gitlab
+- extract tar and run python3.7 get-orgasm.py
+
+It works.
+
+
+**** Is there a way to test the installation?
+not really, but there is a tutorial with test data, which I will use to
+test the installation
+
+markus found a way using valgrind to run it successfully. I will try that, too:
+
+- sudo apt update
+- sudo apt install valgrind
+- make testrun dir in /tmp
+- following the tutorial
+- downloading the reads
+- running oa index command with ~--no-pipe~ option
+- get segfault
+- run the ~orgasmi~ command from log with valgrind (~valgrind orgasmi ...~)
+- no errors
+- running ~oa buildgraph~ command from tutorial
+- running ~oa unfold~ command from tutorial
+
+success, I get an assembly
+**** Is there a tutorial on how to use the tool?
+yes
+https://docs.metabarcoding.org/asm/mitochondrion.html
+
+it is for mitochondrion and not chloroplasts, but should give an idea of how to use the software.
+
+- downloaded datasets
+- running index command
+- failed with error "Cannot open file butterfly.odx/index.ogx" (file does not exist)
+
+This error is caused by a segfault, that goes away when running it with valgrind
+**** Is there a good documentation on the parameter settings?
+Parameters are explained when using ~--help~
+**** Is the tool maintained (issues answered, implementation of new features)?
+yes, last commit is about a week ago, Frank got an answer to his email
+**** Is the tool Open Source?
+yes, CeCILL License
+
+*** summary
+- Is the tool easy to install? BAD
+- Is there a way to test the installation? OK
+- Is there a tutorial on how to use the tool? GOOD
+- Is there a good documentation on the parameter settings? OK
+- Is the tool maintained (issues answered, implementation of new features)? GOOD
+- Is the tool Open Source? GOOD
+
+** NOVOPlasty
+*** questions
+**** Is the tool easy to install?
+- only perl as dependency (already installed)
+- downloaded zip from github
+- unzip
+- done
+
+**** Is there a way to test the installation?
+no
+
+I am testing with the chloroextractor test set using the
+tair chloroplast as seed.
+Works.
+
+
+**** Is there a tutorial on how to use the tool?
+no, but a good explanation of how to use it
+**** Is there a good documentation on the parameter settings?
+there is an extensive explanation of the parameters and output files
+in the readme
+**** Is the tool maintained (issues answered, implementation of new features)?
+Yes
+**** Is the tool Open Source?
+Yes, custom license
+*** summary
+- Is the tool easy to install? GOOD
+- Is there a way to test the installation? BAD
+- Is there a tutorial on how to use the tool? OK
+- Is there a good documentation on the parameter settings? GOOD
+- Is the tool maintained (issues answered, implementation of new features)? GOOD
+- Is the tool Open Source? OK
+
+** chloroExtractor
+*** questions
+**** Is the tool easy to install?
+prerequisites:
+- installing docker with this guide: https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
+running docker pull command from readme
+works.
+**** Is there a way to test the installation?
+Yes, an example dataset is provided.
+
+I am running this:
+- downloaded data from zenodo
+- executed docker command
+- error: Fatal error: cannot create 'R_TempDir'
+- may be related to a too small disk size. I add mor disk space to the VM and try again
+- yes that fixed it. Example is running smoothly
+
+
+**** Is there a tutorial on how to use the tool?
+Yes, but it is not much more detailed than the example
+**** Is there a good documentation on the parameter settings?
+Yes, the parameters are explained in the readme and when calling the ~--help~ parameter
+**** Is the tool maintained (issues answered, implementation of new features)?
+Yes
+**** Is the tool Open Source?
+Yes, MIT license
+*** summary
+- Is the tool easy to install? GOOD
+- Is there a way to test the installation? OK (not meaningful error message, final check if the result is correct would be nice)
+- Is there a tutorial on how to use the tool? OK
+- Is there a good documentation on the parameter settings? GOOD
+- Is the tool maintained (issues answered, implementation of new features)? GOOD
+- Is the tool Open Source? GOOD
+
+** IOGA
+*** questions
+**** Is the tool easy to install?
+downloaded zip from github
+
+
+apparently, I need to install python first 
+- apt install python python-pip 
+- pip install wget
+
+some dependency installations failed, maybe make is missing
+-apt install build-essential
+
+no difference. I still get errors saying that some dependencies fail, but no reasons for failing.
+I will probably have to install them manually.
+Failing:
+- picard (maybe because of java missing)
+- samtools
+- ALE
+- seqtk
+
+installing default-jre
+picard works
+
+samtools probably misses zlib.h -> installing libz-dev
+missing curses.h -> installing libncurses5-dev
+samtools seems to work, ALE and seqtk, too
+
+trying again with setup script
+works.
+
+**** Is there a way to test the installation?
+they suggest to run IOGA.py -h
+
+returns an error -> matplotlib is missing
+running pip install matplotlib
+no mopdule named Bio -> installing via pip install biopython
+
+now it works
+
+**** Is there a tutorial on how to use the tool?
+no
+**** Is there a good documentation on the parameter settings?
+short explanation of the parameters when running ~IOGA.py -h~
+**** Is the tool maintained (issues answered, implementation of new features)?
+not really, no issues open, last closed in march 2018, last commit in september 2016
+**** Is the tool Open Source?
+No license in the github repo
+*** summary
+- Is the tool easy to install? BAD
+- Is there a way to test the installation? BAD
+- Is there a tutorial on how to use the tool? BAD
+- Is there a good documentation on the parameter settings? OK
+- Is the tool maintained (issues answered, implementation of new features)? OK
+- Is the tool Open Source? BAD
+
+** Chloroplast Assembly Protocol
+*** questions
+**** Is the tool easy to install?
+- download zip from github
+- unzip
+- perl install.pl
+- most are OK, one requires g++ 
+- apt install g++
+- try again
+- apt install make
+- try again
+- zlib.h missing -> installing libz-dev
+- try again
+- preccpp.h missing -> installing libpcre3-dev
+- seems to work
+- next test is for trimmomatic, message says, java is missing, install jre
+- everything "OK"
+
+
+**** Is there a way to test the installation?
+There are two examples with test data provided. I will follow both
+
+ref-guided:
+1. get reads -> success
+2. clean reads -> success
+3. singlePE: velvet assembly failed
+   both PE and MP: velvet assembly failed
+
+de-novo:
+1. get reads -> success
+2. clean reads -> success
+3. assembly -> velvet fails
+**** Is there a tutorial on how to use the tool?
+there are two howto files, I will test one of them (HOWTO_brachy.txt)
+
+1. downloading reads from sra
+2. preparing read file
+3. running 0_get_cp_reads.pl
+4. cleaning reads
+5. create config file (typo in file name)
+6. assembling
+   Error: apparently, getopts.pl is missing -> installing via apt libperl4-corelibs-perl
+   try again assembling
+   works
+7. assembly without reference: works, too
+
+
+**** Is there a good documentation on the parameter settings?
+short descriptions when calling with ~--help~ option
+**** Is the tool maintained (issues answered, implementation of new features)?
+two issues closed in 2016, last commit in june 2018
+**** Is the tool Open Source?
+yes, GPL-2.0
+*** summary
+- Is the tool easy to install? OK
+- Is there a way to test the installation? OK
+- Is there a tutorial on how to use the tool? GOOD
+- Is there a good documentation on the parameter settings? OK
+- Is the tool maintained (issues answered, implementation of new features)? OK
+- Is the tool Open Source? GOOD
+
+* Summary
+
+| Tool            | Installation | Test | Tutorial | Documentation | Maintenance | FLOSS |
+|-----------------+--------------+------+----------+---------------+-------------+-------|
+| GetOrganelle    | OK           | BAD  | OK       | GOOD          | GOOD        | GOOD  |
+| fast-plast      | BAD          | OK   | OK       | GOOD          | GOOD        | GOOD  |
+| org-asm         | BAD          | OK   | GOOD     | OK            | GOOD        | GOOD  |
+| NOVOPlasty      | GOOD         | BAD  | OK       | GOOD          | GOOD        | OK    |
+| ChloroExtractor | GOOD         | OK   | OK       | GOOD          | GOOD        | GOOD  |
+| IOGA            | BAD          | BAD  | BAD      | OK            |             | BAD   |
+| Chl Asm Prot    | OK           | OK   | GOOD     | OK            | OK          | GOOD  | 
+
+
+** issues to open
+GetOrganelle:
+- improve installation instructions (add pip, git, create directory
+- add test dataset (using mine with the examples, I got some strange errors)
+
+fast-plast:
+- improve installation instructions (some dependencies missing - maybe present on centOS wich was tested?)
+- phred score error
+
+org-asm:
+- improve istallation instructions
+- segfault in tutorial
+
+NOVOPlasty:
+- add Test data 
+
+ChloroExtractor:
+- disk size issue (get better error message, please)
+- provide a way to check the assembly from the test dataset
+
+IOGA:
+- improve installation instruction (many dependencies missing)
+- provide a way to test the installation
+- add a tutorial
+- add a license (already opened)
+
+Chloroplast assembly protocol:
+- improve installation instructions (dependencies missing)
+- examples: assembly fails (maybe a data problem - HOWTO-brachy works)
