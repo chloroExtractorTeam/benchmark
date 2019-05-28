@@ -183,7 +183,11 @@
    email={niklas.terhoeven@uni-wuerzubrg.de}
 ]{\inits{NT}\fnm{Niklas} \snm{Terhoeven}}
 \author[
-   addressref={aff1,aff2,aff3 },
+   addressref={aff1},
+   email={arthur.korte@uni-wuerzubrg.de}
+]{\inits{AK}\fnm{Arthur} \snm{Korte}}
+\author[
+   addressref={aff2,aff1,aff3 },
    noteref={n2},
    email={markus.ankenbrand@uni-wuerzubrg.de}
 ]{\inits{MJA}\fnm{Markus J} \snm{Ankenbrand}}
@@ -373,7 +377,7 @@ normal assembly - then blast, assembly then graph resolution, might be combined 
 The goal of this study is to compare the effectiveness and efficiency of existing open source command-line tools to de-novo assemble whole chloroplast genomes from raw mixed genomic data sets with minimal configuration.
 This means: no data preparation, no specific reference (but \plant{At} if required), default parameters, no manual finishing.
 We further restricted our benchmark to paired Illumina data sets as these are the most common \todo{cite?} and the %\todo{(all?) - habs gecheckt}
-tools in this study can not handle any other types.
+tools in this study can not handle any other types. \todo{tools can not handle passt hier finde ich nicht als Begründung. Wir geben gerade vor was uns interessiert und wählen später Tools aus die dazu passen. Sonst gibt es einen Ringschluss zwischen Scope und Tool Selection.}
 
 In our opinion this reflects the most common use cases: (1) a user trying a tool quickly without digging into options for fine tuning and (2) large scale automatic applications.
 Still, we acknowledge that the performance of the tools might be significantly improved by optimizing parameters (and references if applicable) for each data set specifically.
@@ -406,7 +410,7 @@ Other related tools for assembling chloroplasts but outside the scope of this st
 \texttt{Organelle PBA} is designed for PacBio data and does not work with paired Illumina data only.
 \texttt{sestaton/Chloro} fits all criteria but is flagged as a work in progress and development seems to have ended two years ago.
 \texttt{Norgal} is a tool to extract organellar DNA from whole genome data based on a k-mer frequency approach. However the final output is a set of contigs of mixed mitochondrial and plastid origin. The suggested approach to get a finished chloroplast genome is to run \np{} on the ten longest contigs.
-\texttt{MitoBim} is specifically designed for mitochondrial genomes. Even though there is a claim by the author that it can be used for chloroplasts as well (\url{https://github.com/chrishah/MITObim/issues/16}, accessed: 2019-05-27), there is no further description on how to do that. \todo{haben wir es versucht? - nein}
+\texttt{MitoBim} is specifically designed for mitochondrial genomes. Even though there is a claim by the author that it can be used for chloroplasts as well (\url{https://github.com/chrishah/MITObim/issues/16}, accessed: 2019-05-27), there is no further description on how to do that. %\todo{haben wir es versucht? - nein}
 Additionally, there is a protocol for the \texttt{Geneious} \cite{geneious} software available \cite{geneious-protocol}.
 However, \texttt{Geneious} is closed source and GUI based, which is not in the scope of this study.
 There is also another publication describing a method for assembling chloroplasts \cite{method-description-paper}. However, the link to the software is not active anymore.
@@ -496,7 +500,7 @@ The completeness is estimated as the coverage of the assembled chloroplast genom
 
 
 \subsubsection*{Reproducibility}
-For reproducibility  testing we randomly choose  \num{100} data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before. The resulting assemblies were scored again as described above and the scores of the 1. and the 2. run were compared to each other. 
+For reproducibility  testing we randomly choose  \num{100} data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before. The resulting assemblies were scored again as described above and the scores of the first and the second run were compared to each other. 
 
 \section*{Results}
 \subsection*{Performance metrics}
@@ -567,12 +571,29 @@ Replicates that did not produce an output were manually scored with \num{0}.
 Both \fp{} and \np{} tend to have minor changes in the assembly when the overall performance is comparably well, leading to the arrow-shaped scatter plots. \ce{} and \cassp{} only have few deviations between the two runs, besides a few one-time non-performing data sets, the other all scored the same.
 
 \section*{Discussion}
-Discuss Computational Resources. Implications of very long running. Also state minimum requirements on the hardware (RAM, CPUs, storage). Importance of this depends on use case (if goal is one single chloroplast 
+Depending on the use case the different criteria assessed in this work need to be weighted differently.
+For example ease of installation and use might not be a big concern if the tool is installed once and integrated in an automated pipeline. On the other hand this factor alone might prevent other users from being able to use the tool at all.
+Similarly computational requirements or run time is less relevant if the goal is to assemble a single chloroplast for further analysis, but it is essential if hundreds or thousands of samples should be processed in parallel for a large scale study.
+Eventually, both ease of use and runtime are irrelevant if the tool is not able to successfully accomplish it's task.
+Also the scope of this study needs to be considered when interpreting the guidelines below.
+In particular, we evaluated all tools under the assumption that they are used in the most basic form (default parameters, no hand selected reference, no pre-processing of the data or post-processing of the result, restricted runtime).
+It is important to note that any tool might perform significantly different if parameters and references are fine-tuned for the specific data set.
 
-We evaluated all tools under the assumption that they are used in the most basic form (default parameters, no hand selected reference, no pre-processing of the data or post-processing of the result, restricted runtime). It is important to note that any tool might perform significantly different if parameters and references are fine-tuned for each data set.
+The overall best success rate both on simulated and real data was achieved by \go{} followed by \fp{}.
+Both tools complement each other as each is able to successfully reconstruct a full chloroplasts in cases where the other tool fails.
+In rare cases \np{} or \oa{} are the only tool to succeed.
+For \fp{}, \np{} and \oa{} do not perform 100\% reproducibly so re-running the tool after a failed attempt might be successful.
+\ce{} yields few complete chloroplast assemblies but requires few resources and is easy to install and use (so it can be considered as a quick first try).
+Both \ioga{} and \cassp{} fail to return any success.
 
 \subsection*{Clear guidelines for the end-user}
-Which program (or combination of programs) to use? Does the decision depend on some parameter of the data (read length, amount, taxonomic group, ...)?
+Given these results our recommendation to users is to run \go{} and in case of failure \fp{}.
+If both programs fail it is sensible to re-run \fp{} and try \np{} and \oa{}.
+This procedure maximizes the chance to effectively and efficiently recover the circular chloroplast genome from mixed genome data.
+If this procedure fails a next step could be a reference guided approach (or tweaking parameters).
+For an automated approach running \go{} and \fp{} in parallel appears to be a good trade-off between chance of success and resources.
+
+\todo{Does the decision depend on some parameter of the data (read length, amount, taxonomic group, ...)?}
 
 \subsection*{Ideas for future development}
 Combining components from different tools might be a promising approach. E.g. read scaling from \ce{}, assembly from \go{} and structural resolution with \fp{}.
@@ -706,9 +727,9 @@ All authors discussed the results and contributed to the final manuscript.
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{plots/real_datasets_tree.pdf}
   \caption{\csentence{Sucess of assemblers on real data sets on tree derived from ncbi taxonomy \cite{ncbi2011}}
-      Figure legend text.}
+      Figure legend text. }
       \label{fig:tree}
-      \end{figure}
+      \end{figure}\todo{cite itol}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
