@@ -86,6 +86,14 @@
 %\def\includegraphics{}
 
 \usepackage{todonotes}
+\setlength{\marginparwidth}{3cm}
+
+\newcounter{todocounter}
+\newcommand{\ak}[1]
+{\stepcounter{todocounter}
+ \todo[color=green!40,author=Arthur]{\thetodocounter: #1}
+ }
+
 
 %%% Put your definitions there:
 \startlocaldefs
@@ -98,6 +106,8 @@
 \newcommand{\go}{\formatprogramnames{GetOrganelle}}
 \newcommand{\cassp}{\formatprogramnames{Chloroplast assembly protocol}}
 
+\newcommand{\zenododataset}{\cite{zenododataset}}
+\newcommand{\zenodorepo}{\cite{zenodorepo}}
 
 % Niklas table
 %\newcommand{\ok}{\textcolor[rgb]{0.7,0.7,0}{\textsc{\bfseries{}OKAY}}}
@@ -169,7 +179,7 @@
     email={simon-pfaff@gmx.de}
     ]{\inits{SP}\fnm{Simon} \snm{Pfaff}}
 \author[
-   addressref={aff2,aff3},
+   addressref={aff1,aff3},
    email={niklas.terhoeven@uni-wuerzubrg.de}
 ]{\inits{NT}\fnm{Niklas} \snm{Terhoeven}}
 \author[
@@ -325,18 +335,19 @@ Text for this section.
 %%%%%%%%%%%%%%%%
 %% Background %%
 %%
+\newpage
 \section*{Introduction}
 \subsection*{General introduction and motivation}
-The chloroplast as the photosynthetic organelle harboring its own genome has been an early target for sequencing.
+The chloroplast as the photosynthetic organelle harboring its own genome has been an early target for sequencing.\ak{maybe even 1-2 sentences about general chloroplast importance}
 The first chloroplast genome sequences were obtained as early as 1986 \cite{ohyama_chloroplast_1986,shinozaki_complete_1986}.
 These efforts elucidated the general genome organization and structure of chloroplasts, expanded by many more studies over the years.
-Chloroplast genome content and structure reviewed elsewhere \cite{wicke_evolution_2011,green_chloroplast_2011}.
+Chloroplast genome content and structure \textcolor{red} {are}  reviewed elsewhere \cite{wicke_evolution_2011,green_chloroplast_2011}.
 Chloroplast genomes are widely used for evolutionary analyses \cite{martin_plastid_2010,xiao-ming_inferring_2017}, barcoding \cite{kress_use_2005,hollingsworth_dna_2009,de_vere_dna_2015}, and meta-barcoding \cite{bell_review_2016,deiner_environmental_2017}.
 Interesting aspect of chloroplast genomes are their reduced size through endosymbiotic gene transfer \cite{martin_evolutionary_2002,timmis_endosymbiotic_2004} and the strong conservation of the remaining genes (cite).
 Despite the overall high conservation there are striking differences between groups (e.g. loss of whole gene families like ndh genes in \textit{Droseraceae} \cite{nevill_plastome-wide_2019} and extreme evolutionary cases with very low GC content and a modified genetic code \cite{su_novel_2019}).
 These differences call for comparative genomic approaches.
 
-It is much easier to decipher the complete chloroplast genome than the complete core genome (cite?).
+It is much easier to decipher the complete chloroplast genome than the complete core genome, due its comparably smaller size. For example \textit{Arabidopsis thaliana} core genome is approximately \SI{125}{\mega\basepair} in length \cite{schmuths2004,cao2011} while the size of the chloroplast genome with \SI{154}{\kilo\basepair} is more than \SI{800}{\times} smaller than the core genome \cite{sato1999}.    
 However, the specific genome structure (esp. the large inverted repeat) complicates automated resolution with short read technologies (cite?).
 Many genome sequencing projects contain chloroplast reads as by-product.
 In some cases the chloroplast data is even considered contamination so experimental protocols for reducing their content have been developed \cite{lutz_isolation_2011}.
@@ -348,7 +359,7 @@ In a different application researchers use shallow genome sequencing to reconstr
 There are also applications in biotechnology and genetic engineering \cite{daniell_chloroplast_2016}.
 
 \subsection*{Chloroplast genome architecture}
-Maybe separate section describing a prototypical chloroplast: LSC, IRa, SSC, IRb. Gene number and content. Size ranges. Evolutionary history incl. endosymbiontic gene transfer. Reduced genomes in parasitic plants. Loss of ndh gene family (maybe too specific). Preliminary SNP analysis in \plant{At} to estimate intraspecific variability? Is there anything known about intra-organismic variability (do some plants have multiple populations of chloroplasts? probably off topic).
+Maybe separate section describing a prototypical chloroplast: LSC, IRa, SSC, IRb. Gene number and content. Size ranges. Evolutionary history incl. endosymbiontic gene transfer. Reduced genomes in parasitic plants. Loss of ndh gene family (maybe too specific). Preliminary SNP analysis in \plant{At} to estimate intraspecific variability? Is there anything known about intra-organismic variability (do some plants have multiple populations of chloroplasts? \ak{Yes, they do , Heteroplasmy} probably off topic).\ak{nope, I think this is important}
 
 \subsection*{Approaches to extracting chloroplasts from whole genome data}
 \todo{ausbauen}
@@ -359,26 +370,27 @@ normal assembly - then blast, assembly then graph resolution, might be combined 
 \cite{twyford_strategies_2017}
 
 \subsection*{Purpose and scope of this study}
-The goal of this study is to compare the effectiveness and efficiency of existing tools to de-novo assemble whole chloroplast genomes from raw mixed genomic datasets with minimal configuration.
-This means: no data prep, no specific reference (but \plant{At} if required), default parameters, no manual finishing.
-We further restricted our benchmark to paired Illumina datasets as these are the most common \todo{cite?} and most \todo{(all?)} tools in this study can not handle any other types.
+The goal of this study is to compare the effectiveness and efficiency of existing open source command-line tools to de-novo assemble whole chloroplast genomes from raw mixed genomic data sets with minimal configuration.
+This means: no data preparation, no specific reference (but \plant{At} if required), default parameters, no manual finishing.
+We further restricted our benchmark to paired Illumina data sets as these are the most common \todo{cite?} and the %\todo{(all?) - habs gecheckt}
+tools in this study can not handle any other types.
 
 In our opinion this reflects the most common use cases: (1) a user trying a tool quickly without digging into options for fine tuning and (2) large scale automatic applications.
-Still, we acknowledge that the performance of the tools might be significantly improved by optimizing parameters (and references if applicable) for each dataset specifically.
+Still, we acknowledge that the performance of the tools might be significantly improved by optimizing parameters (and references if applicable) for each data set specifically.
 (However, this was outside the scope of this study.)
 
 %Clearly state criteria. Work with mixed data. Full automation. De novo - no manual selection of appropriate reference. No manual finishing. The step we are interested in is: from raw paired Illumina (!) reads to a fasta file containing the assembly (optimally full, circularized and on one contig). We are not interested in annotation or any additional contigs (genomic, mitochondrion, rRNA, etc.).
 %\cite{koon,oreg,khar,zvai,xjon,schn,pond,smith,marg,hunn,advi,koha,mouse}
 
 \section*{Methods}
-Source code for all methods is available at \url{https://github.com/chloroExtractorTeam/benchmark} and archived under \todo{(zenodo doi)}.
+Source code for all methods is available at \url{https://github.com/chloroExtractorTeam/benchmark} and archived under \zenodorepo{}.
 All docker images are published on \url{https://cloud.docker.com/u/chloroextractorteam/} and are named with a leading \texttt{benchmark\_} (\cref{tab:dockerimages}).
-datasets at \todo{(zenodo links for simulated and real)}.
+Our simulated data sets are stored at \zenododataset{}.
 This study adheres to the guidelines for computational method benchmarking \cite{weber_essential_2018}.
 
 \subsection*{Tool Selection}
 
-We included tools designed for assembling chloroplasts from whole genome paired end Illumina sequencing data. The tools must be available as open source software and allow execution via a command line interface \todo{das noch oben in der scope section erwähnen}. A graphical user interface is not suitable for
+We included tools designed for assembling chloroplasts from whole genome paired end Illumina sequencing data. The tools must be available as open source software and allow execution via a command line interface. A graphical user interface is not suitable for
 running automated comparisons. The following tools were determined to be within the scope of this study:
 
 \oa{} \cite{coissac_barcodes_2016}, 
@@ -389,11 +401,15 @@ running automated comparisons. The following tools were determined to be within 
 \go{} \cite{jin_getorganelle:_2018}, 
 \cassp{} \cite{sancho_comparative_2018}.
 
-Other related tools for assembling chloroplasts but outside the scope of this study are \texttt{Organelle PBA} \cite{Soorni2017}, a protocol for \texttt{Genious}, \texttt{sestaton/Chloro}, \texttt{Norgal} and \texttt{MitoBim}.
-\texttt{Organelle PBA} is designed for PacBio data and does not work with paired Illumina data only. \texttt{Genious} software \todo{cite - die empfohlene Ref passt nicht da wir Geneious ja gar nicht verwenden, wir bräuchten eine ref die sagt, dass es das protocol gibt @niklas. \url{https://support.geneious.com/hc/en-us/articles/227534768-How-do-I-cite-Geneious-in-a-paper-}} is closed source and GUI based. \texttt{sestaton/Chloro} (\url{https://github.com/sestaton/Chloro}) fits all criteria but is flagged as a work in progress and development seems to have ended two years ago.
-\texttt{Norgal} \cite{Al-Nakeeb2017} is a tool to extract organellar DNA from whole genome data based on a k-mer frequency approach. However the final output is a set of contigs of mixed mitochondrial and plastid origin. The suggested approach to get a finished chloroplast genome is to run \np{} on the ten longest contigs.
-\texttt{MitoBim} is specifically designed for mitochondrial genomes. Even though there is a claim by the author that it can be used for chloroplasts as well (\url{https://github.com/chrishah/MITObim/issues/16}, accessed: 2019-05-27), there is no further description on how to do that. \todo{haben wir es versucht?}
-\todo{method description paper - war das method description paper nicht das chloroplast assembly protocol? @niklas}
+Other related tools for assembling chloroplasts but outside the scope of this study are \texttt{Organelle PBA} \cite{Soorni2017}, \texttt{sestaton/Chloro} \cite{sestaton}, \texttt{Norgal}  \cite{Al-Nakeeb2017} and \texttt{MitoBim} \cite{mitobim2013}.
+
+\texttt{Organelle PBA} is designed for PacBio data and does not work with paired Illumina data only.
+\texttt{sestaton/Chloro} fits all criteria but is flagged as a work in progress and development seems to have ended two years ago.
+\texttt{Norgal} is a tool to extract organellar DNA from whole genome data based on a k-mer frequency approach. However the final output is a set of contigs of mixed mitochondrial and plastid origin. The suggested approach to get a finished chloroplast genome is to run \np{} on the ten longest contigs.
+\texttt{MitoBim} is specifically designed for mitochondrial genomes. Even though there is a claim by the author that it can be used for chloroplasts as well (\url{https://github.com/chrishah/MITObim/issues/16}, accessed: 2019-05-27), there is no further description on how to do that. \todo{haben wir es versucht? - nein}
+Additionally, there is a protocol for the \texttt{Geneious} \cite{geneious} software available \cite{geneious-protocol}.
+However, \texttt{Geneious} is closed source and GUI based, which is not in the scope of this study.
+There is also another publication describing a method for assembling chloroplasts \cite{method-description-paper}. However, the link to the software is not active anymore.
 
 
 \subsection*{Our Setup}
@@ -405,7 +421,7 @@ All singularity containers were run on the Julia-HPC on Intel® Xeon® Gold \num
 \subsection*{Data}
 \subsubsection*{Simulated}
 To avoid suffering from sequencing errors and biological variances, we simulated perfect reads based on the \plant{At} (TAIR10) chloroplast assembly \cite{tair10}.
-Therefore we used a sliding window approach with seqkit \cite{seqkit} \todo{seqkit parameter - würde ich hier nicht erwähnen, seqkit wurde mehrfach mit verschiedenen sub commands und parametern aufgerufen, die genaue Doku ist hier: \url{https://github.com/chloroExtractorTeam/benchmark/blob/master/03_representative_datasets.md}}.
+Therefore we used a sliding window approach with seqkit \cite{seqkit}. The exact commands can be found inside \href{https://github.com/chloroExtractorTeam/benchmark/blob/master/03_representative_datasets.md}{\texttt{03\_representative\_datasets.md}} in \zenododataset{}.
 For the final simulated data sets reads based on pseudo mixtures of TAIR10's core and chloroplast genome:  \num{0}:\num{1}, \num{1}:\num{10}, \num{1}:\num{100}, and \num{1}:\num{1000}.
 Additionally, we generated different read lengths (\SIlist{150;250}{\basepair}).
 
@@ -426,13 +442,13 @@ The setting combined the different input data and different number of threads to
 Some programs used more CPU threads than specified, therefore, the number of CPUs available have been fixed using the CPUs option while running the docker run command.
 For each assembly setting, we recorded the peak memory consumption, the CPU usage for calculation of mean and peak CPU usage, and the size of the folder where the assembly was calculated.
 The values of CPU and memory usage have been obtained by docker.
-The disk usage was estimated using the GNU tool du.
-We used GNU parallel for queuing of the different settings \cite{Tange2011a}.
+The disk usage was estimated using the GNU tool \texttt{du}.
+We used \texttt{GNU parallel} for queuing of the different settings \cite{Tange2011a}.
 
 \subsubsection*{Qualitative}
 
 The qualitative evaluation is mainly based on the reviewer guidelines for the Journal of Open Source Software (JOSS) \cite{joss}.
-To create a standard environment, all tools were tested in a fresh default installation of Ubuntu 18.04.2 running in a virtual machine. We chose this setup instead of the docker container, because it resembles a typical user environment better than the minimal docker installation. The tools were installed according to their installation instructions and
+To create a standard environment, all tools were tested in a fresh default installation of Ubuntu 18.04.2 running in a virtual machine (VirtualBox Version 5.2.18\_Ubuntu r123745). We chose this setup instead of the docker container, because it resembles a typical user environment better than the minimal docker installation. The tools were installed according to their installation instructions and
 the provided tutorial or example usage was executed. During the evaluation, the following
 questions were asked:
 
@@ -450,26 +466,34 @@ CRAN, docker, etc. An \ok{} installation procedure provides a custom script to i
 or at least lists all dependencies. A \bad{} installation procedure fails to list important dependencies
 or produces errors, that prevent a successful installation. 
 
-After an initial evaluation, we contacted all authors via their github or gitlab issue tracking to
+After an initial evaluation, we contacted all authors via their GitHub or GitLab issue tracking to
 report any flaws we found.
 
 \subsubsection*{Quantitative}
-We want to quantify continuity, completeness, correctness, repeat resolution.
-We use continuity: number of contigs.
-Completeness: Number of covered bases on reference (when aligning assembly).
-Correctness: Number of covered bases in assembly (when aligning reference).
-Repeat resolution: Difference between above two measures (indicates collapsed or expanded repeats)
+
+%We use continuity: number of contigs.
+%Completeness: Number of covered bases on reference (when aligning assembly).
+%Correctness: Number of covered bases in assembly (when aligning reference).
+%Repeat resolution: Difference between above two measures (indicates collapsed or expanded repeats)
 %
 %\nocite{oreg,schn,pond,smith,marg,hunn,advi,koha,mouse}
 
-Foreach dataset and assembler the proposed chloroplast was compared to the respective reference chloroplast using \texttt{minimap2} v2.16 for pairwise alignment \cite{li2018minimap2}.
+
+%We want to quantify continuity, completeness, correctness and repeat resolution.
+
+Foreach dataset and assembler the proposed chloroplast was compared to the respective reference chloroplast using a pairwise alignment obtained with \texttt{minimap2} v2.16 \cite{li2018minimap2}. Based on theses alignments the score is calculated as shown in \cref{eq:quantitative}
+The assemblies were scored on a scale from 0 to 100, with 100 being the best and 0 the worst possible score. Four different metrics were Incorporated, each contributing  $\frac{1}{4}$ to the total score: Completeness, correctness, repeat resolution and continuity.
+
+The completeness is estimated as the coverage of the assembled chloroplast genome versus the reference genome ($cov_{ref}$). It resembles how many bases of the query genome can be mapped to its respective reference genome. Secondly, we mapped the reference genome against the query. The coverage of the reference genome ($cov_{qry}$) is used as measurment for the correctness of the assembly. The repeat resolution is estimated from the size difference of the assembly and the reference genome ($min\left\{ \frac{cov_{qry}}{cov_{ref}}, \frac{cov_{ref}}{cov_{qry}}\right\}$).The $min$ was applied to ensure, that only values between 0 and 1 were obtained. The fourth metric used is the continuity, represented by the number of contigs. A perfect score is achieved if one circular chromosome was assembled.
+
+
 
 \begin{equation}
    score = \frac{1}{4} \cdot \left( cov_{ref} +  cov_{qry} + min\left\{ \frac{cov_{qry}}{cov_{ref}}, \frac{cov_{ref}}{cov_{qry}}\right\} + \frac{1}{n_{contigs} }\right) \cdot 100 
    \label{eq:quantitative}
 \end{equation}
 
-Formula 1 shows the quantitative measurements taken to score the assemblies from 0 to 100, with 100 being the best possible and 0 the worst score. Four different metrics were Incorporated: The coverage of the assembled chloroplast genome versus the reference genome $cov_{ref}$, to evaluate how many bases of the query genome can be mapped to its respective reference genome. Secondly we mapped the reference genome against the query to asses the coverage of the reference genome $cov_{qry}$. To penalize differences in the size of the assembly and the reference genome we used the term  $min\left\{ \frac{cov_{qry}}{cov_{ref}}, \frac{cov_{ref}}{cov_{qry}}\right\}$ the $min$ was applied to ensure, that always values between 0 and 1 were obtained. The fourth metric used is the number of contigs, with a perfect score being achieved if once circular chromosome was assembled. All four metrics contribute equally with $\frac{1}{4}$ to the final score.
+
 
 \subsubsection*{Reproducibility}
 For reproducibility  testing we randomly choose  \num{100} data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before. The resulting assemblies were scored again as described above and the scores of the 1. and the 2. run were compared to each other. 
@@ -480,64 +504,72 @@ For reproducibility  testing we randomly choose  \num{100} data sets, that in th
 %Table and figure of performance evaluation. Including RAM, I/O, runtime, parallelization ability, CPU usage. Free text description of results, range, mean/median, effect of input size, threads parameter, ...
 
 \subsubsection*{Time requirements}
-
-\textit{plot comp\_time\_log.pdf goes here}
-
-In terms of time efficiency there was a great difference between input datasets, number of threads and the tool in use ranging from a few minutes to several hours. Some assemblies failed to finish within the time-limit we set at \SI{48}{\hour}. 
-On average the longest time to complete assemblies was taken by \ioga{} and \fp{} followed by \oa{} and \go{} the most time efficient overall was \ce{} with on average is a little faster than \np{} and \cassp{}
+In terms of time efficiency there was a great difference between input datasets, number of threads and the tool in use ranging from a few minutes to several hours (\cref{fig:performance_runtime}).
+Some assemblies failed to finish within the time-limit we set at \SI{48}{\hour}. 
+On average the longest time to complete assemblies was taken by \ioga{} and \fp{} followed by \oa{} and \go{} the most time efficient overall was \ce{} with on average is a little faster than \np{} and \cassp{}.
 %% multithreading
-Not all the tools were able to benefit from having access to multiple threads. Both \np{} and \oa{} take about the same time independent of being able to utilize \numlist[list-final-separator={, or }]{1;2;4;8} threads. \cassp{}, \ce{} , \go and \fp{} all profit from multi-threading.
+Not all the tools were able to benefit from having access to multiple threads. Both \np{} and \oa{} take about the same time independent of being able to utilize \numlist[list-final-separator={, or }]{1;2;4;8} threads. \cassp{}, \ce{} , \go and \fp{} all profit from multi-threading (\cref{fig:performance_runtime}, \cref{fig:performance_memory_cpu}).
 
 \subsubsection*{Memory and CPU Usage }
-\textit{plot usage\_amout\_threads.pdf goes here}
-
-
-\[ CAP_n=221 , CE_n=205 , Fast-Plast_n=352 , GetOrganelle_n=356 IOGA_n=296, NOVOPlasty_n=270 org.ASM_n=228 \]
+The peak and mean CPU usage, as well as peak memory and disk usage have been recorded for all assemblers based on a input data set size and a number of threads to use (\cref{fig:performance_memory_cpu}).
+Mainly, the size of the input set influenced the peak memory usage with an exception for \ce{} and \ioga{}.
+Those two assemblers seems to have a memory usage pattern, which is less influenced by data set size.
+The number of allowed threads have only no or a limited impact on the peak memory usage.
+Nevertheless, all programs profit by a higher number of threads, even more if the input size increases.
+In contrast, the disk usage is independent from input size and number of threads for all assemblers, but the factor between the programs exceeds a factor of \num{100}.
 
 \subsection*{Qualitative}
 Most of the tools were evaluated as mainly \good{} (see table \ref{tab:resultsQual}). However, a few critique points remained.
-Two minor dependencies were missing in the \go{} installation instructions. There was also no test data available and an issue occurred when running it on a \plant{At} dataset. We are currently in the process of resolving this with the authors.
+Two minor dependencies were missing in the \go{} installation instructions. There was also no test data available and an issue occurred when running it on a \plant{At} data set. We are currently in the process of resolving this with the authors.
 
-The \fp{} installation instructions were missing some dependencies. Like \go{}, \fp{} does not offer a test dataset or a tutorial, except from some example commands. 
+The \fp{} installation instructions were missing some dependencies. Like \go{}, \fp{} does not offer a test data set or a tutorial, except from some example commands. 
 
-The \oa{} installation instructions did not work. We found some issues, which are probably related to the requirement of python3.7. There is a tutorial with sample data available. However following the instructions resulted in a segmentation fault. We found a workaround for this bug and contacted the authors.
+The \oa{} installation instructions did not work. We found some issues, which are probably related to the requirement of \texttt{Python~3.7}. There is a tutorial with sample data available. However following the instructions resulted in a segmentation fault. We found a workaround for this bug and contacted the authors.
 
-The main critique point of \np{} was the lack of a test dataset with instructions. This was fixed by the authors after we contacted them. \np{} uses a custom license. An OSI approved license would be preferred here.
+The main critique point of \np{} was the lack of a test data set with instructions. This was fixed by the authors after we contacted them. \np{} uses a custom license. An OSI approved license would be preferred here.
 
-The \ce{} does come with a test dataset and a short tutorial. However, a way to evaluate the results of the test run would be nice.
+The \ce{} does come with a test data set and a short tutorial. However, a way to evaluate the results of the test run would be nice.
 
-The \ioga{} installation instructions were missing many dependencies. Also, there was no test data or tutorial available and there is no license assigned to it. Since there was no update to the github repository for the last three years, the project can be seen as inactive. After contact, the authors promised to resolve the mentioned issues.
+The \ioga{} installation instructions were missing many dependencies. Also, there was no test data or tutorial available and there is no license assigned to it. Since there was no update to the GitHub repository for the last three years, the project can be seen as inactive. After contact, the authors promised to resolve the mentioned issues.
 
-As many of the other tools, the installation instructions for the \cassp{} were missing some dependencies. The list was updated after we contacted the authors. This tool does come with a test dataset, however a note about the expected outcome would be nice. A more extensive tutorial is provided. The description about the parameter is short, but seems to be sufficient.
+As many of the other tools, the installation instructions for the \cassp{} were missing some dependencies. The list was updated after we contacted the authors. This tool does come with a test data set, however a note about the expected outcome would be nice. A more extensive tutorial is provided. The description about the parameter is short, but seems to be sufficient.
 
 \subsection*{Quantitative}
 \subsubsection*{Simulated data}
-\textit{tile plot for simulated data goes here}
-The only assembler obtaining perfect results according to our score for the simulated datasets is \go{}.
+The only assembler obtaining perfect results according to our score for the simulated data sets is \go{} (\cref{fig:simulated}).
 \ioga{} and \cassp{} showed the worst performance being unable to fully assemble a single chloroplast out of \num{14}.
-\np{} performed second best with scores above \num{80} for all datasets, only failing to resolve the chloroplast contig into one single circular assembly.
+\np{} performed second best with scores above \num{80} for all data sets, only failing to resolve the chloroplast contig into one single circular assembly.
 (As could have been expected -> discussion) the overall performance is best, when the input data consists purely of chloroplast reads.
 Only \ioga{} and \cassp{} failed to deliver any results once each.
 Besides that no clear causality between length of the input reads, ratio of core vs chloroplast reads and the performance can be clearly observed. 
 
 \subsubsection*{real data sets}
-Highest scoring is \go{} next is \fp{} while \ioga{} and \cassp{} perform poorly, never reaching a score of  \num{1} (\cref{fig:swarmplot}). TODO: median/mean score, mad/sd Tabelle
+Concerning the performance of the assemblers on evaluated on the real data sets from SRA database we were able to observe considerable differences in the median score (\cref{fig:swarmplot}).
+The highest scores were achieved by \go{} with a median of 99.7 and 199 circular assemblies out of a total of 356 assemblies that resulted in an output  \cref{tab:scores}.
+The performance of \go{} is seconded by \fb{} \np{} \oa{}, with \fb{} outperforming the latter two slightly in terms of score, however \fb{} as almost or more than twice as much \num{114} perfectly assembled chloroplast genomes as \np{} with \num{66} or \num{55} circular genomes for \oa{}.
+\ioga{} and \cassp{} were both not able to assemble a single circular, single-contig genome \cref{tab:scores}, consequently resulting in the lowest mean and median scores.  
+
+
+
+%% Ich werde die Namen in der Tabelle anpassen, sobald ich die finale Version habe 
+
+\cref{fig:upset}
 
 \textit{swarm plot goes here}
 %% Den upset plot eventuell erst in die Discussion reinbringen ? Da wir davon ableiten welche tools wir empfehlen?
 
 
 \subsubsection*{Reproducibility}
-Reproducibility was tested as described above, by re-unning assemblies and comparison of the scores of the two assemblies (\cref{fig:reproducibility}).
+Reproducibility was tested as described above, by re-running assemblies and comparison of the scores of the two assemblies (\cref{fig:reproducibility}).
 Replicates that did not produce an output were manually scored with \num{0}. 
 \go{} was the only tool that succeeded in obtaining similar scores for all the assemblies, without having and completely unsuccessful assemblies for this subset of data. Except for \fp{} all the other tools had at least one assembly that was unsuccessful in either runs, but produced an output in the other.  Notably \ioga{} appears to have a tendency of being able to perform differently in independent runs. More that \SI{10}{\percent} of the assemblies failed once, but were successful in the other run.
 
-Both \fp{} and \np{} tend to have minor changes in the assembly when the overall performance is comparably well, leading to the arrow-shaped scatter plots. \ce{} and \cassp{} only have few deviations between the two runs, besides a few one-time non-performing datasets, the other all scored the same.
+Both \fp{} and \np{} tend to have minor changes in the assembly when the overall performance is comparably well, leading to the arrow-shaped scatter plots. \ce{} and \cassp{} only have few deviations between the two runs, besides a few one-time non-performing data sets, the other all scored the same.
 
 \section*{Discussion}
 Discuss Computational Resources. Implications of very long running. Also state minimum requirements on the hardware (RAM, CPUs, storage). Importance of this depends on use case (if goal is one single chloroplast 
 
-We evaluated all tools under the assumption that they are used in the most basic form (default parameters, no hand selected reference, no pre-processing of the data or post-processing of the result, restricted runtime). It is important to note that any tool might perform significantly different if parameters and references are fine-tuned for each dataset.
+We evaluated all tools under the assumption that they are used in the most basic form (default parameters, no hand selected reference, no pre-processing of the data or post-processing of the result, restricted runtime). It is important to note that any tool might perform significantly different if parameters and references are fine-tuned for each data set.
 
 \subsection*{Clear guidelines for the end-user}
 Which program (or combination of programs) to use? Does the decision depend on some parameter of the data (read length, amount, taxonomic group, ...)?
@@ -553,7 +585,7 @@ Other (more) data types, PacBio, nanopore.
 %Short summary of clear guidelines and future development (might not be necessary as these are the last two sections of the Discussion anyway, so we might elect to skip this).
 \todo{sollten wir lobend erwähnen, dass alle auf github/gitlab sind?}
 
-Put results back in context: the multitude of available tools shows importance to solve the challenge of chloro extraction. Presented benchmarking shows that all tools sometimes struggle even with ``perfect'' data. Although no program works everytime, most chloroplasts are resolved by at least one tool (is that so?). So programs are complementary, more effort to combine strengths of different methods (or automatic parameter selection - if failure is due to suboptimal parameters for the specific dataset).
+Put results back in context: the multitude of available tools shows importance to solve the challenge of chloro extraction. Presented benchmarking shows that all tools sometimes struggle even with ``perfect'' data. Although no program works everytime, most chloroplasts are resolved by at least one tool (is that so?). So programs are complementary, more effort to combine strengths of different methods (or automatic parameter selection - if failure is due to suboptimal parameters for the specific data set).
 
 Outlook: next step in the pipeline is annotation. There is a similar problem: many tools, which one to use? 
 A large scale study reconstructing chloroplasts throughout SRA (or \num{1001} genome project) is feasible and promising using the existing tools (estimated runtime, number of novel chloroplasts).
@@ -637,6 +669,13 @@ All authors discussed the results and contributed to the final manuscript.
       \end{figure}
 
 \begin{figure}[h!]
+  \includegraphics[width=\textwidth]{plots/comp_time_log.pdf}
+  \caption{\csentence{Computation time depending on number of threads and size of input data}
+  }
+        \label{fig:performance_runtime}
+      \end{figure}
+
+\begin{figure}[h!]
   \includegraphics[width=\textwidth]{plots/usage_amount_threads.pdf}
   \caption{\csentence{Performance metrics}
       Boxplots depictiing the demand of CPU and RAM and disk space needed depending on the assembler, input data size and number of threads}
@@ -655,13 +694,6 @@ All authors discussed the results and contributed to the final manuscript.
   \caption{\csentence{Scores between two independent runs for reproducibility testing}
       }
       \label{fig:reproducibility}
-      \end{figure}
-
-\begin{figure}[h!]
-  \includegraphics[width=\textwidth]{plots/comp_time_log.pdf}
-  \caption{\csentence{Computation time depending on number of threads and size of input data}
-  }
-        \label{fig:performance_runtime}
       \end{figure}
 
 \begin{figure}[h!]
@@ -720,16 +752,158 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
       \end{tabular}}
 \end{table}
 
-\begin{table}[h!]
-\caption{Sample table title. This is where the description of the table should go.}
-      \begin{tabular}{cccc}
-        \hline
-           & B1  &B2   & B3\\ \hline
-        A1 & 0.1 & 0.2 & 0.3\\
-        A2 & ... & ..  & .\\
-        A3 & ..  & .   & .\\ \hline
-      \end{tabular}
+
+\begin{table}[ht]
+\caption{Mean scores of chloroplast genome assemblers}
+\label{tab:scores}
+\centering
+\begin{tabular}{rlrrrr}
+  \hline
+ & assembler & Mean & SD & N\_perfect & N\_tot \\ 
+  \hline
+  1 & CAP & 51.26 & 8.42 &   0 & 221 \\ 
+  2 & CE & 69.99 & 12.33 &  14 & 205 \\ 
+  3 & Fast-Plast & 86.96 & 15.33 & 114 & 352 \\ 
+  4 & GetOrganelle & 89.13 & 15.30 & 199 & 356 \\ 
+  5 & IOGA & 68.74 & 11.69 &   0 & 296 \\ 
+  6 & NOVOPlasty & 82.78 & 16.55 &  66 & 270 \\ 
+  7 & org.ASM & 82.77 & 16.38 &  55 & 228 \\ 
+   \hline
+\end{tabular}
 \end{table}
+
+
+\begin{table}[ht]
+\caption{Performance metrics input size 25K}
+\label{tab:perform25K}
+\centering
+\begin{tabular}{rlrrrr}
+  \hline
+ & program & threads & Peak CPU usage & Peak memeory & Peak disk usage (GB) \\ 
+  \hline
+1 & CAP &   1 & 113.32 & 0.31 & 0.06 \\ 
+  2 & CAP &   2 & 166.60 & 0.26 & 0.05 \\ 
+  3 & CAP &   4 & 305.99 & 0.26 & 0.05 \\ 
+  4 & CAP &   8 & 569.12 & 0.37 & 0.06 \\ 
+  5 & CE &   1 & 111.49 & 3.41 & 0.07 \\ 
+  6 & CE &   2 & 199.12 & 3.41 & 0.07 \\ 
+  7 & CE &   4 & 343.22 & 3.41 & 0.07 \\ 
+  8 & CE &   8 & 509.51 & 3.41 & 0.07 \\ 
+  9 & Fast-Plast &   1 & 118.31 & 0.77 & 0.30 \\ 
+  10 & Fast-Plast &   2 & 213.57 & 0.77 & 0.31 \\ 
+  11 & Fast-Plast &   4 & 379.27 & 0.77 & 0.32 \\ 
+  12 & Fast-Plast &   8 & 657.20 & 0.77 & 0.35 \\ 
+  13 & GetOrganelle &   1 & 111.39 & 0.38 & 0.05 \\ 
+  14 & GetOrganelle &   2 & 170.30 & 0.32 & 0.05 \\ 
+  15 & GetOrganelle &   4 & 242.27 & 0.31 & 0.06 \\ 
+  16 & GetOrganelle &   8 & 346.98 & 0.31 & 0.07 \\ 
+  17 & IOGA &   1 & 118.12 & 18.61 & 6.25 \\ 
+  18 & IOGA &   2 & 224.74 & 17.88 & 6.26 \\ 
+  19 & IOGA &   4 & 394.98 & 16.62 & 5.60 \\ 
+  20 & IOGA &   8 & 733.11 & 21.76 & 11.13 \\ 
+  21 & NOVOPlasty &   1 & 78.38 & 0.04 & 0.00 \\ 
+  22 & NOVOPlasty &   2 & 86.64 & 0.04 & 0.00 \\ 
+  23 & NOVOPlasty &   4 & 86.50 & 0.04 & 0.00 \\ 
+  24 & NOVOPlasty &   8 & 87.32 & 0.04 & 0.00 \\ 
+  25 & org.ASM &   1 & 112.08 & 0.79 & 0.03 \\ 
+  26 & org.ASM &   2 & 115.44 & 0.79 & 0.03 \\ 
+  27 & org.ASM &   4 & 105.09 & 0.79 & 0.03 \\ 
+  28 & org.ASM &   8 & 105.78 & 0.79 & 0.03 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\caption{Performance metrics input size 250K}
+\label{tab:perform250K}
+\centering
+\begin{tabular}{rlrrrr}
+  \hline
+ & program & threads & Peak CPU usage & Peak memeory & Peak disk usage (GB) \\ 
+  \hline
+1 & CAP &   1 & 114.38 & 0.90 & 0.65 \\ 
+  2 & CAP &   2 & 204.39 & 0.93 & 0.65 \\ 
+  3 & CAP &   4 & 337.09 & 0.97 & 0.65 \\ 
+  4 & CAP &   8 & 652.75 & 1.08 & 0.65 \\ 
+  5 & CE &   1 & 117.57 & 3.96 & 0.63 \\ 
+  6 & CE &   2 & 230.35 & 3.96 & 0.63 \\ 
+  7 & CE &   4 & 414.25 & 3.96 & 0.63 \\ 
+  8 & CE &   8 & 755.76 & 3.97 & 0.63 \\ 
+  9 & Fast-Plast &   1 & 118.81 & 1.40 & 0.78 \\ 
+  10 & Fast-Plast &   2 & 234.12 & 2.25 & 0.78 \\ 
+  11 & Fast-Plast &   4 & 425.89 & 2.32 & 0.79 \\ 
+  12 & Fast-Plast &   8 & 845.94 & 2.52 & 0.79 \\ 
+  13 & GetOrganelle &   1 & 117.94 & 1.07 & 0.40 \\ 
+  14 & GetOrganelle &   2 & 227.05 & 1.13 & 0.40 \\ 
+  15 & GetOrganelle &   4 & 403.35 & 1.08 & 0.40 \\ 
+  16 & GetOrganelle &   8 & 747.20 & 1.03 & 0.39 \\ 
+  17 & IOGA &   1 & 118.62 & 12.03 & 4.01 \\ 
+  18 & IOGA &   2 & 234.09 & 9.71 & 4.01 \\ 
+  19 & IOGA &   4 & 420.77 & 10.09 & 3.48 \\ 
+  20 & IOGA &   8 & 842.57 & 19.21 & 9.45 \\ 
+  21 & NOVOPlasty &   1 & 111.97 & 0.32 & 0.00 \\ 
+  22 & NOVOPlasty &   2 & 115.07 & 0.32 & 0.00 \\ 
+  23 & NOVOPlasty &   4 & 116.42 & 0.31 & 0.00 \\ 
+  24 & NOVOPlasty &   8 & 115.86 & 0.31 & 0.00 \\ 
+  25 & org.ASM &   1 & 118.10 & 0.93 & 0.06 \\ 
+  26 & org.ASM &   2 & 161.76 & 0.93 & 0.06 \\ 
+  27 & org.ASM &   4 & 163.01 & 0.93 & 0.06 \\ 
+  28 & org.ASM &   8 & 160.74 & 0.93 & 0.06 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\caption{Performance metrics input size 2.5M}
+\label{tab:perform2.5M  }
+\centering
+\begin{tabular}{rlrrrr}
+  \hline
+ & program & threads & Peak CPU usage & Peak memeory & Peak disk usage (GB) \\ 
+ \hline
+1 & CAP &   1 & 118.80 & 6.83 & 6.59 \\ 
+  2 & CAP &   2 & 209.22 & 7.58 & 6.59 \\ 
+  3 & CAP &   4 & 357.36 & 7.25 & 6.59 \\ 
+  4 & CAP &   8 & 683.71 & 6.99 & 6.59 \\ 
+  5 & CE &   1 & 118.78 & 5.34 & 2.01 \\ 
+  6 & CE &   2 & 234.82 & 5.34 & 2.01 \\ 
+  7 & CE &   4 & 415.74 & 5.28 & 2.09 \\ 
+  8 & CE &   8 & 844.95 & 5.34 & 2.01 \\ 
+  9 & Fast-Plast &   1 & 119.24 & 6.80 & 5.80 \\ 
+  10 & Fast-Plast &   2 & 237.34 & 6.98 & 5.82 \\ 
+  11 & Fast-Plast &   4 & 443.27 & 8.02 & 5.69 \\ 
+  12 & Fast-Plast &   8 & 872.07 & 8.87 & 5.69 \\ 
+  13 & GetOrganelle &   1 & 118.91 & 5.25 & 3.31 \\ 
+  14 & GetOrganelle &   2 & 235.18 & 5.26 & 3.31 \\ 
+  15 & GetOrganelle &   4 & 420.10 & 5.44 & 3.31 \\ 
+  16 & GetOrganelle &   8 & 845.13 & 6.07 & 3.31 \\ 
+  17 & IOGA &   1 & 119.46 & 18.64 & 8.83 \\ 
+  18 & IOGA &   2 & 237.22 & 21.24 & 10.19 \\ 
+  19 & IOGA &   4 & 425.50 & 18.71 & 10.56 \\ 
+  20 & IOGA &   8 & 857.29 & 25.23 & 16.51 \\ 
+  21 & NOVOPlasty &   1 & 112.67 & 2.69 & 0.00 \\ 
+  22 & NOVOPlasty &   2 & 117.77 & 2.58 & 0.00 \\ 
+  23 & NOVOPlasty &   4 & 117.40 & 2.74 & 0.00 \\ 
+  24 & NOVOPlasty &   8 & 117.28 & 2.74 & 0.00 \\ 
+  25 & org.ASM &   1 & 118.73 & 2.63 & 0.37 \\ 
+  26 & org.ASM &   2 & 184.53 & 2.63 & 0.37 \\ 
+  27 & org.ASM &   4 & 177.03 & 2.63 & 0.37 \\ 
+  28 & org.ASM &   8 & 176.25 & 2.63 & 0.37 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+% \begin{table}[h!]
+% \caption{Sample table title. This is where the description of the table should go.}
+%       \begin{tabular}{cccc}
+%         \hline
+%           & B1  &B2   & B3\\ \hline
+%         A1 & 0.1 & 0.2 & 0.3\\
+%         A2 & ... & ..  & .\\
+%         A3 & ..  & .   & .\\ \hline
+%       \end{tabular}
+% \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
