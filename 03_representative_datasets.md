@@ -6,7 +6,7 @@ We use both simulated and real data.
 
 ## Simulated Data
 The final simulation data is available from zenodo: 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2644937.svg)](https://doi.org/10.5281/zenodo.2644937)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2622875.svg)](https://doi.org/10.5281/zenodo.2622875)
 
 If you want to reproduce the simulation yourself please follow these instructions:
 
