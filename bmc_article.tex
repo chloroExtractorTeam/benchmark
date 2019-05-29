@@ -109,6 +109,8 @@
 \newcommand{\zenododataset}{\cite{zenododataset}}
 \newcommand{\zenodorepo}{\cite{zenodorepo}}
 
+\newcommand{\genename}[1]{\textit{#1}}
+
 % Niklas table
 %\newcommand{\ok}{\textcolor[rgb]{0.7,0.7,0}{\textsc{\bfseries{}OKAY}}}
 %\newcommand{\bad}{\textcolor{red}{\textsc{\bfseries{}BAD}}}
@@ -345,10 +347,10 @@ Text for this section.
 The chloroplast as the photosynthetic organelle harboring its own genome has been an early target for sequencing.\ak{maybe even 1-2 sentences about general chloroplast importance}
 The first chloroplast genome sequences were obtained as early as 1986 \cite{ohyama_chloroplast_1986,shinozaki_complete_1986}.
 These efforts elucidated the general genome organization and structure of chloroplasts, expanded by many more studies over the years.
-Chloroplast genome content and structure \textcolor{red} {are}  reviewed elsewhere \cite{wicke_evolution_2011,green_chloroplast_2011}.
+Chloroplast genome content and structure are reviewed elsewhere \cite{wicke_evolution_2011,green_chloroplast_2011}.
 Chloroplast genomes are widely used for evolutionary analyses \cite{martin_plastid_2010,xiao-ming_inferring_2017}, barcoding \cite{kress_use_2005,hollingsworth_dna_2009,de_vere_dna_2015}, and meta-barcoding \cite{bell_review_2016,deiner_environmental_2017}.
 Interesting aspect of chloroplast genomes are their reduced size through endosymbiotic gene transfer \cite{martin_evolutionary_2002,timmis_endosymbiotic_2004} and the strong conservation of the remaining genes (cite).
-Despite the overall high conservation there are striking differences between groups (e.g. loss of whole gene families like ndh genes in \textit{Droseraceae} \cite{nevill_plastome-wide_2019} and extreme evolutionary cases with very low GC content and a modified genetic code \cite{su_novel_2019}).
+Despite the overall high conservation there are striking differences between groups (e.g. loss of whole gene families like \genename{ndh} genes in Droseraceae \cite{nevill_plastome-wide_2019} and extreme evolutionary cases with very low GC content and a modified genetic code \cite{su_novel_2019}).
 These differences call for comparative genomic approaches.
 
 It is much easier to decipher the complete chloroplast genome than the complete core genome, due its comparably smaller size. For example \textit{Arabidopsis thaliana} core genome is approximately \SI{125}{\mega\basepair} in length \cite{schmuths2004,cao2011} while the size of the chloroplast genome with \SI{154}{\kilo\basepair} is more than \SI{800}{\times} smaller than the core genome \cite{sato1999}.    
@@ -363,21 +365,32 @@ In a different application researchers use shallow genome sequencing to reconstr
 There are also applications in biotechnology and genetic engineering \cite{daniell_chloroplast_2016}.
 
 \subsection*{Chloroplast genome architecture}
-Maybe separate section describing a prototypical chloroplast: LSC, IRa, SSC, IRb. Gene number and content. Size ranges. Evolutionary history incl. endosymbiontic gene transfer. Reduced genomes in parasitic plants. Loss of ndh gene family (maybe too specific). Preliminary SNP analysis in \plant{At} to estimate intraspecific variability? Is there anything known about intra-organismic variability (do some plants have multiple populations of chloroplasts? \ak{Yes, they do , Heteroplasmy} probably off topic).\ak{nope, I think this is important}
+Maybe separate section describing a prototypical chloroplast: LSC, IRa, SSC, IRb. Gene number and content. Size ranges. Evolutionary history incl. endosymbiontic gene transfer. Reduced genomes in parasitic plants. Loss of \genename{ndh} gene family (maybe too specific). Preliminary SNP analysis in \plant{At} to estimate intraspecific variability? Is there anything known about intra-organismic variability (do some plants have multiple populations of chloroplasts? \ak{Yes, they do , Heteroplasmy} probably off topic).\ak{nope, I think this is important}
 
 \subsection*{Approaches to extracting chloroplasts from whole genome data}
-\todo{ausbauen}
-1. Getting chloroplast reads out of mixed files
-Mapping (potentially iterative), k-mer coverage analysis, seeded assembly
-2. Assembly of chloroplast (incl special structure with IRs)
-normal assembly - then blast, assembly then graph resolution, might be combined with step 1.
-\cite{twyford_strategies_2017}
+
+In general, obtaining a chloroplast genome from WGS data requires two steps. First, the chloroplast reads have to be extracted from the mixed sequencing data. 
+The second step is the assembly and resolving the special circular structure including the inverted repeat.
+The extraction of the reads can be achieved by mapping the reads to a reference chloroplast. \todo{example}
+This can also be done iteratively, as done by \todo{\ioga{}?}.
+A different approach relies on the higher coverage of chloroplast data in the whole genome sequencing data set. A kmer analysis can be used here to extract the most frequent reads. An example for this is implemented in \ce{}.
+A third method, solving both steps simultaneously, uses a reference chloroplast as seed and then assembles the reads based on that. \todo{example}
+
+Once the chloroplast reads are extracted from the data set, they need to be assembled. To resolve the special structure, it is possible to analyze the assembly graph and infer the circular structure and the inverted repeat from that. This approach is used in \ce{}. A second method uses local alignments to the assembly to find the correct order of the contigs. \todo{example}
+
+\todo{cite twyford strategies 2017}
+
+%\todo{ausbauen}
+%1. Getting chloroplast reads out of mixed files
+%Mapping (potentially iterative), k-mer coverage analysis, seeded assembly
+%2. Assembly of chloroplast (incl special structure with IRs)
+%normal assembly - then blast, assembly then graph resolution, might be combined with step 1.
+
 
 \subsection*{Purpose and scope of this study}
 The goal of this study is to compare the effectiveness and efficiency of existing open source command-line tools to de-novo assemble whole chloroplast genomes from raw mixed genomic data sets with minimal configuration.
 This means: no data preparation, no specific reference (but \plant{At} if required), default parameters, no manual finishing.
-We further restricted our benchmark to paired Illumina data sets as these are the most common \todo{cite?} and the %\todo{(all?) - habs gecheckt}
-tools in this study can not handle any other types. \todo{tools can not handle passt hier finde ich nicht als Begründung. Wir geben gerade vor was uns interessiert und wählen später Tools aus die dazu passen. Sonst gibt es einen Ringschluss zwischen Scope und Tool Selection.}
+We further restricted our benchmark to paired end Illumina data sets as these are the most common sequencing platform \cite{Goodwin2016}. % done by Frank \todo{tools can not handle passt hier finde ich nicht als Begründung. Wir geben gerade vor was uns interessiert und wählen später Tools aus die dazu passen. Sonst gibt es einen Ringschluss zwischen Scope und Tool Selection.}
 
 In our opinion this reflects the most common use cases: (1) a user trying a tool quickly without digging into options for fine tuning and (2) large scale automatic applications.
 Still, we acknowledge that the performance of the tools might be significantly improved by optimizing parameters (and references if applicable) for each data set specifically.
@@ -417,23 +430,32 @@ There is also another publication describing a method for assembling chloroplast
 
 
 \subsection*{Our Setup}
-\todo{ausformulieren}
-Defined interface, forward.fq and reverse.fq as only input. output.fa as only relevant output.
-Docker container, all derived from main container, wrapper script makes all tools work conforming to the defined interface. Run docker containers for performance measurement and singularity containers on real datasets.
-Singularity container were built from docker containers for usage on Julia-HPC of JMU using Singularity v.2.5.2 \cite{kurtzer2017singularity}
+% done by Frank \todo{ausformulieren}
+We want to use accomplish a minimum of different parameter settings for all assembly programs.
+Therefore, we decided to specify that all programs have to work based on two input files, representing a data set's forward (\texttt{forward.fq}) and reverse input (\texttt{reverse.fq}).
+Moreover, depending on the assembler, files with different names and locations are generated as final output.
+Those different files are copied and renamed to ensure \texttt{output.fa} as exclusive output of an assembly approach.
+Additionally, we want to an environment variable to control the number of allowed threads.
+All three requirements (defined input file names, defined output file name, thread number control via environment variable) are ensured by a simple wrapper script (\texttt{wrapper.sh}).
+Finally, for a maximum of reproducibility all programs are bundled into individual docker images based on a central base image which provides all the required software.
+That docker images were used for the recording of the consumption of computational resources.
+Furthermore, all our docker images are converted into singularity containers for the quantitative measurement on simulated and real data sets .
+%
+Singularity container were built from docker images for usage on Julia-HPC of JMU using Singularity v.2.5.2 \cite{kurtzer2017singularity}
 All singularity containers were run on the Julia-HPC on Intel® Xeon® Gold \num{6140} Processors using slurm workload manager version 17.11.8 \cite{Jette02slurm}. Assemblies run on \num{4} threads using \SI{10}{\gibi\byte} RAM with a timelimit of \SI{48}{\hour}. 
 \subsection*{Data}
 \subsubsection*{Simulated}
 To avoid suffering from sequencing errors and biological variances, we simulated perfect reads based on the \plant{At} (TAIR10) chloroplast assembly \cite{tair10}.
-Therefore we used a sliding window approach with seqkit \cite{seqkit}. The exact commands can be found inside \href{https://github.com/chloroExtractorTeam/benchmark/blob/master/03_representative_datasets.md}{\texttt{03\_representative\_datasets.md}} in \zenododataset{}.
+We used a sliding window approach with \texttt{seqkit} \cite{seqkit}. The exact commands are documented in \href{https://github.com/chloroExtractorTeam/benchmark/blob/master/03_representative_datasets.md}{\texttt{03\_representative\_datasets.md}} in \zenododataset{}.
 For the final simulated data sets reads based on pseudo mixtures of TAIR10's core and chloroplast genome:  \num{0}:\num{1}, \num{1}:\num{10}, \num{1}:\num{100}, and \num{1}:\num{1000}.
-Additionally, we generated different read lengths (\SIlist{150;250}{\basepair}).
+Additionally, we generated different read lengths (\SIlist{150;250}{\basepair}) and subsets with exactly 2 million read pairs.
 
 %(circular for chloro and mito). No errors, no insert size variation, perfect quality, equal coverage.
 
 \subsubsection*{Real}
-We downloaded sequencing data from SRA \cite{sra2010} of all organisms with a reference
-chloroplast in CpBase \cite{cpbase}. In total, this accumulated to \num{380} datasets, including \num{6} without data and \num{5} with malformatted data. This leads to a total set of \num{369} datasets \todo{see supplementary table?}.
+Additionally, we selected real datasets deposited at SRA \cite{sra2010}.
+Among all datasets that matched this search \texttt{((((((("green plants"[orgn]) AND "wgs"[Strategy]) AND "illumina"[Platform]) AND "biomol dna"[Properties]) AND "paired"[Layout]) AND "random"[Selection])) AND "public"[Access]} (on 2019-03-28) we selected one dataset per species with a reference chloroplast in CpBase \cite{cpbase}.
+In total, this accumulated to \num{380} datasets, including \num{6} without data and \num{5} with malformatted data \todo{soll ich da die genauen accessions nochmal raussuchen? bzw. im supp table flaggen?}. This leads to a total set of \num{369} datasets \todo{see supplementary table - da die real\_datasets.tsv, die sraruninfo oder eine custom table?}.
 
 \subsection*{Evaluation Criteria}
 \subsubsection*{Computational Resources}
@@ -547,21 +569,16 @@ The only assembler obtaining perfect results according to our score for the simu
 Only \ioga{} and \cassp{} failed to deliver any results once each.
 Besides that no clear causality between length of the input reads, ratio of core vs chloroplast reads and the performance can be clearly observed. 
 
-\subsubsection*{real data sets}
+\subsubsection*{Real data sets}
 Concerning the performance of the assemblers on evaluated on the real data sets from SRA database we were able to observe considerable differences in the median score (\cref{fig:swarmplot}).
 The highest scores were achieved by \go{} with a median of 99.7 and 199 circular assemblies out of a total of 356 assemblies that resulted in an output  \cref{tab:scores}.
-The performance of \go{} is seconded by \fb{} \np{} \oa{}, with \fb{} outperforming the latter two slightly in terms of score, however \fb{} as almost or more than twice as much \num{114} perfectly assembled chloroplast genomes as \np{} with \num{66} or \num{55} circular genomes for \oa{}.
+The performance of \go{} is seconded by \fp{} \np{} \oa{}, with \fp{} outperforming the latter two slightly in terms of score, however \fp{} as almost or more than twice as much \num{114} perfectly assembled chloroplast genomes as \np{} with \num{66} or \num{55} circular genomes for \oa{}.
 \ioga{} and \cassp{} were both not able to assemble a single circular, single-contig genome \cref{tab:scores}, consequently resulting in the lowest mean and median scores.  
-
-
-
-%% Ich werde die Namen in der Tabelle anpassen, sobald ich die finale Version habe 
 
 \cref{fig:upset}
 
 \textit{swarm plot goes here}
 %% Den upset plot eventuell erst in die Discussion reinbringen ? Da wir davon ableiten welche tools wir empfehlen?
-
 
 \subsubsection*{Reproducibility}
 Reproducibility was tested as described above, by re-running assemblies and comparison of the scores of the two assemblies (\cref{fig:reproducibility}).
@@ -574,15 +591,15 @@ Both \fp{} and \np{} tend to have minor changes in the assembly when the overall
 Depending on the use case the different criteria assessed in this work need to be weighted differently.
 For example ease of installation and use might not be a big concern if the tool is installed once and integrated in an automated pipeline. On the other hand this factor alone might prevent other users from being able to use the tool at all.
 Similarly computational requirements or run time is less relevant if the goal is to assemble a single chloroplast for further analysis, but it is essential if hundreds or thousands of samples should be processed in parallel for a large scale study.
-Eventually, both ease of use and runtime are irrelevant if the tool is not able to successfully accomplish it's task.
+Eventually, both ease of use and runtime are irrelevant if the tool is not able to successfully accomplish its task.
 Also the scope of this study needs to be considered when interpreting the guidelines below.
 In particular, we evaluated all tools under the assumption that they are used in the most basic form (default parameters, no hand selected reference, no pre-processing of the data or post-processing of the result, restricted runtime).
 It is important to note that any tool might perform significantly different if parameters and references are fine-tuned for the specific data set.
 
 The overall best success rate both on simulated and real data was achieved by \go{} followed by \fp{}.
-Both tools complement each other as each is able to successfully reconstruct a full chloroplasts in cases where the other tool fails.
+Both tools complement each other as each is able to successfully reconstruct a full chloroplasts in cases where the other tool fails. 
 In rare cases \np{} or \oa{} are the only tool to succeed.
-For \fp{}, \np{} and \oa{} do not perform 100\% reproducibly so re-running the tool after a failed attempt might be successful.
+The tools \fp{}, \np{}, and \oa{} seem to be not \SI{100}{\percent} reproducible, thus re-running the tool after a failed attempt might be successful.
 \ce{} yields few complete chloroplast assemblies but requires few resources and is easy to install and use (so it can be considered as a quick first try).
 Both \ioga{} and \cassp{} fail to return any success.
 
@@ -636,7 +653,7 @@ JAF and MJA implemented the score model and prepared the figures.
 All authors discussed the results and contributed to the final manuscript.
 
 \section*{Acknowledgements}
-  Text for this section \ldots
+Text for this section \ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
 %%                                                         %%
@@ -773,6 +790,31 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
       \end{tabular}}
 \end{table}
 
+\begin{table}[ht]
+\caption{Scores of assemblies of simulated data}
+\centering
+\begin{tabular}{rlrrrrrrr}
+  \hline
+ & dataset & CAP & CE & Fast-Plast & GetOrganelle & IOGA & NOVOPlasty & org.ASM \\ 
+  \hline
+1 & sim\_150bp.0-1 & 79.10 & 100.00 & 99.72 & 100.00 &  & 91.52 & 100.00 \\ 
+  2 & sim\_150bp.1-10 &  & 56.44 &  & 100.00 &  & 91.52 & 78.00 \\ 
+  3 & sim\_150bp.1-10.2M &  &  & 99.97 & 100.00 &  & 100.00 & 82.72 \\ 
+  4 & sim\_150bp.1-100 &  & 100.00 &  & 100.00 &  & 91.52 & 91.50 \\ 
+  5 & sim\_150bp.1-100.2M &  & 100.00 & 99.47 & 100.00 & 74.82 & 100.00 & 100.00 \\ 
+  6 & sim\_150bp.1-1000 & 79.10 &  &  & 100.00 &  & 91.52 & 91.50 \\ 
+  7 & sim\_150bp.1-1000.2M & 79.10 & 100.00 & 99.72 & 100.00 &  & 91.52 & 100.00 \\ 
+  8 & sim\_250bp.0-1 & 79.10 & 100.00 & 93.83 & 100.00 &  & 91.52 & 100.00 \\ 
+  9 & sim\_250bp.1-10 &  & 54.98 & 68.45 & 100.00 &  & 91.52 & 40.20 \\ 
+  10 & sim\_250bp.1-10.2M &  &  & 93.00 & 100.00 &  & 87.40 & 40.20 \\ 
+  11 & sim\_250bp.1-100 &  & 100.00 & 93.83 & 100.00 & 65.81 & 91.52 & 100.00 \\ 
+  12 & sim\_250bp.1-100.2M &  & 100.00 & 93.83 & 100.00 & 75.73 & 87.40 & 100.00 \\ 
+  13 & sim\_250bp.1-1000 & 79.10 & 21.30 &  & 100.00 &  & 91.52 & 91.50 \\ 
+  14 & sim\_250bp.1-1000.2M & 79.10 & 100.00 & 93.83 & 100.00 &  & 87.40 & 100.00 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
 
 \begin{table}[ht]
 \caption{Mean scores of chloroplast genome assemblers}
@@ -792,6 +834,14 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
    \hline
 \end{tabular}
 \end{table}
+
+
+
+\include{sets_re_runs.tex}    
+
+
+
+
 
 
 \begin{table}[ht]
