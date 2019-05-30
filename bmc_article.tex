@@ -89,6 +89,10 @@
 \setlength{\marginparwidth}{3cm}
 
 \newcounter{todocounter}
+\newcommand{\ff}[1]
+{\stepcounter{todocounter}
+ \todo[color=blue!40,author=For Frank]{\thetodocounter: #1}
+ }
 \newcommand{\ak}[1]
 {\stepcounter{todocounter}
  \todo[color=green!40,author=Arthur]{\thetodocounter: #1}
@@ -270,6 +274,8 @@
 \begin{abstractbox}
 
 \begin{abstract} % abstract
+\ff{Abstract}
+Useful as always: \url{https://cbs.umn.edu/sites/cbs.umn.edu/files/public/downloads/Annotated_Nature_abstract.pdf}
 The special issue will accept manuscripts presenting:
 
 - in-depth analyses of advantages
@@ -298,8 +304,10 @@ Text for this section.
 
 \begin{keyword}
 \kwd{Chloroplast}
-\kwd{Genome assembly}
-\kwd{author}
+\kwd{Genome}
+\kwd{Assembly}
+\kwd{Software}
+\kwd{Benchmark}
 \end{keyword}
 
 % MSC classifications codes, if any
@@ -354,7 +362,7 @@ Despite the overall high conservation there are striking differences between gro
 These differences call for comparative genomic approaches.
 
 It is much easier to decipher the complete chloroplast genome than the complete core genome, due its comparably smaller size. For example \textit{Arabidopsis thaliana} core genome is approximately \SI{125}{\mega\basepair} in length \cite{schmuths2004,cao2011} while the size of the chloroplast genome with \SI{154}{\kilo\basepair} is more than \SI{800}{\times} smaller than the core genome \cite{sato1999}.    
-However, the specific genome structure (esp. the large inverted repeat) complicates automated resolution with short read technologies (cite?).
+However, the specific genome structure (esp. the large inverted repeat) complicates automated resolution with short read technologies\todo{cite}.
 Many genome sequencing projects contain chloroplast reads as by-product.
 In some cases the chloroplast data is even considered contamination so experimental protocols for reducing their content have been developed \cite{lutz_isolation_2011}.
 The resolved chloroplast genome helps to remove these reads, which can improve assembly of the core genome.
@@ -364,11 +372,12 @@ Resolving these (hidden treasures) would allow for more and larger scale compara
 In a different application researchers use shallow genome sequencing to reconstruct full chloroplast genomes for use as super-barcodes \cite{coissac_barcodes_2016}.
 There are also applications in biotechnology and genetic engineering \cite{daniell_chloroplast_2016}.
 
-\subsection*{Chloroplast genome architecture}
+\subsection*{Chloroplast genome architecture}\ff{Chloroplast genome architecture section}
 Maybe separate section describing a prototypical chloroplast: LSC, IRa, SSC, IRb. Gene number and content. Size ranges. Evolutionary history incl. endosymbiontic gene transfer. Reduced genomes in parasitic plants. Loss of \genename{ndh} gene family (maybe too specific). Preliminary SNP analysis in \plant{At} to estimate intraspecific variability? Is there anything known about intra-organismic variability (do some plants have multiple populations of chloroplasts? \ak{Yes, they do , Heteroplasmy} probably off topic).\ak{nope, I think this is important}
 
 \subsection*{Approaches to extracting chloroplasts from whole genome data}
 
+Defferent strategies have been developed to assemble chloroplast genomes \cite{twyford_strategies_2017}.
 In general, obtaining a chloroplast genome from WGS data requires two steps. First, the chloroplast reads have to be extracted from the mixed sequencing data. 
 The second step is the assembly and resolving the special circular structure including the inverted repeat.
 The extraction of the reads can be achieved by mapping the reads to a reference chloroplast. \todo{example}
@@ -377,8 +386,6 @@ A different approach relies on the higher coverage of chloroplast data in the wh
 A third method, solving both steps simultaneously, uses a reference chloroplast as seed and then assembles the reads based on that. \todo{example}
 
 Once the chloroplast reads are extracted from the data set, they need to be assembled. To resolve the special structure, it is possible to analyze the assembly graph and infer the circular structure and the inverted repeat from that. This approach is used in \ce{}. A second method uses local alignments to the assembly to find the correct order of the contigs. \todo{example}
-
-\todo{cite twyford strategies 2017}
 
 %\todo{ausbauen}
 %1. Getting chloroplast reads out of mixed files
@@ -509,6 +516,7 @@ report any flaws we found.
 
 Foreach dataset and assembler the proposed chloroplast was compared to the respective reference chloroplast using a pairwise alignment obtained with \texttt{minimap2} v2.16 \cite{li2018minimap2}. Based on theses alignments the score is calculated as shown in \cref{eq:quantitative}
 The assemblies were scored on a scale from 0 to 100, with 100 being the best and 0 the worst possible score. Four different metrics were Incorporated, each contributing  $\frac{1}{4}$ to the total score: Completeness, correctness, repeat resolution and continuity.
+These metrics are similar in concept by those used in the Assemblathon 2 project: coverage, validity, multiplicity, and parsimony \cite{assemblathon2}.
 
 The completeness is estimated as the coverage of the assembled chloroplast genome versus the reference genome ($cov_{ref}$). It resembles how many bases of the query genome can be mapped to its respective reference genome. Secondly, we mapped the reference genome against the query. The coverage of the reference genome ($cov_{qry}$) is used as measurment for the correctness of the assembly. The repeat resolution is estimated from the size difference of the assembly and the reference genome ($min\left\{ \frac{cov_{qry}}{cov_{ref}}, \frac{cov_{ref}}{cov_{qry}}\right\}$).The $min$ was applied to ensure, that only values between 0 and 1 were obtained. The fourth metric used is the continuity, represented by the number of contigs. A perfect score is achieved if one circular chromosome was assembled.
 
@@ -522,7 +530,7 @@ The completeness is estimated as the coverage of the assembled chloroplast genom
 
 
 \subsubsection*{Reproducibility}
-For reproducibility  testing we randomly choose  \num{100} data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before. The resulting assemblies were scored again as described above and the scores of the first and the second run were compared to each other. 
+For reproducibility  testing we randomly choose  \num{100} data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before. The resulting assemblies were scored again as described above and the scores of the first and the second run were compared to each other. This information is important to decide whether it is worth it to re-try a program in case of failure.
 
 \section*{Results}
 \subsection*{Performance metrics}
@@ -613,6 +621,7 @@ For an automated approach running \go{} and \fp{} in parallel appears to be a go
 \todo{Does the decision depend on some parameter of the data (read length, amount, taxonomic group, ...)?}
 
 \subsection*{Ideas for future development}
+\ff{this section (lower priority)}
 Combining components from different tools might be a promising approach. E.g. read scaling from \ce{}, assembly from \go{} and structural resolution with \fp{}.
 Mitigate installation issues e.g. by containerization.
 Improve documentation and usability.
@@ -620,6 +629,7 @@ Maybe better integrated guessing of parameters (?) at least for automatization (
 Other (more) data types, PacBio, nanopore.
 
 \section*{Conclusion}
+\ff{Conclusion}
 %Short summary of clear guidelines and future development (might not be necessary as these are the last two sections of the Discussion anyway, so we might elect to skip this).
 \todo{sollten wir lobend erwähnen, dass alle auf github/gitlab sind?}
 
