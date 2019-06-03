@@ -1,4 +1,4 @@
-dps = c("tidyverse","dabestr","UpSetR","RColorBrewer","ggbeeswarm","ggpmisc","xtable")                   
+dps = c("tidyverse","dabestr","UpSetR","RColorBrewer","ggbeeswarm","ggpmisc","xtable","foreach")           
 sapply(dps,function(x){if(!require(x,character.only = T)){install.packages(x);library(x,character.only = T)}else{library(x,character.only = T)}})
 
 
@@ -62,6 +62,7 @@ dev.off()
 run_log <- read_tsv("results/log_clean.tsv")
 
 ## convert bytes to GB in log file 
+
 run_log[,14:15] <- run_log[,14:15]  / 10^9
 
 run_log_mem <- run_log %>%  filter(exit_code==0) %>%
@@ -150,10 +151,26 @@ out_j %>% ggplot(aes(x=score,y=score_rerun,col=assembler)) + geom_point()  + the
 ggsave("plots/repro.pdf")
 
 
-out_tibble %>% drop_na %>% select(assembler, score) %>% group_by(assembler) %>%
-    summarize(Mean=mean(score),
-              Median=median(score),
-              SD = sqrt(var(score)),
-              N_perfect = length(which(score > 99)),
-              N_tot = length(score)) %>%
-    xtable
+
+
+score_summary <- out_tibble %>% drop_na %>% select(assembler, score) %>% group_by(assembler) %>%
+    summarize(Mean=mean(score), SD = sqrt(var(score)), N_perfect = length(which(score > 99)), N_tot = length(score))
+
+xtable(score_summary)
+
+out_tibble_sim %>% select(assembler,score,dataset) %>% spread(assembler,score)  %>% xtable
+
+
+sra <- read.delim("SRA/my_accs",header =F )
+re_run <- read.delim("re_runs.txt",header =F )
+
+sra_re <- sra %>% add_column("Re-eval" = 
+            foreach(i = 1:nrow(sra),.combine = "c") %do%
+            ifelse(sra[i,1] %in% re_run[,1], "Yes","NO"))
+
+print.xtable(sra_re %>% xtable,file="sets_re_runs.tex",type="latex")
+
+colnames(sra_re)[1] <- "data set"
+
+write.csv(sra_re,"sets_re_runs.csv")
+
