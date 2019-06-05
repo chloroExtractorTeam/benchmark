@@ -1,39 +1,37 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_org-asm]
-929ec8012cb9: Preparing
-1f613c7f691d: Preparing
-5990ce677587: Preparing
-c8033cd03ce9: Preparing
-07c24bb8db46: Preparing
-105b6cd1d820: Preparing
-33e906852d2c: Preparing
-aa1a48c2d328: Preparing
-c41f3ed1a55a: Preparing
-1d3f78dc52fb: Preparing
+0f20a83592fe: Preparing
+b120961691e2: Preparing
+85926466f98e: Preparing
+a13d3af40150: Preparing
+38d4573a3107: Preparing
+60d3760ca378: Preparing
+53a1b7a75d2e: Preparing
+64e99a088376: Preparing
+589f83eab126: Preparing
+abc57714d6f9: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-33e906852d2c: Waiting
-aa1a48c2d328: Waiting
-c41f3ed1a55a: Waiting
-1d3f78dc52fb: Waiting
-d60e01b37e74: Waiting
-b57c79f4a9f3: Waiting
-105b6cd1d820: Waiting
-762d8e1a6054: Waiting
+abc57714d6f9: Waiting
+60d3760ca378: Waiting
+53a1b7a75d2e: Waiting
 e45cfbc98a50: Waiting
-929ec8012cb9: Layer already exists
-07c24bb8db46: Layer already exists
-c8033cd03ce9: Layer already exists
-1f613c7f691d: Layer already exists
-5990ce677587: Layer already exists
-105b6cd1d820: Layer already exists
-c41f3ed1a55a: Layer already exists
-aa1a48c2d328: Layer already exists
-33e906852d2c: Layer already exists
-1d3f78dc52fb: Layer already exists
+b57c79f4a9f3: Waiting
+762d8e1a6054: Waiting
+64e99a088376: Waiting
+38d4573a3107: Layer already exists
+b120961691e2: Layer already exists
+a13d3af40150: Layer already exists
+0f20a83592fe: Layer already exists
+85926466f98e: Layer already exists
+60d3760ca378: Layer already exists
+53a1b7a75d2e: Layer already exists
+64e99a088376: Layer already exists
+589f83eab126: Layer already exists
+abc57714d6f9: Layer already exists
+d60e01b37e74: Layer already exists
 b57c79f4a9f3: Layer already exists
 e45cfbc98a50: Layer already exists
-d60e01b37e74: Layer already exists
 762d8e1a6054: Layer already exists
-latest: digest: sha256:23ecc4cd13a69eebc78a027a9300de3f0ae2dbc846e2e86d4121caf16245fd4a size: 3249
+latest: digest: sha256:9525a968406fe0823f7ab864465d31281ebf4f2b6f28afdd13135409555f6d1b size: 3249

@@ -1,40 +1,39 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_novoplasty]
-595c4de4e354: Preparing
-95c97450601e: Preparing
-e6f9119d0d7e: Preparing
-c8033cd03ce9: Preparing
-07c24bb8db46: Preparing
-105b6cd1d820: Preparing
-33e906852d2c: Preparing
-aa1a48c2d328: Preparing
-c41f3ed1a55a: Preparing
-1d3f78dc52fb: Preparing
+8d4bd117d840: Preparing
+5df6409f7873: Preparing
+c8b3c8fbd6a1: Preparing
+a13d3af40150: Preparing
+38d4573a3107: Preparing
+60d3760ca378: Preparing
+53a1b7a75d2e: Preparing
+64e99a088376: Preparing
+589f83eab126: Preparing
+abc57714d6f9: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-aa1a48c2d328: Waiting
+53a1b7a75d2e: Waiting
 d60e01b37e74: Waiting
-c41f3ed1a55a: Waiting
+64e99a088376: Waiting
 e45cfbc98a50: Waiting
 1d3f78dc52fb: Waiting
 b57c79f4a9f3: Waiting
 762d8e1a6054: Waiting
-105b6cd1d820: Waiting
-595c4de4e354: Layer already exists
-e6f9119d0d7e: Layer already exists
-c8033cd03ce9: Layer already exists
-95c97450601e: Layer already exists
-07c24bb8db46: Layer already exists
-1d3f78dc52fb: Layer already exists
-c41f3ed1a55a: Layer already exists
-33e906852d2c: Layer already exists
-105b6cd1d820: Layer already exists
-aa1a48c2d328: Layer already exists
-b57c79f4a9f3: Layer already exists
+589f83eab126: Waiting
+b57c79f4a9f3: Waiting
+38d4573a3107: Layer already exists
+5df6409f7873: Layer already exists
+8d4bd117d840: Layer already exists
+a13d3af40150: Layer already exists
+c8b3c8fbd6a1: Layer already exists
+53a1b7a75d2e: Layer already exists
+60d3760ca378: Layer already exists
+589f83eab126: Layer already exists
+64e99a088376: Layer already exists
+abc57714d6f9: Layer already exists
 d60e01b37e74: Layer already exists
 e45cfbc98a50: Layer already exists
 b57c79f4a9f3: Layer already exists
-d60e01b37e74: Layer already exists
 762d8e1a6054: Layer already exists
-latest: digest: sha256:46b8556b381d498a36623efd5fc1e3f88434c0eb9c76e80af05efb956a7d424b size: 3245
+latest: digest: sha256:34e2b5d6cdd633f0efc58e373fa8d8e74591c875cccb1820f3102c34914625a0 size: 3247
