@@ -276,16 +276,16 @@
 \begin{abstractbox}
 \begin{abstract} % abstract
 %One or two sentences providing a basic introduction to the field, comprehensible to a scientist in any discipline.
-Chloroplasts are photosynthetic active organelles in plant cells and contain their own genomic information.
+Chloroplasts are photosynthetic organelles in plant cells and contain their own genomic information.
 That genome can be utilized in different scientific fields like phylogenetics or biotechnology.
-%Two to three sentences ofmore detailed background, comprehensible to scientists in related disciplines.
+%Two to three sentences of more detailed background, comprehensible to scientists in related disciplines.
 Thus, different assemblers have been developed specialized in chloroplast assemblies.
 Those assemblers often use the output of whole genome sequencing experiments as input.
-Such sequencing data contain usually the complete chloroplast genome information, even if the sequencing aims for the core genome.
+Such sequencing data usually contain the complete chloroplast genome information, even if the sequencing aims for the core genome.
 %One sentence clearly stating the general problem being addressed by this particular study.
-The Different assembly tools have never been systematically compared. %to each other concerning success rate or computational requirements.
+Different assembly tools have never been systematically compared. %to each other concerning success rate or computational requirements.
 %One sentence summarising the main result (with the words “here we show” or their equivalent).
-Here we present a benchmark of seven chloroplast assembly tools, which are under active\todo{Niklas: da kann man bei IOGA drüber streiten} development and are capable to succeed in more than \SI{60}{\percent} of real data sets.
+Here we present a benchmark of seven chloroplast assembly tools, capable to succeed in more than \SI{60}{\percent} of real data sets.
 %Two or three sentences explaining what the main result reveals in direct comparison to what was thought to be the case previously, or how the main result adds to previous knowledge.
 Our results show significant differences between the tested assemblers in terms of generating whole chloroplast genome sequences and computational requirements.
 Moreover, we suggest further development to improve user experience and success rate.
@@ -372,7 +372,9 @@ Thus large scale screening for chloroplasts as hidden treasures within genomic s
 %%
 \section*{Introduction}
 \subsection*{General introduction and motivation}
-Chloroplasts are essential organelles present in plant cells and the cells of some protists. Chloroplasts enable the conversion of light energy into chemical energy via photosyntesis. They harbor their own ribosomes and a circular DNA genome with a size between \SIrange{120}{160}{\kilo\basepair} \cite{palmer_1985}.
+Chloroplasts are essential organelles present in plant cells and the cells of some protists.
+Chloroplasts enable the conversion of light energy into chemical energy via photosynthesis.
+They harbor their own ribosomes and a circular DNA genome with a size between \SIrange{120}{160}{\kilo\basepair} \cite{palmer_1985}\todo{diese range umfasst die meisten aber nicht alle Chloroplasten}.
 Because of this small size, the chloroplast genome has been an early target for sequencing.
 The first chloroplast genome sequences were obtained as early as 1986 \cite{ohyama_chloroplast_1986,shinozaki_complete_1986}.
 These early efforts elucidated the general genome organization and structure of the chloroplast DNA. 
@@ -382,7 +384,8 @@ Interesting aspects of chloroplast genomes are their small size (\SIrange{120}{1
 Despite the overall high conservation of the genome sequence, there are striking differences in the gene content between different groups (e.g. the loss of the whole \genename{ndh} gene family in Droseraceae \cite{nevill_plastome-wide_2019}). Even more extreme evolutionary cases, where chloroplasts show a very low GC content and a modified genetic code are described \cite{su_novel_2019}.
 
 These differences call for comparative genomic approaches.
-Given the small size, it is much easier to decipher the complete chloroplast genome than the complete core genome. For example the \plant{At} core genome is approximately \SI{125}{\mega\basepair} in length \cite{schmuths2004,cao2011} while the size of the \plant{At} chloroplast genome with \SI{154}{\kilo\basepair} is more than \SI{800}{\times} smaller \cite{sato1999}.
+Given the small size, it is much easier to decipher the complete chloroplast genome than the complete core genome.
+For example the \plant{At} core genome is approximately \SI{125}{\mega\basepair} in length \cite{schmuths2004,cao2011} while the size of the \plant{At} chloroplast genome with \SI{154}{\kilo\basepair} is more than \SI{800}{\times} smaller \cite{sato1999}.
 
 Even if only a single chloroplast is located inside a plant cell, several hundreds copies of the chloroplast genome exists in each cell \cite{kumar_2014,bendich_1987}.
 Therefore, many genome sequencing projects contain chloroplast reads as by-product.
@@ -390,11 +393,11 @@ In some cases the chloroplast data is even considered contamination and experime
 An alternative approach to improve the assembly of the core genome would be to first resolve the chloroplast genome and afterwards use this information to remove those reads that map to the chloroplast genome.
 
 Structurally, two inverted repeats (IR\textsubscript{A} and IR\textsubscript{B}) of \SIrange{10}{76}{\kilo\basepair} divide the chloroplast genome into a large (LSC) and a small single copy (SSC) region \cite{palmer_1985}.
-Those large inverted repeats complicates automated resolution with short read technologies\cite{Wang2018}.
+Those large inverted repeats complicate automated resolution with short read technologies\cite{Wang2018}.
 Moreover, the existence of different chloroplasts within a single individual, and thus multiple different chloroplast genomes, have been described for different plants \cite{corriveau_1988,Chat2002,Scar2016}.
 Although the origin and evolutionary importance of this phenomena, - called heteroplasmy - are only poorly understood, the assembly of whole chloroplast genomes might be hindered.  
 
-Databases containing short read data for species where no reference chloroplast sequence is publicly available, exist.
+Databases containing short read data for species where no reference chloroplast sequence is publicly available, exist. \todo{cite? SRA?}
 The availability of whole chloroplast genomes would enable large scale comparative studies \cite{tonti-filippini_what_2017}.
 Additionally, reconstructed full chloroplast genomes have been used as super-barcodes \cite{coissac_barcodes_2016}, for biotechnology applications and genetic engineering \cite{daniell_chloroplast_2016}.
 
@@ -410,9 +413,10 @@ Additionally, reconstructed full chloroplast genomes have been used as super-bar
 
 Different strategies have been developed to assemble chloroplast genomes \cite{twyford_strategies_2017}.
 In general, obtaining a chloroplast genome from WGS data requires two steps. First, the chloroplast reads have to be extracted from the mixed sequencing data. 
-The second step is the assembly and resolving the special circular structure including the inverted repeats.
+The second step is the assembly and resolution of the special circular structure including the inverted repeats.
 The extraction of the reads can be achieved by mapping the reads to a reference chloroplast. \cite{Vinga2012}.
-A different approach that does not perform alignments, relies on the higher coverage of chloroplast data in the whole genome sequencing data set\cite{Chan2013}. Here, a $k$-mer analysis can be used to extract the most frequent reads. An example for this is implemented in \ce{}.
+A different approach that does not perform alignments, relies on the higher coverage of chloroplast data in the whole genome sequencing data set\cite{Chan2013}.
+Here, a $k$-mer analysis can be used to extract the most frequent reads. An example for this is implemented in \ce{} \cite{j_ankenbrand_chloroextractor:_2018}. \todo{ce ist hier der einzig explizit genannte Assembler, das wirkt wie bias :) entfernen?}
 A third method combines both approaches by useing a reference chloroplast as seed and simultaneously assembling the reads based on $k$-mers \cite{dierckxsens_novoplasty:_2017}.
 
 %\todo{Niklas: wir nennen hier immer nur \ce{} als beispiel - wir sollten auch andere nennen}
@@ -425,7 +429,8 @@ This includes no need for extensive data preparation, no need for a specific ref
 We further restricted our benchmark to paired end Illumina data sets as these are routinely generated by modern sequencing platforms \cite{Goodwin2016}. 
 
 In our opinion this reflects the most common use cases: (1) a user trying a tool quickly without digging into options for fine tuning and (2) large scale automatic applications.
-Still, we acknowledge that the performance of the tools might be significantly improved by optimizing parameters (and references if applicable) for each data set specifically. However an exhaustive comparison - including tuning of all different possible parameters for each tool- would not been possible within the scope of this study. 
+Still, we acknowledge that the performance of the tools might be significantly improved by optimizing parameters (and references if applicable) for each data set specifically.
+However, an exhaustive comparison - including tuning of all different possible parameters for each tool- was out of scope for this study. 
 
 Our results will enable the discovery of novel chloroplast genomes as well as an assembly of inter/intra-individual differences in the respective chloroplast genomes.  
 
@@ -439,8 +444,9 @@ Those simulated data sets are stored at \zenododataset{}.
 This study adheres to the guidelines for computational method benchmarking \cite{weber_essential_2018}.
 
 \subsection*{Tool Selection}
-We included tools designed for assembling chloroplasts from whole genome paired end Illumina sequencing data. As a requirement, all tools must be available as open source software and allow execution via a command line interface. As a graphical user interface is not suitable for
-running automated comparisons, tools only providing a graphical interface have not been included. The following tools were determined to be within the scope of this study:
+We included tools designed for assembling chloroplasts from whole genome paired end Illumina sequencing data. As a requirement, all tools must be available as open source software and allow execution via a command line interface. 
+As a graphical user interface is not suitable for automated comparisons, tools only providing a graphical interface have not been included.
+The following tools were determined to be within the scope of this study:
 \oa{} \cite{coissac_barcodes_2016}, 
 \ce{} \cite{j_ankenbrand_chloroextractor:_2018}, 
 \fp{} \cite{mckain__fast-plast_2017}, 
