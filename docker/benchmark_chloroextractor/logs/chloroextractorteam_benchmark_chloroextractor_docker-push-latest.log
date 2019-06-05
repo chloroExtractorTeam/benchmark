@@ -1,36 +1,35 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_chloroextractor]
-dfa114bb0bd3: Preparing
-b5f98d918048: Preparing
-1005e0c35fcb: Preparing
-fff26739fae3: Preparing
-e0c4f376211b: Preparing
-4c146a13665d: Preparing
-b34ee9e6ef9b: Preparing
-b488c1b5ad92: Preparing
-0aee0163fd06: Preparing
+dbd2719cc1fc: Preparing
+a3fb30ee5df0: Preparing
+c8033cd03ce9: Preparing
+07c24bb8db46: Preparing
+105b6cd1d820: Preparing
+33e906852d2c: Preparing
+aa1a48c2d328: Preparing
+c41f3ed1a55a: Preparing
+1d3f78dc52fb: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-4c146a13665d: Waiting
-b34ee9e6ef9b: Waiting
-0aee0163fd06: Waiting
-b488c1b5ad92: Waiting
-b57c79f4a9f3: Waiting
+aa1a48c2d328: Waiting
 d60e01b37e74: Waiting
-e45cfbc98a50: Waiting
+c41f3ed1a55a: Waiting
+1d3f78dc52fb: Waiting
 762d8e1a6054: Waiting
-fff26739fae3: Layer already exists
-b5f98d918048: Layer already exists
-dfa114bb0bd3: Layer already exists
-e0c4f376211b: Layer already exists
-1005e0c35fcb: Layer already exists
-4c146a13665d: Layer already exists
-b488c1b5ad92: Layer already exists
-0aee0163fd06: Layer already exists
+b57c79f4a9f3: Waiting
+e45cfbc98a50: Waiting
+c8033cd03ce9: Layer already exists
+07c24bb8db46: Layer already exists
+a3fb30ee5df0: Layer already exists
+dbd2719cc1fc: Layer already exists
+105b6cd1d820: Layer already exists
+aa1a48c2d328: Layer already exists
+33e906852d2c: Layer already exists
+c41f3ed1a55a: Layer already exists
+1d3f78dc52fb: Layer already exists
 b57c79f4a9f3: Layer already exists
-b34ee9e6ef9b: Layer already exists
-d60e01b37e74: Layer already exists
 e45cfbc98a50: Layer already exists
 762d8e1a6054: Layer already exists
-latest: digest: sha256:873f1c079a3ad60180b42d62c8ab12b0ea82747a60c48f5ad7c0e968dbed5378 size: 3038
+d60e01b37e74: Layer already exists
+latest: digest: sha256:1437707dedc21cc7d53ba2628d9fa1d8de6375e7ccadfdcac547c5ba536b6562 size: 3038
