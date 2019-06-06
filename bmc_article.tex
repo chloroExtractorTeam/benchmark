@@ -374,7 +374,7 @@ Thus large scale screening for chloroplasts as hidden treasures within genomic s
 \subsection*{General introduction and motivation}
 Chloroplasts are essential organelles present in plant cells and the cells of some protists.
 Chloroplasts enable the conversion of light energy into chemical energy via photosynthesis.
-They harbor their own ribosomes and a circular DNA genome with a size between \SIrange{120}{160}{\kilo\basepair} \cite{palmer_1985}\todo{diese range umfasst die meisten aber nicht alle Chloroplasten}.
+They harbor their own ribosomes and a circular DNA genome usually with a size between \SIrange{120}{160}{\kilo\basepair} \cite{palmer_1985}.
 Because of this small size, the chloroplast genome has been an early target for sequencing.
 The first chloroplast genome sequences were obtained as early as 1986 \cite{ohyama_chloroplast_1986,shinozaki_complete_1986}.
 These early efforts elucidated the general genome organization and structure of the chloroplast DNA. 
@@ -416,11 +416,10 @@ In general, obtaining a chloroplast genome from WGS data requires two steps. Fir
 The second step is the assembly and resolution of the special circular structure including the inverted repeats.
 The extraction of the reads can be achieved by mapping the reads to a reference chloroplast. \cite{Vinga2012}.
 A different approach that does not perform alignments, relies on the higher coverage of chloroplast data in the whole genome sequencing data set\cite{Chan2013}.
-Here, a $k$-mer analysis can be used to extract the most frequent reads. An example for this is implemented in \ce{} \cite{j_ankenbrand_chloroextractor:_2018}. \todo{ce ist hier der einzig explizit genannte Assembler, das wirkt wie bias :) entfernen?}
-A third method combines both approaches by useing a reference chloroplast as seed and simultaneously assembling the reads based on $k$-mers \cite{dierckxsens_novoplasty:_2017}.
+Here, a $k$-mer analysis can be used to extract the most frequent reads.
+An example for this is implemented in \ce{} \cite{j_ankenbrand_chloroextractor:_2018}. %\todo{ce ist hier der einzig explizit genannte Assembler, das wirkt wie bias :) entfernen? Nope... Steht klar ein Beispiel und wir haben nun mal den angesehen... Würde ich jetzt einmal so drin lassen. Alternativ nehmen wir noch einen dazu}
+A third method combines both approaches by using a reference chloroplast as seed and simultaneously assembling the reads based on $k$-mers \cite{dierckxsens_novoplasty:_2017}.
 
-%\todo{Niklas: wir nennen hier immer nur \ce{} als beispiel - wir sollten auch andere nennen}
-%\todo{example}
 %\ak{e.g. HomBlocks: A multiple-alignment construction pipeline for organelle phylogenomics based on locally collinear block searching, aber ist nicht inkluded, also können wir zitieren, müssen aber nicht}
 
 \subsection*{Purpose and scope of this study}
@@ -469,7 +468,6 @@ There is also another publication describing a method for assembling chloroplast
 However, the link to the software is not active anymore.
 
 \subsection*{Our Setup}
-% done by Frank \todo{ausformulieren}
 We want to use a minimum of different parameter settings for all assembly programs to enable a fair comparison. 
 Therefore, we decided to specify that all programs have to work based on two input files, representing a data set's forward (\texttt{forward.fq}) and reverse  (\texttt{reverse.fq}) sequence file in FASTQ format.
 Depending on the assembler, output files with different names and locations are generated.
@@ -564,8 +562,8 @@ A perfect score is achieved if one circular chromosome was assembled, while the 
    \label{eq:quantitative}
 \end{equation}
 
-\subsubsection*{Reproducibility}
-\todo{lieber Consistency?}To ensure reproducibility of the obtained results, we randomly chose  \num{100} data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before.
+\subsubsection*{Consistency}
+\todo{lieber Consistency?}To ensure consistency of the obtained results, we randomly chose  \num{100} data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before.
 The resulting assemblies were scored again as described and the scores of the first and the second run were compared to each other
 This information is important to assess the robustness of the different programs.
 
@@ -593,7 +591,7 @@ In contrast, the disk usage is independent from input size and number of threads
 %but the factor between the programs exceeds a factor of \num{100}.
 
 \subsection*{Qualitative}
-The user experience of most tools was evaluated as mainly \good{} (see table \ref{tab:resultsQual}). However, a few critique points remained.
+The user experience of most tools was evaluated as mainly \good{} (\cref{tab:resultsQual}). However, a few critique points remained.
 Two minor dependencies were missing in the \go{} installation instructions and there was no test data available.
 Additionally, an issue occurred when running it on a \plant{At} data set.
 We are currently in the process of resolving this with the authors.
@@ -643,8 +641,8 @@ The performance of \go{} is followed by \fp{}, \np{}, \oa{}, and \ce{}. \fp{} is
 %\textit{swarm plot goes here}
 %% Den upset plot eventuell erst in die Discussion reinbringen ? Da wir davon ableiten welche tools wir empfehlen?
 
-\subsubsection*{Reproducibility}
-Reproducibility was tested as described above, by re-running assemblies and comparison of the scores of two assemblies (\cref{fig:reproducibility}).
+\subsubsection*{Consistency}
+Consistency was tested by re-running assemblies and comparison of the scores of two assemblies (\cref{fig:consistency}).
 Replicates that did not produce an output were manually scored as \num{0}. 
 \go{} was the only tool that succeeded in obtaining similar scores for all assemblies, without producing and completely unsuccessful assemblies for this subset of data.
 Except for \fp{} all the other tools had at least one assembly that was unsuccessful in one run, but produced an output in the other.\ak{oben steht \go{} war als einziges immer gut, dann kommt except for \fp{} ?? does not seem to be consistent}
@@ -690,16 +688,13 @@ Therefore, either containerization (docker, singularity, etc.) or install workfl
 Otherwise, the burden of the software installation might result in scientists ignoring good tools.
 
 Another important feature of software is a comprehensive documentation, which needs to be up-to-date and maintained.
-Software authors should constantly improve the usability\todo{ich bin nicht sicher ob ich das so hart sagen würde}, and be open to suggestions from the users.
+Additionally, software authors could improve the usability based on suggestions from their users.
 
 Finally, all tools should improve their integrated guessing of default parameters, as many users avoid fine tuning of those, especially, for larger screening approaches.
-Last, as sequencing technology is developing fast ( eg.\ PacBio or nanopore), tools need to be updated to not become obsolete.
+Last, as sequencing technology is developing fast (eg.\ PacBio or nanopore), tools need to be updated to not become obsolete.
 But the hope would be that with ongoing software development and improved sequencing technologies, the generation of whole chloroplast assemblies from any species will become a routine technique.
 
 \section*{Conclusion}
-%\ff{Conclusion}
-%Short summary of clear guidelines and future development (might not be necessary as these are the last two sections of the Discussion anyway, so we might elect to skip this).
-%\todo{sollten wir lobend erwähnen, dass alle auf github/gitlab sind?}
 The main assumption for our study to benchmark different chloroplast assembly tools, is that whole genome sequencing data are also a promising source for chlorplast assemblies.
 Our benchmark shows that ~\SI{60}{\percent} of the data sets without available chloroplast genome, have been assembled by at least one of the tools we analysed.
 Still, even with simulated (aka``perfect'') data, not all tools succeeded in generating complete chloroplast assemblies.
@@ -780,17 +775,7 @@ Text for this section\todo{haben wir da jemanden oder etwas? funding?} \ldots
 
 %%
 %% Do not use \listoffigures as most will included as separate files
-\ak{figures und tables gehen noch etwas durcheinander}
-\ak{teilweise fehlen noch figure legends}
 \section*{Figures}
-  \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{plots/swarm.pdf}
-  \caption{\csentence{Results of scoring of the seven assemblers}
-  The box- and swarplots depict the results of the scoring algorithm we used. For the different assemblers. The whiskers of boxplots indicate the 1.5 x interquartile range. 
-    }
-      \label{fig:swarmplot}
-      \end{figure}
-
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{plots/comp_time_log.pdf}
   \caption{\csentence{Computation time depending on number of threads and size of input data}
@@ -813,12 +798,12 @@ Text for this section\todo{haben wir da jemanden oder etwas? funding?} \ldots
       \label{fig:simulated}
       \end{figure}
 
-\begin{figure}[h!]
-  \includegraphics[width=\textwidth]{plots/repro.pdf}
-  \caption{\csentence{Scores between two repeated runs for reproducibility testing}
-  The scatter plots depicts the scores of the 1. runs x-axis versus the scores of the 2. run y-axis of the data sets that were selected for re-evaluation. 
-      }
-      \label{fig:reproducibility}
+  \begin{figure}[h!]
+  \includegraphics[width=\textwidth]{plots/swarm.pdf}
+  \caption{\csentence{Results of scoring of the seven assemblers}
+  The box- and swarplots depict the results of the scoring algorithm we used. For the different assemblers. The whiskers of boxplots indicate the 1.5 x interquartile range. 
+    }
+      \label{fig:swarmplot}
       \end{figure}
 
 \begin{figure}[h!]
@@ -826,6 +811,14 @@ Text for this section\todo{haben wir da jemanden oder etwas? funding?} \ldots
   \caption{\csentence{Upset plot \cite{lex2014upset} comparing success of assemblers on the real data sets}
       The plot shows the intersection of success ($score > 99$) between assemblers. For \num{69} data sets only \go{} was able to obtain a complete chloroplast. \num{43} were successful with both \go{} and \fp{} and so on}
             \label{fig:upset}
+      \end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{plots/repro.pdf}
+  \caption{\csentence{Scores between two repeated runs for consistency testing}
+  The scatter plots depicts the scores of the 1. runs x-axis versus the scores of the 2. run y-axis of the data sets that were selected for re-evaluation. 
+      }
+      \label{fig:consistency}
       \end{figure}
 
 \begin{figure}[h!]
@@ -844,22 +837,6 @@ Text for this section\todo{haben wir da jemanden oder etwas? funding?} \ldots
 %% Use of \listoftables is discouraged.
 %%
 \section*{Tables}
-\begin{table}[]
-    \centering
-    \caption{Overview of the results of the qualitative usability evaluation. Each tool 
-    could score \good{}, \ok{} or \bad{} in each of the categories.}
-    \label{tab:resultsQual}
-\begin{tabular}{p{3cm}cccccc}   
-Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\                           \hline \ce{}     &  \good{}  &  \good{}  &  \good{}  &  \good{}  &  \good{} \\
-\cassp{}  &  \ok{}    &  \good{}  &  \ok{}    &  \good{}  &  \good{} \\
-\fp{}     &  \bad{}   &  \ok{}    &  \good{}  &  \good{}  &  \good{} \\
-\go{}     &  \ok{}    &  \ok{}    &  \good{}  &  \good{}  &  \good{} \\
-\ioga{}   &  \bad{}   &  \bad{}   &  \ok{}    &  \ok{}    &  \bad{}  \\
-\np{}     &  \good{}  &  \good{}  &  \good{}  &  \good{}  &  \ok{}   \\
-\oa{}     &  \bad{}   &  \bad{}   &  \ok{}    &  \good{}  &  \good{} \\ \hline
-\end{tabular}      
-\end{table}
-
 \begin{table}[h!]
 \caption{Docker images used in our benchmark setup.}
 \label{tab:dockerimages}
@@ -875,6 +852,22 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
           \np & \dockernp & \dockernpsha \\
           \oa & \dockeroa & \dockeroasha \\ \hline
       \end{tabular}}
+\end{table}
+
+\begin{table}[]
+    \centering
+    \caption{Overview of the results of the qualitative usability evaluation. Each tool 
+    could score \good{}, \ok{} or \bad{} in each of the categories.}
+    \label{tab:resultsqual}
+\begin{tabular}{p{3cm}cccccc}   
+Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\                           \hline \ce{}     &  \good{}  &  \good{}  &  \good{}  &  \good{}  &  \good{} \\
+\cassp{}  &  \ok{}    &  \good{}  &  \ok{}    &  \good{}  &  \good{} \\
+\fp{}     &  \bad{}   &  \ok{}    &  \good{}  &  \good{}  &  \good{} \\
+\go{}     &  \ok{}    &  \ok{}    &  \good{}  &  \good{}  &  \good{} \\
+\ioga{}   &  \bad{}   &  \bad{}   &  \ok{}    &  \ok{}    &  \bad{}  \\
+\np{}     &  \good{}  &  \good{}  &  \good{}  &  \good{}  &  \ok{}   \\
+\oa{}     &  \bad{}   &  \bad{}   &  \ok{}    &  \good{}  &  \good{} \\ \hline
+\end{tabular}      
 \end{table}
 
 \begin{table}[ht]
