@@ -395,19 +395,11 @@ An alternative approach to improve the assembly of the core genome would be to f
 Structurally, two inverted repeats (IR\textsubscript{A} and IR\textsubscript{B}) of \SIrange{10}{76}{\kilo\basepair} divide the chloroplast genome into a large (LSC) and a small single copy (SSC) region \cite{palmer_1985}.
 Those large inverted repeats complicate automated resolution with short read technologies\cite{Wang2018}.
 Moreover, the existence of different chloroplasts within a single individual, and thus multiple different chloroplast genomes, have been described for different plants \cite{corriveau_1988,Chat2002,Scar2016}.
-Although the origin and evolutionary importance of this phenomena, - called heteroplasmy - are only poorly understood, the assembly of whole chloroplast genomes might be hindered.  
+Although the origin and evolutionary importance of this phenomena ---called heteroplasmy--- are only poorly understood, the assembly of whole chloroplast genomes might be hindered.  
 
-Databases containing short read data for species where no reference chloroplast sequence is publicly available, exist. \todo{cite? SRA?}
+Databases exist containing short read data for species where no reference chloroplast sequence is publicly available, eg.\ the Sequence Read Archive at NCBI \cite{sra2010}.
 The availability of whole chloroplast genomes would enable large scale comparative studies \cite{tonti-filippini_what_2017}.
 Additionally, reconstructed full chloroplast genomes have been used as super-barcodes \cite{coissac_barcodes_2016}, for biotechnology applications and genetic engineering \cite{daniell_chloroplast_2016}.
-
-%\subsection*{Chloroplast genome architecture}\ff{Chloroplast genome architecture section}
-%
-%Maybe separate section describing a prototypical chloroplast: LSC, IRa, SSC, IRb. Gene number and content. 
-%Size ranges. 
-%Evolutionary history incl. endosymbiontic gene transfer. 
-%Reduced genomes in parasitic plants. Loss of \genename{ndh} gene family (maybe too specific).
-%Preliminary SNP analysis in \plant{At} to estimate intraspecific variability? Is there anything known about intra-organismic variability (do some plants have multiple populations of chloroplasts? \ak{Yes, they do , Heteroplasmy} probably off topic).\ak{nope, I think this is important}
 
 \subsection*{Approaches to extracting chloroplasts from whole genome data}
 
@@ -435,8 +427,8 @@ Our results will enable the discovery of novel chloroplast genomes as well as an
 
 \section*{Methods}
 \subsection*{Data availability}
-Source code for all methods used is available at \url{https://github.com/chloroExtractorTeam/benchmark} and archived in zenodo under \zenodorepo{}.
-All docker images are published on \url{https://cloud.docker.com/u/chloroextractorteam/} and are named with a leading \texttt{benchmark\_} (\cref{tab:dockerimages}).
+Source code for all methods used is available at \cite{github-benchmark-repo} and archived in zenodo under \zenodorepo{}.
+All docker images are published on \cite{dockerhub-benchmark} and are named with a leading \texttt{benchmark\_} (\cref{tab:dockerimages}).
 
 To enable a fair comparison of all tools, we generated simulated sequencing data.
 Those simulated data sets are stored at \zenododataset{}.
@@ -478,7 +470,6 @@ Finally, for a maximum of reproducibility all programs have been bundled into in
 Furthermore, all our docker images have been converted into singularity containers for the quantitative measurement on simulated and real data sets.
 Singularity container were built from docker images for usage on a HPC-environment using Singularity v.2.5.2 \cite{kurtzer2017singularity}
 All singularity containers were run on %the Julia-HPC 
-\ak{I would note refer to Julia in the ms, maybe we could add it as a link}
 Intel® Xeon® Gold \num{6140} Processors using a Slurm workload manager version 17.11.8 \cite{Jette02slurm}. Assemblies were run on \num{4} threads using \SI{10}{\gibi\byte} RAM with a time limit of \SI{48}{\hour}. 
 \subsection*{Data}
 \subsubsection*{Simulated}
@@ -501,10 +492,9 @@ In total, this accumulated to \num{369} data sets (see supplement for details).
 We recorded the mean and the peak CPU usage, the peak memory consumption, and the size of the assembly folder for each program. 
 As input data, we used different data sets comprising \numlist{25000;250000;2500000} read pairs sampled from  our simulated reads.
 %Therefore, the simulated perfect read files have been read repeatedly to achieve the required number of read pairs.
-%\ak{etwas umständlich formuliert, hoffe ich hab es jetzt richtig formuliert und verstanden}
-We used our docker image setup (\cref{tab:dockerimages}) \ak{check Nummerierung tables, oben war auch schon table 2} to run all assembly programs three times for each parameter setting.
+We used our docker image setup (\cref{tab:dockerimages}) to run all assembly programs three times for each parameter setting.
 The different settings combined different input data and different number of threads to use (\numlist{1;2;4;8}).
-%\ak{in 'Our Setup' before, schreiben wir 10GiB und 4 threads, müsste dann vielleicht geändert werden}
+
 Some programs will use more CPU threads than specified, therefore, the number of CPUs available have been fixed using the CPU option while running the docker run command.
 For each assembly setting, we recorded the peak memory consumption, the CPU usage (mean and peak CPU usage) and the size of the folder where the assembly was calculated.
 The values of CPU and memory usage have been obtained by docker.
@@ -563,7 +553,7 @@ A perfect score is achieved if one circular chromosome was assembled, while the 
 \end{equation}
 
 \subsubsection*{Consistency}
-\todo{lieber Consistency?}To ensure consistency of the obtained results, we randomly chose  \num{100} data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before.
+To ensure consistency of the obtained results, we randomly chose  \num{100} data sets, that in the previous runs resulted in outputs for most of the assemblers and run them again with the same parameters as before.
 The resulting assemblies were scored again as described and the scores of the first and the second run were compared to each other
 This information is important to assess the robustness of the different programs.
 
@@ -574,7 +564,7 @@ This information is important to assess the robustness of the different programs
 
 \subsubsection*{Time requirements}
 In terms of run time, massive differences between the different tools have been observed. Apart from tool-specific differences, input data and number of threads had huge impact. The observed run times varied from a few minutes to several hours (\cref{fig:performance_runtime}).
-%\ak{did I miss Figure 1 ?, need to check figure numbering in the end}
+
 Some assemblies failed to finish within the time-limit we set (\SI{48}{\hour}). 
 On average the longest time to generate the assemblies was taken by \ioga{} and \fp{} followed by \oa{} and \go{} the most time efficient tool was \ce{}, which on average is a little faster than \np{} and \cassp{}.
 %% multithreading
@@ -628,7 +618,7 @@ The description about the parameter is short, but sufficient.
 The only assembler obtaining perfect results according to our score for the simulated data sets is \go{} (\cref{fig:simulated}).
 \ioga{} and \cassp{} showed the worst performance, being unable to fully assemble a single chloroplast out of \num{14} runs.
 \np{} performed second best with scores above \num{80} for all data sets, only failing to resolve the contigs into one single circular chloroplast assembly.
-The overall performance \ak{of all assemblers ?} is best, when the input data consists purely of chloroplast reads.
+The overall performance is best, when the input data consists purely of chloroplast reads.
 Only \ioga{} and \cassp{} failed to deliver any results under this scenario once.
 In general, no clear correlation between either length of the input reads or the ratio of core vs chloroplast reads and the performance of the different assemblers can be observed. 
 
@@ -645,11 +635,13 @@ The performance of \go{} is followed by \fp{}, \np{}, \oa{}, and \ce{}. \fp{} is
 Consistency was tested by re-running assemblies and comparison of the scores of two assemblies (\cref{fig:consistency}).
 Replicates that did not produce an output were manually scored as \num{0}. 
 \go{} was the only tool that succeeded in obtaining similar scores for all assemblies, without producing and completely unsuccessful assemblies for this subset of data.
-Except for \fp{} all the other tools had at least one assembly that was unsuccessful in one run, but produced an output in the other.\ak{oben steht \go{} war als einziges immer gut, dann kommt except for \fp{} ?? does not seem to be consistent}
+Except for \fp{} all the other tools had at least one assembly that was unsuccessful in one run, but produced an output in the other.
+%\ak{oben steht \go{} war als einziges immer gut, dann kommt except for \fp{} ?? does not seem to be consistent}
 Notably \ioga{} appears to have a tendency to perform differently in independent runs.
 Here, more than \SI{10}{\percent} of the assemblies failed in one run only.
 
-Both \fp{} and \np{} tend to have minor changes in the assembly when the overall performance is comparably well, leading to the arrow-shaped scatter plots.\ak{link to figure scatter plots is missing}
+Both \fp{} and \np{} tend to have minor changes in the assembly when the overall performance is comparably well, leading to the arrow-shaped scatter plots.
+%\ak{link to figure scatter plots is missing}
 \ce{} and \cassp{} appear to be the most robust assemblers, having only few deviations between the two runs.
 
 \section*{Discussion}
@@ -670,16 +662,15 @@ It is easy to install and use and thus could be considered as a good option for 
 Both \ioga{} and \cassp{} have the worst performance of all tools tested and fail to return reliable chloroplast assemblies.
 
 \subsection*{Guidelines for the end-user}
-Given these results, our recommendation is to use \go{} as default option, and in case of failure \fp{} as backup solution.\ak{what if both lead to qualitative different results?, always trust \go{} , or could one compute a high-confidence assembly by combining different results ?, might be a point for future directions.}
+Given these results, our recommendation is to use \go{} as default option, and in case of failure \fp{} as backup solution.
+%\ak{what if both lead to qualitative different results?, always trust \go{} , or could one compute a high-confidence assembly by combining different results ?, might be a point for future directions.}
 If both programs fail, it is sensible to re-run \fp{} and additionally try \np{} and \oa{}.
 This procedure maximizes the chance to effectively and efficiently recover the circular chloroplast genome from mixed genomic data.
 If none of these four assemblers produce sensible results, a reference guided approach and tweaking of the default parameters, might be the solution.
 Here, it is not possible to provide general guidelines, as the procedure will differ for different data sets.
 For an automated approach, running \go{} and \fp{} in parallel appears to be a good trade-off between success rate and use of resources.
-%\todo{Does the decision depend on some parameter of the data (read length, amount, taxonomic group, ...)?}
 
 \subsection*{Ideas for future development}
-%\ff{this section (lower priority)}
 For further experiments, combining different components from different tools might be a promising approach.
 For example, read scaling from \ce{} followed by an assembly by \go{} and finally the structural resolution with \fp{} could be a promising approach, combing the respective strength of the different tools.
 
@@ -718,7 +709,8 @@ Ultimately, large scale studies reconstructing hundreds or thousands of chloropl
 The authors disclose that SP, NT, FF, and MJA are developers of \ce{}, one of the tools benchmarked in this article.
 The authors exercised caution not to let this fact unfairly influence their judgment and recommendations.
 JF, NT, and MJA are affiliated with the for-profit organization AnaLife Data Science.
-\ak{and I think we should mention Analife as competing interest, normally people list all non-academic shareholder whatever stuff, just to be sure}\todo{Ich weiß nicht ob das so passt}
+\ak{and I think we should mention Analife as competing interest, normally people list all non-academic shareholder whatever stuff, just to be sure}
+\todo{Ich weiß nicht ob das so passt}
 
 \section*{Author's contributions}
 MJA and FF conceived of the presented idea and supervised the findings of this manuscript.
