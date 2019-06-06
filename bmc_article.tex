@@ -871,23 +871,6 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
 \end{tabular}
 \end{table}
 
-\begin{table}[h!]
-\caption{Docker images used in our benchmark setup.}
-\label{tab:dockerimages}
-\centering
-      \resizebox{\textwidth}{!}{\begin{tabular}{ccc}
-        \hline
-          Tool & Image name and tag & SHA256 Checksum   \\ \hline
-          \ce & \dockerce & \dockercesha \\
-          \cassp & \dockercassp & \dockercasspsha \\
-          \fp & \dockerfp & \dockerfpsha \\
-          \go & \dockergo & \dockergosha \\
-          \ioga & \dockerioga & \dockeriogasha \\
-          \np & \dockernp & \dockernpsha \\
-          \oa & \dockeroa & \dockeroasha \\ \hline
-      \end{tabular}}
-\end{table}
-
 \begin{table}[ht]
 \caption{Mean scores of chloroplast genome assemblers}
 \label{tab:scores_real}
@@ -907,7 +890,22 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
 \end{tabular}
 \end{table}
 
-\include{sets_re_runs.tex}    
+\begin{table}[h!]
+\caption{Docker images used in our benchmark setup.}
+\label{tab:dockerimages}
+\centering
+      \resizebox{\textwidth}{!}{\begin{tabular}{ccc}
+        \hline
+          Tool & Image name and tag & SHA256 Checksum   \\ \hline
+          \ce & \dockerce & \dockercesha \\
+          \cassp & \dockercassp & \dockercasspsha \\
+          \fp & \dockerfp & \dockerfpsha \\
+          \go & \dockergo & \dockergosha \\
+          \ioga & \dockerioga & \dockeriogasha \\
+          \np & \dockernp & \dockernpsha \\
+          \oa & \dockeroa & \dockeroasha \\ \hline
+      \end{tabular}}
+\end{table}
 
 \begin{table}[ht]
 \caption{Performance metrics input size 25K}

@@ -1,0 +1,144 @@
+\documentclass[oneside,10pt,A4]{article}
+
+%%% Load packages
+%\usepackage{amsthm,amsmath}
+%\RequirePackage{natbib}
+%\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
+\RequirePackage{hyperref}
+\usepackage[utf8]{inputenc} %unicode support
+%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
+%\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
+\usepackage{graphicx}
+
+\usepackage[noabbrev]{cleveref}
+\usepackage{siunitx}
+\DeclareSIUnit \basepair{bp}
+\DeclareSIUnit \byte{B}
+\DeclareSIPrefix\mebi{Mi}{10}
+\DeclareSIPrefix\gibi{Gi}{10}
+
+\usepackage{biocon}
+\newplant{At}{genus=Arabidopsis,epithet=thaliana}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                             %%
+%%  If you wish to display your graphics for   %%
+%%  your own use using includegraphic or       %%
+%%  includegraphics, then comment out the      %%
+%%  following two lines of code.               %%
+%%  NB: These line *must* be included when     %%
+%%  submitting to BMC.                         %%
+%%  All figure files must be submitted as      %%
+%%  separate graphics through the BMC          %%
+%%  submission process, not included in the    %%
+%%  submitted article.                         %%
+%%                                             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\def\includegraphic{}
+%\def\includegraphics{}
+
+\usepackage{todonotes}
+\setlength{\marginparwidth}{3cm}
+
+\newcounter{todocounter}
+\newcommand{\ff}[1]
+{\stepcounter{todocounter}
+ \todo[color=blue!40,author=For Frank]{\thetodocounter: #1}
+ }
+\newcommand{\ak}[1]
+{\stepcounter{todocounter}
+ \todo[color=green!40,author=Arthur]{\thetodocounter: #1}
+ }
+
+
+%%% Put your definitions there:
+\newcommand{\formatprogramnames}[1]{\texttt{#1}}
+\newcommand{\ce}{\formatprogramnames{chloroExtractor}}
+\newcommand{\oa}{\formatprogramnames{ORG.Asm}}
+\newcommand{\fp}{\formatprogramnames{Fast-Plast}}
+\newcommand{\ioga}{\formatprogramnames{IOGA}}
+\newcommand{\np}{\formatprogramnames{NOVOPlasty}}
+\newcommand{\go}{\formatprogramnames{GetOrganelle}}
+\newcommand{\cassp}{\formatprogramnames{Chloroplast assembly protocol}}
+
+\newcommand{\zenododataset}{\cite{zenododataset}}
+\newcommand{\zenodorepo}{\cite{zenodorepo}}
+
+\newcommand{\genename}[1]{\textit{#1}}
+
+% Niklas table
+%\newcommand{\ok}{\textcolor[rgb]{0.7,0.7,0}{\textsc{\bfseries{}OKAY}}}
+%\newcommand{\bad}{\textcolor{red}{\textsc{\bfseries{}BAD}}}
+%\newcommand{\good}{\textcolor[rgb]{0,0.6,0}{\textsc{\bfseries{}GOOD}}}
+\newcommand{\ok}{\textsc{Okay}}
+\newcommand{\bad}{\textsc{Bad}}
+\newcommand{\good}{\textsc{Good}}
+
+
+% List of docker images
+\newcommand{\docker}[2]{\href{https://cloud.docker.com/u/chloroextractorteam/repository/docker/chloroextractorteam/#1}{chloroextracteam/#1:#2}}
+\newcommand{\dockerce}{\docker{benchmark\_chloroextractor}{v2.0.0}}
+\newcommand{\dockercesha}{\texttt{8f49e03424b37e699c5fea9391f79dbb9f2d0dc550ce86c4c700f39deec2dacd}}
+\newcommand{\dockeroa}{\docker{benchmark\_org-asm}{v2.0.0}}
+\newcommand{\dockeroasha}{\texttt{ff83677c97b7c4e346191b9e04a5162eeea2a8dfd9e60ff84067d33747868f60}}
+\newcommand{\dockerfp}{\docker{benchmark\_fastplast}{v2.0.0}}
+\newcommand{\dockerfpsha}{\texttt{a3d06a610f8340ba49c3ff3b27342534e2a5348b17caa4fd3c3f3d327243a272}}
+\newcommand{\dockerioga}{\docker{benchmark\_ioga}{v2.0.0}}
+\newcommand{\dockeriogasha}{\texttt{4698a21c343c60290bbf16811165a654ff01e8fddeb41cd75d0771b7f45968c0}}
+\newcommand{\dockernp}{\docker{benchmark\_novoplasty}{v2.0.0}}
+\newcommand{\dockernpsha}{\texttt{106387bad4e8e5c53fb9d4c3bdd60cdddf05a47b52a38697369eeabb947c547c}}
+\newcommand{\dockergo}{\docker{benchmark\_getorganelle}{v2.0.0}}
+\newcommand{\dockergosha}{\texttt{2ed3a464a82025a196ea56c649d0b0a3472cef76994bb065d56054d93298d956}}
+\newcommand{\dockercassp}{\docker{benchmark\_chloroplast\_assembly\_protocol}{v2.0.0}}
+\newcommand{\dockercasspsha}{\texttt{d10d2317103d91fadec4cb1d5466ac109f23176ad74b6f44f0179175f050155d}}
+
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{capt-of}
+
+\renewcommand{\thetable}{S\arabic{table}}%
+\renewcommand{\thefigure}{S\arabic{figure}}
+%%% Begin ...
+\begin{document}
+
+\listoftables
+
+\begin{landscape}
+\setlength{\LTcapwidth}{1.5\textwidth}
+\begin{longtable}{cccrrcc}
+\caption[Summary real data set]{\textbf{Summary real data set.} List of real data sets used during our benchmark study. The tables was sorted by species name. Additionally, the table contains the accession for the Sequencing Read Archive (SRA Acc) and the accession of the used reference (Ref Acc). Moreover, the original number of read pairs (read pairs), the overall number of sequenced nucleotides (base pairs), and the mean read length (read len.) is given. Finally, the last column contains the information, if that data set was used for the check of the consistency.} \\
+\hline
+Taxon & SRA Acc & Ref Acc & read pairs & base pairs (bp) & read len. (bp) & Consistency check \\
+\hline
+\endfirsthead
+\multicolumn{7}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}}\\[0.5em]
+Taxon & SRA Acc & Ref Acc & read pairs & base pairs (bp) & read len. (bp) & Consistency check \\ \hline
+\endhead
+\hline
+\multicolumn{7}{r}{Continued on next page}\\
+\endfoot
+\endlastfoot
+\input{sra_ref.tex}
+\end{longtable}
+
+\newpage
+{\tiny
+\captionof{table}{Docker images used in our benchmark setup.}
+\label{tab:dockerimages_suppl}
+\centering
+\begin{tabular}{ccc}
+        \hline
+          Tool & Image name and tag & SHA256 Checksum   \\ \hline
+          \ce & \dockerce & \dockercesha \\
+          \cassp & \dockercassp & \dockercasspsha \\
+          \fp & \dockerfp & \dockerfpsha \\
+          \go & \dockergo & \dockergosha \\
+          \ioga & \dockerioga & \dockeriogasha \\
+          \np & \dockernp & \dockernpsha \\
+          \oa & \dockeroa & \dockeroasha \\ \hline
+      \end{tabular}
+}
+\end{landscape}
+\end{document}

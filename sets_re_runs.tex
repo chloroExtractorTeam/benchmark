@@ -1,11 +1,25 @@
 % latex table generated in R 3.6.0 by xtable 1.8-4 package
 % Wed May 29 19:46:12 2019
-\begin{table}[ht]
-\centering
-\begin{tabular}{rll}
-  \hline
- & V1 & Re-eval \\ 
-  \hline
+%\begin{longtable}[ht]
+%\centering
+\begin{longtable}{ccc}
+\caption{SRA IDs used as real data sets} \\
+% Definition des Tabellenkopfes auf der ersten Seite
+\hline
+Data set number & SRA ID & Used for consistency check \\
+\hline
+\endfirsthead % Erster Kopf zu Ende
+% Definition des Tabellenkopfes auf den folgenden Seiten
+\hline
+\multicolumn{3}{c}{continued from last page}\\
+Data set number & SRA ID & Used for consistency check \\
+\hline
+\endhead % Zweiter Kopf ist zu Ende
+\hline
+\multicolumn{3}{c}{continued on next page}\\
+\hline
+\endfoot
+\endlastfoot
 1 & DRR000604 & Yes \\ 
   2 & DRR001794 & NO \\ 
   3 & DRR013917 & NO \\ 
@@ -376,5 +390,5 @@
   368 & SRR934060 & NO \\ 
   369 & SRR954964 & Yes \\ 
    \hline
-\end{tabular}
-\end{table}
+\end{longtable}
+%\end{table}
