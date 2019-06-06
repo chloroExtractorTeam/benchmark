@@ -483,7 +483,7 @@ The description about the parameter is short, but sufficient.
 
 \subsection*{Quantitative}
 \subsubsection*{Simulated data}
-The only assembler obtaining perfect results according to our score for the simulated data sets is \go{} (\cref{fig:simulated}).
+The only assembler obtaining perfect results according to our score for the simulated data sets is \go{} (\cref{fig:simulated,tab:scores_simulated}).
 \ioga{} and \cassp{} showed the worst performance, being unable to fully assemble a single chloroplast out of \num{14} runs.
 \np{} performed second best with scores above \num{80} for all data sets, only failing to resolve the contigs into one single circular chloroplast assembly.
 The overall performance is best, when the input data consists purely of chloroplast reads.
@@ -492,7 +492,7 @@ In general, no clear correlation between either length of the input reads or the
 
 \subsubsection*{Real data sets}
 Concerning the performance of the assemblers on the real data sets, we were able to observe considerable differences in the median score (\cref{fig:swarmplot}).
-The highest scores were achieved by \go{} with a median of \num{99.7} and \num{199} circular assemblies out of a total of 356 assemblies that resulted in an output (\cref{tab:scores}).
+The highest scores were achieved by \go{} with a median of \num{99.7} and \num{199} circular assemblies out of a total of 356 assemblies that resulted in an output (\cref{tab:scores_real}).
 The performance of \go{} is followed by \fp{}, \np{}, \oa{}, and \ce{}. \fp{} is outperforming the latter two slightly in terms of score, with twice as much \num{114} perfectly assembled chloroplast genomes (\np{} produced \num{66} and \oa{} \num{55} circular genomes).
 \ioga{} and \cassp{} were both not able to assemble a circular, single-contig genome (\cref{tab:scores}), consequently resulting in the lowest mean and median scores (\cref{fig:upset}).
 
@@ -815,10 +815,10 @@ Text for this section\todo{haben wir da jemanden oder etwas? funding?} \ldots
 
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{plots/real_datasets_tree.pdf}
-  \caption{\csentence{Success of assemblers on real data sets on tree derived from NCBI taxonomy \cite{ncbi2011}}
+  \caption{\csentence{Success of assemblers on real data sets on tree derived from NCBI taxonomy \cite{ncbi2011}. Plot was prepared using \cite{Letunic2019}}
        }
       \label{fig:tree}
-      \end{figure}\todo{cite itol}
+      \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                               %%
@@ -829,23 +829,6 @@ Text for this section\todo{haben wir da jemanden oder etwas? funding?} \ldots
 %% Use of \listoftables is discouraged.
 %%
 \section*{Tables}
-\begin{table}[h!]
-\caption{Docker images used in our benchmark setup.}
-\label{tab:dockerimages}
-\centering
-      \resizebox{\textwidth}{!}{\begin{tabular}{ccc}
-        \hline
-          Tool & Image name and tag & SHA256 Checksum   \\ \hline
-          \ce & \dockerce & \dockercesha \\
-          \cassp & \dockercassp & \dockercasspsha \\
-          \fp & \dockerfp & \dockerfpsha \\
-          \go & \dockergo & \dockergosha \\
-          \ioga & \dockerioga & \dockeriogasha \\
-          \np & \dockernp & \dockernpsha \\
-          \oa & \dockeroa & \dockeroasha \\ \hline
-      \end{tabular}}
-\end{table}
-
 \begin{table}[]
     \centering
     \caption{Overview of the results of the qualitative usability evaluation. Each tool 
@@ -864,7 +847,7 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
 
 \begin{table}[ht]
 \caption{Scores of assemblies of simulated data}
-\label{tab:scores}
+\label{tab:scores_simulated}
 \centering
 \begin{tabular}{rlrrrrrrr}
   \hline
@@ -888,10 +871,26 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
 \end{tabular}
 \end{table}
 
+\begin{table}[h!]
+\caption{Docker images used in our benchmark setup.}
+\label{tab:dockerimages}
+\centering
+      \resizebox{\textwidth}{!}{\begin{tabular}{ccc}
+        \hline
+          Tool & Image name and tag & SHA256 Checksum   \\ \hline
+          \ce & \dockerce & \dockercesha \\
+          \cassp & \dockercassp & \dockercasspsha \\
+          \fp & \dockerfp & \dockerfpsha \\
+          \go & \dockergo & \dockergosha \\
+          \ioga & \dockerioga & \dockeriogasha \\
+          \np & \dockernp & \dockernpsha \\
+          \oa & \dockeroa & \dockeroasha \\ \hline
+      \end{tabular}}
+\end{table}
 
 \begin{table}[ht]
 \caption{Mean scores of chloroplast genome assemblers}
-\label{tab:scores}
+\label{tab:scores_real}
 \centering
 \begin{tabular}{rlrrrr}
   \hline
@@ -908,14 +907,7 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
 \end{tabular}
 \end{table}
 
-
-
 \include{sets_re_runs.tex}    
-
-
-
-
-
 
 \begin{table}[ht]
 \caption{Performance metrics input size 25K}
