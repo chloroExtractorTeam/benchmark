@@ -437,10 +437,10 @@ Some assemblies failed to finish within the time-limit we set (\SI{48}{\hour}).
 On average the longest time to generate the assemblies was taken by \ioga{} and \fp{} followed by \oa{} and \go{} the most time efficient tool was \ce{}, which on average is a little faster than \np{} and \cassp{}.
 %% multithreading
 
-Not all the tools were able to benefit from having access to multiple threads. Both \np{} and \oa{} take about the same time independent of being able to utilize \numlist[list-final-separator={, or }]{1;2;4;8} threads. \cassp{}, \ce{}, \go  and \fp{} all profit from multi-threading (\cref{fig:performance_runtime,fig:performance_memory_cpu}).
+Not all the tools were able to benefit from having access to multiple threads. Both \np{} and \oa{} take about the same time independent of being able to utilize \numlist[list-final-separator={, or }]{1;2;4;8} threads. \cassp{}, \ce{}, \go  and \fp{} all profit from multi-threading (\cref{fig:performance_runtime,fig:performance_memory_cpu,tab:perform25K_suppl,tab:perform250K_suppl,tab:perform2.5M_suppl}).
 
 \subsubsection*{Memory and CPU Usage }
-The peak and mean CPU usage, as well as peak memory and disk usage have been recorded for all assemblers based on the same input data set and number of threads to use (\cref{fig:performance_memory_cpu}).
+The peak and mean CPU usage, as well as peak memory and disk usage have been recorded for all assemblers based on the same input data set and number of threads to use (\cref{fig:performance_memory_cpu,tab:perform25K_suppl,tab:perform250K_suppl,tab:perform2.5M_suppl}).
 Mainly, the size of the input data influenced the peak memory usage with the exception of \ce{} and \ioga{}.
 Those two assemblers seems to have a memory usage pattern, which is less influenced by the size of the data.
 The number of allowed threads had only a limited impact on the peak memory usage.
@@ -928,7 +928,7 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
 
 \section*{Additional Files}
   \subsection*{Additional file 1 --- supplemental data}
-  Supplementary data contain a complete list of all real data sets used in this study. Additionally, a table with more details to the used docker images and the detailed results of the performance measurement are included. The file is available at \cite{supplement}.
+  Supplementary data contain a complete list of all real data sets used in this study. Additionally, a table with more details to the used docker images and the detailed results of the performance measurement are included. The file is available at \cite{zenodosupplement}.
 
 \end{backmatter}
 \end{document}
