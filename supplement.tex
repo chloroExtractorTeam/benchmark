@@ -1,4 +1,4 @@
-\documentclass[oneside,10pt,A4]{article}
+\documentclass[oneside,10pt,A4]{scrartcl}
 
 %%% Load packages
 %\usepackage{amsthm,amsmath}
@@ -17,8 +17,8 @@
 \DeclareSIPrefix\mebi{Mi}{10}
 \DeclareSIPrefix\gibi{Gi}{10}
 
-\usepackage{biocon}
-\newplant{At}{genus=Arabidopsis,epithet=thaliana}
+\input{biocon-stuff.tex}
+\input{docker-stuff.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
@@ -76,24 +76,6 @@
 \newcommand{\bad}{\textsc{Bad}}
 \newcommand{\good}{\textsc{Good}}
 
-
-% List of docker images
-\newcommand{\docker}[2]{\href{https://cloud.docker.com/u/chloroextractorteam/repository/docker/chloroextractorteam/#1}{chloroextracteam/#1:#2}}
-\newcommand{\dockerce}{\docker{benchmark\_chloroextractor}{v2.0.0}}
-\newcommand{\dockercesha}{\texttt{8f49e03424b37e699c5fea9391f79dbb9f2d0dc550ce86c4c700f39deec2dacd}}
-\newcommand{\dockeroa}{\docker{benchmark\_org-asm}{v2.0.0}}
-\newcommand{\dockeroasha}{\texttt{ff83677c97b7c4e346191b9e04a5162eeea2a8dfd9e60ff84067d33747868f60}}
-\newcommand{\dockerfp}{\docker{benchmark\_fastplast}{v2.0.0}}
-\newcommand{\dockerfpsha}{\texttt{a3d06a610f8340ba49c3ff3b27342534e2a5348b17caa4fd3c3f3d327243a272}}
-\newcommand{\dockerioga}{\docker{benchmark\_ioga}{v2.0.0}}
-\newcommand{\dockeriogasha}{\texttt{4698a21c343c60290bbf16811165a654ff01e8fddeb41cd75d0771b7f45968c0}}
-\newcommand{\dockernp}{\docker{benchmark\_novoplasty}{v2.0.0}}
-\newcommand{\dockernpsha}{\texttt{106387bad4e8e5c53fb9d4c3bdd60cdddf05a47b52a38697369eeabb947c547c}}
-\newcommand{\dockergo}{\docker{benchmark\_getorganelle}{v2.0.0}}
-\newcommand{\dockergosha}{\texttt{2ed3a464a82025a196ea56c649d0b0a3472cef76994bb065d56054d93298d956}}
-\newcommand{\dockercassp}{\docker{benchmark\_chloroplast\_assembly\_protocol}{v2.0.0}}
-\newcommand{\dockercasspsha}{\texttt{d10d2317103d91fadec4cb1d5466ac109f23176ad74b6f44f0179175f050155d}}
-
 \usepackage{longtable}
 \usepackage{pdflscape}
 \usepackage{capt-of}
@@ -103,6 +85,12 @@
 %%% Begin ...
 \begin{document}
 
+\title{The landscape of chloroplast genome assembly
+tools}
+\subtitle{Supplemental material}
+\author{\parbox{\textwidth}{\centering{}Jan A Freudenthal, Simon Pfaff, Niklas Terhoeven, Arthur Korte, Markus J Ankenbrand and Frank Förster}}
+\date{}
+\maketitle
 \listoftables
 
 \begin{landscape}
@@ -141,4 +129,125 @@ Taxon & SRA Acc & Ref Acc & read pairs & base pairs (bp) & read len. (bp) & Cons
       \end{tabular}
 }
 \end{landscape}
+
+\begin{table}[ht]
+\caption{Performance metrics input size 25K}
+\label{tab:perform25K}
+\centering
+\begin{tabular}{rlrrrr}
+  \hline
+ & program & threads & Peak CPU usage & Peak memeory & Peak disk usage (GB) \\ 
+  \hline
+1 & CAP &   1 & 113.32 & 0.31 & 0.06 \\ 
+  2 & CAP &   2 & 166.60 & 0.26 & 0.05 \\ 
+  3 & CAP &   4 & 305.99 & 0.26 & 0.05 \\ 
+  4 & CAP &   8 & 569.12 & 0.37 & 0.06 \\ 
+  5 & CE &   1 & 111.49 & 3.41 & 0.07 \\ 
+  6 & CE &   2 & 199.12 & 3.41 & 0.07 \\ 
+  7 & CE &   4 & 343.22 & 3.41 & 0.07 \\ 
+  8 & CE &   8 & 509.51 & 3.41 & 0.07 \\ 
+  9 & Fast-Plast &   1 & 118.31 & 0.77 & 0.30 \\ 
+  10 & Fast-Plast &   2 & 213.57 & 0.77 & 0.31 \\ 
+  11 & Fast-Plast &   4 & 379.27 & 0.77 & 0.32 \\ 
+  12 & Fast-Plast &   8 & 657.20 & 0.77 & 0.35 \\ 
+  13 & GetOrganelle &   1 & 111.39 & 0.38 & 0.05 \\ 
+  14 & GetOrganelle &   2 & 170.30 & 0.32 & 0.05 \\ 
+  15 & GetOrganelle &   4 & 242.27 & 0.31 & 0.06 \\ 
+  16 & GetOrganelle &   8 & 346.98 & 0.31 & 0.07 \\ 
+  17 & IOGA &   1 & 118.12 & 18.61 & 6.25 \\ 
+  18 & IOGA &   2 & 224.74 & 17.88 & 6.26 \\ 
+  19 & IOGA &   4 & 394.98 & 16.62 & 5.60 \\ 
+  20 & IOGA &   8 & 733.11 & 21.76 & 11.13 \\ 
+  21 & NOVOPlasty &   1 & 78.38 & 0.04 & 0.00 \\ 
+  22 & NOVOPlasty &   2 & 86.64 & 0.04 & 0.00 \\ 
+  23 & NOVOPlasty &   4 & 86.50 & 0.04 & 0.00 \\ 
+  24 & NOVOPlasty &   8 & 87.32 & 0.04 & 0.00 \\ 
+  25 & org.ASM &   1 & 112.08 & 0.79 & 0.03 \\ 
+  26 & org.ASM &   2 & 115.44 & 0.79 & 0.03 \\ 
+  27 & org.ASM &   4 & 105.09 & 0.79 & 0.03 \\ 
+  28 & org.ASM &   8 & 105.78 & 0.79 & 0.03 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\caption{Performance metrics input size 250K}
+\label{tab:perform250K}
+\centering
+\begin{tabular}{rlrrrr}
+  \hline
+ & program & threads & Peak CPU usage & Peak memeory & Peak disk usage (GB) \\ 
+  \hline
+1 & CAP &   1 & 114.38 & 0.90 & 0.65 \\ 
+  2 & CAP &   2 & 204.39 & 0.93 & 0.65 \\ 
+  3 & CAP &   4 & 337.09 & 0.97 & 0.65 \\ 
+  4 & CAP &   8 & 652.75 & 1.08 & 0.65 \\ 
+  5 & CE &   1 & 117.57 & 3.96 & 0.63 \\ 
+  6 & CE &   2 & 230.35 & 3.96 & 0.63 \\ 
+  7 & CE &   4 & 414.25 & 3.96 & 0.63 \\ 
+  8 & CE &   8 & 755.76 & 3.97 & 0.63 \\ 
+  9 & Fast-Plast &   1 & 118.81 & 1.40 & 0.78 \\ 
+  10 & Fast-Plast &   2 & 234.12 & 2.25 & 0.78 \\ 
+  11 & Fast-Plast &   4 & 425.89 & 2.32 & 0.79 \\ 
+  12 & Fast-Plast &   8 & 845.94 & 2.52 & 0.79 \\ 
+  13 & GetOrganelle &   1 & 117.94 & 1.07 & 0.40 \\ 
+  14 & GetOrganelle &   2 & 227.05 & 1.13 & 0.40 \\ 
+  15 & GetOrganelle &   4 & 403.35 & 1.08 & 0.40 \\ 
+  16 & GetOrganelle &   8 & 747.20 & 1.03 & 0.39 \\ 
+  17 & IOGA &   1 & 118.62 & 12.03 & 4.01 \\ 
+  18 & IOGA &   2 & 234.09 & 9.71 & 4.01 \\ 
+  19 & IOGA &   4 & 420.77 & 10.09 & 3.48 \\ 
+  20 & IOGA &   8 & 842.57 & 19.21 & 9.45 \\ 
+  21 & NOVOPlasty &   1 & 111.97 & 0.32 & 0.00 \\ 
+  22 & NOVOPlasty &   2 & 115.07 & 0.32 & 0.00 \\ 
+  23 & NOVOPlasty &   4 & 116.42 & 0.31 & 0.00 \\ 
+  24 & NOVOPlasty &   8 & 115.86 & 0.31 & 0.00 \\ 
+  25 & org.ASM &   1 & 118.10 & 0.93 & 0.06 \\ 
+  26 & org.ASM &   2 & 161.76 & 0.93 & 0.06 \\ 
+  27 & org.ASM &   4 & 163.01 & 0.93 & 0.06 \\ 
+  28 & org.ASM &   8 & 160.74 & 0.93 & 0.06 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\caption{Performance metrics input size 2.5M}
+\label{tab:perform2.5M  }
+\centering
+\begin{tabular}{rlrrrr}
+  \hline
+ & program & threads & Peak CPU usage & Peak memeory & Peak disk usage (GB) \\ 
+ \hline
+1 & CAP &   1 & 118.80 & 6.83 & 6.59 \\ 
+  2 & CAP &   2 & 209.22 & 7.58 & 6.59 \\ 
+  3 & CAP &   4 & 357.36 & 7.25 & 6.59 \\ 
+  4 & CAP &   8 & 683.71 & 6.99 & 6.59 \\ 
+  5 & CE &   1 & 118.78 & 5.34 & 2.01 \\ 
+  6 & CE &   2 & 234.82 & 5.34 & 2.01 \\ 
+  7 & CE &   4 & 415.74 & 5.28 & 2.09 \\ 
+  8 & CE &   8 & 844.95 & 5.34 & 2.01 \\ 
+  9 & Fast-Plast &   1 & 119.24 & 6.80 & 5.80 \\ 
+  10 & Fast-Plast &   2 & 237.34 & 6.98 & 5.82 \\ 
+  11 & Fast-Plast &   4 & 443.27 & 8.02 & 5.69 \\ 
+  12 & Fast-Plast &   8 & 872.07 & 8.87 & 5.69 \\ 
+  13 & GetOrganelle &   1 & 118.91 & 5.25 & 3.31 \\ 
+  14 & GetOrganelle &   2 & 235.18 & 5.26 & 3.31 \\ 
+  15 & GetOrganelle &   4 & 420.10 & 5.44 & 3.31 \\ 
+  16 & GetOrganelle &   8 & 845.13 & 6.07 & 3.31 \\ 
+  17 & IOGA &   1 & 119.46 & 18.64 & 8.83 \\ 
+  18 & IOGA &   2 & 237.22 & 21.24 & 10.19 \\ 
+  19 & IOGA &   4 & 425.50 & 18.71 & 10.56 \\ 
+  20 & IOGA &   8 & 857.29 & 25.23 & 16.51 \\ 
+  21 & NOVOPlasty &   1 & 112.67 & 2.69 & 0.00 \\ 
+  22 & NOVOPlasty &   2 & 117.77 & 2.58 & 0.00 \\ 
+  23 & NOVOPlasty &   4 & 117.40 & 2.74 & 0.00 \\ 
+  24 & NOVOPlasty &   8 & 117.28 & 2.74 & 0.00 \\ 
+  25 & org.ASM &   1 & 118.73 & 2.63 & 0.37 \\ 
+  26 & org.ASM &   2 & 184.53 & 2.63 & 0.37 \\ 
+  27 & org.ASM &   4 & 177.03 & 2.63 & 0.37 \\ 
+  28 & org.ASM &   8 & 176.25 & 2.63 & 0.37 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
 \end{document}
