@@ -123,6 +123,8 @@
 \newcommand{\bad}{\textsc{Bad}}
 \newcommand{\good}{\textsc{Good}}
 
+\usepackage{xr}
+\externaldocument{supplement}
 
 % List of docker images
 \endlocaldefs
@@ -479,8 +481,7 @@ In general, no clear correlation between either length of the input reads or the
 Concerning the performance of the assemblers on the real data sets, we were able to observe considerable differences in the median score (\cref{fig:swarmplot}).
 The highest scores were achieved by \go{} with a median of \num{99.7} and \num{199} circular assemblies out of a total of 356 assemblies that resulted in an output (\cref{tab:scores_real}).
 The performance of \go{} is followed by \fp{}, \np{}, \oa{}, and \ce{}. \fp{} is outperforming the latter two slightly in terms of score, with twice as much \num{114} perfectly assembled chloroplast genomes (\np{} produced \num{66} and \oa{} \num{55} circular genomes).
-\ioga{} and \cassp{} were both not able to assemble a circular, single-contig genome (\cref{tab:scores}), consequently resulting in the lowest mean and median scores (\cref{fig:upset}).
-
+\ioga{} and \cassp{} were both not able to assemble a circular, single-contig genome (\cref{tab:scores_real}), consequently resulting in the lowest mean and median scores (\cref{fig:upset}).
 %\textit{swarm plot goes here}
 %% Den upset plot eventuell erst in die Discussion reinbringen ? Da wir davon ableiten welche tools wir empfehlen?
 
@@ -513,6 +514,9 @@ The tools \fp{}, \np{}, and \oa{} produce the most variable results, thus re-run
 \ce{} yields only few complete chloroplast assemblies, but requires also only few resources.
 It is easy to install and use and thus could be considered as a good option for a quick first try.
 Both \ioga{} and \cassp{} have the worst performance of all tools tested and fail to return reliable chloroplast assemblies.
+
+Additionally, we observed no phylogenetic pattern in the success rate of the assemblers (\cref{fig:tree}).
+This indicates that the tools are generally able to reconstruct chloroplasts across the plant kingdom even without or with fixed \plant{At} as reference.
 
 \subsection*{Guidelines for the end-user}
 Given these results, our recommendation is to use \go{} as default option, and in case of failure \fp{} as backup solution.
@@ -592,10 +596,11 @@ Those different files are copied and renamed to ensure that each assembly approa
 Additionally, we set an environment variable for all programs to control the number of allowed threads.
 All three requirements (defined input file names, defined output file name, thread number control via environment variable) are ensured by a simple wrapper script (\texttt{wrapper.sh}).
 Finally, for a maximum of reproducibility all programs have been bundled into individual docker images based on a central base image which provides all the required software. Those docker images were used for the recording of the consumption of computational resources.
+Those docker images have been used for the performance benchmarking on a four Intel CPU-E7 8867 v3 system offering \SI{1}{\tera\byte} of RAM.
 Furthermore, all our docker images have been converted into singularity containers for the quantitative measurement on simulated and real data sets.
 Singularity container were built from docker images for usage on a HPC-environment using Singularity v.2.5.2 \cite{kurtzer2017singularity}
 All singularity containers were run on %the Julia-HPC 
-Intel® Xeon® Gold \num{6140} Processors using a Slurm workload manager version 17.11.8 \cite{Jette02slurm}. Assemblies were run on \num{4} threads using \SI{10}{\gibi\byte} RAM with a time limit of \SI{48}{\hour}. 
+Intel® Xeon® Gold \num{6140} Processors using a Slurm workload manager version 17.11.8 \cite{Jette02slurm}. Assemblies were run on \num{4} threads using \SI{10}{\gibi\byte} RAM with a time limit of \SI{48}{\hour}.
 \subsection*{Data}
 \subsubsection*{Simulated}
 To avoid suffering from sequencing errors and biological variances, we simulated perfect reads based on the \plant{At} (TAIR10) chloroplast assembly \cite{tair10}.
@@ -609,7 +614,7 @@ Additionally, we generated data with different read lengths (\SIlist{150;250}{\b
 We selected real data deposited at SRA \cite{sra2010}.
 We searched all data that matched  \texttt{((((((("green plants"[orgn]) AND "wgs"[Strategy]) AND "illumina"[Platform]) AND "biomol dna"[Properties]) AND "paired"[Layout]) AND "random"[Selection])) AND "public"[Access]} \cite{sra_search_term}. 
 For each species with a reference chloroplast in CpBase \cite{cpbase}, we selected one data set of those.
-In total, this accumulated to \num{369} data sets (see supplement for details).
+In total, this accumulated to \num{369} data sets (\cref{tab:real_dataset_details}) representing a broad spectrum of the green plants (\cref{fig:tree}).
 
 \subsection*{Evaluation Criteria}
 \subsubsection*{Computational Resources}
@@ -798,7 +803,7 @@ All authors discussed the results and contributed to the final manuscript.
 
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{plots/real_datasets_tree.pdf}
-  \caption{\csentence{Success of assemblers on real data sets on tree derived from NCBI taxonomy \cite{ncbi2011}. Plot was prepared using \cite{Letunic2019}}
+  \caption{\csentence{Success for chloroplast assembly shows no taxonomic bias} Success of assemblers on real data sets on tree derived from NCBI taxonomy \cite{ncbi2011}. Plot was prepared using \cite{Letunic2019}
        }
       \label{fig:tree}
       \end{figure}
@@ -812,9 +817,9 @@ All authors discussed the results and contributed to the final manuscript.
 %% Use of \listoftables is discouraged.
 %%
 \section*{Tables}
-\begin{table}[]
+\begin{table}[h!]
     \centering
-    \caption{Overview of the results of the qualitative usability evaluation. Each tool 
+    \caption{\textbf{Overview of the results of the qualitative usability evaluation} Each tool 
     could score \good{}, \ok{} or \bad{} in each of the categories.}
     \label{tab:resultsQual}
 \begin{tabular}{p{3cm}cccccc}   
@@ -828,8 +833,8 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
 \end{tabular}      
 \end{table}
 
-\begin{table}[ht]
-\caption{Scores of assemblies of simulated data}
+\begin{table}[h!]
+\caption{\textbf{Scores of assemblies of simulated data}}
 \label{tab:scores_simulated}
 \centering
 \begin{tabular}{rlrrrrrrr}
@@ -854,8 +859,8 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
 \end{tabular}
 \end{table}
 
-\begin{table}[ht]
-\caption{Mean scores of chloroplast genome assemblers}
+\begin{table}[h!]
+\caption{\textbf{Mean scores of chloroplast genome assemblers}}
 \label{tab:scores_real}
 \centering
 \begin{tabular}{rlrrrr}
@@ -874,19 +879,19 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
 \end{table}
 
 \begin{table}[h!]
-\caption{Docker images used in our benchmark setup.}
+\caption{\textbf{Docker images used in our benchmark setup} SHA256 checksums are stated in \cref{tab:dockerimages_suppl}}
 \label{tab:dockerimages}
 \centering
       \resizebox{\textwidth}{!}{\begin{tabular}{ccc}
         \hline
-          Tool & Image name and tag & SHA256 Checksum   \\ \hline
-          \ce & \dockerce & \dockercesha \\
-          \cassp & \dockercassp & \dockercasspsha \\
-          \fp & \dockerfp & \dockerfpsha \\
-          \go & \dockergo & \dockergosha \\
-          \ioga & \dockerioga & \dockeriogasha \\
-          \np & \dockernp & \dockernpsha \\
-          \oa & \dockeroa & \dockeroasha \\ \hline
+          Tool & Image name and tag\\ \hline
+          \ce & \dockerce \\
+          \cassp & \dockercassp \\
+          \fp & \dockerfp \\
+          \go & \dockergo \\
+          \ioga & \dockerioga \\
+          \np & \dockernp \\
+          \oa & \dockeroa \\ \hline
       \end{tabular}}
 \end{table}
 
@@ -909,15 +914,8 @@ Tool & Installation & Test/Tutorial & Documentation & Maintenance & FLOSS\\     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Additional Files}
-  \subsection*{Additional file 1 --- Sample additional file title}
-\todo{Supplement description}
-    Additional file descriptions text (including details of how to
-    view the file, if it is in a non-standard format or the file extension).  This might
-    refer to a multi-page table or a figure.
-
-  \subsection*{Additional file 2 --- Sample additional file title}
-    Additional file descriptions text.
-
+  \subsection*{Additional file 1 --- supplemental data}
+  Supplementary data contain a complete list of all real data sets used in this study. Additionally, a table with more details to the used docker images and the detailed results of the performance measurement are included. The file is available at \cite{supplement}.
 
 \end{backmatter}
 \end{document}
