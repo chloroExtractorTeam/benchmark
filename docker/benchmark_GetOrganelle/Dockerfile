@@ -19,7 +19,7 @@ RUN apt install --yes \
     python-numpy \
     python-sympy
 
-ENV GETORGANELLEVERSION b2e29d6d9372246535d42063430f51280766a741
+ENV GETORGANELLEVERSION 587c1c51c34e270eb9178a42a77a5150157e6925
 
 WORKDIR /opt
 RUN git clone --recursive https://github.com/Kinggerm/GetOrganelle.git && \
