@@ -37,7 +37,7 @@ my ($start_time,
     )=(
     "", 
     "", 
-    "",
+    0,
     0,
     0,
     0,
@@ -110,8 +110,8 @@ if (-e $filename)
 	# timestamp           size_bytes  path
 	# 20190510-T-14:25:34 8234        /home/bla/blub/sim_250bp/1000/2.5M//2/org-asm
 	chomp;
-	my ($timestamp, $size, $path) = $_ =~ /^(\S+)\s+(\d+)\s+(.+)$/g;
-	if ($size > $peak_disk_usage)
+	my ($timestamp, $size, $path) = split(/\s+/, $_, 3);
+	if (defined $size && $size ne "" && ($size > $peak_disk_usage))
 	{
 	    $peak_disk_usage = $size;
 	}
