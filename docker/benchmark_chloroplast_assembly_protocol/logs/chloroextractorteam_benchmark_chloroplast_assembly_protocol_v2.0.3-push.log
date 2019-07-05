@@ -1,0 +1,45 @@
+The push refers to repository [docker.io/chloroextractorteam/benchmark_chloroplast_assembly_protocol]
+50018b039323: Preparing
+3a11ee2dd5d5: Preparing
+749611d1c44b: Preparing
+cec4d3cf1bc0: Preparing
+e8b5298e44e0: Preparing
+9a00768b0490: Preparing
+b527316f8ebc: Preparing
+369779135c33: Preparing
+cf69ddfd28c2: Preparing
+23aa763786de: Preparing
+06bf94e667bb: Preparing
+aafd5f42e7c5: Preparing
+b57c79f4a9f3: Preparing
+d60e01b37e74: Preparing
+e45cfbc98a50: Preparing
+762d8e1a6054: Preparing
+9a00768b0490: Waiting
+cf69ddfd28c2: Waiting
+06bf94e667bb: Waiting
+23aa763786de: Waiting
+d60e01b37e74: Waiting
+e45cfbc98a50: Waiting
+b527316f8ebc: Waiting
+762d8e1a6054: Waiting
+369779135c33: Waiting
+aafd5f42e7c5: Waiting
+b57c79f4a9f3: Waiting
+3a11ee2dd5d5: Pushed
+50018b039323: Pushed
+749611d1c44b: Pushed
+e8b5298e44e0: Pushed
+b527316f8ebc: Mounted from chloroextractorteam/benchmark_org-asm
+9a00768b0490: Mounted from chloroextractorteam/benchmark_org-asm
+369779135c33: Mounted from chloroextractorteam/benchmark_org-asm
+cf69ddfd28c2: Mounted from chloroextractorteam/benchmark_org-asm
+06bf94e667bb: Mounted from chloroextractorteam/benchmark_org-asm
+b57c79f4a9f3: Layer already exists
+23aa763786de: Mounted from chloroextractorteam/benchmark_org-asm
+aafd5f42e7c5: Mounted from chloroextractorteam/benchmark_org-asm
+d60e01b37e74: Layer already exists
+e45cfbc98a50: Layer already exists
+762d8e1a6054: Layer already exists
+cec4d3cf1bc0: Pushed
+v2.0.3: digest: sha256:0618853ed97e7917fcaef77fd0557daa934652a6c36311292f5b9cc238d42e57 size: 3666
