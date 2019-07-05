@@ -1,36 +1,36 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_chloroextractor]
-8e307427e307: Preparing
-cea431eb0ebd: Preparing
-423c4e907d4f: Preparing
-4debff08447b: Preparing
-63ac61fe7377: Preparing
-3b53a6fe48a5: Preparing
-4f34841b330e: Preparing
-ec556bf36497: Preparing
-37e0cec141b3: Preparing
+c0f65aca4c2a: Preparing
+b8447fcf3efa: Preparing
+33c741c118a2: Preparing
+3f30f5df5394: Preparing
+9c09271c2124: Preparing
+e7e542cb3e51: Preparing
+301213c4b20f: Preparing
+5240fe9e0c73: Preparing
+214660e1168e: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-ec556bf36497: Waiting
-37e0cec141b3: Waiting
-b57c79f4a9f3: Waiting
-3b53a6fe48a5: Waiting
-762d8e1a6054: Waiting
-4f34841b330e: Waiting
-d60e01b37e74: Waiting
+e7e542cb3e51: Waiting
+301213c4b20f: Waiting
+5240fe9e0c73: Waiting
 e45cfbc98a50: Waiting
-63ac61fe7377: Mounted from chloroextractorteam/benchmark-baseimage
-4debff08447b: Mounted from chloroextractorteam/benchmark-baseimage
-423c4e907d4f: Mounted from chloroextractorteam/benchmark-baseimage
-3b53a6fe48a5: Mounted from chloroextractorteam/benchmark-baseimage
-4f34841b330e: Mounted from chloroextractorteam/benchmark-baseimage
-8e307427e307: Pushed
-ec556bf36497: Mounted from chloroextractorteam/benchmark-baseimage
+214660e1168e: Waiting
+762d8e1a6054: Waiting
+b57c79f4a9f3: Waiting
+d60e01b37e74: Waiting
+33c741c118a2: Mounted from chloroextractorteam/benchmark-baseimage
+9c09271c2124: Mounted from chloroextractorteam/benchmark-baseimage
+3f30f5df5394: Mounted from chloroextractorteam/benchmark-baseimage
+c0f65aca4c2a: Pushed
+e7e542cb3e51: Mounted from chloroextractorteam/benchmark-baseimage
+301213c4b20f: Mounted from chloroextractorteam/benchmark-baseimage
+5240fe9e0c73: Mounted from chloroextractorteam/benchmark-baseimage
 b57c79f4a9f3: Layer already exists
 d60e01b37e74: Layer already exists
 e45cfbc98a50: Layer already exists
 762d8e1a6054: Layer already exists
-37e0cec141b3: Mounted from chloroextractorteam/benchmark-baseimage
-cea431eb0ebd: Pushed
-master: digest: sha256:bb0acb0b47980ff2b4030edba366563adc38e3389c49d650b4e7595ca1def311 size: 3038
+214660e1168e: Mounted from chloroextractorteam/benchmark-baseimage
+b8447fcf3efa: Pushed
+master: digest: sha256:28e93aab90977db0b131f5d44238a7a01ebda1f3c40884592d0bf8554206af18 size: 3038

@@ -1,40 +1,42 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_ioga]
-cfd71e94d485: Preparing
-11087c214d06: Preparing
-99b13c781ee3: Preparing
-66112e669391: Preparing
-423c4e907d4f: Preparing
-4debff08447b: Preparing
-63ac61fe7377: Preparing
-3b53a6fe48a5: Preparing
-4f34841b330e: Preparing
-ec556bf36497: Preparing
-37e0cec141b3: Preparing
+d096c0f32f04: Preparing
+eadf89126ae0: Preparing
+2ac9fee8c98f: Preparing
+6ae69ade5c44: Preparing
+33c741c118a2: Preparing
+3f30f5df5394: Preparing
+9c09271c2124: Preparing
+e7e542cb3e51: Preparing
+301213c4b20f: Preparing
+5240fe9e0c73: Preparing
+214660e1168e: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-37e0cec141b3: Waiting
-4debff08447b: Waiting
+214660e1168e: Waiting
+3f30f5df5394: Waiting
+301213c4b20f: Waiting
+9c09271c2124: Waiting
+e7e542cb3e51: Waiting
 b57c79f4a9f3: Waiting
-e45cfbc98a50: Waiting
+d60e01b37e74: Waiting
 762d8e1a6054: Waiting
-4f34841b330e: Waiting
-63ac61fe7377: Waiting
-ec556bf36497: Waiting
-cfd71e94d485: Layer already exists
-66112e669391: Layer already exists
-423c4e907d4f: Layer already exists
-11087c214d06: Layer already exists
-99b13c781ee3: Layer already exists
-63ac61fe7377: Layer already exists
-4debff08447b: Layer already exists
-3b53a6fe48a5: Layer already exists
-ec556bf36497: Layer already exists
-4f34841b330e: Layer already exists
-37e0cec141b3: Layer already exists
+5240fe9e0c73: Waiting
+e45cfbc98a50: Waiting
+eadf89126ae0: Layer already exists
+6ae69ade5c44: Layer already exists
+d096c0f32f04: Layer already exists
+33c741c118a2: Layer already exists
+2ac9fee8c98f: Layer already exists
+9c09271c2124: Layer already exists
+3f30f5df5394: Layer already exists
+301213c4b20f: Layer already exists
+e7e542cb3e51: Layer already exists
+5240fe9e0c73: Layer already exists
+214660e1168e: Layer already exists
 b57c79f4a9f3: Layer already exists
 e45cfbc98a50: Layer already exists
 d60e01b37e74: Layer already exists
 762d8e1a6054: Layer already exists
-latest: digest: sha256:89b39947e93acd904d7a18465b033395744fab3da1402cd997fcd6e8945eb3cb size: 3459
+latest: digest: sha256:ff1ee0e38a37eca8adea0c120c0cd8e7a25b395ba44675bf1fdf4c37d3e072d0 size: 3459

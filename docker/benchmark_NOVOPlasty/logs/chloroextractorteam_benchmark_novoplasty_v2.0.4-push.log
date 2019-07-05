@@ -1,0 +1,37 @@
+The push refers to repository [docker.io/chloroextractorteam/benchmark_novoplasty]
+d6a46353eade: Preparing
+89ce65b2bd93: Preparing
+a26e9c0d7869: Preparing
+097bfc05ef65: Preparing
+e2f5edc3251c: Preparing
+902aaa3d4f7a: Preparing
+54bfb8866dea: Preparing
+0e30337cfd80: Preparing
+d63300ce977b: Preparing
+a604c4f39400: Preparing
+b57c79f4a9f3: Preparing
+d60e01b37e74: Preparing
+e45cfbc98a50: Preparing
+762d8e1a6054: Preparing
+902aaa3d4f7a: Waiting
+b57c79f4a9f3: Waiting
+d60e01b37e74: Waiting
+e45cfbc98a50: Waiting
+54bfb8866dea: Waiting
+a604c4f39400: Waiting
+d63300ce977b: Waiting
+097bfc05ef65: Mounted from chloroextractorteam/benchmark_ioga
+e2f5edc3251c: Mounted from chloroextractorteam/benchmark_ioga
+d6a46353eade: Pushed
+89ce65b2bd93: Pushed
+902aaa3d4f7a: Mounted from chloroextractorteam/benchmark_ioga
+54bfb8866dea: Mounted from chloroextractorteam/benchmark_ioga
+0e30337cfd80: Mounted from chloroextractorteam/benchmark_ioga
+b57c79f4a9f3: Layer already exists
+d63300ce977b: Mounted from chloroextractorteam/benchmark_ioga
+d60e01b37e74: Layer already exists
+a604c4f39400: Mounted from chloroextractorteam/benchmark_ioga
+e45cfbc98a50: Layer already exists
+762d8e1a6054: Layer already exists
+a26e9c0d7869: Pushed
+v2.0.4: digest: sha256:384cd5ee86f54c24079ffb1ec991549c5a021c548829fbe2409805e1e2088d73 size: 3247

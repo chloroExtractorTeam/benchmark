@@ -1,39 +1,38 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_novoplasty]
-64f9e4a0f5b4: Preparing
-206211ab804f: Preparing
-83a4b89495c5: Preparing
-423c4e907d4f: Preparing
-4debff08447b: Preparing
-63ac61fe7377: Preparing
-3b53a6fe48a5: Preparing
-4f34841b330e: Preparing
-ec556bf36497: Preparing
-37e0cec141b3: Preparing
+b6f7094716bf: Preparing
+a71af39618f9: Preparing
+e1cb20bbdf4e: Preparing
+33c741c118a2: Preparing
+3f30f5df5394: Preparing
+9c09271c2124: Preparing
+e7e542cb3e51: Preparing
+301213c4b20f: Preparing
+5240fe9e0c73: Preparing
+214660e1168e: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-37e0cec141b3: Waiting
-b57c79f4a9f3: Waiting
-63ac61fe7377: Waiting
-762d8e1a6054: Waiting
-3b53a6fe48a5: Waiting
-d60e01b37e74: Waiting
-ec556bf36497: Waiting
-4f34841b330e: Waiting
+e7e542cb3e51: Waiting
+301213c4b20f: Waiting
+5240fe9e0c73: Waiting
 e45cfbc98a50: Waiting
-4debff08447b: Layer already exists
-83a4b89495c5: Layer already exists
-206211ab804f: Layer already exists
-64f9e4a0f5b4: Layer already exists
-423c4e907d4f: Layer already exists
-63ac61fe7377: Layer already exists
-ec556bf36497: Layer already exists
-3b53a6fe48a5: Layer already exists
-37e0cec141b3: Layer already exists
-4f34841b330e: Layer already exists
+214660e1168e: Waiting
+762d8e1a6054: Waiting
+b57c79f4a9f3: Waiting
+9c09271c2124: Waiting
+a71af39618f9: Layer already exists
+3f30f5df5394: Layer already exists
+b6f7094716bf: Layer already exists
+33c741c118a2: Layer already exists
+e1cb20bbdf4e: Layer already exists
+e7e542cb3e51: Layer already exists
+9c09271c2124: Layer already exists
+301213c4b20f: Layer already exists
+5240fe9e0c73: Layer already exists
+214660e1168e: Layer already exists
+d60e01b37e74: Layer already exists
 b57c79f4a9f3: Layer already exists
 e45cfbc98a50: Layer already exists
-d60e01b37e74: Layer already exists
 762d8e1a6054: Layer already exists
-latest: digest: sha256:2d951dcd2d716016927d7e9e22bf6b47d83c4efb903bc2083bf114c14cb229e9 size: 3247
+latest: digest: sha256:372284c6bf0807c53376a04a77fe018f38da61a45a32d71c736914d965028bc3 size: 3247
