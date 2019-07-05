@@ -34,7 +34,7 @@ else
 fi
 
 
-NAME="${PROGRAM2CALL}"_"${THREADS}"_"${LENGTH_READS}"_"${READ_RATIO}"_"${AMOUNT}"_"${REPLICATE}"
+NAME="${PROGRAM2CALL}"_"${THREADS}"_"${LENGTH_READS}"_"${READ_RATIO}"_"${AMOUNT}"_"${ITERATION}"
 LOGBASE=~/projects/benchmark/benchmark/performance/performance/logs/"${NAME}"
 OUTPUTDIR=~/projects/benchmark/benchmark/performance/performance/sim_"${LENGTH_READS}"bp/"${READ_RATIO}"/"${AMOUNT}"/
 
@@ -59,7 +59,7 @@ Output:
    Assembler output folder:  ${OUTFOLDER}
    Name of output file:      ${NAME}
    Basename of logfolder:    ${LOGBASE}
-   Folder for calulations:   ${REPLICATE}
+   Folder for calculations:  ${REPLICATE}
 
 EOF
 
