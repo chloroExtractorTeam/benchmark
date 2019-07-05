@@ -26,7 +26,7 @@ RUN git clone https://github.com/eead-csic-compbio/chloroplast_assembly_protocol
 ENV PATH "/opt/chloroplast_assembly_protocol:$PATH"
 
 RUN perl /opt/chloroplast_assembly_protocol/install.pl && \
-    sed -i '/^[[:space:]]*my \$CPUTHREADS = 4;/{=;s/^\([[:space:]]*my \$CPUTHREADS = 4;.*\)/my $CPUTHREADS = (exists $ENV{NUMCPUS} && $ENV{NUMCPUS} =~ \/^\\d+$\/) ? $ENV{NUMCPUS} : 4; # old line content: \1/};' /opt/chloroplast_assembly_protocol/1_cleanreads.pl
+    sed -i '/^[[:space:]]*my \$CPUTHREADS = 4;/{s/^\([[:space:]]*my \$CPUTHREADS = 4;.*\)/my $CPUTHREADS = ((exists $ENV{NUMCPUS}) and ($ENV{NUMCPUS} =~ \/^\\d+$\/)) ? $ENV{NUMCPUS} : 4; # old line content: \1/};' /opt/chloroplast_assembly_protocol/1_cleanreads.pl
 
 ADD TAIR10_chrC.fas /opt/reference.fa
 
