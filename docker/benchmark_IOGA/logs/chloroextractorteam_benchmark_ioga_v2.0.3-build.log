@@ -3,73 +3,73 @@ SSH_CONNECTION=::1 32826 ::1 22
 GIT_SHA1=4f6a4b80628d2966446b6a792a90244b274186d8
 LANG=de_DE.UTF-8
 OLDPWD=/tmp/benchmark/docker
-LATESTLOG=logs/chloroextractorteam_benchmark_ioga_master-push-latest.log
-LOGFILE=logs/chloroextractorteam_benchmark_ioga_master-build.log
+LATESTLOG=logs/chloroextractorteam_benchmark_ioga_v2.0.3-push-latest.log
+LOGFILE=logs/chloroextractorteam_benchmark_ioga_v2.0.3-build.log
 SSH_AUTH_SOCK=/tmp/ssh-lGsdvSFjZ7Qa/agent.14056
 XDG_SESSION_ID=23
 USER=ffoerster
-IMAGE_NAME=chloroextractorteam/benchmark_ioga:master
-PUSHLOG=logs/chloroextractorteam_benchmark_ioga_master-push.log
+IMAGE_NAME=chloroextractorteam/benchmark_ioga:v2.0.3
+PUSHLOG=logs/chloroextractorteam_benchmark_ioga_v2.0.3-push.log
 PWD=/tmp/benchmark/docker/benchmark_IOGA
 HOME=/home/ffoerster
 SSH_AGENT_PID=14057
 SSH_CLIENT=10.149.30.159 58453 22
 TMUX=/tmp/tmux-1000/default,16631,0
-BUILD_DATE=2019-07-05T14:01:14Z
+BUILD_DATE=2019-07-05T13:33:05Z
 SSH_TTY=/dev/pts/0
 MAIL=/var/mail/ffoerster
 VCS_REF=4f6a4b8
 TERM=screen
 SHELL=/bin/bash
-LOGBASE=logs/chloroextractorteam_benchmark_ioga_master
+LOGBASE=logs/chloroextractorteam_benchmark_ioga_v2.0.3
 TMUX_PANE=%79
 SHLVL=4
 PROMPT_COMMAND=history -a; history -n
 DOCKER_REPO=chloroextractorteam/benchmark_ioga
-SOURCE_BRANCH=master
+SOURCE_BRANCH=v2.0.3
 LOGNAME=ffoerster
 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 XDG_RUNTIME_DIR=/run/user/1000
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 _=/usr/bin/env
-Sending build context to Docker daemon  268.3kB
+Sending build context to Docker daemon  264.2kB
 Step 1/17 : ARG baseimageversion=latest
 Step 2/17 : FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
-master: Pulling from chloroextractorteam/benchmark-baseimage
-Digest: sha256:20a020bcf309527a8c7e674c4288da2be9acdb617031a99ced4af8758f41facb
-Status: Image is up to date for chloroextractorteam/benchmark-baseimage:master
- ---> 91c6e156b605
+v2.0.3: Pulling from chloroextractorteam/benchmark-baseimage
+Digest: sha256:0160b4b59f5060ee2ee652437dbb69d333bf40e02627d27245a111543d773ce9
+Status: Image is up to date for chloroextractorteam/benchmark-baseimage:v2.0.3
+ ---> 4f3956e421d4
 Step 3/17 : ARG VERSION=master
- ---> Running in 74e0c348f26b
-Removing intermediate container 74e0c348f26b
- ---> 984d3b759090
+ ---> Running in 5ad47805aa1d
+Removing intermediate container 5ad47805aa1d
+ ---> d4e8f4ed290c
 Step 4/17 : ARG VCS_REF
- ---> Running in 62f1bd7fbde0
-Removing intermediate container 62f1bd7fbde0
- ---> 4dabbb491873
+ ---> Running in b6be2dae25a2
+Removing intermediate container b6be2dae25a2
+ ---> a838a0e47c5a
 Step 5/17 : ARG BUILD_DATE
- ---> Running in 359a9f3800ae
-Removing intermediate container 359a9f3800ae
- ---> 38180abe2ede
+ ---> Running in a0752574baa5
+Removing intermediate container a0752574baa5
+ ---> 0bc2c0261a6f
 Step 6/17 : RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
- ---> Running in 3b845bfca396
-VCS_REF: 4f6a4b8, BUILD_DATE: 2019-07-05T14:01:14Z, VERSION: master
-Removing intermediate container 3b845bfca396
- ---> bfd8c8b37b74
+ ---> Running in 02745ada69c3
+VCS_REF: 4f6a4b8, BUILD_DATE: 2019-07-05T13:33:05Z, VERSION: v2.0.3
+Removing intermediate container 02745ada69c3
+ ---> a79d2bee773d
 Step 7/17 : LABEL maintainer="frank.foerster@ime.fraunhofer.de"       description="Dockerfile providing an image for IOGA for our benchmark setup"       version=${VERSION}       org.label-schema.vcs-ref=${VCS_REF}       org.label-schema.build-date=${BUILD_DATE}       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
- ---> Running in a5622431556c
-Removing intermediate container a5622431556c
- ---> a37b428bd000
+ ---> Running in 4b8f37c7afac
+Removing intermediate container 4b8f37c7afac
+ ---> 5a7e13d9a85c
 Step 8/17 : ENV IOGAVERSION c460ea9d9fe176fec2bd76d369b0cbb36793b2bf
- ---> Running in 8b4d0b043e6b
-Removing intermediate container 8b4d0b043e6b
- ---> 40e6aafebb37
+ ---> Running in d16210a9d7d1
+Removing intermediate container d16210a9d7d1
+ ---> ebfae21df677
 Step 9/17 : WORKDIR /opt
- ---> Running in e590b8cbd1f9
-Removing intermediate container e590b8cbd1f9
- ---> 90cde15b56f6
+ ---> Running in bc1951401192
+Removing intermediate container bc1951401192
+ ---> 83850f858de4
 Step 10/17 : RUN git clone --recursive https://github.com/holmrenser/IOGA.git &&     cd IOGA &&     git checkout ${IOGAVERSION} &&     rm -rf .git &&     python setup_IOGA.py
- ---> Running in ac6f784121e4
+ ---> Running in 5c08559401f9
 [91mCloning into 'IOGA'...
 [0m[91mNote: checking out 'c460ea9d9fe176fec2bd76d369b0cbb36793b2bf'.
 
@@ -115,31 +115,31 @@ seqtk
 make
 trying /opt/IOGA/exe/seqtk-master/seqtk
 succes
-Removing intermediate container ac6f784121e4
- ---> 8c3cc28ec43d
+Removing intermediate container 5c08559401f9
+ ---> 45c818c97b47
 Step 11/17 : RUN chmod -R +rX /opt/IOGA
- ---> Running in e38d687848f2
-Removing intermediate container e38d687848f2
- ---> 0dfa35bd4c98
+ ---> Running in 122b23a52cb5
+Removing intermediate container 122b23a52cb5
+ ---> 3eeda5723bc4
 Step 12/17 : ENV PATH "/opt/IOGA:$PATH"
- ---> Running in db589e24c8dc
-Removing intermediate container db589e24c8dc
- ---> d970650ba9ff
+ ---> Running in 493a0947c921
+Removing intermediate container 493a0947c921
+ ---> 484ad08ccd26
 Step 13/17 : ADD TAIR10_chrC.fas /opt/reference.fa
- ---> cfdbb923fd03
+ ---> 22a6385a5834
 Step 14/17 : ADD wrapper.sh /usr/local/bin/wrapper.sh
- ---> 7cfa163a8791
+ ---> 4f2677ee52a6
 Step 15/17 : ENTRYPOINT ["wrapper.sh"]
- ---> Running in 83cae8716423
-Removing intermediate container 83cae8716423
- ---> ada19a9d9a1e
+ ---> Running in 476512c09768
+Removing intermediate container 476512c09768
+ ---> 183e810b3cbd
 Step 16/17 : VOLUME /data
- ---> Running in d988d754043e
-Removing intermediate container d988d754043e
- ---> 3a9f4267f888
+ ---> Running in faad651da11d
+Removing intermediate container faad651da11d
+ ---> 4fdbb2446237
 Step 17/17 : WORKDIR /data
- ---> Running in ec44285d9888
-Removing intermediate container ec44285d9888
- ---> 86ef788fc4db
-Successfully built 86ef788fc4db
-Successfully tagged chloroextractorteam/benchmark_ioga:master
+ ---> Running in 35b49971cc69
+Removing intermediate container 35b49971cc69
+ ---> 3176cc8e2e7a
+Successfully built 3176cc8e2e7a
+Successfully tagged chloroextractorteam/benchmark_ioga:v2.0.3
