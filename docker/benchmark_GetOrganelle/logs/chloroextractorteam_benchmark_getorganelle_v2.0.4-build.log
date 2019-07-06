@@ -4,65 +4,65 @@ SSH_CONNECTION=::1 32826 ::1 22
 GIT_SHA1=47373df5535d770ec886eef74a378b73bf00ca34
 LANG=de_DE.UTF-8
 OLDPWD=/tmp/benchmark/docker
-LATESTLOG=logs/chloroextractorteam_benchmark_getorganelle_master-push-latest.log
-LOGFILE=logs/chloroextractorteam_benchmark_getorganelle_master-build.log
+LATESTLOG=logs/chloroextractorteam_benchmark_getorganelle_v2.0.4-push-latest.log
+LOGFILE=logs/chloroextractorteam_benchmark_getorganelle_v2.0.4-build.log
 SSH_AUTH_SOCK=/tmp/ssh-lGsdvSFjZ7Qa/agent.14056
 XDG_SESSION_ID=23
 USER=ffoerster
-IMAGE_NAME=chloroextractorteam/benchmark_getorganelle:master
-PUSHLOG=logs/chloroextractorteam_benchmark_getorganelle_master-push.log
+IMAGE_NAME=chloroextractorteam/benchmark_getorganelle:v2.0.4
+PUSHLOG=logs/chloroextractorteam_benchmark_getorganelle_v2.0.4-push.log
 PWD=/tmp/benchmark/docker/benchmark_GetOrganelle
 HOME=/home/ffoerster
 SSH_AGENT_PID=14057
 SSH_CLIENT=10.149.30.159 58453 22
 TMUX=/tmp/tmux-1000/default,16631,0
-BUILD_DATE=2019-07-05T16:00:10Z
+BUILD_DATE=2019-07-05T15:32:43Z
 SSH_TTY=/dev/pts/0
 MAIL=/var/mail/ffoerster
 VCS_REF=47373df
 TERM=screen
 SHELL=/bin/bash
-LOGBASE=logs/chloroextractorteam_benchmark_getorganelle_master
+LOGBASE=logs/chloroextractorteam_benchmark_getorganelle_v2.0.4
 TMUX_PANE=%79
 SHLVL=4
 PROMPT_COMMAND=history -a; history -n
 DOCKER_REPO=chloroextractorteam/benchmark_getorganelle
-SOURCE_BRANCH=master
+SOURCE_BRANCH=v2.0.4
 LOGNAME=ffoerster
 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 XDG_RUNTIME_DIR=/run/user/1000
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
 _=/usr/bin/env
-Sending build context to Docker daemon    236kB
+Sending build context to Docker daemon  231.9kB
 Step 1/16 : ARG baseimageversion=latest
 Step 2/16 : FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
-master: Pulling from chloroextractorteam/benchmark-baseimage
-Digest: sha256:ec1be7055ee935f5dfb67798ccbf3f1a4cd0d2f41f83fe9c080f46366565e6aa
-Status: Image is up to date for chloroextractorteam/benchmark-baseimage:master
- ---> a08cb37478c6
+v2.0.4: Pulling from chloroextractorteam/benchmark-baseimage
+Digest: sha256:76294f7ef26b12e59efbbc9edbdf7ecfe046d21a9917d4ee0d8e4543622b4233
+Status: Image is up to date for chloroextractorteam/benchmark-baseimage:v2.0.4
+ ---> 02fdfdb5a720
 Step 3/16 : ARG VERSION=master
- ---> Running in 0ea87007cb2d
-Removing intermediate container 0ea87007cb2d
- ---> daa77bb8e719
+ ---> Running in 6f69b5b4b6f8
+Removing intermediate container 6f69b5b4b6f8
+ ---> 357c7d3125cb
 Step 4/16 : ARG VCS_REF
- ---> Running in f7d9bdcacc3b
-Removing intermediate container f7d9bdcacc3b
- ---> cefa71135244
+ ---> Running in 0fe700bea3bd
+Removing intermediate container 0fe700bea3bd
+ ---> 7452c0addd32
 Step 5/16 : ARG BUILD_DATE
- ---> Running in 54a4ca715d58
-Removing intermediate container 54a4ca715d58
- ---> c8732c9687eb
+ ---> Running in 031ea92ee02e
+Removing intermediate container 031ea92ee02e
+ ---> 15d0bac5c309
 Step 6/16 : RUN echo "VCS_REF: "${VCS_REF}", BUILD_DATE: "${BUILD_DATE}", VERSION: "${VERSION}
- ---> Running in 77711c16ac72
-VCS_REF: 47373df, BUILD_DATE: 2019-07-05T16:00:10Z, VERSION: master
-Removing intermediate container 77711c16ac72
- ---> 896c5b9dbd70
+ ---> Running in 98726e0ebc6a
+VCS_REF: 47373df, BUILD_DATE: 2019-07-05T15:32:43Z, VERSION: v2.0.4
+Removing intermediate container 98726e0ebc6a
+ ---> 258fb20734d4
 Step 7/16 : LABEL maintainer="frank.foerster@ime.fraunhofer.de"       description="Dockerfile providing an image for GetOrganelle for our benchmark setup"       version=${VERSION}       org.label-schema.vcs-ref=${VCS_REF}       org.label-schema.build-date=${BUILD_DATE}       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
- ---> Running in e45ab53abd6e
-Removing intermediate container e45ab53abd6e
- ---> 538789b9cfac
+ ---> Running in 1cabb71b803a
+Removing intermediate container 1cabb71b803a
+ ---> 6988c3eecf77
 Step 8/16 : RUN apt install --yes     python-scipy     python-numpy     python-sympy
- ---> Running in 120dad4374b2
+ ---> Running in 42ae9f17b255
 [91m
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
@@ -126,7 +126,7 @@ Get:28 http://archive.ubuntu.com/ubuntu bionic/universe amd64 python-pyglet all 
 Get:29 http://archive.ubuntu.com/ubuntu bionic/universe amd64 python-sympy all 1.1.1-5 [2,568 kB]
 Get:30 http://archive.ubuntu.com/ubuntu bionic/universe amd64 python-scipy amd64 0.19.1-2ubuntu1 [9,689 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 45.8 MB in 2s (26.5 MB/s)
+[0mFetched 45.8 MB in 2s (26.0 MB/s)
 Selecting previously unselected package python-decorator.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 52512 files and directories currently installed.)
 Preparing to unpack .../00-python-decorator_4.1.2-1_all.deb ...
@@ -253,20 +253,20 @@ Setting up python-sympy (1.1.1-5) ...
 Setting up python-ipython (5.5.0-1) ...
 Setting up ipython (5.5.0-1) ...
 Processing triggers for libc-bin (2.27-3ubuntu1) ...
-Removing intermediate container 120dad4374b2
- ---> daa9427b212f
+Removing intermediate container 42ae9f17b255
+ ---> 409a21f35499
 Step 9/16 : ENV GETORGANELLEVERSION 587c1c51c34e270eb9178a42a77a5150157e6925
- ---> Running in 9c5fa7583a76
-Removing intermediate container 9c5fa7583a76
- ---> bb5e1f9ba867
+ ---> Running in 412eb8873001
+Removing intermediate container 412eb8873001
+ ---> 09737f3981cf
 Step 10/16 : WORKDIR /opt
- ---> Running in 0452e4958f67
-Removing intermediate container 0452e4958f67
- ---> 7ebbffcf403c
+ ---> Running in 5b519c59e365
+Removing intermediate container 5b519c59e365
+ ---> bbec1c43a5a1
 Step 11/16 : RUN git clone --recursive https://github.com/Kinggerm/GetOrganelle.git &&     cd GetOrganelle &&     git checkout ${GETORGANELLEVERSION} &&     rm -rf .git
- ---> Running in b167692642a4
+ ---> Running in 82e646eb6c15
 [91mCloning into 'GetOrganelle'...
-[0m[91mChecking out files:  44% (134/304)   [0m[91mChecking out files:  45% (137/304)   [0m[91mChecking out files:  46% (140/304)   [0m[91mChecking out files:  47% (143/304)   [0m[91mChecking out files:  48% (146/304)   [0m[91mChecking out files:  49% (149/304)   [0m[91mChecking out files:  50% (152/304)   [0m[91mChecking out files:  51% (156/304)   [0m[91mChecking out files:  52% (159/304)   [0m[91mChecking out files:  53% (162/304)   [0m[91mChecking out files:  54% (165/304)   [0m[91mChecking out files:  55% (168/304)   [0m[91mChecking out files:  56% (171/304)   [0m[91mChecking out files:  57% (174/304)   [0m[91mChecking out files:  58% (177/304)   [0m[91mChecking out files:  59% (180/304)   [0m[91mChecking out files:  60% (183/304)   [0m[91mChecking out files:  61% (186/304)   [0m[91mChecking out files:  62% (189/304)   [0m[91mChecking out files:  63% (192/304)   [0m[91mChecking out files:  64% (195/304)   [0m[91mChecking out files:  65% (198/304)   [0m[91mChecking out files:  66% (201/304)   [0m[91mChecking out files:  67% (204/304)   Checking out files:  68% (207/304)   [0m[91mChecking out files:  69% (210/304)   [0m[91mChecking out files:  70% (213/304)   [0m[91mChecking out files:  71% (216/304)   [0m[91mChecking out files:  72% (219/304)   [0m[91mChecking out files:  73% (222/304)   [0m[91mChecking out files:  74% (225/304)   [0m[91mChecking out files:  75% (228/304)   [0m[91mChecking out files:  76% (232/304)   [0m[91mChecking out files:  77% (235/304)   [0m[91mChecking out files:  78% (238/304)   [0m[91mChecking out files:  79% (241/304)   [0m[91mChecking out files:  80% (244/304)   [0m[91mChecking out files:  81% (247/304)   [0m[91mChecking out files:  82% (250/304)   [0m[91mChecking out files:  83% (253/304)   Checking out files:  84% (256/304)   [0m[91mChecking out files:  85% (259/304)   [0m[91mChecking out files:  86% (262/304)   [0m[91mChecking out files:  87% (265/304)   [0m[91mChecking out files:  88% (268/304)   [0m[91mChecking out files:  89% (271/304)   [0m[91mChecking out files:  90% (274/304)   [0m[91mChecking out files:  91% (277/304)   [0m[91mChecking out files:  92% (280/304)   [0m[91mChecking out files:  93% (283/304)   [0m[91mChecking out files:  94% (286/304)   [0m[91mChecking out files:  95% (289/304)   [0m[91mChecking out files:  96% (292/304)   [0m[91mChecking out files:  97% (295/304)   [0m[91mChecking out files:  98% (298/304)   [0m[91mChecking out files:  99% (301/304)   [0m[91mChecking out files: 100% (304/304)   [0m[91mChecking out files: 100% (304/304), done.
+[0m[91mChecking out files:  44% (134/304)   [0m[91mChecking out files:  45% (137/304)   [0m[91mChecking out files:  46% (140/304)   [0m[91mChecking out files:  47% (143/304)   [0m[91mChecking out files:  48% (146/304)   [0m[91mChecking out files:  49% (149/304)   [0m[91mChecking out files:  50% (152/304)   [0m[91mChecking out files:  51% (156/304)   [0m[91mChecking out files:  52% (159/304)   [0m[91mChecking out files:  53% (162/304)   [0m[91mChecking out files:  54% (165/304)   [0m[91mChecking out files:  55% (168/304)   [0m[91mChecking out files:  56% (171/304)   [0m[91mChecking out files:  57% (174/304)   [0m[91mChecking out files:  58% (177/304)   [0m[91mChecking out files:  59% (180/304)   [0m[91mChecking out files:  60% (183/304)   [0m[91mChecking out files:  61% (186/304)   [0m[91mChecking out files:  62% (189/304)   [0m[91mChecking out files:  63% (192/304)   [0m[91mChecking out files:  64% (195/304)   [0m[91mChecking out files:  65% (198/304)   [0m[91mChecking out files:  66% (201/304)   [0m[91mChecking out files:  67% (204/304)   [0m[91mChecking out files:  68% (207/304)   [0m[91mChecking out files:  69% (210/304)   [0m[91mChecking out files:  70% (213/304)   [0m[91mChecking out files:  71% (216/304)   [0m[91mChecking out files:  72% (219/304)   [0m[91mChecking out files:  73% (222/304)   [0m[91mChecking out files:  74% (225/304)   [0m[91mChecking out files:  75% (228/304)   [0m[91mChecking out files:  76% (232/304)   [0m[91mChecking out files:  77% (235/304)   [0m[91mChecking out files:  78% (238/304)   [0m[91mChecking out files:  79% (241/304)   [0m[91mChecking out files:  80% (244/304)   [0m[91mChecking out files:  81% (247/304)   [0m[91mChecking out files:  82% (250/304)   [0m[91mChecking out files:  83% (253/304)   [0m[91mChecking out files:  84% (256/304)   [0m[91mChecking out files:  85% (259/304)   [0m[91mChecking out files:  86% (262/304)   [0m[91mChecking out files:  87% (265/304)   [0m[91mChecking out files:  88% (268/304)   [0m[91mChecking out files:  89% (271/304)   [0m[91mChecking out files:  90% (274/304)   [0m[91mChecking out files:  91% (277/304)   [0m[91mChecking out files:  92% (280/304)   [0m[91mChecking out files:  93% (283/304)   [0m[91mChecking out files:  94% (286/304)   [0m[91mChecking out files:  95% (289/304)   [0m[91mChecking out files:  96% (292/304)   [0m[91mChecking out files:  97% (295/304)   [0m[91mChecking out files:  98% (298/304)   [0m[91mChecking out files:  99% (301/304)   [0m[91mChecking out files: 100% (304/304)   [0m[91mChecking out files: 100% (304/304), done.
 [0m[91mNote: checking out '587c1c51c34e270eb9178a42a77a5150157e6925'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
@@ -279,25 +279,25 @@ do so (now or later) by using -b with the checkout command again. Example:
   git checkout -b <new-branch-name>
 
 HEAD is now at 587c1c5 v1.6.2a
-[0mRemoving intermediate container b167692642a4
- ---> ed0120583ddf
+[0mRemoving intermediate container 82e646eb6c15
+ ---> 62b2ad054f36
 Step 12/16 : ENV PATH "/opt/GetOrganelle:/opt/GetOrganelle/Utilities:$PATH"
- ---> Running in 46dfec4c8a0a
-Removing intermediate container 46dfec4c8a0a
- ---> cf929217d853
+ ---> Running in a127fe14aebb
+Removing intermediate container a127fe14aebb
+ ---> b74cbcc390b6
 Step 13/16 : ADD wrapper.sh /usr/local/bin/wrapper.sh
- ---> 90d4d72c0b1b
+ ---> 8d979f7c3384
 Step 14/16 : ENTRYPOINT ["wrapper.sh"]
- ---> Running in 04a52cef04e4
-Removing intermediate container 04a52cef04e4
- ---> 1e4ccf0229c4
+ ---> Running in 619dd82abe5c
+Removing intermediate container 619dd82abe5c
+ ---> e9e3529d3069
 Step 15/16 : VOLUME /data
- ---> Running in ca5422dfc38d
-Removing intermediate container ca5422dfc38d
- ---> ff15d6895e78
+ ---> Running in 44db4f2fb670
+Removing intermediate container 44db4f2fb670
+ ---> 968ab7cc23b2
 Step 16/16 : WORKDIR /data
- ---> Running in 4c9777d8a16a
-Removing intermediate container 4c9777d8a16a
- ---> 6caf529a530d
-Successfully built 6caf529a530d
-Successfully tagged chloroextractorteam/benchmark_getorganelle:master
+ ---> Running in d4bc89e156f2
+Removing intermediate container d4bc89e156f2
+ ---> 4a31ba8bdfd0
+Successfully built 4a31ba8bdfd0
+Successfully tagged chloroextractorteam/benchmark_getorganelle:v2.0.4
