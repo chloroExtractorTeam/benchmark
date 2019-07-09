@@ -83,7 +83,7 @@ then
     ln -s ../"${FW_READ}"
     ln -s ../"${REV_READ}"
 
-    get_organelle_reads.py -1 "${FW_READ}" -2 "${REV_READ}" "${SPADESOPTIONS_OPT}" "${SPADESOPTIONS}" -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
+    get_organelle_from_reads.py -1 "${FW_READ}" -2 "${REV_READ}" "${SPADESOPTIONS_OPT}" "${SPADESOPTIONS}" -o ./ -R 15 -k 21,45,65,85,105 -F plant_cp -t ${NUMCPUS}
 
     find -name "*path_sequence.fasta" | sort | head -1 | xargs -I{} cp {} output.fa
 fi
