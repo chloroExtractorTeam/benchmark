@@ -1,0 +1,36 @@
+The push refers to repository [docker.io/chloroextractorteam/benchmark_fastplast]
+2fee89f29075: Preparing
+b30cfe895f51: Preparing
+86338646df9c: Preparing
+6c5cedd41573: Preparing
+73d1779d0691: Preparing
+3910c0f1df1d: Preparing
+c057760a3ea9: Preparing
+1e611bee0431: Preparing
+6f7c52ee7e72: Preparing
+b57c79f4a9f3: Preparing
+d60e01b37e74: Preparing
+e45cfbc98a50: Preparing
+762d8e1a6054: Preparing
+1e611bee0431: Waiting
+b57c79f4a9f3: Waiting
+6f7c52ee7e72: Waiting
+d60e01b37e74: Waiting
+e45cfbc98a50: Waiting
+762d8e1a6054: Waiting
+3910c0f1df1d: Waiting
+c057760a3ea9: Waiting
+6c5cedd41573: Layer already exists
+b30cfe895f51: Layer already exists
+86338646df9c: Layer already exists
+2fee89f29075: Layer already exists
+73d1779d0691: Layer already exists
+3910c0f1df1d: Layer already exists
+6f7c52ee7e72: Layer already exists
+c057760a3ea9: Layer already exists
+b57c79f4a9f3: Layer already exists
+1e611bee0431: Layer already exists
+d60e01b37e74: Layer already exists
+762d8e1a6054: Layer already exists
+e45cfbc98a50: Layer already exists
+latest: digest: sha256:237df03df97d0e43a4d187c3584a39515ce40a6ffa96d3a62384c03646a6a48b size: 3038
