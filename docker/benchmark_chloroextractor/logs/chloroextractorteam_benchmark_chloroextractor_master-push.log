@@ -1,36 +1,41 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_chloroextractor]
-c0f65aca4c2a: Preparing
-b8447fcf3efa: Preparing
-33c741c118a2: Preparing
-3f30f5df5394: Preparing
-9c09271c2124: Preparing
-e7e542cb3e51: Preparing
-301213c4b20f: Preparing
-5240fe9e0c73: Preparing
-214660e1168e: Preparing
+110567b65103: Preparing
+37423822f7f8: Preparing
+41e3a25fc831: Preparing
+36c6c517f677: Preparing
+56ec9a39ce80: Preparing
+b5f0a2f2d20e: Preparing
+aa77955a24ac: Preparing
+975e55aa4fa5: Preparing
+682926f14a44: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-e7e542cb3e51: Waiting
-301213c4b20f: Waiting
-5240fe9e0c73: Waiting
-e45cfbc98a50: Waiting
-214660e1168e: Waiting
+b5f0a2f2d20e: Waiting
+aa77955a24ac: Waiting
+975e55aa4fa5: Waiting
 762d8e1a6054: Waiting
+e45cfbc98a50: Waiting
+682926f14a44: Waiting
 b57c79f4a9f3: Waiting
 d60e01b37e74: Waiting
-33c741c118a2: Mounted from chloroextractorteam/benchmark-baseimage
-9c09271c2124: Mounted from chloroextractorteam/benchmark-baseimage
-3f30f5df5394: Mounted from chloroextractorteam/benchmark-baseimage
-c0f65aca4c2a: Pushed
-e7e542cb3e51: Mounted from chloroextractorteam/benchmark-baseimage
-301213c4b20f: Mounted from chloroextractorteam/benchmark-baseimage
-5240fe9e0c73: Mounted from chloroextractorteam/benchmark-baseimage
+56ec9a39ce80: Mounted from chloroextractorteam/benchmark-baseimage
+36c6c517f677: Mounted from chloroextractorteam/benchmark-baseimage
+41e3a25fc831: Mounted from chloroextractorteam/benchmark-baseimage
+aa77955a24ac: Mounted from chloroextractorteam/benchmark-baseimage
+110567b65103: Pushed
+b5f0a2f2d20e: Mounted from chloroextractorteam/benchmark-baseimage
 b57c79f4a9f3: Layer already exists
 d60e01b37e74: Layer already exists
-e45cfbc98a50: Layer already exists
+975e55aa4fa5: Mounted from chloroextractorteam/benchmark-baseimage
 762d8e1a6054: Layer already exists
-214660e1168e: Mounted from chloroextractorteam/benchmark-baseimage
-b8447fcf3efa: Pushed
-master: digest: sha256:28e93aab90977db0b131f5d44238a7a01ebda1f3c40884592d0bf8554206af18 size: 3038
+e45cfbc98a50: Layer already exists
+682926f14a44: Mounted from chloroextractorteam/benchmark-baseimage
+37423822f7f8: Retrying in 5 seconds
+37423822f7f8: Retrying in 4 seconds
+37423822f7f8: Retrying in 3 seconds
+37423822f7f8: Retrying in 2 seconds
+37423822f7f8: Retrying in 1 second
+37423822f7f8: Pushed
+master: digest: sha256:6f65aa89bfa1d738da5d4115cb66bb81c2020e6be0d8f4371ee47aea5e968051 size: 3038

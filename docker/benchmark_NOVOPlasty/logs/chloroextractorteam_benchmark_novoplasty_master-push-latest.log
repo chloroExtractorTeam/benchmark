@@ -1,38 +1,39 @@
 The push refers to repository [docker.io/chloroextractorteam/benchmark_novoplasty]
-b6f7094716bf: Preparing
-a71af39618f9: Preparing
-e1cb20bbdf4e: Preparing
-33c741c118a2: Preparing
-3f30f5df5394: Preparing
-9c09271c2124: Preparing
-e7e542cb3e51: Preparing
-301213c4b20f: Preparing
-5240fe9e0c73: Preparing
-214660e1168e: Preparing
+96d7696d2a08: Preparing
+51616398d720: Preparing
+b73d6b7f769c: Preparing
+41e3a25fc831: Preparing
+36c6c517f677: Preparing
+56ec9a39ce80: Preparing
+b5f0a2f2d20e: Preparing
+aa77955a24ac: Preparing
+975e55aa4fa5: Preparing
+682926f14a44: Preparing
 b57c79f4a9f3: Preparing
 d60e01b37e74: Preparing
 e45cfbc98a50: Preparing
 762d8e1a6054: Preparing
-e7e542cb3e51: Waiting
-301213c4b20f: Waiting
-5240fe9e0c73: Waiting
+d60e01b37e74: Waiting
+aa77955a24ac: Waiting
 e45cfbc98a50: Waiting
-214660e1168e: Waiting
 762d8e1a6054: Waiting
+56ec9a39ce80: Waiting
+975e55aa4fa5: Waiting
+682926f14a44: Waiting
+b5f0a2f2d20e: Waiting
 b57c79f4a9f3: Waiting
-9c09271c2124: Waiting
-a71af39618f9: Layer already exists
-3f30f5df5394: Layer already exists
-b6f7094716bf: Layer already exists
-33c741c118a2: Layer already exists
-e1cb20bbdf4e: Layer already exists
-e7e542cb3e51: Layer already exists
-9c09271c2124: Layer already exists
-301213c4b20f: Layer already exists
-5240fe9e0c73: Layer already exists
-214660e1168e: Layer already exists
-d60e01b37e74: Layer already exists
+41e3a25fc831: Layer already exists
+96d7696d2a08: Layer already exists
+b73d6b7f769c: Layer already exists
+51616398d720: Layer already exists
+36c6c517f677: Layer already exists
+56ec9a39ce80: Layer already exists
+682926f14a44: Layer already exists
+975e55aa4fa5: Layer already exists
+aa77955a24ac: Layer already exists
+b5f0a2f2d20e: Layer already exists
 b57c79f4a9f3: Layer already exists
-e45cfbc98a50: Layer already exists
+d60e01b37e74: Layer already exists
 762d8e1a6054: Layer already exists
-latest: digest: sha256:372284c6bf0807c53376a04a77fe018f38da61a45a32d71c736914d965028bc3 size: 3247
+e45cfbc98a50: Layer already exists
+latest: digest: sha256:6849c70f02a44f934ba7e745eab5e252520d06204689c4a1daa727e5420896cf size: 3247
