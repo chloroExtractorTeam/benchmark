@@ -1,4 +1,3 @@
-File Edit Options Buffers Tools Sh-Script Help                                                                                                                                                
 #!/bin/bash                                                                                                                                                                                   
 
 i=$SLURM_ARRAY_TASK_ID ;
