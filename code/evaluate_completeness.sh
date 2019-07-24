@@ -17,7 +17,8 @@ rm ${NAME}_vs_ref.bam
 rm ref_vs_${NAME}.bam
 
 ### for the simulated data 
-#for i in */*/output.fa ; do echo -ne "$(dirname $(dirname $i))\t"  >> res.tsv ; ../evaluate_completeness.sh /home/maa62rb/sim/athaliana_chloro_sim/TAIR10_chrC.fas $i $(basename $(dirname $i)) >> res.tsv ; done
+#for i in */*/output.fa ; do echo -ne "$(dirname $(dirname $i))\t"  >> res.tsv ; ../evaluate_completeness.sh ~maa62rb/chloroplast_benchmark/data/sim/TAIR10_chrC.fas $i $(basename $(dirname $i)) >> res.tsv ; done
+
 
 ## for the real datsets 
 #for i in */*/output.fa ; do dat=$(dirname $(dirname $i)); echo -ne "$dat\t"  >> res.tsv ; ../evaluate_completeness.sh ~maa62rb/real/references/$(cat /home/maa62rb/real/real_datasets.tsv   | grep $dat  | awk '{print $NF}').fa $i $(basename $(dirname $i)) >> res.tsv ; done
