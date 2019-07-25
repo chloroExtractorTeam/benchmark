@@ -1,0 +1,39 @@
+The push refers to repository [docker.io/chloroextractorteam/benchmark_novoplasty]
+75b1583f1d6e: Preparing
+0135f221806b: Preparing
+84b6111a7e8c: Preparing
+d9c967ee39ae: Preparing
+cc3aa22016cb: Preparing
+189d15fa8419: Preparing
+fd492255957a: Preparing
+96f5cd25f999: Preparing
+bfc7e569f41d: Preparing
+136a41642414: Preparing
+b57c79f4a9f3: Preparing
+d60e01b37e74: Preparing
+e45cfbc98a50: Preparing
+762d8e1a6054: Preparing
+fd492255957a: Waiting
+136a41642414: Waiting
+b57c79f4a9f3: Waiting
+d60e01b37e74: Waiting
+96f5cd25f999: Waiting
+e45cfbc98a50: Waiting
+bfc7e569f41d: Waiting
+189d15fa8419: Waiting
+762d8e1a6054: Waiting
+0135f221806b: Layer already exists
+84b6111a7e8c: Layer already exists
+75b1583f1d6e: Layer already exists
+d9c967ee39ae: Layer already exists
+cc3aa22016cb: Layer already exists
+189d15fa8419: Layer already exists
+fd492255957a: Layer already exists
+136a41642414: Layer already exists
+bfc7e569f41d: Layer already exists
+96f5cd25f999: Layer already exists
+b57c79f4a9f3: Layer already exists
+e45cfbc98a50: Layer already exists
+d60e01b37e74: Layer already exists
+762d8e1a6054: Layer already exists
+latest: digest: sha256:5e7dba2b8b844c70c4f658a2d3731447d891a30d59ef56be510af9568cd2c15a size: 3245

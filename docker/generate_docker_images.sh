@@ -14,15 +14,22 @@ do
 	export DOCKER_REPO=chloroextractorteam/$(echo $i | tr "A-Z" "a-z");
 	export IMAGE_NAME="${DOCKER_REPO}":${SOURCE_BRANCH}
 
-	./hooks/build &>/dev/zero
+	mkdir -p logs
+
+	export LOGBASE=logs/$(echo $IMAGE_NAME | tr ":/" "__")
+	export LOGFILE="${LOGBASE}"-build.log
+	export PUSHLOG="${LOGBASE}"-push.log
+	export LATESTLOG="${LOGBASE}"-push-latest.log
+
+	./hooks/build &>"${LOGFILE}"
 
 	if [ $? -ne 0 ]
 	then
 		echo "$i FAIL"
 	else
 		echo "$i PASS"
-		docker push ${IMAGE_NAME} &>/dev/zero
-		./hooks/post_push &>/dev/zero
+		docker push ${IMAGE_NAME} &>"${PUSHLOG}"
+		./hooks/post_push &>"${LATESTLOG}"
 	fi
 
 	cd $OLDPWD

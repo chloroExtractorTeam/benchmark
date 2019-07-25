@@ -1,0 +1,39 @@
+The push refers to repository [docker.io/chloroextractorteam/benchmark_ioga]
+917430561aa0: Preparing
+93e00f801a69: Preparing
+3e44111b4d28: Preparing
+7936ea65b1eb: Preparing
+278e5003b891: Preparing
+6d514cacbc66: Preparing
+502ec14bf503: Preparing
+5bf4b12eb285: Preparing
+40453c67894b: Preparing
+7ec72b3de33d: Preparing
+103c69a719f8: Preparing
+b57c79f4a9f3: Preparing
+d60e01b37e74: Preparing
+e45cfbc98a50: Preparing
+762d8e1a6054: Preparing
+502ec14bf503: Waiting
+5bf4b12eb285: Waiting
+40453c67894b: Waiting
+6d514cacbc66: Waiting
+e45cfbc98a50: Waiting
+d60e01b37e74: Waiting
+7ec72b3de33d: Waiting
+7936ea65b1eb: Layer already exists
+278e5003b891: Layer already exists
+917430561aa0: Layer already exists
+93e00f801a69: Layer already exists
+3e44111b4d28: Layer already exists
+502ec14bf503: Layer already exists
+5bf4b12eb285: Layer already exists
+6d514cacbc66: Layer already exists
+40453c67894b: Layer already exists
+7ec72b3de33d: Layer already exists
+103c69a719f8: Layer already exists
+b57c79f4a9f3: Layer already exists
+e45cfbc98a50: Layer already exists
+762d8e1a6054: Layer already exists
+d60e01b37e74: Layer already exists
+latest: digest: sha256:640b4cc6fe62a4165ee99ce3192f2335e7237aef2d05a459a21a2afb2a6c9ec8 size: 3459

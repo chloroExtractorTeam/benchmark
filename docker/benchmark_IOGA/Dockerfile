@@ -1,5 +1,5 @@
-ARG osversion=latest
-FROM chloroextractorteam/benchmark-baseimage:${osversion}
+ARG baseimageversion=latest
+FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
 
 ARG VERSION=master
 ARG VCS_REF
@@ -22,6 +22,8 @@ RUN git clone --recursive https://github.com/holmrenser/IOGA.git && \
     git checkout ${IOGAVERSION} && \
     rm -rf .git && \
     python setup_IOGA.py
+
+RUN chmod -R +rX /opt/IOGA
 
 ENV PATH "/opt/IOGA:$PATH"
 

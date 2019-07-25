@@ -1,0 +1,39 @@
+{
+    "description": "Software repository for the chloroplast assembly tool benchmark", 
+    "license": "MIT", 
+    "title": "chloroExtractorTeam/benchmark: Repository for chloroplast assembly tools", 
+    "upload_type": "software",
+    "creators": [
+        {
+            "affiliation": "Center for Computational and Theoretical Biology, University of Würzburg", 
+            "name": "Freudenthal, Jan A.",
+            "orcid": "0000-0001-5279-6168"
+        }, 
+        {
+            "affiliation": "Center for Computational and Theoretical Biology, University of Würzburg", 
+            "name": "Pfaff, Simon",
+            "orcid": "0000-0001-8505-9439"
+        }, 
+        {
+            "affiliation": "Center for Computational and Theoretical Biology, University of Würzburg", 
+            "name": "Terhoeven, Niklas",
+            "orcid": "0000-0002-8669-0000"
+        }, 
+        {
+            "affiliation": "Center for Computational and Theoretical Biology, University of Würzburg", 
+            "name": "Korte, Arthur",
+            "orcid": "0000-0003-0831-1463"
+        }, 
+        {
+            "affiliation": "Center for Computational and Theoretical Biology, University of Würzburg", 
+            "name": "Ankenbrand, Markus J.",
+            "orcid": "0000-0002-6620-807X"
+        }, 
+        {
+            "affiliation": "Center for Computational and Theoretical Biology, University of Würzburg", 
+            "name": "Förster, Frank",
+            "orcid": "0000-0003-4166-5423"
+        } 
+    ], 
+    "access_right": "open" 
+}

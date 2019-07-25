@@ -1,0 +1,38 @@
+The push refers to repository [docker.io/chloroextractorteam/benchmark_getorganelle]
+dca67e34628f: Preparing
+960cad3ea1a9: Preparing
+3fd4b5f032dc: Preparing
+1b7222e36e73: Preparing
+66bb9ca7590b: Preparing
+7eb98aec9bd3: Preparing
+397c1432147a: Preparing
+07f65d179622: Preparing
+702d924a92bf: Preparing
+eab1bf5b8e62: Preparing
+b57c79f4a9f3: Preparing
+d60e01b37e74: Preparing
+e45cfbc98a50: Preparing
+762d8e1a6054: Preparing
+7eb98aec9bd3: Waiting
+702d924a92bf: Waiting
+07f65d179622: Waiting
+b57c79f4a9f3: Waiting
+d60e01b37e74: Waiting
+e45cfbc98a50: Waiting
+762d8e1a6054: Waiting
+eab1bf5b8e62: Waiting
+960cad3ea1a9: Layer already exists
+dca67e34628f: Layer already exists
+66bb9ca7590b: Layer already exists
+3fd4b5f032dc: Layer already exists
+1b7222e36e73: Layer already exists
+397c1432147a: Layer already exists
+7eb98aec9bd3: Layer already exists
+07f65d179622: Layer already exists
+eab1bf5b8e62: Layer already exists
+702d924a92bf: Layer already exists
+b57c79f4a9f3: Layer already exists
+e45cfbc98a50: Layer already exists
+d60e01b37e74: Layer already exists
+762d8e1a6054: Layer already exists
+latest: digest: sha256:59114a3ae4593f8b66d7669b3c0dc4067863721735b44950a8a40f12205174d9 size: 3249

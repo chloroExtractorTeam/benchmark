@@ -1,5 +1,5 @@
-ARG osversion=latest
-FROM chloroextractorteam/benchmark-baseimage:${osversion}
+ARG baseimageversion=latest
+FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
 
 ARG VERSION=master
 ARG VCS_REF
@@ -14,13 +14,20 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
-ENV ORGASMVERSION e8d013ea9b939c0a05b8a7632e21f001e9c8c516
+ENV ORGASMVERSION 830313acae3ca773b63f6bea9fc6d017e021bde5
 WORKDIR /opt
 RUN git clone https://git.metabarcoding.org/org-asm/org-asm.git && \
     cd org-asm && \
     git checkout ${ORGASMVERSION} && \
     rm -rf .git && \
-    python3 setup.py --serenity install
+    python3.7 get_orgasm/get-orgasm.py
+
+RUN cd org-asm/src && \
+    sed -i 's#<stdio.h>#<bsd/stdio.h>#' fastq.c && \
+    make && \
+    cp orgasmi /opt/org-asm/ORG.asm-1.0.3/bin
+
+ENV PATH "/opt/org-asm/ORG.asm-1.0.3/bin:$PATH"
 
 ADD wrapper.sh /usr/local/bin/wrapper.sh
 

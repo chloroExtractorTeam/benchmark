@@ -1,5 +1,5 @@
-ARG osversion=latest
-FROM chloroextractorteam/benchmark-baseimage:${osversion}
+ARG baseimageversion=latest
+FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
 
 ARG VERSION=master
 ARG VCS_REF
@@ -14,15 +14,15 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
-ENV NOVOPLASTYVERSION e8329aea1fc35d385ad6ad2fb1b7b22c630a760c
+ENV NOVOPLASTYVERSION 6af0894f8ea1d76a1b71df9cb762cf6e48dceac1
 
 WORKDIR /opt
 RUN git clone --recursive https://github.com/ndierckx/NOVOPlasty.git && \
     cd NOVOPlasty && \
     git checkout ${NOVOPLASTYVERSION} && \
     rm -rf .git && \
-    chmod +x NOVOPlasty2.7.2.pl && \
-    ln -s NOVOPlasty2.7.2.pl NOVOPlasty.pl
+    chmod +x NOVOPlasty*.pl && \
+    ln -s NOVOPlasty*.pl NOVOPlasty.pl
 ENV PATH "/opt/NOVOPlasty:$PATH"
 
 ADD TAIR10_chrC.fas /opt/reference.fa

@@ -14,16 +14,25 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
-ENV DEBIAN_FRONTEND noninteractive
-
 RUN apt update && \
     apt install --yes \
+       locales
+RUN locale-gen en_GB.UTF-8  
+
+ENV DEBIAN_FRONTEND=noninteractive LANG=en_GB.UTF-8 LANGUAGE=en_GB:UTF-8 LC_ALL=en_GB.UTF-8  
+
+RUN apt install --yes \
 	software-properties-common && \
     add-apt-repository --yes ppa:deadsnakes/ppa && \
     apt update && \
     apt install --yes \
-       python3.7 && \
+       python3.7 \
+       python3.7-venv \
+       python3.7-dev && \
     apt install --yes \
+       nvi \
+       nano \
+       libbsd-dev \
        liblog-log4perl-perl \
        libmoose-perl \
        libfile-which-perl \
@@ -48,6 +57,7 @@ RUN apt update && \
        python-wget \
        python-matplotlib \
        python-biopython \
+       python3-distutils \
        git
 
 RUN cd /tmp/ && \
@@ -55,13 +65,10 @@ RUN cd /tmp/ && \
        tar -xzf - && \
     mv SPAdes-3.13.0-Linux/ /opt//spades/
 
-RUN pip3 install -U pip && \
-    pip install -U sphinx && \
-    pip install -U cython
-
 ENV PATH "/opt/spades/bin:$PATH"
 
 ADD get_versions.sh /usr/local/bin/get_versions.sh
+ADD random_qual.pl /usr/local/bin/random_qual.pl
 
 # Setup of /data volume and set it as working directory
 VOLUME /data

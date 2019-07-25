@@ -1,0 +1,38 @@
+The push refers to repository [docker.io/chloroextractorteam/benchmark_org-asm]
+795b520111a0: Preparing
+b1b13b46ea26: Preparing
+d79ce2f01270: Preparing
+1b7222e36e73: Preparing
+66bb9ca7590b: Preparing
+7eb98aec9bd3: Preparing
+397c1432147a: Preparing
+07f65d179622: Preparing
+702d924a92bf: Preparing
+eab1bf5b8e62: Preparing
+b57c79f4a9f3: Preparing
+d60e01b37e74: Preparing
+e45cfbc98a50: Preparing
+762d8e1a6054: Preparing
+07f65d179622: Waiting
+702d924a92bf: Waiting
+e45cfbc98a50: Waiting
+762d8e1a6054: Waiting
+d60e01b37e74: Waiting
+eab1bf5b8e62: Waiting
+b57c79f4a9f3: Waiting
+397c1432147a: Waiting
+795b520111a0: Layer already exists
+66bb9ca7590b: Layer already exists
+d79ce2f01270: Layer already exists
+1b7222e36e73: Layer already exists
+b1b13b46ea26: Layer already exists
+702d924a92bf: Layer already exists
+7eb98aec9bd3: Layer already exists
+07f65d179622: Layer already exists
+397c1432147a: Layer already exists
+eab1bf5b8e62: Layer already exists
+b57c79f4a9f3: Layer already exists
+e45cfbc98a50: Layer already exists
+762d8e1a6054: Layer already exists
+d60e01b37e74: Layer already exists
+latest: digest: sha256:9ab48eb4c678b0afc9b06525fbfa44fde39118d67a3144b4d106cadf19e4aa6c size: 3249

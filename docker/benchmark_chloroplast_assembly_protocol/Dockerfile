@@ -1,5 +1,5 @@
-ARG osversion=latest
-FROM chloroextractorteam/benchmark-baseimage:${osversion}
+ARG baseimageversion=latest
+FROM chloroextractorteam/benchmark-baseimage:${baseimageversion}
 
 ARG VERSION=master
 ARG VCS_REF
@@ -14,7 +14,9 @@ LABEL maintainer="frank.foerster@ime.fraunhofer.de" \
       org.label-schema.build-date=${BUILD_DATE} \
       org.label-schema.vcs-url="https://github.com/chloroExtractorTeam/benchmark.git"
 
-ENV CHLOROPLASTASSEMBLYPROTOCOL 750e241f2a51c3989d59a9c58ab48c4709aa9ccb
+RUN apt install --yes libperl4-corelibs-perl
+
+ENV CHLOROPLASTASSEMBLYPROTOCOLVERSION 250d16ac02005d6a5939bf182b3d2995d0e88229
 WORKDIR /opt
 RUN git clone https://github.com/eead-csic-compbio/chloroplast_assembly_protocol.git && \
     cd chloroplast_assembly_protocol && \
@@ -23,7 +25,8 @@ RUN git clone https://github.com/eead-csic-compbio/chloroplast_assembly_protocol
 
 ENV PATH "/opt/chloroplast_assembly_protocol:$PATH"
 
-RUN perl /opt/chloroplast_assembly_protocol/install.pl
+RUN perl /opt/chloroplast_assembly_protocol/install.pl && \
+    sed -i '/^[[:space:]]*my \$CPUTHREADS = 4;/{s/^\([[:space:]]*my \$CPUTHREADS = 4;.*\)/my $CPUTHREADS = ((exists $ENV{NUMCPUS}) and ($ENV{NUMCPUS} =~ \/^\\d+$\/)) ? $ENV{NUMCPUS} : 4; # old line content: \1/};' /opt/chloroplast_assembly_protocol/1_cleanreads.pl
 
 ADD TAIR10_chrC.fas /opt/reference.fa
 
