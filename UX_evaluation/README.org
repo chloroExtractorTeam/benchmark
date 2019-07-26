@@ -477,3 +477,136 @@ IOGA:
 Chloroplast assembly protocol:
 - improve installation instructions (dependencies missing)
 - examples: assembly fails (maybe a data problem - HOWTO-brachy works)
+* UPDATE FOR RESUBMISSION
+** base image
+[2019-07-25 Do]
+run apt udate and dist-upgrade
+
+** GetOrganelle
+new version available, redoing eval on new base image
+*** new version
+**** questions
+***** Is the tool easy to install?
+there are two ways - testing "in situ" first
+- git is missing -> installing via apt
+- as python is not there, I am using python3
+- ~python3 setup.py --in-situ~ fails with missing setuptools
+- installing python3-setuptools via apt
+- pip is missing in the next step (installation of numpy, scipy and sympy)
+- installing python3-pip via apt
+- works with pip3
+
+***** Is there a way to test the installation?
+no test data provided -> using the chloroextractor set
+works.
+**** summary
+Installation instructions changed 
+- still not perfect
+- missing things like git and pip
+- confusion about python versions
+
+dependencies not found error is fixed as deps are now packaged with GetOrganelle
+
+Tutorial, maintenance and license stay the same
+
+** fast-plast
+*** new version
+**** questions
+***** Is the tool easy to install?
+***** Is there a way to test the installation?
+***** Is there a tutorial on how to use the tool?
+***** Is there a good documentation on the parameter settings?
+***** Is the tool maintained (issues answered, implementation of new features)?
+***** Is the tool Open Source?
+**** summary
+- Is the tool easy to install?
+- Is there a way to test the installation? 
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings? 
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+** org-asm
+*** new version
+**** questions
+***** Is the tool easy to install?
+***** Is there a way to test the installation?
+***** Is there a tutorial on how to use the tool?
+***** Is there a good documentation on the parameter settings?
+***** Is the tool maintained (issues answered, implementation of new features)?
+***** Is the tool Open Source?
+**** summary
+- Is the tool easy to install?
+- Is there a way to test the installation? 
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings? 
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+** NOVOPlasty
+*** new version
+**** questions
+***** Is the tool easy to install?
+***** Is there a way to test the installation?
+***** Is there a tutorial on how to use the tool?
+***** Is there a good documentation on the parameter settings?
+***** Is the tool maintained (issues answered, implementation of new features)?
+***** Is the tool Open Source?
+**** summary
+- Is the tool easy to install?
+- Is there a way to test the installation? 
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings? 
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+** chloroExtractor
+*** new version
+**** questions
+***** Is the tool easy to install?
+***** Is there a way to test the installation?
+***** Is there a tutorial on how to use the tool?
+***** Is there a good documentation on the parameter settings?
+***** Is the tool maintained (issues answered, implementation of new features)?
+***** Is the tool Open Source?
+**** summary
+- Is the tool easy to install?
+- Is there a way to test the installation? 
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings? 
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+** IOGA
+*** new version
+**** questions
+***** Is the tool easy to install?
+***** Is there a way to test the installation?
+***** Is there a tutorial on how to use the tool?
+***** Is there a good documentation on the parameter settings?
+***** Is the tool maintained (issues answered, implementation of new features)?
+***** Is the tool Open Source?
+**** summary
+- Is the tool easy to install?
+- Is there a way to test the installation? 
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings? 
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+** Chloroplast Assembly Protocol
+*** new version
+**** questions
+***** Is the tool easy to install?
+***** Is there a way to test the installation?
+***** Is there a tutorial on how to use the tool?
+***** Is there a good documentation on the parameter settings?
+***** Is the tool maintained (issues answered, implementation of new features)?
+***** Is the tool Open Source?
+**** summary
+- Is the tool easy to install?
+- Is there a way to test the installation? 
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings? 
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
