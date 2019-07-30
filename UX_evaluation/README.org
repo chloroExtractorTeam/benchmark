@@ -513,7 +513,21 @@ Tutorial, maintenance and license stay the same
 *** new version
 **** questions
 ***** Is the tool easy to install?
+- git clone does not work, git is missing -> installed via apt
+- running install perl script
+- error: gcc seems to be missing -> installing via apt
+- error: make seems to be missing -> installing via apt
+- error: g++ seems to be missing -> installing via apt
+- error: zlib.h is missing -> installing libz-dev via apt
+- success
 ***** Is there a way to test the installation?
+using the chloroextractor test data with the example command from the fastplast readme
+
+- looks like java is missing -> installing openjdk-11-jre-headless via apt
+- python seems to be missing -> installing via apt
+
+works now.
+
 ***** Is there a tutorial on how to use the tool?
 ***** Is there a good documentation on the parameter settings?
 ***** Is the tool maintained (issues answered, implementation of new features)?
@@ -527,27 +541,27 @@ Tutorial, maintenance and license stay the same
 - Is the tool Open Source?
 
 ** org-asm
-*** new version
-**** questions
-***** Is the tool easy to install?
-***** Is there a way to test the installation?
-***** Is there a tutorial on how to use the tool?
-***** Is there a good documentation on the parameter settings?
-***** Is the tool maintained (issues answered, implementation of new features)?
-***** Is the tool Open Source?
-**** summary
-- Is the tool easy to install?
-- Is there a way to test the installation? 
-- Is there a tutorial on how to use the tool?
-- Is there a good documentation on the parameter settings? 
-- Is the tool maintained (issues answered, implementation of new features)?
-- Is the tool Open Source?
-
+no updates since last test
 ** NOVOPlasty
+- several new commits in repo
+- latest commit in master from 26. July 2019 (removed NOVOPlasty3.4.pl)
+- this commit is not usable (as the main script is missing)
+- I am using the latest release (3.2)
+
 *** new version
 **** questions
 ***** Is the tool easy to install?
+- downloaded tar.gz of latest release (3.2)
+- unpacking
+- seems to be done
+
+No installation instructions available, but a simple download is enough
+
+
 ***** Is there a way to test the installation?
+Testing with the shipped test data and config file
+
+sucess
 ***** Is there a tutorial on how to use the tool?
 ***** Is there a good documentation on the parameter settings?
 ***** Is the tool maintained (issues answered, implementation of new features)?
