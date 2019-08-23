@@ -17,6 +17,8 @@ eval_params <- function(ir, total, data=my_res){
 	return(tibble(ir,total,prec,sens,f1))
 }
 
+crossing(ir=seq(0,25000,1000),total=seq(10000,150000,10000)) %>% rowwise %>% do(eval_params(.$ir,.$total)) %>% gather(measure,value,3:5) %>% filter(measure == "f1") %>% arrange(-value) %>% head(1) %>% print
+
 pdf("novel_cutoffs.pdf")
 crossing(ir=seq(0,25000,1000),total=seq(10000,150000,10000)) %>% rowwise %>% do(eval_params(.$ir,.$total)) %>% gather(measure,value,3:5) %>% ggplot(aes(total,ir,fill=value)) + geom_tile() + facet_grid(. ~ measure) + ggtitle("F1, sensitivity, and precision by total and ir length cutoffs")
 crossing(ir=seq(0,25000,1000),total=seq(10000,150000,10000)) %>% rowwise %>% do(eval_params(.$ir,.$total)) %>% gather(measure,value,3:5) %>% ggplot(aes(total,color=as.factor(ir),y=value)) + geom_line() + facet_grid(. ~ measure) + ggtitle("F1, sensitivity, and precision by ir length cutoffs (and total)")
