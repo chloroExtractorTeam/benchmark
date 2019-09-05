@@ -1,25 +1,54 @@
-dps = c("tidyverse","dabestr","UpSetR","RColorBrewer","ggbeeswarm","ggpmisc","xtable","foreach")           
+dps = c("tidyverse","dabestr","UpSetR","RColorBrewer","ggbeeswarm","ggpmisc","xtable","foreach","BBmisc","EnvStats")           
 sapply(dps,function(x){if(!require(x,character.only = T)){install.packages(x);library(x,character.only = T)}else{library(x,character.only = T)}})
 
 
 ## load output file from alignment analyis
 ### order assemblers for ggplot
-res <- read_tsv("results/res2_clean.tsv",col_names=c("dataset","assembler","ref_tot","ref_cov","ref_cov_frac","qry_tot","qry_cov","qry_cov_frac","contig_num"))
+res <- read_tsv("results/res_runs_clean.tsv",col_names=c("dataset","assembler","ref_tot","ref_cov","ref_cov_frac","qry_tot","qry_cov","qry_cov_frac","contig_num")) %>% replace(is.na(.), 0)
 
 ## simulated data 
 res_sim  <- read_tsv("results/res_sim_clean.tsv",col_names=c("dataset","assembler","ref_tot","ref_cov","ref_cov_frac","qry_tot","qry_cov","qry_cov_frac","contig_num"))
 
+res_novel <- read_tsv("res_novel.tsv",col_names=c("dataset","assembler","ref_tot","ref_cov","ref_cov_frac","qry_tot","qry_cov","qry_cov_frac","contig_num"))
+
 ## calculate the score for each assembly for real data
 out_tibble <- res %>% mutate(rep_res = exp(-abs(log(qry_cov/ref_cov)))) %>%
-    mutate(score =  (1 - ((abs(1-ref_cov_frac)/4) + (abs(1-qry_cov_frac)/4) + (abs(1-rep_res)/4) + (abs(1-(1/contig_num))/4)))*100)
+    mutate(score =  (1 - ((abs(1-ref_cov_frac)/4) + (abs(1-qry_cov_frac)/4) + (abs(1-rep_res)/4) + (abs(1-(1/contig_num))/4)))*100) %>% replace(is.na(.), 0)
+
+ds_o = out_tibble %>% distinct(dataset)  %>% pull
+ass_o = out_tibble %>% distinct(assembler)  %>% pull
+
+dummy_o = foreach(i = ds_o,.combine="rbind") %do% {
+    foreach(j = ass_o,.combine="rbind") %do% {
+         c(i,j,NA)
+    } } %>% setColNames(c("dataset","assembler","score"))
+
+out_tibble = right_join(out_tibble,as.tibble(dummy_o),by = c("dataset","assembler")) %>%
+    mutate(score = score.x)
+
+
 
 ## order the assemblers for ggplot
 out_tibble$assembler_f <- factor(out_tibble$assembler, levels=c("CAP","CE","Fast-Plast","GetOrganelle","IOGA","NOVOPlasty","org.ASM"))
 
 
 ## calculate the score for each assembly for simulated  data 
-out_tibble_sim <- res_sim %>% mutate(rep_res = exp(-abs(log(qry_cov/ref_cov)))) %>%
+out_tibble_sim <- res_sim %>% mutate(rep_res = exp(-abs(log(qry_cov/ref_cov)))) %>% 
     mutate(score =  (1 - ((abs(1-ref_cov_frac)/4) + (abs(1-qry_cov_frac)/4) + (abs(1-rep_res)/4) + (abs(1-(1/contig_num))/4)))*100)
+
+ds = out_tibble_sim %>% distinct(dataset)  %>% pull
+ds = unique(c(ds, "sim_250bp.0-1.2M", "sim_150bp.0-1.2M"))
+ass = out_tibble_sim %>% distinct(assembler)  %>% pull
+
+dummy = foreach(i = ds,.combine="rbind") %do% {
+    foreach(j = ass,.combine="rbind") %do% {
+         c(i,j,NA)
+} } %>% setColNames(c("dataset","assembler","score"))
+
+out_tibble_sim = right_join(out_tibble_sim,as.tibble(dummy),by = c("dataset","assembler")) %>%
+    mutate(score = score.x)
+
+
 
 ## order the assemblers for ggplot
 out_tibble_sim$assembler_f <- factor(out_tibble_sim$assembler,
@@ -28,18 +57,30 @@ out_tibble_sim$assembler_f <- factor(out_tibble_sim$assembler,
 ## select colour pallette for plots 
 my_col=brewer.pal(7,"Set2")
 
+split_tab =  out_tibble_sim %>% pull(dataset) %>% strsplit("_") %>% lapply("[[",2)  %>% unlist  %>% strsplit("[.]")  %>% do.call(what="rbind") 
+
+sim_p <- out_tibble_sim %>% add_column(read_len = split_tab[,1]) %>%
+    add_column(ratio = split_tab[,2]) %>%
+    add_column(n_reads = split_tab[,3]) %>%
+    mutate(n_reads = str_replace_all(n_reads,"150bp","full")) %>% mutate(n_reads= str_replace_all(n_reads,"250bp","full"))
+
 ## create the tile plot for simulated data
-out_tibble_sim %>% ggplot(aes(x=assembler,y=dataset,fill=score)) + geom_tile() + theme_bw()+
+sim_p %>% ggplot(aes(x=assembler,y=dataset,fill=score)) + geom_tile() + theme_bw()+
     scale_fill_continuous(low = my_col[2] ,high = my_col[1]) +
-    theme(axis.title.y = element_blank(),axis.title.x=element_blank(),text = element_text(size=15))
+    theme(axis.title.y = element_blank(),axis.title.x=element_blank(),text = element_text(size=15)) +facet_grid(n_reads ~ read_len)
+
+
+sim_p %>% ggplot(aes(x=assembler,y=ratio,fill=score)) + geom_tile() + theme_bw()+
+    scale_fill_continuous(low = my_col[2] ,high = my_col[1]) +
+    theme(axis.title.y = element_blank(),axis.title.x=element_blank(),text = element_text(size=15)) +facet_grid(n_reads ~ read_len)
 ggsave("plots/sim_tiles.pdf")
 
 
 ## swarm plot for real datasets
-out_tibble %>% drop_na %>%  ggplot(aes(y=score,x=assembler_f,color=assembler_f)) +
-    geom_boxplot(notch=F,alpha=0.3,width=0.2,color="black",fill="#c0c0c0") +
+out_tibble %>% replace(is.na(.), 0) %>%  ggplot(aes(y=score,x=assembler_f,color=assembler_f)) +
     geom_quasirandom(size=1.9 ) + theme_bw()  + scale_color_manual(values=my_col) +
-    theme(axis.title.x = element_blank(),text = element_text(size=15), legend.title=element_blank())
+    geom_boxplot(notch=F,alpha=0.3,width=0.2,color="black",fill="#c0c0c0",outlier.shape=NA) +
+    theme(axis.title.x = element_blank(),text = element_text(size=15), legend.title=element_blank()) 
 ggsave("plots/swarm.pdf")
 
 
@@ -52,7 +93,8 @@ pdf("plots/upset.pdf")
 UL  = out_tibble %>% filter(score>99)  %>% select(dataset,assembler) %>% split(.$assembler) %>% lapply("[[",1)
 upset(fromList(UL), order.by = "freq",sets.bar.color=my_col[c(4,3,6,7,2)],
       point.size=5,matrix.color = my_col[3],
-      shade.alpha = 0.5, text.scale = 1.5)
+      shade.alpha = 0.5, text.scale = 1.5,nsets = 7)
+
 dev.off()
 
 
@@ -122,30 +164,50 @@ ggsave("plots/usage_amount_threads.pdf")
 ### Analyze re runs
 
 
-res_re  <- read_tsv("results/res_re_clean.tsv",col_names=c("dataset","assembler","ref_tot","ref_cov","ref_cov_frac","qry_tot","qry_cov","qry_cov_frac","contig_num"))
+res_re  <- read_tsv("results/res_reruns_clean.tsv",
+                    col_names=c("dataset","assembler","ref_tot","ref_cov",
+                                "ref_cov_frac","qry_tot","qry_cov","qry_cov_frac","contig_num")) %>%
+    replace(is.na(.), 0)
+
 
 
 out_tibble_re <- res_re %>% mutate(rep_res = exp(-abs(log(qry_cov/ref_cov)))) %>%
-    mutate(score =  (1 - ((abs(1-ref_cov_frac)/4) + (abs(1-qry_cov_frac)/4) + (abs(1-rep_res)/4) + (abs(1-(1/contig_num))/4)))*100)
+    mutate(score =  (1 - ((abs(1-ref_cov_frac)/4) +
+                          (abs(1-qry_cov_frac)/4) +
+                          (abs(1-rep_res)/4) +
+                          (abs(1-(1/contig_num))/4)))*100) %>% replace(is.na(.), 0)
 
 ## order the assemblers for ggplot
-out_tibble_re$assembler_f <- factor(out_tibble_re$assembler, levels=c("CAP","CE","Fast-Plast","GetOrganelle","IOGA","NOVOPlasty","org.ASM"))
+out_tibble_re$assembler_f <- factor(out_tibble_re$assembler,
+                                    levels=c("CAP","CE","Fast-Plast",
+                                             "GetOrganelle","IOGA","NOVOPlasty","org.ASM"))
 
+full_join(select(out_tibble,dataset,assembler,score1=score),select(out_tibble,dataset,assembler,score2=score))
 
 ##filter out_tibble with re run datasets
 
-out_re <- out_tibble[paste0(unlist(out_tibble[,1]),unlist(out_tibble[,2])) %in% paste0(unlist(out_tibble_re[,1]),unlist(out_tibble_re[,2])),]
+out_re <- out_tibble[paste0(unlist(out_tibble[,1]),unlist(out_tibble[,2])) %in%
+                     paste0(unlist(out_tibble_re[,1]),unlist(out_tibble_re[,2])),]
 
-out_re2 <- out_tibble_re[paste0(unlist(out_tibble_re[,1]),unlist(out_tibble_re[,2])) %in% paste0(unlist(out_re[,1]),unlist(out_re[,2])),]
+out_re2 <- out_tibble_re[paste0(unlist(out_tibble_re[,1]),unlist(out_tibble_re[,2])) %in%
+                         paste0(unlist(out_re[,1]),unlist(out_re[,2])),]
 
 out_j <- out_re %>% add_column(score_rerun=out_re2$score)
+out_j <- out_j %>%   replace(is.na(.), 0)
 
 
-out_j %>% ggplot(aes(x=score,y=score_rerun,col=assembler)) + geom_point()  + theme_bw() +
+
+full_join(select(out_tibble,dataset,assembler,score=score),
+          select(out_tibble_re,dataset,assembler,score_rerun=score)) %>% replace(is.na(.),0) %>%
+    ggplot(aes(x=score,y=score_rerun,col=assembler)) +
+#out_j %>%  ggplot(aes(x=score,y=score_rerun,col=assembler)) +
+    geom_jitter(width=0.1,height = 0.1)  + theme_bw() +
     facet_wrap(~assembler,ncol=3) + 
     stat_poly_eq(formula = x ~ y,parse=T) +
     guides(col=guide_legend(ncol=2)) +
-    theme(legend.title = element_blank(),legend.position = c(0.5,0.2), text=element_text(size=15)) +
+    theme(legend.title = element_blank(),
+          legend.position = c(0.5,0.2),
+          text=element_text(size=15)) +
     xlab("Score 1. run ") + ylab("Score 2. run")
 
 ggsave("plots/repro.pdf")
@@ -153,8 +215,12 @@ ggsave("plots/repro.pdf")
 
 
 
-score_summary <- out_tibble %>% drop_na %>% select(assembler, score) %>% group_by(assembler) %>%
-    summarize(Mean=mean(score), SD = sqrt(var(score)), N_perfect = length(which(score > 99)), N_tot = length(score))
+score_summary <- out_tibble %>% drop_na(score) %>%
+    select(assembler, score) %>% group_by(assembler) %>%
+    summarize(Median=median(score), IQR = iqr((score)), N_perfect = length(which(score > 99)),
+              N_tot = length(score))
+
+
 
 xtable(score_summary)
 
