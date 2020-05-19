@@ -86,6 +86,16 @@ csv2tsv SraRunInfo_plants.csv |
  tsv-uniq -f 2 |
  tsv-join --filter-file cpbase.tsv --key-fields 1 --data-fields 2 --append-fields 2 --allow-duplicate-keys |
  tsv-sample --seed-value 91685 >real_datasets.tsv
+
+# Repeat for species in SRA without reference in CpBase
+csv2tsv SraRunInfo_plants.csv |
+ perl -ne 'print unless /^$/' |
+ tsv-select -f1,29,7 |
+ sort -t $'\t' -k2,2 -k3,3nr |
+ tsv-uniq -f 2 |
+ tsv-join --filter-file cpbase.tsv --key-fields 1 --data-fields 2 --exclude --allow-duplicate-keys |
+ tsv-sample --seed-value 91685 >new_datasets.tsv
+
 ```
 
 Download reference chloroplasts
