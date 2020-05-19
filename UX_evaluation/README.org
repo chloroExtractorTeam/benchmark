@@ -477,3 +477,156 @@ IOGA:
 Chloroplast assembly protocol:
 - improve installation instructions (dependencies missing)
 - examples: assembly fails (maybe a data problem - HOWTO-brachy works)
+* UPDATE FOR RESUBMISSION
+** base image
+[2019-07-25 Do]
+run apt udate and dist-upgrade
+
+** GetOrganelle
+new version available, redoing eval on new base image
+*** new version
+**** questions
+***** Is the tool easy to install?
+there are two ways - testing "in situ" first
+- git is missing -> installing via apt
+- as python is not there, I am using python3
+- ~python3 setup.py --in-situ~ fails with missing setuptools
+- installing python3-setuptools via apt
+- pip is missing in the next step (installation of numpy, scipy and sympy)
+- installing python3-pip via apt
+- works with pip3
+
+***** Is there a way to test the installation?
+no test data provided -> using the chloroextractor set
+works.
+**** summary
+Installation instructions changed 
+- still not perfect
+- missing things like git and pip
+- confusion about python versions
+
+dependencies not found error is fixed as deps are now packaged with GetOrganelle
+
+Tutorial, maintenance and license stay the same
+
+** fast-plast
+*** new version
+**** questions
+***** Is the tool easy to install?
+- git clone does not work, git is missing -> installed via apt
+- running install perl script
+- error: gcc seems to be missing -> installing via apt
+- error: make seems to be missing -> installing via apt
+- error: g++ seems to be missing -> installing via apt
+- error: zlib.h is missing -> installing libz-dev via apt
+- success
+***** Is there a way to test the installation?
+using the chloroextractor test data with the example command from the fastplast readme
+
+- looks like java is missing -> installing openjdk-11-jre-headless via apt
+- python seems to be missing -> installing via apt
+
+works now.
+
+***** Is there a tutorial on how to use the tool?
+***** Is there a good documentation on the parameter settings?
+***** Is the tool maintained (issues answered, implementation of new features)?
+***** Is the tool Open Source?
+**** summary
+- Is the tool easy to install?
+- Is there a way to test the installation? 
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings? 
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+** org-asm
+no updates since last test
+** NOVOPlasty
+- several new commits in repo
+- latest commit in master from 26. July 2019 (removed NOVOPlasty3.4.pl)
+- this commit is not usable (as the main script is missing)
+- I am using the latest release (3.2)
+
+*** new version
+**** questions
+***** Is the tool easy to install?
+- downloaded tar.gz of latest release (3.2)
+- unpacking
+- seems to be done
+
+No installation instructions available, but a simple download is enough
+
+
+***** Is there a way to test the installation?
+Testing with the shipped test data and config file
+
+sucess
+** chloroExtractor
+*** new version
+**** questions
+***** Is the tool easy to install?
+- installing docker as described on the docker homepage (there is a not in the CE readme that docker has to be installed)
+- docker pull worked
+***** Is there a way to test the installation?
+- testing installation with example dataset
+
+***** Is there a tutorial on how to use the tool?
+***** Is there a good documentation on the parameter settings?
+***** Is the tool maintained (issues answered, implementation of new features)?
+***** Is the tool Open Source?
+**** summary
+- Is the tool easy to install?
+- Is there a way to test the installation? 
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings? 
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+
+** IOGA
+no updates
+
+** Chloroplast Assembly Protocol
+*** new version
+**** questions
+***** Is the tool easy to install?
+- installing g++ make libz-dev libpcre3-dev default-jre via apt (mentioned in Readme)
+- downloading repo
+- running perl install.pl
+- looks good
+
+***** Is there a way to test the installation?
+running the HOWTO brachy tutorial
+works
+***** Is there a tutorial on how to use the tool?
+***** Is there a good documentation on the parameter settings?
+***** Is the tool maintained (issues answered, implementation of new features)?
+***** Is the tool Open Source?
+**** summary
+- Is the tool easy to install?
+- Is there a way to test the installation? 
+- Is there a tutorial on how to use the tool?
+- Is there a good documentation on the parameter settings? 
+- Is the tool maintained (issues answered, implementation of new features)?
+- Is the tool Open Source?
+** summary
+GO: 
+- installation is easier by prepackaged dependencies
+- some dependencies are missing, but nothing dealbraking
+- missing dependencies in testrung bug is fixed by packaging deps directly
+FP:
+- no real changes to the first test, still some dependencies (g++, etc) are missing from the description
+OA:
+no updates, no new test
+NP:
+- last commit in master is not working (main script is missing) -> tested with latest release
+- easy installation (download from git is enough)
+- new test dataset shipped after I opened the issue
+CE:
+- no changes in ux
+IO:
+no updates, no new test
+CA:
+- readme updated with missing dependencies (g++, make, etc)
+- installation works on the first try now
+
