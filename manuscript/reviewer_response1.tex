@@ -7,20 +7,19 @@
 %
 \begin{document}
 \maketitle
-\section{Editor}
-We have now received reports from two referees, whose comments are available below.
-As you will see from the reports, both referees raised serious concerns that the benchmark hasn't provided sufficient advance to be useful for the field.
-At this stage, therefore, we are not persuaded that an offer of publication in Genome Biology would be justified.
-Unless you can address all of the issues raised by the referees I am afraid that we would not be able to consider this work again.
-In particular we ask that you provide additional analyses as requested by both referees to convince them of the advance.
-The revised manuscript should address in full all the points raised by both referees; a separate list of the revisions made, specifying where in the manuscript the changes have been made, would also be helpful.
-Please note that all data generated for the manuscript should be deposited in a relevant public repository, with accession codes listed in the manuscript's Availability of Data and Materials section.
-All other supporting data should also be signposted.
-If you decide to submit a revised version, you will need to  this as a new manuscript, although we would consider it in the same way as we do all revised manuscripts.
-The exception is that we will take into account any work published in the intervening period.
-For the time being, however, we hope that you will find our referees' comments helpful in deciding how to proceed.
-Please feel free to contact us if you have any questions.
-
+% \section{Editor}
+% We have now received reports from two referees, whose comments are available below.
+% As you will see from the reports, both referees raised serious concerns that the benchmark hasn't provided sufficient advance to be useful for the field.
+% At this stage, therefore, we are not persuaded that an offer of publication in Genome Biology would be justified.
+% Unless you can address all of the issues raised by the referees I am afraid that we would not be able to consider this work again.
+% In particular we ask that you provide additional analyses as requested by both referees to convince them of the advance.
+% The revised manuscript should address in full all the points raised by both referees; a separate list of the revisions made, specifying where in the manuscript the changes have been made, would also be helpful.
+% Please note that all data generated for the manuscript should be deposited in a relevant public repository, with accession codes listed in the manuscript's Availability of Data and Materials section.
+% All other supporting data should also be signposted.
+% If you decide to submit a revised version, you will need to  this as a new manuscript, although we would consider it in the same way as we do all revised manuscripts.
+% The exception is that we will take into account any work published in the intervening period.
+% For the time being, however, we hope that you will find our referees' comments helpful in deciding how to proceed.
+% Please feel free to contact us if you have any questions.
 \section{Reviewer 1}
 Methods are appropriate but same authors developed ChloroExtractor, an important tool used as a benchmark in this study.
 Authors compare seven chloroplast genome assembly tools.
@@ -28,11 +27,11 @@ So, this reviewer is not sure of novelty of this manuscript.
 So, authors haven't addressed the important question "Does the work represent a significant advance over previously published studies?".  
 
 \textbf{
-Indeed the novelty in this article is not a new approach to the task of chloroplast genome assembly but rather a thourough benchmark of existing tools (including our tool ChloroExtractor).
+Indeed the novelty in this article is not a new approach to the task of chloroplast genome assembly but rather a thorough benchmark of existing tools (including our tool ChloroExtractor).
 This represents a substantial advance for the field as there are competing tools published for the same task without any information about their relative performances.
 Currently, researchers have to do this evaluation of tools themselves to find the appropriate tool which leads to duplicated efforts as this is done by every group separately and without sharing results.
-If this evaluation is neglected a suboptimal tool might be used which can lead to additional manual efforts in finishing or additional costs if more data is generated.
-Thus, clear guidelines to the end user (and important directions for improvement to the developers) are novel, important and benficial for the research community.
+If this evaluation is neglected a non optimal tool might be used which can lead to additional manual efforts in finishing or additional costs if more data is generated.
+Thus, clear guidelines to the end user (and important directions for improvement to the developers) are novel, important and beneficial for the research community.
 }
 
 User experience and success rate should be determined by users and documented through satisfaction surveys.
@@ -40,8 +39,8 @@ This is especially important when authors emphasize that program can be used usi
 
 \textbf{
 We agree that this would be the best way to measure and quantify user experience.
-However, this is not feasible with limited budget and time (TODO: is this excuse good enough?) while the main focus of the work was on quantitative performance measures, anyway.
-We decided to include usability metrics that were obtainable in a defined and structured way using the JOSS reviewer guidelines.
+However, the main focus of the work was on quantitative performance measures. 
+Nevertheless, we decided to include usability metrics that were obtainable in a defined and structured way using the reviewer guidelines of the ``Journal of Open Source Software'' (JOSS).
 }
 
 There is >1,000 sequenced chloroplast genomes, with a large majority not fully assembled or annotated.
@@ -49,8 +48,11 @@ So, authors have plenty of opportunity to demonstrate use of these new assembly 
 
 \textbf{
 Thanks for pointing this out.
-We now include as a proof of principle the application of these tools on more than 100 novel datasets.
-We thus clearly demonstrate that the insights from this article can be used to produce further novel results that can lead to biological insight.
+We now include as a proof of principle the application of these tools on 105 novel data sets.
+The assembly of 49 of those 105 data sets returned chloroplast genomes.
+After further screening against NCBI databases, still 20 data sets remained.
+That sets contained new chloroplast genomes for species without a reported plastid genome.
+We thus clearly demonstrate that the insights from this article can be used to produce further novel results that can lead to further biological insight.
 }
 
 It is well known that intergenic spacer regions are not conserved and not even a single intergenic spacer region is conserved within chloroplasts genomes of the graminae or grass genomes.
@@ -59,15 +61,16 @@ So, how does reference genome help in genome assembly?
 
 \textbf{
 This is a very interesting question.
-We don't think that this is within the scope of our publication as we compare de novo assembly tools.
-TODO: some people use it, some programs use it, it seems to work often but actually your argument is justification why we restricted our analysis to de novo tools.
+But due to we are comparing de novo assembly tools, we think answering this question is outside the scope of our publication.
+Nevertheless, using reference plastid genomes, is helpful to sort the huge amount of input data into potential plastid genome related sequences and non related sequences which need no longer to be considered for an assembly.
+%TODO: some people use it, some programs use it, it seems to work often but actually your argument is justification why we restricted our analysis to de novo tools.
 }
 
 In order to have real life comparison, authors could have sequenced few chloroplast genomes and used that data to compare different assembly tools and time taken for each program, pros and cons.
 
 \textbf{
-We already tested the tools on real datasets downloaded from SRA which is equivalent to customly sequenced data.
-But we now include additional 100+ novel data sets with no reference chloroplast in the database.
+We already tested the tools on real data sets downloaded from NCBIs SRA which is equivalent to customly sequenced data.
+But we now include additional 105 novel data sets with no reference chloroplast in the database.
 }
 
 - Is the paper of broad interest to others in the field, or of outstanding interest to a broad audience of biologists?
@@ -81,8 +84,8 @@ However, the overall manuscript is not well written and contains limited informa
 
 \textbf{
 Thanks for your thorough review and the pointers that helped us improve the overall readability of the manuscript.
-In addition we received feedback and edits from a native English speaker to further improve readabilty.
-TODO: how do we adress the "limited information" aspect. We could link to the github repo that contains all data and code we used including the dockerfiles.
+In addition we received feedback and edits from a native English speaker to further improve readability.
+We try to add more information about our systematically comparison into the manuscript, moreover, we provide all our script and even the docker container in our GitHub repository, DockerHub, and Zenodo to enable a maximum of reproducibility.
 }
 
 Specific points: The number of lines on the edge does not correspond to the maintext.
@@ -118,4 +121,6 @@ The major concerns about this manuscript can be found below and major revision i
     \item Part of "Consistency"
     \item Line 3: As shown in the Fig.6, only two tools achieved R2  not equal 1 by re-running assemblies and comparison of the scores of two assemblers, however, GetOrganelle defined as the only tool that succeed in obtaining similar score for all assemblers, this conclusion is not rigorous.
 \end{itemize}
+
+\textbf{We addressed the more specific issues within the manuscript.}
 \end{document}
