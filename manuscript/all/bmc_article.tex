@@ -797,7 +797,7 @@ The resulting assemblies are available from Zenodo \cite{zenodoassemblies}.
 %% Do not use \listoffigures as most will included as separate files
 \section*{Figures}
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{plots/comp_time_log.pdf}
+  \includegraphics[width=\textwidth]{comp_time_log.pdf}
   \caption{\csentence{Computation time depending on number of threads and size of input data}
   The boxplots show the differences in demand of CPU time for different number of threads and input data size for the seven different assemblers
   }
@@ -805,21 +805,21 @@ The resulting assemblies are available from Zenodo \cite{zenodoassemblies}.
       \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{plots/usage_amount_threads.pdf}
+  \includegraphics[width=\textwidth]{usage_amount_threads.pdf}
   \caption{\csentence{Performance metrics}
       Boxplots depicting the demand of CPU and RAM and disk space needed depending on the assembler, input data size and number of threads}
       \label{fig:performance_memory_cpu}
       \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{plots/sim_tiles.pdf}
+  \includegraphics[width=\textwidth]{sim_tiles.pdf}
   \caption{\csentence{Score of assemblies on simulated data}
       Results of assemblies from simulated data sets. Color scale of the tiles represents the score }
       \label{fig:simulated}
       \end{figure}
 
   \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{plots/swarm.pdf}
+  \includegraphics[width=\textwidth]{swarm.pdf}
   \caption{\csentence{Results of scoring of the seven assemblers}
   The box- and swarplots depict the results of the scoring algorithm we used. For the different assemblers. The whiskers of boxplots indicate the 1.5 x interquartile range. 
     }
@@ -827,14 +827,14 @@ The resulting assemblies are available from Zenodo \cite{zenodoassemblies}.
       \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth,page=2]{plots/upset.pdf}
+  \includegraphics[width=\textwidth,page=2]{upset.pdf}
   \caption{\csentence{Upset plot \cite{lex2014upset} comparing success of assemblers on the real data sets}
       The plot shows the intersection of success ($score > 99$) between assemblers. For \num{69} data sets only \go{} was able to obtain a complete chloroplast. \num{43} were successful with both \go{} and \fp{} and so on}
             \label{fig:upset}
       \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{plots/repro.pdf}
+  \includegraphics[width=\textwidth]{repro.pdf}
   \caption{\csentence{Scores between two repeated runs for consistency testing}
   The scatter plots depicts the scores of the 1. runs x-axis versus the scores of the 2. run y-axis of the data sets that were selected for re-evaluation. 
       }
@@ -842,14 +842,14 @@ The resulting assemblies are available from Zenodo \cite{zenodoassemblies}.
       \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{plots/real_datasets_tree.pdf}
+  \includegraphics[width=\textwidth]{real_datasets_tree.pdf}
   \caption{\csentence{Success for chloroplast assembly shows no taxonomic bias} Success of assemblers on real data sets on tree derived from NCBI taxonomy \cite{ncbi2011}. Plot was prepared using \cite{Letunic2019}
        }
       \label{fig:tree}
       \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{manuscript/plots/upset_novel.pdf}
+  \includegraphics[width=\textwidth]{upset_novel.pdf}
   \caption{\csentence{Upset plot \cite{lex2014upset} comparing success of assemblers on the novel data sets}
       The plot shows the intersection of success (single contig, $length \ge 130kbp$, $ir \ge 17kbp$) between assemblers. For \num{15} data sets only \go{} was able to obtain a complete chloroplast. \num{10} were successful with \go{}, \fp{}, \np{}, and \oa{} and so on}
       \label{fig:upset_novel}
@@ -857,7 +857,7 @@ The resulting assemblies are available from Zenodo \cite{zenodoassemblies}.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\textwidth]{manuscript/plots/AliTV.png}
+  \includegraphics[width=0.9\textwidth]{AliTV.png}
   \caption{\csentence{AliTV plot \cite{alitv} showing alignments of the different assemblers compared to each other and the reference} Each blue bar in the plot corresponds to an assembly of the \plant{Ob} chloroplast (DRR053294). Regions in adjacent assemblies are connected with colored ribbons for similar regions in the alignment with identity coded as color from red to green. The purple arrows on the assemblies depict the \gls{ir} regions. This plot highlights some common problems with chloroplast assembly. \cassp{} only assembled small fragments mostly from the \gls{ir} region. \ioga{} returned three separate contigs corresponding to \gls{lsc}, \gls{ssc}, and IR. \fp{} and \go{} produced assemblies that were identical to the reference. \ce{} has the same structure but the \gls{lsc} is flipped compared to the reference (which is a biologically valid option). Both \np{} and \oa{} had the \gls{ssc} flipped compared to the reference and did not start with the \gls{lsc} but the \gls{ir} and \gls{ssc}, respectively (the start point is arbitrary in a circular sequence).%
       }
       \label{fig:alitv}
@@ -865,7 +865,7 @@ The resulting assemblies are available from Zenodo \cite{zenodoassemblies}.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.9\textwidth]{manuscript/plots/feature_counts_distinct.png}
+  \includegraphics[width=0.9\textwidth]{feature_counts_distinct.png}
   \caption{\csentence{Number of distinct features in novel chloroplast genomes} The distribution of feature types tRNA, rRNA, and coding sequence (CDS) are shown separately.%
       }
       \label{fig:feature_count_novel}
